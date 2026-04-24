@@ -89,16 +89,16 @@ Validate each module end-to-end before starting the next.
 **Swift modules:** `BlueskyCore` (Account type), `BlueskyKit` (SessionManaging protocol), `BlueskyAuth` (implementation + views)  
 **Goal:** User can log in, tokens are persisted in Keychain, session restores on relaunch, 2FA works, multi-account switching works.
 
-- [ ] `Account` struct in `BlueskyCore`: DID, handle, email, service URL, PDS URL
-- [ ] `SessionManaging` protocol in `BlueskyKit`
-- [ ] Keychain wrapper in `BlueskyDataStore` for access JWT + refresh JWT per DID
-- [ ] `SessionManager` (`@Observable`) in `BlueskyAuth`: login, resumeSession, logout, switchAccount, removeAccount
-- [ ] Login screen: handle/email + password form, service URL field
-- [ ] 2FA screen: TOTP token prompt on `AuthFactorTokenRequired`
-- [ ] Account picker: list saved accounts, switch or remove
-- [ ] Session restore on app launch (check token expiry, refresh if needed)
-- [ ] Multi-account: store all accounts in Keychain, one `currentAccount` active
-- [ ] Logout: clear tokens, unregister push token
+- [x] `Account` struct in `BlueskyCore`: DID, handle, email, service URL, PDS URL
+- [x] `SessionManaging` protocol in `BlueskyKit`
+- [x] Keychain wrapper in `BlueskyDataStore` for access JWT + refresh JWT per DID
+- [x] `SessionManager` (`@Observable`) in `BlueskyAuth`: login, resumeSession, logout, switchAccount, removeAccount
+- [x] Login screen: handle/email + password form, service URL field
+- [x] 2FA screen: TOTP token prompt on `AuthFactorTokenRequired`
+- [x] Account picker: list saved accounts, switch or remove
+- [x] Session restore on app launch (check token expiry, refresh if needed)
+- [x] Multi-account: store all accounts in Keychain, one `currentAccount` active
+- [x] Logout: clear tokens, unregister push token
 - [ ] **Validate:** Login → kill app → relaunch → session restored without login prompt
 
 ---
@@ -109,17 +109,17 @@ Validate each module end-to-end before starting the next.
 **Goal:** Typed XRPC client in Swift covering all endpoints the app uses.
 
 - [ ] Add `BlueskyNetworking` target to `BlueskyKit/Package.swift`
-- [ ] `NetworkClient` protocol in `BlueskyKit`
+- [x] `NetworkClient` protocol in `BlueskyKit`
 - [ ] `ATProtoClient` with `URLSession` + bearer auth header
 - [ ] Auto-refresh: intercept 401, use refresh token, retry original request
-- [ ] Error types in `BlueskyCore`: `ATError` (network, auth, XRPC lexicon errors)
-- [ ] Cursor pagination type in `BlueskyCore`: `PagedResult<T>`
+- [x] Error types in `BlueskyCore`: `ATError` (network, auth, XRPC lexicon errors)
+- [x] Cursor pagination type in `BlueskyCore`: `PagedResult<T>`
 - [ ] Codable lexicon types in `BlueskyCore` for:
-  - [ ] `app.bsky.feed.*` (getFeed, getTimeline, getAuthorFeed, getPostThread, getLikes, getRepostedBy)
-  - [ ] `app.bsky.actor.*` (getProfile, getProfiles, searchActors)
+  - [x] `app.bsky.feed.*` core types: `PostRecord`, `PostView`, `FeedViewPost`, `FeedReason`, embed hierarchy (`Embed`/`EmbedView` with `$type` discrimination), `BlobRef`
+  - [x] `app.bsky.actor.*` core types: `ProfileBasic`, `ProfileView`, `ProfileDetailed`, `Label`, `ListBasic`, `ProfileViewerState`
+  - [x] `app.bsky.feed.post` record schema: `RichTextFacet`, `FacetFeature` (mention/link/tag), all embed types
   - [ ] `app.bsky.notification.*` (listNotifications, updateSeen, registerPush)
   - [ ] `app.bsky.graph.*` (getFollowers, getFollows, getMutes, getBlocks, getLists)
-  - [ ] `app.bsky.feed.post` record schema (rich text facets, embeds, labels)
   - [ ] `com.atproto.repo.*` (applyWrites, uploadBlob)
   - [ ] `app.bsky.chat.*` (DM convos, messages, send)
   - [ ] Moderation lexicons (labeler, report)
@@ -133,6 +133,9 @@ Validate each module end-to-end before starting the next.
 **Goal:** All persistent state that React Native stored in AsyncStorage/MMKV is replicated in native Swift.
 
 - [ ] Storage protocols in `BlueskyKit`: `AccountStore`, `PreferencesStore`, `CacheStore`
+  - [x] `AccountStore` (with `nonisolated` requirements — implementations can be actor-isolated)
+  - [x] `PreferencesStore` (with `nonisolated` requirements)
+  - [ ] `CacheStore`
 - [ ] `KeychainAccountStore` — session tokens, account list
 - [ ] `UserDefaultsPreferencesStore` — theme, language, UI toggles
 - [ ] `SwiftDataCacheStore` — query cache per DID (feeds, posts, profiles)
