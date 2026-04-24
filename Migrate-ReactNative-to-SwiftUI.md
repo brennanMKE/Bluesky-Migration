@@ -214,13 +214,14 @@ Validate each module end-to-end before starting the next.
 
 **Swift module:** `BlueskyProfile` (new)
 
-- [ ] Add `BlueskyProfile` target to `BlueskyKit/Package.swift`
-- [ ] Profile header: avatar, banner, display name, handle, bio, follower/following counts
-- [ ] Posts / Replies / Media / Likes / Feeds / Lists tabs
-- [ ] Follow / Unfollow / Block / Mute actions
-- [ ] Edit profile sheet (avatar upload, bio, display name)
+- [x] Add `BlueskyProfile` target to `BlueskyKit/Package.swift`
+- [x] Profile header: avatar, banner, display name, handle, bio, follower/following counts
+- [x] Posts / Replies / Media / Likes tabs (Feeds / Lists deferred)
+- [x] Follow / Unfollow / Block / Mute actions (optimistic updates)
+- [x] Edit profile sheet (display name + bio; avatar upload deferred to later)
 - [ ] Verified badges, labeler badges
 - [ ] Known followers chip
+- [ ] Feeds / Lists tabs
 - [ ] **Validate:** Own profile and other profiles, edit flow, follow/unfollow
 
 ---

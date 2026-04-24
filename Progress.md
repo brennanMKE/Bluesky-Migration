@@ -29,8 +29,8 @@ When you review a new RN commit and confirm nothing affects the migration plan, 
 | | |
 |---|---|
 | **Phase** | 0 — Foundation |
-| **Active module** | Module 6/7 — Home Feed + Thread |
-| **Active item** | Module 6 Gate (validate feed loads, scrolls, interactions — needs live app) |
+| **Active module** | Module 8 — Profile |
+| **Active item** | Module 8 Gate (validate own/other profiles, edit flow, follow/unfollow — needs live app) |
 | **Blockers** | None |
 
 ---
@@ -83,6 +83,20 @@ These are the first items to work on in order. Cross them off here and tick the 
 - [x] `project.pbxproj`: added `BlueskyKit` local package reference + `XCSwiftPackageProductDependency` for all 7 products (BlueskyCore, BlueskyKit, BlueskyAuth, BlueskyDataStore, BlueskyUI, BlueskyNetworking, BlueskyFeed)
 - [x] Home tab wired to `FeedView(network:accountStore:onPostTap:)` with `navigationDestination` to `ThreadView`
 - [ ] **Gate:** Validate tabs switch, back navigation works, deep links open correct screen (needs Xcode + simulator)
+
+**Module 8 — Profile**
+- [x] `BlueskyProfile` target added to `Package.swift`
+- [x] `ProfileViewModel`: loadProfile, per-tab author feed with cursor pagination, follow/unfollow/block/unblock/mute/unmute (all optimistic), `updateProfile` (displayName + description)
+- [x] `ProfileHeaderView`: banner image, avatar with border, display name + handle, bio, stats row (Following/Followers/Posts), Follow/Unfollow + More action menu
+- [x] `ProfileScreen`: sticky tab strip via `pinnedViews`, Posts/Replies/Media/Likes tabs, `LazyVStack` + infinite scroll, `EditProfileSheet` sheet
+- [x] `EditProfileSheet`: display name + bio `TextEditor`, Save/Cancel toolbar
+- [x] `FollowRecord`, `BlockRecord`, `MuteActorRequest` in `BlueskyCore/Graph.swift`
+- [x] `PutRecordRequest<T>`, `ProfileRecord` in `BlueskyCore/Feed.swift`
+- [x] Profile tab wired in `MainTabView` via `ProfileScreen(actorDID:network:accountStore:viewerDID:)`
+- [ ] Feeds / Lists tabs
+- [ ] Verified badges, labeler badges
+- [ ] Known followers chip
+- [ ] **Gate:** Own profile + other profiles, edit flow, follow/unfollow (needs live app)
 
 **Module 6 — Home Feed**
 - [x] `BlueskyFeed` target added to `Package.swift`
@@ -140,6 +154,13 @@ _Append entries here as items are finished. Most recent at the top._
 
 | Date | Module | Item |
 |------|--------|------|
+| 2026-04-24 | Bluesky-SwiftUI | Module 8 Gate pending: validate profile screen with live API |
+| 2026-04-24 | BlueskyProfile | `ProfileScreen`: sticky tab strip (pinnedViews), Posts/Replies/Media/Likes tabs, lazy per-tab feed loading |
+| 2026-04-24 | BlueskyProfile | `ProfileHeaderView`: banner, avatar, stats, Follow button, More menu (block/mute) |
+| 2026-04-24 | BlueskyProfile | `ProfileViewModel`: loadProfile, loadFeed/loadMoreFeed per tab, follow/unfollow/block/unblock/mute/unmute, updateProfile |
+| 2026-04-24 | BlueskyProfile | `EditProfileSheet`: display name + bio form (avatar upload deferred) |
+| 2026-04-24 | BlueskyCore | `FollowRecord`, `BlockRecord`, `MuteActorRequest` in Graph.swift |
+| 2026-04-24 | BlueskyCore | `PutRecordRequest<T>`, `ProfileRecord` in Feed.swift |
 | 2026-04-24 | Bluesky-SwiftUI | Module 6/7 Gate pending: wire app to live Bluesky API to validate feed + thread |
 | 2026-04-24 | Bluesky-SwiftUI | `MainTabView` Home tab wired to `FeedView`; `navigationDestination` → `ThreadView` |
 | 2026-04-24 | Bluesky-SwiftUI.xcodeproj | Fixed `XCLocalSwiftPackageReference` relative path `../../BlueskyKit` → `../BlueskyKit`; added BlueskyFeed product dependency |
@@ -229,6 +250,30 @@ All `BlueskyCore` types and `BlueskyKit` protocols are in place. The `swift test
 - `Embed` and `EmbedView` are `indirect enum` because `recordWithMedia` nests the same type recursively.
 
 **Next session:** Start with `KeychainAccountStore` in `BlueskyDataStore`. The `AccountStore` protocol is ready; the Keychain wrapper is the first concrete I/O implementation.
+
+---
+
+**2026-04-24 — Module 8 (BlueskyProfile) core implementation complete; gate needs live API**
+
+`BlueskyProfile` target built and linked into the Xcode app:
+
+- `ProfileViewModel` (`@Observable`): `loadProfile` via `app.bsky.actor.getProfile`; per-tab author feed via `app.bsky.feed.getAuthorFeed` (filter: `posts_no_replies` / `posts_with_replies` / `posts_with_media`) and `app.bsky.feed.getActorLikes`; cursor pagination; follow/unfollow (`com.atproto.repo.createRecord` / `deleteRecord`), block/unblock, mute/unmute (`app.bsky.graph.muteActor` / `unmuteActor`); `updateProfile` via `com.atproto.repo.putRecord` (collection `app.bsky.actor.profile`, rkey `"self"`); all mutations use optimistic UI with revert on failure.
+- `ProfileHeaderView`: banner `AsyncImage` + placeholder; avatar `AvatarView` overlapping banner with white border; display name + handle + bio; stats row (Following/Followers/Posts); Follow/Unfollow button with `.borderedProminent` / `.bordered` style; More `Menu` with block/mute actions; Edit Profile button for own profile.
+- `ProfileScreen`: single outer `ScrollView` + `LazyVStack(pinnedViews: [.sectionHeaders])` so the tab strip sticks while scrolling through posts; `Picker(.segmented)` for Posts/Replies/Media/Likes; post rows use `PostCard` from `BlueskyUI` with infinite scroll trigger on last row.
+- `EditProfileSheet`: `NavigationStack` with `Form` — `TextField` for display name, `TextEditor` for bio; Save/Cancel in toolbar.
+- Added `FollowRecord` + `BlockRecord` (with `$type` CodingKey pattern) and `MuteActorRequest` to `BlueskyCore/Graph.swift`.
+- Added `PutRecordRequest<T>` and `ProfileRecord` to `BlueskyCore/Feed.swift`.
+- `MainTabView` Profile tab now shows `ProfileScreen(actorDID: account.did, ...)` when logged in.
+- Xcode build succeeds.
+
+Key decisions:
+- `ProfileScreen` uses a single `ScrollView` + `LazyVStack` (not nested `List` inside `ScrollView`) to avoid nested scrollable view issues on iOS.
+- `ThreadView` in the profile context uses a `ThreadPlaceholder` stub to avoid a circular `BlueskyProfile → BlueskyFeed` dependency. The app target wires the real `ThreadView` in a future integration step.
+- `ProfileRecord` for `putRecord` encodes only `displayName` and `description` (avatar upload requires `com.atproto.repo.uploadBlob` which is deferred).
+
+**Gates remaining**: Modules 6, 7, 8 gates all need live Bluesky credentials; Module 5 needs simulator for tabs/nav/deep links.
+
+**Next session:** Module 9 — Search & Discovery (`BlueskySearch` target).
 
 ---
 
