@@ -29,8 +29,8 @@ When you review a new RN commit and confirm nothing affects the migration plan, 
 | | |
 |---|---|
 | **Phase** | 0 — Foundation |
-| **Active module** | Module 1 — Auth & Session |
-| **Active item** | Module 1 Gate (needs app target) |
+| **Active module** | Module 2 — Networking |
+| **Active item** | Module 2 Gate (unit tests against public.api.bsky.app — pending credentials) |
 | **Blockers** | None |
 
 ---
@@ -55,20 +55,20 @@ These are the first items to work on in order. Cross them off here and tick the 
 - [ ] **Gate:** Login → kill app → relaunch → session restored ← needs app target (Module 5)
 
 **Module 2 — Networking** _(starts after Module 1 gate passes)_
-- [ ] Add `BlueskyNetworking` target to `BlueskyKit/Package.swift`
+- [x] Add `BlueskyNetworking` target to `BlueskyKit/Package.swift`
 - [x] `NetworkClient` protocol in `BlueskyKit`
-- [ ] `ATProtoClient` with `URLSession` + bearer auth header
-- [ ] Auto-refresh: intercept 401, use refresh token, retry original request
+- [x] `ATProtoClient` with `URLSession` + bearer auth header
+- [x] Auto-refresh: intercept 401, use refresh token, retry original request
 - [x] Error types in `BlueskyCore`: `ATError` (network, auth, XRPC lexicon errors)
 - [x] Cursor pagination type in `BlueskyCore`: `PagedResult<T>`
-- [ ] Codable lexicon types for all endpoint groups — feed, actor, notification, graph, repo, chat, moderation
+- [x] Codable lexicon types for all endpoint groups — feed, actor, notification, graph, repo, chat, moderation
   - [x] `app.bsky.feed.*` core types: `PostRecord`, `PostView`, `FeedViewPost`, embed hierarchy, `RichTextFacet`
   - [x] `app.bsky.actor.*` core types: `ProfileBasic`, `ProfileView`, `ProfileDetailed`, `Label`
-  - [ ] `app.bsky.notification.*`
-  - [ ] `app.bsky.graph.*` (followers, follows, mutes, blocks, lists)
-  - [ ] `com.atproto.repo.*` (applyWrites, uploadBlob)
-  - [ ] `app.bsky.chat.*` (DM convos, messages, send)
-  - [ ] Moderation lexicons (labeler, report)
+  - [x] `app.bsky.notification.*`
+  - [x] `app.bsky.graph.*` (followers, follows, mutes, blocks, lists)
+  - [x] `com.atproto.repo.*` (applyWrites, uploadBlob)
+  - [x] `chat.bsky.*` (DM convos, messages, send)
+  - [x] Moderation lexicons (labeler, report)
 - [ ] **Gate:** Unit test each endpoint group against `public.api.bsky.app`
 
 **Module 3 — DataStore** _(starts after Module 2 gate passes)_
@@ -90,6 +90,13 @@ _Append entries here as items are finished. Most recent at the top._
 
 | Date | Module | Item |
 |------|--------|------|
+| 2026-04-24 | BlueskyCore | Moderation lexicons: `ReportSubjectRepo`, `ReportSubjectRecord`, `CreateReportRequest/Response`, `LabelerView` |
+| 2026-04-24 | BlueskyCore | `chat.bsky.*` types: `ConvoView`, `MessageView`, `MessageSender`, `MessageInput`, `SendMessageRequest`, `ListConvosResponse`, `GetMessagesResponse` |
+| 2026-04-24 | BlueskyCore | `com.atproto.repo.*` types: `UploadBlobResponse`, `WriteCreate`, `WriteDelete`, `WriteOp`, `ApplyWritesRequest/Response`, `RepoCommit`, `AnyEncodable` |
+| 2026-04-24 | BlueskyCore | `app.bsky.graph.*` types: `GetFollowersResponse`, `GetFollowsResponse`, `GetMutesResponse`, `GetBlocksResponse`, `GetListsResponse`, `ListView` |
+| 2026-04-24 | BlueskyCore | `app.bsky.notification.*` types: `NotificationView`, `ListNotificationsResponse`, `UpdateSeenRequest`, `RegisterPushRequest` |
+| 2026-04-24 | BlueskyNetworking | `ATProtoClient` actor: URLSession + bearer auth + 401 auto-refresh + token rotation via `refreshSession` |
+| 2026-04-24 | Package.swift | `BlueskyNetworking` target added (actor-isolated, no `defaultIsolation`) |
 | 2026-04-24 | BlueskyAuth | `AccountPickerView`: account list with avatar, switch, remove (context menu) |
 | 2026-04-24 | BlueskyAuth | `LoginView`: handle/password form, custom PDS URL, 2FA inline, iOS keyboard/content-type annotations |
 | 2026-04-24 | BlueskyAuth | `SessionManager` (`@MainActor @Observable`): login, resumeSession, switchAccount, logout, removeAccount, restoreLastSession; JWT expiry check; direct URLSession for auth endpoints |
@@ -143,6 +150,26 @@ All `BlueskyCore` types and `BlueskyKit` protocols are in place. The `swift test
 - `Embed` and `EmbedView` are `indirect enum` because `recordWithMedia` nests the same type recursively.
 
 **Next session:** Start with `KeychainAccountStore` in `BlueskyDataStore`. The `AccountStore` protocol is ready; the Keychain wrapper is the first concrete I/O implementation.
+
+---
+
+**2026-04-24 — Module 2 lexicon types complete; gate pending API credentials**
+
+All Module 2 implementation items are done:
+- `BlueskyNetworking` target in `Package.swift` (no `defaultIsolation` — `ATProtoClient` is a custom actor)
+- `ATProtoClient` actor: bearer auth, 401 intercept → refresh-token → retry, token saved back to `AccountStore`
+- All lexicon Codable types in `BlueskyCore`: notification, graph, repo (applyWrites/uploadBlob), chat.bsky, moderation
+- 24 tests pass — Codable round-trips for every new type
+
+Key patterns for Module 2:
+- `BlueskyNetworking` uses **no** `defaultIsolation`. `ATProtoClient` is a custom `actor`, and its private decoders run in the actor's isolation, not on `@MainActor`.
+- `nonisolated` wrappers (`get`, `post`) call `await` into actor-isolated `performGet`/`performPost` helpers — the canonical pattern for satisfying `nonisolated` protocol requirements with an actor.
+- `AnyEncodable` type-erases `Encodable & Sendable` using a `@Sendable` closure so heterogeneous write operations can live in a concrete array (`[WriteOp]`).
+- Chat API namespace is `chat.bsky.*` not `app.bsky.chat.*`.
+
+**Module 2 Gate** requires Bluesky credentials to hit `public.api.bsky.app`. Defer the live integration tests until the app target exists (Module 5) and we can wire up a real `KeychainAccountStore`. Start Module 3 (DataStore) now.
+
+**Next session:** Start `CacheStore` protocol in `BlueskyKit` and `SwiftDataCacheStore` in `BlueskyDataStore`.
 
 ---
 

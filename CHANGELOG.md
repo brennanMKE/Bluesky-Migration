@@ -4,6 +4,26 @@ All completed work, most recent first. Mirrors the Completion Log in `Progress.m
 
 ---
 
+## 2026-04-24 — Module 2: Networking complete (gate pending)
+
+### BlueskyNetworking (new module)
+- `ATProtoClient` actor — URLSession-based `NetworkClient` implementation; bearer auth on every request; 401 intercept → `refreshSession` → retry; updated tokens saved back to `AccountStore`
+
+### BlueskyCore — lexicon types
+- `Notification.swift` — `NotificationView`, `ListNotificationsResponse`, `UpdateSeenRequest`, `RegisterPushRequest` (`app.bsky.notification.*`)
+- `Graph.swift` — `GetFollowersResponse`, `GetFollowsResponse`, `GetMutesResponse`, `GetBlocksResponse`, `GetListsResponse`, `ListView` (`app.bsky.graph.*`)
+- `Repo.swift` — `UploadBlobResponse`, `WriteCreate`, `WriteDelete`, `WriteOp`, `ApplyWritesRequest/Response`, `RepoCommit`, `AnyEncodable` (`com.atproto.repo.*`)
+- `Chat.swift` — `ConvoView`, `MessageView`, `MessageSender`, `MessageInput`, `SendMessageRequest`, `ListConvosResponse`, `GetMessagesResponse` (`chat.bsky.*`)
+- `Moderation.swift` — `ReportSubjectRepo`, `ReportSubjectRecord`, `CreateReportRequest/Response`, `LabelerView`
+
+### Package.swift
+- `BlueskyNetworking` target added; no `defaultIsolation` (ATProtoClient is a custom actor)
+
+### Tests
+- 24 tests pass — Codable round-trips and encoding checks for all new lexicon types
+
+---
+
 ## 2026-04-24
 
 ### BlueskyAuth (new module)

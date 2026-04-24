@@ -108,21 +108,21 @@ Validate each module end-to-end before starting the next.
 **Swift module:** `BlueskyNetworking` (new target to add to `Package.swift`)  
 **Goal:** Typed XRPC client in Swift covering all endpoints the app uses.
 
-- [ ] Add `BlueskyNetworking` target to `BlueskyKit/Package.swift`
+- [x] Add `BlueskyNetworking` target to `BlueskyKit/Package.swift`
 - [x] `NetworkClient` protocol in `BlueskyKit`
-- [ ] `ATProtoClient` with `URLSession` + bearer auth header
-- [ ] Auto-refresh: intercept 401, use refresh token, retry original request
+- [x] `ATProtoClient` with `URLSession` + bearer auth header
+- [x] Auto-refresh: intercept 401, use refresh token, retry original request
 - [x] Error types in `BlueskyCore`: `ATError` (network, auth, XRPC lexicon errors)
 - [x] Cursor pagination type in `BlueskyCore`: `PagedResult<T>`
-- [ ] Codable lexicon types in `BlueskyCore` for:
+- [x] Codable lexicon types in `BlueskyCore` for:
   - [x] `app.bsky.feed.*` core types: `PostRecord`, `PostView`, `FeedViewPost`, `FeedReason`, embed hierarchy (`Embed`/`EmbedView` with `$type` discrimination), `BlobRef`
   - [x] `app.bsky.actor.*` core types: `ProfileBasic`, `ProfileView`, `ProfileDetailed`, `Label`, `ListBasic`, `ProfileViewerState`
   - [x] `app.bsky.feed.post` record schema: `RichTextFacet`, `FacetFeature` (mention/link/tag), all embed types
-  - [ ] `app.bsky.notification.*` (listNotifications, updateSeen, registerPush)
-  - [ ] `app.bsky.graph.*` (getFollowers, getFollows, getMutes, getBlocks, getLists)
-  - [ ] `com.atproto.repo.*` (applyWrites, uploadBlob)
-  - [ ] `app.bsky.chat.*` (DM convos, messages, send)
-  - [ ] Moderation lexicons (labeler, report)
+  - [x] `app.bsky.notification.*` (listNotifications, updateSeen, registerPush)
+  - [x] `app.bsky.graph.*` (getFollowers, getFollows, getMutes, getBlocks, getLists)
+  - [x] `com.atproto.repo.*` (applyWrites, uploadBlob)
+  - [x] `chat.bsky.*` (DM convos, messages, send)
+  - [x] Moderation lexicons (labeler, report)
 - [ ] **Validate:** Unit test each endpoint group against `public.api.bsky.app`
 
 ---
