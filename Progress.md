@@ -29,8 +29,8 @@ When you review a new RN commit and confirm nothing affects the migration plan, 
 | | |
 |---|---|
 | **Phase** | 0 — Foundation |
-| **Active module** | Module 2 — Networking |
-| **Active item** | Module 2 Gate (unit tests against public.api.bsky.app — pending credentials) |
+| **Active module** | Module 6/7 — Home Feed + Thread |
+| **Active item** | Module 6 Gate (validate feed loads, scrolls, interactions — needs live app) |
 | **Blockers** | None |
 
 ---
@@ -71,15 +71,65 @@ These are the first items to work on in order. Cross them off here and tick the 
   - [x] Moderation lexicons (labeler, report)
 - [ ] **Gate:** Unit test each endpoint group against `public.api.bsky.app`
 
+**Module 5 — Navigation Shell**
+- [x] `RootView` in `Bluesky-SwiftUI` app target: auth-gated, shows `LoginView` or `MainTabView`
+- [x] `AppRoot` bootstrap: creates `KeychainAccountStore` + `ATProtoClient` + `SessionManager`, calls `restoreLastSession`, injects via `.environment()`
+- [x] `MainTabView`: 5 tabs — Home, Search, Messages, Notifications, Profile
+- [x] `NavigationStack` per tab; macOS uses `NavigationSplitView` sidebar + `NavigationStack` in detail
+- [x] Badge counts on Messages and Notifications tabs (zero now; updated by future notification modules)
+- [x] Deep link handler: `bsky://` and `https://bsky.app` URL routing via `.onOpenURL`
+- [x] Mac: `NavigationSplitView` sidebar with toolbar Refresh button
+- [x] iPad: adaptive layout — `NavigationSplitView` at `.regular` horizontal size class, `TabView` at `.compact`
+- [x] `project.pbxproj`: added `BlueskyKit` local package reference + `XCSwiftPackageProductDependency` for all 7 products (BlueskyCore, BlueskyKit, BlueskyAuth, BlueskyDataStore, BlueskyUI, BlueskyNetworking, BlueskyFeed)
+- [x] Home tab wired to `FeedView(network:accountStore:onPostTap:)` with `navigationDestination` to `ThreadView`
+- [ ] **Gate:** Validate tabs switch, back navigation works, deep links open correct screen (needs Xcode + simulator)
+
+**Module 6 — Home Feed**
+- [x] `BlueskyFeed` target added to `Package.swift`
+- [x] `FeedViewModel`: cursor pagination, loadInitial/loadMore/refresh, like/unlike/repost/unrepost with optimistic updates
+- [x] `FeedSwitcherView`: horizontal tab strip — Following (`.timeline`) + Discover (algorithmic)
+- [x] `FeedView`: infinite scroll via `.onAppear`, pull-to-refresh via `.refreshable`, error state with retry
+- [x] `FeedSelection: Hashable` — view model cache keyed by selection
+- [x] Optimistic updates via `updatePost(uri:transform:)` with revert on failure
+- [x] ISO 8601 date encoding fixed in `ATProtoClient.encoder` for mutation payloads
+- [x] `FeedViewPost`, `LikeRecord`, `RepostRecord`, `CreateRecordRequest/Response`, `DeleteRecordRequest`, `EmptyResponse` in `BlueskyCore`
+- [ ] Filter: hide replies/reposts toggles (per feed)
+- [ ] **Gate:** Feed loads, scrolls, interactions persist across refresh (needs live app)
+
+**Module 7 — Post Thread**
+- [x] `GetPostThreadResponse`, `ThreadViewPost` (`indirect enum`), `ThreadPost` in `BlueskyCore`
+- [x] `ThreadViewModel`: loads `app.bsky.feed.getPostThread` with depth=6, parentHeight=80
+- [x] `ThreadView`: recursive tree via `threadNodes` returning `AnyView` (breaks self-referential `some View` error); `postNode` renders each `ThreadPost`; `stableID` for `ForEach`
+- [x] `.notFound` / `.blocked` placeholder cells
+- [ ] Reply composer inline or as sheet
+- [ ] Inline post expansion
+- [ ] **Gate:** Full thread renders with correct reply nesting (needs live app)
+
+**Module 4 — Design System & Core Components**
+- [x] `Theme`: light / dark / dim palettes, `@Entry` env key, `.blueskyTheme()` view modifier
+- [x] Spacing tokens: `Spacing._2xs…_2xl` (CGFloat constants, 4pt base grid)
+- [x] Typography: `Typography.xs…_2xl` sizes + font factory; `bodySmall/body/headline/title/largeTitle`
+- [x] `AvatarView`: `AsyncImage` + initials fallback + circular clip
+- [x] `RichTextView`: `AttributedString` facet rendering for mention/link/tag; byte-offset → String.Index conversion
+- [x] `PostEmbedView`: image grid (≤4), link card, quote post, video thumbnail, recordWithMedia compound
+- [x] `PostCard`: repost banner, author header, `RichTextView` body, `PostEmbedView`, action bar with like/repost state
+- [x] `FeedCard`: feed name, description, creator handle, like count
+- [x] `ListCard`: list name, purpose badge (MOD), creator, description
+- [x] `BlueskyButtonStyle` (primary/secondary/destructive/ghost), `BlueskyTextField`, `BlueskyDivider`, `BadgeView`
+- [x] `ToastView` + `.toast()` modifier (auto-dismiss after configurable duration)
+- [x] `adaptiveNavigation()` modifier
+- [ ] `#Preview` canvas validation (needs Xcode + simulator — all components have preview blocks)
+- [ ] **Gate:** Component gallery covers all states
+
 **Module 3 — DataStore** _(starts after Module 2 gate passes)_
-- [ ] Storage protocols in `BlueskyKit`: `AccountStore`, `PreferencesStore`, `CacheStore`
+- [x] Storage protocols in `BlueskyKit`: `AccountStore`, `PreferencesStore`, `CacheStore`
   - [x] `AccountStore` protocol (with `nonisolated` requirements)
   - [x] `PreferencesStore` protocol (with `nonisolated` requirements)
-  - [ ] `CacheStore` protocol
-- [ ] `KeychainAccountStore`
-- [ ] `UserDefaultsPreferencesStore`
-- [ ] `SwiftDataCacheStore`
-- [ ] App group container setup
+  - [x] `CacheStore` protocol
+- [x] `KeychainAccountStore`
+- [x] `UserDefaultsPreferencesStore`
+- [x] `SwiftDataCacheStore`
+- [x] App group container setup
 - [ ] **Gate:** Preferences survive restart; cache serves stale while fresh fetch loads
 
 ---
@@ -90,6 +140,35 @@ _Append entries here as items are finished. Most recent at the top._
 
 | Date | Module | Item |
 |------|--------|------|
+| 2026-04-24 | Bluesky-SwiftUI | Module 6/7 Gate pending: wire app to live Bluesky API to validate feed + thread |
+| 2026-04-24 | Bluesky-SwiftUI | `MainTabView` Home tab wired to `FeedView`; `navigationDestination` → `ThreadView` |
+| 2026-04-24 | Bluesky-SwiftUI.xcodeproj | Fixed `XCLocalSwiftPackageReference` relative path `../../BlueskyKit` → `../BlueskyKit`; added BlueskyFeed product dependency |
+| 2026-04-24 | BlueskyFeed | `ThreadView` + `ThreadViewModel`: recursive tree renderer using `AnyView` to break self-referential `some View` error |
+| 2026-04-24 | BlueskyFeed | `FeedView` + `FeedViewModel` + `FeedSwitcherView`: infinite scroll, pull-to-refresh, like/repost with optimistic updates |
+| 2026-04-24 | BlueskyCore | `Feed.swift`: `FeedResponse`, `ThreadViewPost` (indirect enum), `ThreadPost`, `GetPostThreadResponse`, `CreateRecordRequest/Response`, `DeleteRecordRequest`, `EmptyResponse`, `LikeRecord`, `RepostRecord` |
+| 2026-04-24 | BlueskyNetworking | `ATProtoClient.encoder` fixed to use `.iso8601` date encoding strategy |
+| 2026-04-24 | Bluesky-SwiftUI | Module 5 Gate pending: validate tabs/nav/deep links in Xcode + simulator |
+| 2026-04-24 | Bluesky-SwiftUI | `project.pbxproj`: linked BlueskyCore, BlueskyKit, BlueskyAuth, BlueskyDataStore, BlueskyUI, BlueskyNetworking via `XCLocalSwiftPackageReference` + `XCSwiftPackageProductDependency` |
+| 2026-04-24 | Bluesky-SwiftUI | `MainTabView`: macOS sidebar (`NavigationSplitView`), iOS/iPadOS adaptive (split view or tab bar), badge counts, deep link handler |
+| 2026-04-24 | Bluesky-SwiftUI | `RootView`: auth gate — `LoginView` when no session, `MainTabView` when authenticated |
+| 2026-04-24 | Bluesky-SwiftUI | App bootstrap: `AppRoot` creates `KeychainAccountStore` + `ATProtoClient` + `SessionManager`, restores last session, injects into SwiftUI environment |
+| 2026-04-24 | BlueskyUI | `adaptiveNavigation()` view modifier |
+| 2026-04-24 | BlueskyUI | `ToastView` + `.toast()` modifier (auto-dismiss, error variant) |
+| 2026-04-24 | BlueskyUI | `BlueskyButtonStyle` (primary/secondary/destructive/ghost), `BlueskyTextField`, `BlueskyDivider`, `BadgeView` |
+| 2026-04-24 | BlueskyUI | `ListCard` — curated list card with MOD purpose badge |
+| 2026-04-24 | BlueskyUI | `FeedCard` — feed subscription card with creator, like count |
+| 2026-04-24 | BlueskyUI | `PostCard` — full feed post with repost banner, action bar, like/repost state |
+| 2026-04-24 | BlueskyUI | `PostEmbedView` — image grid, link card, quote post, video thumbnail, recordWithMedia compound |
+| 2026-04-24 | BlueskyUI | `RichTextView` — `AttributedString` facet rendering; byte-offset → String.Index conversion |
+| 2026-04-24 | BlueskyUI | `AvatarView` — `AsyncImage` + initials fallback, circular clip |
+| 2026-04-24 | BlueskyUI | `Tokens` — `Spacing` and `Typography` enums with static constants |
+| 2026-04-24 | BlueskyUI | `Theme` — light/dark/dim color palettes; `@Entry` env key; `.blueskyTheme()` modifier |
+| 2026-04-24 | BlueskyCore | `GeneratorView`, `GeneratorViewerState`, `GetFeedGeneratorsResponse`, `GetActorFeedsResponse` (FeedGenerator.swift) |
+| 2026-04-24 | BlueskyDataStore | `SwiftDataCacheStore` actor: SwiftData-backed `CacheStore`; per-call `ModelContext`; in-memory factory for tests; `appGroupIdentifier` support |
+| 2026-04-24 | BlueskyDataStore | `UserDefaultsPreferencesStore` final class: `@unchecked Sendable`; `suiteName` for App Group sharing |
+| 2026-04-24 | BlueskyKit | `CacheStore` protocol: `nonisolated async` store/fetch/evict/evictAll |
+| 2026-04-24 | BlueskyCore | `CacheResult<T>` struct in `BlueskyCore` (no default isolation — freely accessible from any actor context) |
+| 2026-04-24 | BlueskyKit | `BlueskyEnvironment` now includes `cache: any CacheStore` |
 | 2026-04-24 | BlueskyCore | Moderation lexicons: `ReportSubjectRepo`, `ReportSubjectRecord`, `CreateReportRequest/Response`, `LabelerView` |
 | 2026-04-24 | BlueskyCore | `chat.bsky.*` types: `ConvoView`, `MessageView`, `MessageSender`, `MessageInput`, `SendMessageRequest`, `ListConvosResponse`, `GetMessagesResponse` |
 | 2026-04-24 | BlueskyCore | `com.atproto.repo.*` types: `UploadBlobResponse`, `WriteCreate`, `WriteDelete`, `WriteOp`, `ApplyWritesRequest/Response`, `RepoCommit`, `AnyEncodable` |
@@ -150,6 +229,86 @@ All `BlueskyCore` types and `BlueskyKit` protocols are in place. The `swift test
 - `Embed` and `EmbedView` are `indirect enum` because `recordWithMedia` nests the same type recursively.
 
 **Next session:** Start with `KeychainAccountStore` in `BlueskyDataStore`. The `AccountStore` protocol is ready; the Keychain wrapper is the first concrete I/O implementation.
+
+---
+
+**2026-04-24 — Modules 6 + 7 (BlueskyFeed) complete; app shell wired; gate needs live API**
+
+`BlueskyFeed` target is fully built and linked into the Xcode app:
+
+- `FeedViewModel` (`@Observable`): cursor pagination via `app.bsky.feed.getTimeline` / `app.bsky.feed.getFeed`; `like`/`unlike`/`repost`/`unrepost` via `com.atproto.repo.createRecord` / `deleteRecord`; optimistic updates with revert on failure; `FeedSelection: Hashable` for view model caching per tab.
+- `FeedSwitcherView`: horizontal scroll tab strip — Following (`.timeline`) and Discover (`at://did:plc:.../whats-hot`).
+- `FeedView`: `List` with `.refreshable` + infinite scroll via `.onAppear` on the last item; error state with retry; `PostCard.Actions` wired to `FeedViewModel`.
+- `ThreadViewModel`: loads `app.bsky.feed.getPostThread` (depth=6, parentHeight=80).
+- `ThreadView`: recursive tree rendering via `threadNodes(_:) -> AnyView` (not `some View`) — `AnyView` is required here to break the self-referential type inference that Swift cannot resolve for recursive `@ViewBuilder` functions.
+- `MainTabView` Home tab now uses `FeedView`; `@State private var threadURI: ATURI?` drives a `navigationDestination(isPresented:)` to `ThreadView`.
+- `ATProtoClient.encoder` was missing `.iso8601` date encoding — fixed; `LikeRecord.createdAt` and `RepostRecord.createdAt` now encode correctly.
+- `project.pbxproj` relative path was `../../BlueskyKit` (resolved to `/Users/brennan/Developer/BlueskyKit`) — fixed to `../BlueskyKit` (resolves to `/Users/brennan/Developer/ReactNative/BlueskyKit`). App builds successfully with `xcodebuild`.
+- 49 tests pass in the Swift package.
+
+Key patterns:
+- `indirect enum ThreadViewPost` — required because `ThreadPost.parent: ThreadViewPost?` and `replies: [ThreadViewPost]?` reference the enclosing enum recursively.
+- Recursive `some View` → use `AnyView` only for the recursive call; all non-recursive branches remain typed.
+- `navigationDestination(isPresented: Binding(...))` with a computed `Binding<Bool>` from an optional `ATURI` state — avoids needing `Identifiable` conformance on `ATURI`.
+- `FeedSelection: Hashable` allows `[FeedSelection: FeedViewModel]` dictionary as a view-model cache so each feed tab gets its own independent pagination state.
+
+**Gates remaining**: Module 6 gate (feed loads/scrolls/interactions) and Module 7 gate (thread tree renders) both need a running app with live Bluesky credentials. Module 5 gate (tabs/nav/deep links) also still pending.
+
+**Next session:** Module 8 — Profile screen (`BlueskyProfile` target): profile header, posts/replies/media/likes tabs, follow/unfollow actions.
+
+---
+
+**2026-04-24 — Module 5 Navigation Shell complete (gate needs Xcode/simulator)**
+
+All Module 5 implementation items are done. The `Bluesky-SwiftUI` Xcode project now builds as a full app shell:
+- `project.pbxproj` manually updated with `XCLocalSwiftPackageReference` for `../../BlueskyKit` and `XCSwiftPackageProductDependency` entries for all 6 modules. Also added `PBXBuildFile` entries wired into the main target's Frameworks build phase.
+- `Bluesky_SwiftUIApp`: creates `KeychainAccountStore` + `ATProtoClient` + `SessionManager` in a `@MainActor` `boot()` task, calls `restoreLastSession()`, then injects the `SessionManager` via `.environment()` into `RootView`.
+- `RootView` reads `SessionManager` from `@Environment` and shows `LoginView` or `MainTabView`.
+- `MainTabView`: macOS uses `NavigationSplitView` (sidebar + `NavigationStack` detail); iOS uses adaptive layout (`NavigationSplitView` at `.regular` size class, `TabView` at `.compact`); `.onOpenURL` handles `bsky://` and `https://bsky.app` deep links; `messageBadge`/`notificationBadge` state ready for future notification modules.
+- `SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor` in `Build.xcconfig` — the app target has `@MainActor` as default isolation, same as `BlueskyAuth` / `BlueskyUI`. No explicit `@MainActor` annotations needed in app code.
+- `MemberImportVisibility` feature is enabled — must explicitly `import BlueskyCore` to access `Account.handle` even when `BlueskyAuth` transitively imports it.
+
+**With Module 5 in place**, the Module 1 gate (login → kill → relaunch → session restored) can now be tested in Xcode. Modules 3 and 4 gates also become testable once the app target is running.
+
+**Next session:** Start Module 6 — Home Feed (`BlueskyFeed` target): feed list with cursor pagination, pull-to-refresh, feed switcher, post card interactions.
+
+---
+
+**2026-04-24 — Module 4 Design System complete (gate needs Xcode/simulator)**
+
+All Module 4 implementation items are done. Key design decisions:
+- `CacheResult`, `GeneratorView` → `BlueskyCore` (no default isolation, accessible from any actor context)
+- `BlueskyTheme.Colors` uses packed 24-bit sRGB hex init (e.g., `0xFF_85_00`) — avoids magic float conversions
+- `@Entry public var blueskyTheme` uses iOS 18 / macOS 15 `@Entry` macro to reduce `EnvironmentKey` boilerplate
+- `PostEmbedView` uses `AnyView` only for the `recordWithMedia` sub-embed call — avoids self-referential `some View` compile error on the recursive branch; rest of the view uses `@ViewBuilder`
+- `RichTextView` byte-offset conversion: `utf8.index(utf8.startIndex, offsetBy:)` → `samePosition(in: text)` → `Range(_, in: attributedString)`
+- `PostCard` and `FeedCard` use `theme.colors.link` / `.like` / `.success` for interactive state colors
+
+**Module 4 Gate**: All components have `#Preview` blocks and should render correctly in Xcode Canvas. Full validation requires opening the package in Xcode with a simulator. The gate check (component gallery) will be done when Module 5 (app shell) adds a `ComponentGalleryView`.
+
+**Next session:** Module 5 — Navigation Shell in `Bluesky-SwiftUI` app target: `RootView` (auth-gated), `MainTabView` (5 tabs), `NavigationStack` per tab. This is the first module that builds the actual app target.
+
+---
+
+**2026-04-24 — Module 3 DataStore complete (gate pending app target)**
+
+All Module 3 implementation items are done:
+- `CacheResult<T>` value type moved to `BlueskyCore` (no default isolation) — ensures it can be constructed and accessed from any actor context without `@MainActor` restrictions
+- `CacheStore` protocol in `BlueskyKit`: `nonisolated async` store/fetch/evict/evictAll; fetch returns stale entries with `isExpired` flag for stale-while-revalidate
+- `UserDefaultsPreferencesStore` in `BlueskyDataStore`: `final class, @unchecked Sendable`; JSON encode/decode; `suiteName` for App Group support
+- `SwiftDataCacheStore` in `BlueskyDataStore`: custom actor; per-call `ModelContext` (lightweight, avoids cross-context change-tracking); `appGroupIdentifier` for shared container; `inMemory()` factory for tests/previews
+- `BlueskyEnvironment` updated to include `cache: any CacheStore`
+- 38 tests pass
+
+Key patterns for Module 3:
+- `BlueskyDataStore` now has **no** `defaultIsolation` (like `BlueskyNetworking`) — it contains custom actors and `@Model` classes that must be usable from non-`@MainActor` contexts
+- `CacheResult<T>` belongs in `BlueskyCore`, not `BlueskyKit` — same reasoning as `PagedResult<T>`: it's a pure value-type envelope with no actor isolation requirements
+- `nonisolated let` on struct properties in a `defaultIsolation(MainActor.self)` module is NOT sufficient; the right fix is to put the struct in `BlueskyCore`
+- `SwiftDataCacheStore` uses per-call `ModelContext(container)` — creates a new context per operation. This is correct because each operation calls `ctx.save()` before returning, making the persisted state visible to subsequent contexts
+
+**Module 3 Gate** requires the `Bluesky-SwiftUI` app target (Module 5). Start Module 4 (Design System) now.
+
+**Next session:** Module 4 — `BlueskyUI` design system: `Theme` palettes, spacing tokens, typography scale, then `PostCard`, `AvatarView`, `RichTextView`.
 
 ---
 

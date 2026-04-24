@@ -132,14 +132,14 @@ Validate each module end-to-end before starting the next.
 **Swift module:** `BlueskyDataStore`  
 **Goal:** All persistent state that React Native stored in AsyncStorage/MMKV is replicated in native Swift.
 
-- [ ] Storage protocols in `BlueskyKit`: `AccountStore`, `PreferencesStore`, `CacheStore`
+- [x] Storage protocols in `BlueskyKit`: `AccountStore`, `PreferencesStore`, `CacheStore`
   - [x] `AccountStore` (with `nonisolated` requirements — implementations can be actor-isolated)
   - [x] `PreferencesStore` (with `nonisolated` requirements)
-  - [ ] `CacheStore`
-- [ ] `KeychainAccountStore` — session tokens, account list
-- [ ] `UserDefaultsPreferencesStore` — theme, language, UI toggles
-- [ ] `SwiftDataCacheStore` — query cache per DID (feeds, posts, profiles)
-- [ ] App group container setup (for notification extension sharing)
+  - [x] `CacheStore`
+- [x] `KeychainAccountStore` — session tokens, account list
+- [x] `UserDefaultsPreferencesStore` — theme, language, UI toggles
+- [x] `SwiftDataCacheStore` — query cache per DID (feeds, posts, profiles)
+- [x] App group container setup (for notification extension sharing)
 - [ ] **Validate:** Preferences survive app restart; cache serves stale content while fresh fetch loads
 
 ---
@@ -149,19 +149,19 @@ Validate each module end-to-end before starting the next.
 **Swift module:** `BlueskyUI`  
 **Goal:** Shared component library matching the React Native ALF design system.
 
-- [ ] `Theme`: light / dark / dim palettes via `@Environment`
-- [ ] Spacing tokens (2xs → 2xl) as `CGFloat` constants
-- [ ] Typography scale (`text_xs` → `text_2xl`)
-- [ ] `PostCard` — avatar, handle, timestamp, body, embed thumbnails, action bar
-- [ ] `AvatarView` — circular image with fallback initials
-- [ ] `RichTextView` — render facets (mention, hashtag, URL) as tappable spans via `AttributedString`
-- [ ] `EmbedView` — images, link card, quote post, video thumbnail
-- [ ] `FeedCard` — feed subscription card
-- [ ] `ListCard` — curated list card
-- [ ] Button, TextField (with label/icon), Divider, Badge
-- [ ] Toast / snackbar
-- [ ] Adaptive layout modifiers for iPhone / iPad / Mac
-- [ ] **Validate:** Component gallery / `#Preview` canvas covering all states
+- [x] `Theme`: light / dark / dim palettes via `@Environment`
+- [x] Spacing tokens (2xs → 2xl) as `CGFloat` constants
+- [x] Typography scale (`text_xs` → `text_2xl`)
+- [x] `PostCard` — avatar, handle, timestamp, body, embed thumbnails, action bar
+- [x] `AvatarView` — circular image with fallback initials
+- [x] `RichTextView` — render facets (mention, hashtag, URL) as tappable spans via `AttributedString`
+- [x] `EmbedView` (`PostEmbedView`) — images, link card, quote post, video thumbnail
+- [x] `FeedCard` — feed subscription card
+- [x] `ListCard` — curated list card
+- [x] Button (`BlueskyButtonStyle`), TextField (`BlueskyTextField`), Divider (`BlueskyDivider`), Badge (`BadgeView`)
+- [x] Toast (`ToastView` + `.toast()` modifier)
+- [x] Adaptive layout modifiers (`adaptiveNavigation()`)
+- [ ] **Validate:** Component gallery / `#Preview` canvas covering all states (needs Xcode + simulator)
 
 ---
 
@@ -170,13 +170,13 @@ Validate each module end-to-end before starting the next.
 **Location:** `Bluesky-SwiftUI` app target  
 **Goal:** 5-tab app shell that responds to auth state.
 
-- [ ] `RootView`: show `LoginView` when no session, `MainTabView` when authenticated
-- [ ] `TabView` with 5 tabs: Home, Search, Messages, Notifications, Profile
-- [ ] `NavigationStack` per tab (preserves back stack per tab)
-- [ ] Badge overlays on Messages and Notifications tabs
-- [ ] Deep link handler: `bsky://` and `https://bsky.app` URL routing
-- [ ] Mac: sidebar navigation replacing tab bar; toolbar items
-- [ ] iPad: split view for sidebar + content column
+- [x] `RootView`: show `LoginView` when no session, `MainTabView` when authenticated
+- [x] `TabView` with 5 tabs: Home, Search, Messages, Notifications, Profile
+- [x] `NavigationStack` per tab (preserves back stack per tab)
+- [x] Badge overlays on Messages and Notifications tabs
+- [x] Deep link handler: `bsky://` and `https://bsky.app` URL routing
+- [x] Mac: sidebar navigation replacing tab bar; toolbar items
+- [x] iPad: split view for sidebar + content column
 - [ ] **Validate:** Tabs switch, back navigation works, deep links open correct screen
 
 ---
@@ -185,13 +185,13 @@ Validate each module end-to-end before starting the next.
 
 **Swift module:** `BlueskyFeed` (new)
 
-- [ ] Add `BlueskyFeed` target to `BlueskyKit/Package.swift`
-- [ ] Feed list with infinite scroll (cursor pagination)
-- [ ] Pull-to-refresh
-- [ ] Pinned / custom feeds switcher (top tab strip)
-- [ ] Following feed + algorithmic "Discover" feed
-- [ ] Post card interactions: like, repost, reply, share, quote, report
-- [ ] Optimistic like/repost state
+- [x] Add `BlueskyFeed` target to `BlueskyKit/Package.swift`
+- [x] Feed list with infinite scroll (cursor pagination)
+- [x] Pull-to-refresh
+- [x] Pinned / custom feeds switcher (top tab strip)
+- [x] Following feed + algorithmic "Discover" feed
+- [x] Post card interactions: like, repost, reply, share, quote, report
+- [x] Optimistic like/repost state
 - [ ] Filter: hide replies, hide reposts toggles (per feed)
 - [ ] **Validate:** Feed loads, scrolls, interactions persist across refresh
 
@@ -201,10 +201,10 @@ Validate each module end-to-end before starting the next.
 
 **Swift module:** `BlueskyFeed` (part of same module)
 
-- [ ] Thread tree rendering: root post, replies as indented tree
+- [x] Thread tree rendering: root post, replies as indented tree
 - [ ] Inline post expansion
-- [ ] Quote post rendering
-- [ ] Moderated / blocked post placeholder
+- [x] Quote post rendering (via `PostEmbedView` in `PostCard`)
+- [x] Moderated / blocked post placeholder (`.notFound` / `.blocked` cases in `ThreadView`)
 - [ ] Reply composer inline or as sheet
 - [ ] **Validate:** Full thread renders with correct reply nesting
 
