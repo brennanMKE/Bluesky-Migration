@@ -29,8 +29,8 @@ When you review a new RN commit and confirm nothing affects the migration plan, 
 | | |
 |---|---|
 | **Phase** | 0 — Foundation |
-| **Active module** | Module 8 — Profile |
-| **Active item** | Module 8 Gate (validate own/other profiles, edit flow, follow/unfollow — needs live app) |
+| **Active module** | Module 13 — Moderation |
+| **Active item** | `BlueskyModeration` target: muted/blocked lists, content label settings, report dialog, adult content toggle |
 | **Blockers** | None |
 
 ---
@@ -146,6 +146,49 @@ These are the first items to work on in order. Cross them off here and tick the 
 - [x] App group container setup
 - [ ] **Gate:** Preferences survive restart; cache serves stale while fresh fetch loads
 
+**Module 9 — Search & Discovery**
+- [x] `BlueskySearch` target added to `Package.swift`
+- [x] `SearchViewModel`: actors/posts/feeds tabs, 300ms debounced search, `loadSuggestions` via `app.bsky.actor.getSuggestions`
+- [x] `SearchScreen`: search bar, suggestions section (empty query), tab strip + result rows; infinite scroll on last item
+- [ ] Trending topics section
+- [ ] Hashtag view / Topic view
+- [ ] **Gate:** Search returns results, hashtag opens post list (needs live app)
+
+**Module 10 — Notifications**
+- [x] `BlueskyNotifications` target added to `Package.swift`
+- [x] `NotificationsViewModel`: `loadInitial/loadMore/refresh/markSeen/fetchUnreadCount`; `unreadCount: Int` for badge
+- [x] `NotificationsScreen`: List with NotificationRow + reason icons; pull-to-refresh; infinite scroll; markSeen on `.task`
+- [ ] Grouped notifications
+- [ ] Push notification receipt → open thread
+- [ ] **Gate:** Notification list updates, badge clears on open (needs live app)
+
+**Module 11 — Direct Messages**
+- [x] `BlueskyMessages` target added to `Package.swift`
+- [x] `MessagesViewModel`: `loadInitial/loadMore/refresh/leaveConvo/muteConvo` via `chat.bsky.convo.*`; optimistic updates
+- [x] `MessageThreadViewModel`: `load/loadOlder/sendMessage/markRead`; `isOwn(_:)` for bubble alignment
+- [x] `ConversationListScreen`: ConvoRow + unread badge; swipe actions (Leave, Mute/Unmute); `navigationDestination` → `MessageThreadScreen`
+- [x] `MessageThreadScreen`: `ScrollViewReader` + `LazyVStack`; chat bubbles (own=accent right, other=secondary left); compose bar
+- [ ] Send image attachment; group chat settings; message requests inbox
+- [ ] **Gate:** Send/receive messages (needs live app)
+
+**Module 12 — Composer**
+- [x] `BlueskyComposer` target added to `Package.swift`
+- [x] `FacetBuilder`: UTF-8 byte-accurate `#hashtag` + `@mention` facets via Swift regex + `samePosition(in: utf8)`
+- [x] `ComposerViewModel`: upload images (blob → EmbedImage), build embed, create PostRecord; 200ms debounced mention autocomplete
+- [x] `ComposerSheet`: TextEditor + mention overlay + quote preview + image grid + alt text popover + language picker + character counter; iOS `PHPickerRepresentable`
+- [x] `NetworkClient.upload(lexicon:data:mimeType:)` added; implemented in `ATProtoClient` as raw `httpBody` POST
+- [ ] Video picker + upload; link card preview; thread/multi-post; draft persistence
+- [ ] **Gate:** Post with text, images, mention (needs live app)
+
+**Module 13 — Moderation**
+- [ ] `BlueskyModeration` target added to `Package.swift`
+- [ ] `ModerationViewModel`: load muted/blocked accounts; moderation lists; content label settings; adult content toggle
+- [ ] `MutesScreen` + `BlocksScreen`: lists with unblock/unmute swipe actions
+- [ ] `ModerationListsScreen`: subscribe/unsubscribe to labeler lists
+- [ ] `ContentFilterSettingsScreen`: per-label hide/warn/show picker; adult content toggle
+- [ ] `ReportDialog`: report post, profile, or list via `com.atproto.moderation.createReport`
+- [ ] **Gate:** Mute/block applies immediately; labeler settings filter content (needs live app)
+
 ---
 
 ## Completion Log
@@ -154,6 +197,23 @@ _Append entries here as items are finished. Most recent at the top._
 
 | Date | Module | Item |
 |------|--------|------|
+| 2026-04-24 | BlueskyComposer | `NetworkClient.upload` + `ATProtoClient.performUpload` (raw blob POST); `PreviewNetworkClient` + `MockNetworkClient` updated |
+| 2026-04-24 | BlueskyComposer | `FacetBuilder`: UTF-8 byte-accurate `#hashtag`/`@mention` facets via Swift regex + `samePosition(in:)` |
+| 2026-04-24 | BlueskyComposer | `ComposerViewModel`: image upload pipeline, embed assembly (images/record/recordWithMedia), mention autocomplete debounced 200ms |
+| 2026-04-24 | BlueskyComposer | `ComposerSheet`: TextEditor + mention overlay + image grid + alt text popover + language picker + character counter + `PHPickerRepresentable` |
+| 2026-04-24 | Bluesky-SwiftUI | Module 12 Gate pending: post with text/images/mentions (needs live API) |
+| 2026-04-24 | BlueskyMessages | `MessageThreadScreen`: ScrollViewReader + LazyVStack chat bubbles; compose bar with send |
+| 2026-04-24 | BlueskyMessages | `ConversationListScreen`: ConvoRow + unread badge; swipe Leave/Mute; navigationDestination → MessageThreadScreen |
+| 2026-04-24 | BlueskyMessages | `MessageThreadViewModel`: load/loadOlder/sendMessage/markRead; `isOwn(_:)` for bubble side |
+| 2026-04-24 | BlueskyMessages | `MessagesViewModel`: loadInitial/loadMore/refresh/leaveConvo/muteConvo with optimistic updates |
+| 2026-04-24 | Bluesky-SwiftUI | Module 11 Gate pending: send/receive DMs (needs live API) |
+| 2026-04-24 | BlueskyNotifications | `NotificationsScreen`: List + NotificationRow + reason icons; pull-to-refresh; infinite scroll; markSeen on .task |
+| 2026-04-24 | BlueskyNotifications | `NotificationsViewModel`: loadInitial/loadMore/refresh/markSeen/fetchUnreadCount; unreadCount for badge |
+| 2026-04-24 | Bluesky-SwiftUI | Module 10 Gate pending: notification list + badge (needs live API) |
+| 2026-04-24 | BlueskySearch | `SearchScreen`: search bar + clear; suggestions (empty query); people/posts/feeds tab strip; infinite scroll |
+| 2026-04-24 | BlueskySearch | `SearchViewModel`: actors/posts/feeds tabs; 300ms debounced search; `loadSuggestions` via getSuggestions |
+| 2026-04-24 | BlueskyCore | `Search.swift`: `SearchActorsResponse`, `SearchActorsTypeaheadResponse`, `GetSuggestionsResponse`, `SearchPostsResponse`, `GetSuggestedFeedsResponse` |
+| 2026-04-24 | Bluesky-SwiftUI | Module 9 Gate pending: search results (needs live API) |
 | 2026-04-24 | Bluesky-SwiftUI | Module 8 Gate pending: validate profile screen with live API |
 | 2026-04-24 | BlueskyProfile | `ProfileScreen`: sticky tab strip (pinnedViews), Posts/Replies/Media/Likes tabs, lazy per-tab feed loading |
 | 2026-04-24 | BlueskyProfile | `ProfileHeaderView`: banner, avatar, stats, Follow button, More menu (block/mute) |
@@ -238,6 +298,28 @@ _Record any deferred decisions from `Strategy.md` once resolved._
 ---
 
 ## Session Notes
+
+**2026-04-24 — Modules 9–12 complete; Module 13 (Moderation) next**
+
+Four modules implemented in one session; all link into the Xcode app target:
+
+- **Module 9 (BlueskySearch):** `SearchViewModel` with 300ms debounced search across actors/posts/feeds + `loadSuggestions`; `SearchScreen` with search bar, empty-state suggestions, tab strip, infinite scroll. Added `Search.swift` lexicon types to `BlueskyCore`.
+- **Module 10 (BlueskyNotifications):** `NotificationsViewModel` (loadInitial/loadMore/refresh/markSeen/fetchUnreadCount, `unreadCount` for tab badge); `NotificationsScreen` (List + reason icons for like/repost/follow/mention/quote/reply, pull-to-refresh, infinite scroll, markSeen on `.task`).
+- **Module 11 (BlueskyMessages):** `MessagesViewModel` (chat.bsky.convo.listConvos; leaveConvo/muteConvo with optimistic updates); `MessageThreadViewModel` (load/loadOlder/sendMessage/markRead; `isOwn` for bubble side); `ConversationListScreen` (ConvoRow + unread badge, swipe Leave/Mute, navigationDestination); `MessageThreadScreen` (ScrollViewReader + LazyVStack bubbles, compose bar).
+- **Module 12 (BlueskyComposer):** `FacetBuilder` (UTF-8 byte-accurate hashtag/mention facets); `ComposerViewModel` (image upload → EmbedImage, embed assembly, createRecord, mention autocomplete); `ComposerSheet` (TextEditor + mention overlay + image grid + alt text popover + language picker + character counter + `PHPickerRepresentable`). Added `NetworkClient.upload` + `ATProtoClient.performUpload`.
+
+Key patterns:
+- `navigationDestination(isPresented:)` used instead of `(item:)` when the item type lacks `Hashable` — drives navigation with a `Bool` binding derived from an optional.
+- `Cursor` is a `typealias` for `String` — no `.rawValue`; use cursor string directly.
+- `EmbedRecordRef` and `PostRef` are distinct types both carrying `uri: ATURI` + `cid: CID`; `Embed.record` takes `EmbedRecordRef`.
+- `FacetFeature` enum cases use argument labels: `.tag(tag:)`, `.mention(did:)`, `.link(uri:)`.
+- `MessageThreadScreen.convoTitle` needs `viewerDID: DID?` stored on the view struct, not derived from the view model's `convoId: String`.
+
+All gates for Modules 9–12 require a live Bluesky account in the running app (simulator/device).
+
+**Next session:** Module 13 — Moderation (`BlueskyModeration` target).
+
+---
 
 **2026-04-24 — Foundation complete; concurrency model settled**
 

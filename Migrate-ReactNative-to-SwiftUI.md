@@ -230,9 +230,9 @@ Validate each module end-to-end before starting the next.
 
 **Swift module:** `BlueskySearch` (new)
 
-- [ ] Search bar: actors, posts, feeds, starter packs
+- [x] Search bar: actors, posts, feeds
 - [ ] Trending topics section
-- [ ] Suggested follows
+- [x] Suggested follows
 - [ ] Hashtag view
 - [ ] Topic view
 - [ ] **Validate:** Search returns results, hashtag opens post list
@@ -243,10 +243,10 @@ Validate each module end-to-end before starting the next.
 
 **Swift module:** `BlueskyNotifications` (new)
 
-- [ ] Notification list: likes, reposts, follows, mentions, quotes, replies
+- [x] Notification list: likes, reposts, follows, mentions, quotes, replies
 - [ ] Group notifications (e.g. "3 people liked your post")
-- [ ] Mark as read / update seen timestamp
-- [ ] Badge count management
+- [x] Mark as read / update seen timestamp
+- [x] Badge count management
 - [ ] Push notification receipt → open correct thread
 - [ ] **Validate:** Notification list updates, badge clears on open
 
@@ -256,13 +256,13 @@ Validate each module end-to-end before starting the next.
 
 **Swift module:** `BlueskyMessages` (new)
 
-- [ ] Conversation list
-- [ ] Message thread view (chat bubbles)
-- [ ] Send text message
+- [x] Conversation list
+- [x] Message thread view (chat bubbles)
+- [x] Send text message
 - [ ] Send image attachment
 - [ ] Group chat settings
 - [ ] Message requests inbox
-- [ ] Leave / mute conversation
+- [x] Leave / mute conversation
 - [ ] **Validate:** Send and receive messages, image attachment works
 
 ---
@@ -271,16 +271,16 @@ Validate each module end-to-end before starting the next.
 
 **Swift module:** `BlueskyComposer` (new)
 
-- [ ] Rich text input with mention autocomplete and hashtag detection
-- [ ] Image picker + compression + upload (`com.atproto.repo.uploadBlob`)
+- [x] Rich text input with mention autocomplete and hashtag detection
+- [x] Image picker + compression + upload (`com.atproto.repo.uploadBlob`)
 - [ ] Video picker + upload
-- [ ] Alt text input per image
+- [x] Alt text input per image
 - [ ] Link card preview
-- [ ] Quote post embed
-- [ ] Language selector
+- [x] Quote post embed
+- [x] Language selector
 - [ ] Thread / multi-post composer
-- [ ] Reply context banner
-- [ ] Character count (300 grapheme limit)
+- [x] Reply context banner
+- [x] Character count (300 grapheme limit)
 - [ ] Draft persistence
 - [ ] **Validate:** Post with text, images, mention, link card; reply to thread
 
