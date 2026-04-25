@@ -290,12 +290,12 @@ Validate each module end-to-end before starting the next.
 
 **Swift module:** `BlueskyModeration` (new)
 
-- [ ] Muted accounts list
-- [ ] Blocked accounts list
-- [ ] Moderation lists (subscribe / unsubscribe)
-- [ ] Content label settings (hide/warn/show per label)
-- [ ] Report dialog (post, profile, list)
-- [ ] Adult content toggle
+- [x] Muted accounts list
+- [x] Blocked accounts list
+- [x] Moderation lists (subscribe / unsubscribe)
+- [x] Content label settings (hide/warn/show per label)
+- [x] Report dialog (post, profile, list)
+- [x] Adult content toggle
 - [ ] **Validate:** Mute/block applies immediately; labeler settings filter content
 
 ---

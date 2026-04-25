@@ -29,8 +29,8 @@ When you review a new RN commit and confirm nothing affects the migration plan, 
 | | |
 |---|---|
 | **Phase** | 0 — Foundation |
-| **Active module** | Module 13 — Moderation |
-| **Active item** | `BlueskyModeration` target: muted/blocked lists, content label settings, report dialog, adult content toggle |
+| **Active module** | Module 14 — Settings |
+| **Active item** | `BlueskySettings` target: appearance, language, notification, account, privacy, content settings |
 | **Blockers** | None |
 
 ---
@@ -181,13 +181,26 @@ These are the first items to work on in order. Cross them off here and tick the 
 - [ ] **Gate:** Post with text, images, mention (needs live app)
 
 **Module 13 — Moderation**
-- [ ] `BlueskyModeration` target added to `Package.swift`
-- [ ] `ModerationViewModel`: load muted/blocked accounts; moderation lists; content label settings; adult content toggle
-- [ ] `MutesScreen` + `BlocksScreen`: lists with unblock/unmute swipe actions
-- [ ] `ModerationListsScreen`: subscribe/unsubscribe to labeler lists
-- [ ] `ContentFilterSettingsScreen`: per-label hide/warn/show picker; adult content toggle
-- [ ] `ReportDialog`: report post, profile, or list via `com.atproto.moderation.createReport`
+- [x] `BlueskyModeration` target added to `Package.swift`
+- [x] `ModerationViewModel`: load muted/blocked accounts; moderation lists; content label settings; adult content toggle
+- [x] `MutesScreen` + `BlocksScreen`: lists with unblock/unmute swipe actions
+- [x] `ModerationListsScreen`: subscribe/unsubscribe to labeler lists
+- [x] `ContentFilterSettingsScreen`: per-label hide/warn/show picker; adult content toggle
+- [x] `ReportDialog`: report post, profile, or list via `com.atproto.moderation.createReport`
 - [ ] **Gate:** Mute/block applies immediately; labeler settings filter content (needs live app)
+
+**Module 14 — Settings**
+- [ ] `BlueskySettings` target added to `Package.swift`
+- [ ] `SettingsViewModel`: load and save preferences (theme, language, notification prefs, privacy)
+- [ ] `SettingsScreen`: hub with navigation to sub-sections; "Moderation" row links to `ModerationScreen`
+- [ ] `AppearanceSettingsScreen`: theme picker (light/dark/dim), font size
+- [ ] `LanguageSettingsScreen`: post languages, app language
+- [ ] `NotificationSettingsScreen`: per-type push notification toggles
+- [ ] `AccountSettingsScreen`: email, password change, 2FA toggle, app passwords
+- [ ] `PrivacySettingsScreen`: activity privacy, interaction settings
+- [ ] `ContentSettingsScreen`: autoplay video, external embeds, alt text requirement
+- [ ] `AboutScreen`: version, open-source licenses, legal links
+- [ ] **Gate:** Each setting persists and takes immediate effect (needs live app)
 
 ---
 
@@ -197,6 +210,13 @@ _Append entries here as items are finished. Most recent at the top._
 
 | Date | Module | Item |
 |------|--------|------|
+| 2026-04-24 | BlueskyModeration | `ReportDialog`: polymorphic subject (account/record), reason picker, details text; calls `com.atproto.moderation.createReport` |
+| 2026-04-24 | BlueskyModeration | `ContentFilterSettingsScreen`: adult content toggle + per-label hide/warn/show pickers; saves via `app.bsky.actor.putPreferences` |
+| 2026-04-24 | BlueskyModeration | `ModerationListsScreen`: subscribed mod lists with Unsubscribe action via `app.bsky.graph.unmuteActorList` |
+| 2026-04-24 | BlueskyModeration | `MutesScreen` + `BlocksScreen`: paginated lists with Unmute/Unblock optimistic actions |
+| 2026-04-24 | BlueskyModeration | `ModerationViewModel`: getMutes/getBlocks/getLists/getPreferences/putPreferences + all mutations |
+| 2026-04-24 | BlueskyCore | `GetListResponse`, `ListItemView`, `ListMuteRequest`, `ContentLabelPref`, `GetPreferencesResponse`, `PutPreferencesRequest` added to Moderation.swift |
+| 2026-04-24 | Bluesky-SwiftUI | Module 13 Gate pending: mute/block applies immediately (needs live API) |
 | 2026-04-24 | BlueskyComposer | `NetworkClient.upload` + `ATProtoClient.performUpload` (raw blob POST); `PreviewNetworkClient` + `MockNetworkClient` updated |
 | 2026-04-24 | BlueskyComposer | `FacetBuilder`: UTF-8 byte-accurate `#hashtag`/`@mention` facets via Swift regex + `samePosition(in:)` |
 | 2026-04-24 | BlueskyComposer | `ComposerViewModel`: image upload pipeline, embed assembly (images/record/recordWithMedia), mention autocomplete debounced 200ms |
@@ -298,6 +318,34 @@ _Record any deferred decisions from `Strategy.md` once resolved._
 ---
 
 ## Session Notes
+
+**2026-04-24 — Module 13 (BlueskyModeration) complete; Module 14 (Settings) next**
+
+`BlueskyModeration` target built and linked into the Xcode app:
+
+- `ModerationViewModel` (`@Observable`): `loadMutes`/`loadMoreMutes`, `loadBlocks`/`loadMoreBlocks`, `loadModLists`/`loadMoreModLists`, `loadPreferences`; mutations `unmute(did:)`, `unblock(profile:)`, `muteList/unmuteList`, `setAdultContent`, `setLabelVisibility`, `report(subject:reasonType:reason:)`; all mutations optimistic with revert on failure.
+- `MutesScreen` / `BlocksScreen`: paginated lists via `getMutes`/`getBlocks` with `ContentUnavailableView` on empty state; Unmute/Unblock buttons with role=.destructive; infinite scroll trigger on last row.
+- `ModerationListsScreen`: lists filtered to `app.bsky.graph.defs#modlist` purpose; Unsubscribe via `unmuteActorList`.
+- `ContentFilterSettingsScreen`: adult content `Toggle` gated section; per-label `Picker(.menu)` for hide/warn/show (porn, sexual, nudity, graphic-media, hate, spam).
+- `ReportDialog`: `NavigationStack` form with reason `Picker(.inline)` + optional `TextEditor`; submits via `com.atproto.moderation.createReport` with `ReportSubjectRepo` or `ReportSubjectRecord`; success `.alert` auto-dismisses.
+- `ModerationScreen`: hub `List` with nav links to all sub-screens.
+- `MainTabView` Profile tab toolbar gains a shield button (🛡) → `ModerationScreen` via `navigationDestination`.
+
+New `BlueskyCore/Moderation.swift` types:
+- `GetListResponse` + `ListItemView` for `app.bsky.graph.getList`
+- `ListMuteRequest` for `muteActorList`/`unmuteActorList`
+- `ContentLabelPref` (label, visibility, labelerDid)
+- `GetPreferencesResponse`: custom decoder that parses polymorphic `$type` array — extracts `adultContentPref` and `contentLabelPref` items
+- `PutPreferencesRequest`: holds `[AnyEncodable]`; private nested `_AdultPref`/`_LabelPref` encode with `$type`
+
+Key decisions:
+- `ContentLabelPref` is `Sendable` only (not `Codable`) — decoded via `GetPreferencesResponse`'s custom decoder; encoded via `PutPreferencesRequest`'s private helpers.
+- `ReportDialog` takes a `ReportSubjectKind` enum rather than a generic subject, keeping the call site simple without leaking AT Protocol types.
+- `ModerationScreen` wired into Profile tab (not Settings) since Settings doesn't exist yet; will be relocated when Module 14 is built.
+
+**Next session:** Module 14 — Settings (`BlueskySettings` target).
+
+---
 
 **2026-04-24 — Modules 9–12 complete; Module 13 (Moderation) next**
 
