@@ -4,6 +4,29 @@ All completed work, most recent first. Mirrors the Completion Log in `Progress.m
 
 ---
 
+## 2026-04-25 — Module 14: Settings complete
+
+### BlueskyCore
+- `Contacts.swift` (new): `app.bsky.contact.*` lexicon types — `StartPhoneVerificationRequest`, `VerifyPhoneRequest/Response`, `ImportContactsRequest/Response`, `ContactMatchItem`, `GetContactMatchesResponse`, `ContactSyncStatus`, `GetContactSyncStatusResponse`, `DismissMatchRequest`
+
+### BlueskySettings (new module)
+- `SettingsViewModel` (`@Observable`): `UserDefaults`-backed theme, font size, content, accessibility, language, and notification toggle preferences; `load()`/`save()`/`setTheme()` helpers
+- `SettingsScreen`: hub `List` with Account, Appearance, Preferences, Notifications, Privacy, About sections; Find Friends row; Moderation callback; Sign Out destructive button
+- `AppearanceSettingsScreen`: segmented theme picker (light/dark/dim) + font-size Slider with live preview
+- `LanguageSettingsScreen`: post language tags with add/remove
+- `NotificationSettingsScreen`: per-type push notification toggles
+- `ContentSettingsScreen`: autoplay video, external embeds, alt-text requirement
+- `AccessibilitySettingsScreen`: reduce motion, open-links-in-app toggles
+- `PrivacySettingsScreen`: placeholder directing users to bsky.app for activity privacy settings
+- `AccountSettingsScreen` (private stub): directs users to bsky.app for email/password/2FA changes
+- `AboutScreen`: version + build from `Bundle.main`; links to ToS, Privacy Policy, Community Guidelines
+- `FindContactsScreen`: 4-step flow — phone input → OTP verify (`app.bsky.contact.verifyPhone`) → `CNContactStore` permission + upload (`app.bsky.contact.importContacts`, max 1000 numbers via `Task.detached`) → match list with optimistic follow buttons; `#if os(iOS)` guards on `keyboardType`/`textContentType`
+
+### Package.swift
+- `BlueskySettings` target added (depends on BlueskyKit, BlueskyCore, BlueskyUI)
+
+---
+
 ## 2026-04-24 — Module 13: Moderation complete
 
 ### BlueskyCore

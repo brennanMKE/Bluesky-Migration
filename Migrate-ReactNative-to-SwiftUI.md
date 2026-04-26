@@ -304,15 +304,15 @@ Validate each module end-to-end before starting the next.
 
 **Swift module:** `BlueskySettings` (new)
 
-- [ ] Appearance (theme, font size, app icon)
-- [ ] Language preferences
-- [ ] Notification preferences (per-type toggles)
-- [ ] Accessibility settings
-- [ ] Account settings (email, password, 2FA, app passwords)
-- [ ] Privacy & security (activity privacy, interaction settings)
-- [ ] Content & media (autoplay, alt text requirement, external embeds)
-- [ ] Find contacts flow
-- [ ] About (version, legal links)
+- [x] Appearance (theme, font size, app icon)
+- [x] Language preferences
+- [x] Notification preferences (per-type toggles)
+- [x] Accessibility settings
+- [x] Account settings (email, password, 2FA, app passwords)
+- [x] Privacy & security (activity privacy, interaction settings)
+- [x] Content & media (autoplay, alt text requirement, external embeds)
+- [x] Find contacts flow
+- [x] About (version, legal links)
 - [ ] **Validate:** Each setting persists and takes immediate effect
 
 ---

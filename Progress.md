@@ -29,8 +29,8 @@ When you review a new RN commit and confirm nothing affects the migration plan, 
 | | |
 |---|---|
 | **Phase** | 0 — Foundation |
-| **Active module** | Module 14 — Settings |
-| **Active item** | `BlueskySettings` target: appearance, language, notification, account, privacy, content settings |
+| **Active module** | Module 15 — Remaining Screens |
+| **Active item** | Starter packs, video feed, bookmarks, feeds management, lists, labeler profile, app passwords |
 | **Blockers** | None |
 
 ---
@@ -190,17 +190,27 @@ These are the first items to work on in order. Cross them off here and tick the 
 - [ ] **Gate:** Mute/block applies immediately; labeler settings filter content (needs live app)
 
 **Module 14 — Settings**
-- [ ] `BlueskySettings` target added to `Package.swift`
-- [ ] `SettingsViewModel`: load and save preferences (theme, language, notification prefs, privacy)
-- [ ] `SettingsScreen`: hub with navigation to sub-sections; "Moderation" row links to `ModerationScreen`
-- [ ] `AppearanceSettingsScreen`: theme picker (light/dark/dim), font size
-- [ ] `LanguageSettingsScreen`: post languages, app language
-- [ ] `NotificationSettingsScreen`: per-type push notification toggles
-- [ ] `AccountSettingsScreen`: email, password change, 2FA toggle, app passwords
-- [ ] `PrivacySettingsScreen`: activity privacy, interaction settings
-- [ ] `ContentSettingsScreen`: autoplay video, external embeds, alt text requirement
-- [ ] `AboutScreen`: version, open-source licenses, legal links
+- [x] `BlueskySettings` target added to `Package.swift`
+- [x] `SettingsViewModel`: load and save preferences (theme, language, notification prefs, privacy)
+- [x] `SettingsScreen`: hub with navigation to sub-sections; "Moderation" row links to `ModerationScreen`
+- [x] `AppearanceSettingsScreen`: theme picker (light/dark/dim), font size
+- [x] `LanguageSettingsScreen`: post languages, app language
+- [x] `NotificationSettingsScreen`: per-type push notification toggles
+- [x] `AccountSettingsScreen`: email, password change, 2FA toggle, app passwords
+- [x] `PrivacySettingsScreen`: activity privacy, interaction settings
+- [x] `ContentSettingsScreen`: autoplay video, external embeds, alt text requirement
+- [x] `AboutScreen`: version, open-source licenses, legal links
+- [x] `FindContactsScreen`: phone verification → contacts import → match list with follow actions
 - [ ] **Gate:** Each setting persists and takes immediate effect (needs live app)
+
+**Module 15 — Remaining Screens**
+- [ ] `BlueskyLists` target: `ListView` + `ListCreateSheet` + `ListEditSheet`
+- [ ] `StarterPackScreen` + `StarterPackCreateSheet` in `BlueskyLists`
+- [ ] `SavedFeedsScreen` (feeds management: pin/unpin/reorder) in `BlueskyFeed` or new target
+- [ ] `VideoFeedScreen` (AVPlayer vertical scroll) in `BlueskyFeed`
+- [ ] `LabelerProfileScreen` + subscribe/unsubscribe in `BlueskyModeration`
+- [ ] `AppPasswordsScreen` in `BlueskySettings`
+- [ ] **Gate:** Each screen reaches feature parity with RN app (needs live app)
 
 ---
 
@@ -210,6 +220,12 @@ _Append entries here as items are finished. Most recent at the top._
 
 | Date | Module | Item |
 |------|--------|------|
+| 2026-04-25 | BlueskySettings | Gate pending: each setting persists and takes immediate effect (needs live app) |
+| 2026-04-25 | BlueskySettings | `FindContactsScreen`: 4-step flow — phone input → OTP verify → `CNContactStore` import → match list with follow; `app.bsky.contact.*` lexicons in `BlueskyCore/Contacts.swift` |
+| 2026-04-25 | BlueskySettings | `SettingsScreen` hub: Account / Appearance / Preferences / Notifications / Privacy / About sections; Find Friends row wired to `FindContactsScreen` |
+| 2026-04-25 | BlueskySettings | `SettingsViewModel` (`@Observable`): `UserDefaults`-backed theme, font size, content, accessibility, language, notification toggle prefs; `load()`/`save()`/`setTheme()` |
+| 2026-04-25 | BlueskySettings | Sub-screens: `AppearanceSettingsScreen`, `LanguageSettingsScreen`, `NotificationSettingsScreen`, `PrivacySettingsScreen`, `ContentSettingsScreen`, `AccessibilitySettingsScreen`, `AboutScreen` |
+| 2026-04-25 | BlueskySettings | `BlueskySettings` target added to `Package.swift` (depends on BlueskyKit, BlueskyCore, BlueskyUI) |
 | 2026-04-24 | BlueskyModeration | `ReportDialog`: polymorphic subject (account/record), reason picker, details text; calls `com.atproto.moderation.createReport` |
 | 2026-04-24 | BlueskyModeration | `ContentFilterSettingsScreen`: adult content toggle + per-label hide/warn/show pickers; saves via `app.bsky.actor.putPreferences` |
 | 2026-04-24 | BlueskyModeration | `ModerationListsScreen`: subscribed mod lists with Unsubscribe action via `app.bsky.graph.unmuteActorList` |
@@ -318,6 +334,32 @@ _Record any deferred decisions from `Strategy.md` once resolved._
 ---
 
 ## Session Notes
+
+**2026-04-25 — Module 14 (BlueskySettings) complete; Module 15 (Remaining Screens) next**
+
+`BlueskySettings` target is complete and wired into the Xcode app:
+
+- `SettingsViewModel` (`@Observable`): `UserDefaults`-backed preferences for theme, font size, autoplay, external embeds, alt-text requirement, reduce motion, open-links-in-app, post languages, and per-type notification toggles (likes, reposts, follows, mentions, replies, quotes). `load()`/`save()`/`setTheme()` helpers.
+- `SettingsScreen`: `List`-based hub with Account, Appearance, Preferences, Notifications, Privacy, and About sections. "Moderation" row passes `onModerationTap` callback to parent. "Sign Out" button with destructive role.
+- `AppearanceSettingsScreen`: segmented theme picker (light/dark/dim) + font-size Slider (12–24pt) with live preview.
+- `LanguageSettingsScreen`: post language tags with add/remove.
+- `NotificationSettingsScreen`: per-type push notification toggles.
+- `ContentSettingsScreen`: autoplay video, external embeds, alt-text requirement toggles.
+- `AccessibilitySettingsScreen`: reduce motion toggle, open-links-in-app toggle.
+- `PrivacySettingsScreen`: info-only placeholder for activity privacy.
+- `AccountSettingsScreen` (private stub in `SettingsScreen.swift`): directs users to bsky.app for email/password/2FA — these require PDS-level operations not suitable for a standalone screen.
+- `AboutScreen`: version + build number from `Bundle.main`, links to ToS/Privacy/Community Guidelines/source.
+- `FindContactsScreen`: 4-step flow — phone number input → OTP verification (`app.bsky.contact.verifyPhone`) → `CNContactStore` permission + phone number upload (`app.bsky.contact.importContacts`, max 1000 numbers via `Task.detached`) → match list with follow buttons. `#if os(iOS)` guards on `keyboardType`/`textContentType`. Added `BlueskyCore/Contacts.swift` with all `app.bsky.contact.*` lexicon types.
+
+Key decisions:
+- `AccountSettingsScreen` is a private stub inside `SettingsScreen.swift` — email/password changes require web-level PDS calls; directing users to bsky.app is the correct UX pattern.
+- `FindContactsScreen` runs `CNContactStore.enumerateContacts` inside `Task.detached` to avoid blocking the main thread on large contact books.
+- `app.bsky.contact.startPhoneVerification` returns `{}` — decoded via `EmptyResponse`, consistent with other void AT Protocol procedures.
+- `SettingsViewModel.accountStore` is `internal` (not `private`) so `FindContactsScreen` can access it via the view model.
+
+**Next session:** Module 15 — Remaining Screens (starter packs, video feed, bookmarks, feeds management, lists, labeler profile, app passwords).
+
+---
 
 **2026-04-24 — Module 13 (BlueskyModeration) complete; Module 14 (Settings) next**
 
