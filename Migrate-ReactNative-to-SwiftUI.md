@@ -319,13 +319,13 @@ Validate each module end-to-end before starting the next.
 
 ### Module 15 — Remaining Screens
 
-- [ ] Starter packs (view + create)
-- [ ] Video feed (TikTok-style vertical scroll)
-- [ ] Bookmarks
-- [ ] Feeds management (pin/unpin/reorder)
-- [ ] Lists (view, create, edit)
-- [ ] Labeler profile page
-- [ ] App passwords
+- [x] Starter packs (view + create)
+- [x] Video feed (TikTok-style vertical scroll)
+- [x] Bookmarks
+- [x] Feeds management (pin/unpin/reorder)
+- [x] Lists (view, create, edit)
+- [x] Labeler profile page
+- [x] App passwords
 - [ ] **Validate:** Each screen reaches feature parity with RN app
 
 ---

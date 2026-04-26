@@ -4,6 +4,36 @@ All completed work, most recent first. Mirrors the Completion Log in `Progress.m
 
 ---
 
+## 2026-04-25 — Module 15: Remaining Screens complete
+
+### BlueskyCore
+- `Auth.swift` (new): `AppPasswordView`, `ListAppPasswordsResponse`, `CreateAppPasswordRequest`, `CreateAppPasswordResponse`, `RevokeAppPasswordRequest`
+- `StarterPack.swift` (new): `StarterPackView`, `StarterPackBasic`, `StarterPackRecord`, `GetStarterPackResponse`, `GetActorStarterPacksResponse`
+- `Bookmark.swift` (new): `BookmarkView`, `GetBookmarksResponse`, `CreateBookmarkRequest`, `DeleteBookmarkRequest` — `app.bsky.bookmark.*` lexicons
+- `Graph.swift`: added `ListRecord`, `ListItemRecord`, `GetListFeedResponse`
+- `Moderation.swift`: added `SavedFeed` (Codable, Identifiable); extended `GetPreferencesResponse` with `savedFeeds`; `PutPreferencesRequest.init(savedFeeds:)`; `GetLabelerServicesResponse`
+
+### BlueskyFeed
+- `VideoFeedView`: AVKit `VideoPlayer` in full-screen vertical-paging `TabView`; `#if os(iOS)` on `.tabViewStyle(.page)` and `.navigationBarTitleDisplayMode`
+- `SavedFeedsScreen` + `SavedFeedsViewModel`: pinned/saved sections, drag-to-reorder, swipe-to-delete, pin toggle; saves via `app.bsky.actor.putPreferences` with `savedFeedsPrefV2`
+- `BookmarksScreen` + `BookmarksViewModel`: paginated bookmark list with pull-to-refresh and swipe-to-remove; `app.bsky.bookmark.getBookmarks` / `deleteBookmark`
+
+### BlueskyLists (new module)
+- `ListsScreen` + `ListsViewModel`: paginated list of user's curated lists, swipe-to-delete, create sheet
+- `ListDetailScreen` + `ListDetailViewModel`: Members / Feed segmented tabs; add/remove member
+- `ListCreateSheet`: name + purpose picker (modlist/curatelist) + description form
+- `StarterPackScreen`: view members, follow-all button, `app.bsky.graph.getStarterPack`
+- `StarterPackCreateSheet`: name / description / list picker form
+- `Package.swift`: `BlueskyLists` target added
+
+### BlueskyModeration
+- `LabelerProfileScreen` + `LabelerProfileViewModel`: subscribe/unsubscribe via saved feeds prefs; applied labels list; `app.bsky.labeler.getServices`
+
+### BlueskySettings
+- `AppPasswordsScreen` + `AppPasswordsViewModel`: list/create/revoke via `com.atproto.server.*`; shows new password in alert with clipboard copy
+
+---
+
 ## 2026-04-25 — Module 14: Settings complete
 
 ### BlueskyCore

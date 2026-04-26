@@ -30,7 +30,7 @@ When you review a new RN commit and confirm nothing affects the migration plan, 
 |---|---|
 | **Phase** | 0 — Foundation |
 | **Active module** | Module 15 — Remaining Screens |
-| **Active item** | Starter packs, video feed, bookmarks, feeds management, lists, labeler profile, app passwords |
+| **Active item** | Module 15 complete — all items implemented; gate pending live app |
 | **Blockers** | None |
 
 ---
@@ -204,12 +204,13 @@ These are the first items to work on in order. Cross them off here and tick the 
 - [ ] **Gate:** Each setting persists and takes immediate effect (needs live app)
 
 **Module 15 — Remaining Screens**
-- [ ] `BlueskyLists` target: `ListView` + `ListCreateSheet` + `ListEditSheet`
-- [ ] `StarterPackScreen` + `StarterPackCreateSheet` in `BlueskyLists`
-- [ ] `SavedFeedsScreen` (feeds management: pin/unpin/reorder) in `BlueskyFeed` or new target
-- [ ] `VideoFeedScreen` (AVPlayer vertical scroll) in `BlueskyFeed`
-- [ ] `LabelerProfileScreen` + subscribe/unsubscribe in `BlueskyModeration`
-- [ ] `AppPasswordsScreen` in `BlueskySettings`
+- [x] `BlueskyLists` target: `ListView` + `ListCreateSheet` + `ListDetailScreen`
+- [x] `StarterPackScreen` + `StarterPackCreateSheet` in `BlueskyLists`
+- [x] `SavedFeedsScreen` (feeds management: pin/unpin/reorder) in `BlueskyFeed`
+- [x] `VideoFeedView` (AVPlayer vertical scroll) in `BlueskyFeed`
+- [x] `LabelerProfileScreen` + subscribe/unsubscribe in `BlueskyModeration`
+- [x] `AppPasswordsScreen` in `BlueskySettings`
+- [x] `BookmarksScreen` + `BookmarksViewModel` in `BlueskyFeed`
 - [ ] **Gate:** Each screen reaches feature parity with RN app (needs live app)
 
 ---
@@ -220,6 +221,20 @@ _Append entries here as items are finished. Most recent at the top._
 
 | Date | Module | Item |
 |------|--------|------|
+| 2026-04-25 | BlueskyFeed | `BookmarksScreen` + `BookmarksViewModel`: paginated list with swipe-to-remove; `app.bsky.bookmark.*` lexicons in `BlueskyCore/Bookmark.swift` |
+| 2026-04-25 | BlueskyFeed | Gate pending: each screen reaches feature parity with RN app (needs live app) |
+| 2026-04-25 | BlueskySettings | Gate pending: each screen reaches feature parity with RN app (needs live app) |
+| 2026-04-25 | BlueskySettings | `AppPasswordsScreen` + `AppPasswordsViewModel`: list/create/revoke via `com.atproto.server.*`; shows new password in alert (copy to clipboard) |
+| 2026-04-25 | BlueskyModeration | `LabelerProfileScreen` + `LabelerProfileViewModel`: subscribe/unsubscribe via saved feeds prefs; label list display |
+| 2026-04-25 | BlueskyFeed | `SavedFeedsScreen` + `SavedFeedsViewModel`: pin/unpin/reorder/delete feeds; saves via `app.bsky.actor.putPreferences` with `savedFeedsPrefV2` |
+| 2026-04-25 | BlueskyFeed | `VideoFeedView`: AVKit `VideoPlayer` in full-screen paging `TabView`; loads from video algorithm feed |
+| 2026-04-25 | BlueskyLists | `StarterPackScreen` + `StarterPackCreateSheet`: view members / follow-all / create via `app.bsky.graph.starterpack` |
+| 2026-04-25 | BlueskyLists | `ListsScreen` + `ListDetailScreen` + `ListCreateSheet` + `ListsViewModel` + `ListDetailViewModel` |
+| 2026-04-25 | BlueskyLists | `BlueskyLists` target added to `Package.swift` |
+| 2026-04-25 | BlueskyCore | `GetLabelerServicesResponse`, `SavedFeed`, updated `GetPreferencesResponse` (adds `savedFeeds`), `PutPreferencesRequest(savedFeeds:)` |
+| 2026-04-25 | BlueskyCore | `StarterPack.swift`: `StarterPackView`, `StarterPackBasic`, `StarterPackRecord`, `GetStarterPackResponse`, `GetActorStarterPacksResponse` |
+| 2026-04-25 | BlueskyCore | `Auth.swift`: `AppPasswordView`, `ListAppPasswordsResponse`, `CreateAppPasswordRequest/Response`, `RevokeAppPasswordRequest` |
+| 2026-04-25 | BlueskyCore | `Graph.swift` additions: `ListRecord`, `ListItemRecord`, `GetListFeedResponse` |
 | 2026-04-25 | BlueskySettings | Gate pending: each setting persists and takes immediate effect (needs live app) |
 | 2026-04-25 | BlueskySettings | `FindContactsScreen`: 4-step flow — phone input → OTP verify → `CNContactStore` import → match list with follow; `app.bsky.contact.*` lexicons in `BlueskyCore/Contacts.swift` |
 | 2026-04-25 | BlueskySettings | `SettingsScreen` hub: Account / Appearance / Preferences / Notifications / Privacy / About sections; Find Friends row wired to `FindContactsScreen` |
