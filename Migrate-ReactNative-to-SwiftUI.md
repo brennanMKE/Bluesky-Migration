@@ -193,6 +193,10 @@ Validate each module end-to-end before starting the next.
 - [x] Post card interactions: like, repost, reply, share, quote, report
 - [x] Optimistic like/repost state
 - [ ] Filter: hide replies, hide reposts toggles (per feed)
+- [ ] `FeedStoring` protocol in `BlueskyKit`: `posts`, `isLoading`, `like/unlike/repost/unrepost` mutations
+- [ ] `FeedStore` (`@Observable`) in `BlueskyFeed`: reads `CacheStore` before fetch; writes after success
+- [ ] Refactor `FeedViewModel` to observe `any FeedStoring`; zero direct `network.*` calls
+- [ ] `BookmarksStoring` protocol + `BookmarksStore`; refactor `BookmarksViewModel`
 - [ ] **Validate:** Feed loads, scrolls, interactions persist across refresh
 
 ---
@@ -206,6 +210,7 @@ Validate each module end-to-end before starting the next.
 - [x] Quote post rendering (via `PostEmbedView` in `PostCard`)
 - [x] Moderated / blocked post placeholder (`.notFound` / `.blocked` cases in `ThreadView`)
 - [ ] Reply composer inline or as sheet
+- [ ] `ThreadStoring` protocol + `ThreadStore`; refactor `ThreadViewModel`
 - [ ] **Validate:** Full thread renders with correct reply nesting
 
 ---
@@ -222,6 +227,9 @@ Validate each module end-to-end before starting the next.
 - [ ] Verified badges, labeler badges
 - [ ] Known followers chip
 - [ ] Feeds / Lists tabs
+- [ ] `ProfileStoring` protocol in `BlueskyKit`
+- [ ] `ProfileStore` (`@Observable`) in `BlueskyProfile`; reads/writes `CacheStore`
+- [ ] Refactor `ProfileViewModel` to observe `any ProfileStoring`; zero direct `network.*` calls
 - [ ] **Validate:** Own profile and other profiles, edit flow, follow/unfollow
 
 ---
@@ -235,6 +243,7 @@ Validate each module end-to-end before starting the next.
 - [x] Suggested follows
 - [ ] Hashtag view
 - [ ] Topic view
+- [ ] `SearchStoring` protocol + `SearchStore`; refactor `SearchViewModel`
 - [ ] **Validate:** Search returns results, hashtag opens post list
 
 ---
@@ -248,6 +257,7 @@ Validate each module end-to-end before starting the next.
 - [x] Mark as read / update seen timestamp
 - [x] Badge count management
 - [ ] Push notification receipt → open correct thread
+- [ ] `NotificationsStoring` protocol + `NotificationsStore`; refactor `NotificationsViewModel`
 - [ ] **Validate:** Notification list updates, badge clears on open
 
 ---
@@ -260,10 +270,15 @@ Validate each module end-to-end before starting the next.
 - [x] Message thread view (chat bubbles)
 - [x] Send text message
 - [ ] Send image attachment
-- [ ] Group chat settings
+- [ ] Group chat — `chat.bsky.group.*` lexicon types in `BlueskyCore`: `GroupConvo`, `DirectConvo`, `GroupConvoMember`, `DirectConvoMember`, `AddMembersRequest/Response`
+- [ ] Group chat — `ConvoWithDetails` discriminated union (group vs. direct) + `parseConvoView` helper; update `MessageThreadViewModel` to carry `ConvoWithDetails` instead of raw `ConvoView`; update `ConvoItem.relatedProfiles` to `[DID: ProfileBasic]` dictionary (was array)
+- [ ] Group chat — `ConversationSettingsScreen` with member list (roles: owner/standard), add-members flow, remove-member, edit group name
+- [ ] Group chat — Join links: `chat.bsky.group.createJoinLink / editJoinLink / enableJoinLink / disableJoinLink`; `InviteLinkSheet` in `ConversationSettingsScreen`
+- [ ] Group chat — Lock/unlock conversation (`chat.bsky.group.lockConversation`)
 - [ ] Message requests inbox
 - [x] Leave / mute conversation
-- [ ] **Validate:** Send and receive messages, image attachment works
+- [ ] `ConversationStoring` protocol + `ConversationStore`; refactor `MessagesViewModel` + `MessageThreadViewModel`
+- [ ] **Validate:** Send and receive messages, group chat create/manage, image attachment works
 
 ---
 
@@ -282,6 +297,7 @@ Validate each module end-to-end before starting the next.
 - [x] Reply context banner
 - [x] Character count (300 grapheme limit)
 - [ ] Draft persistence
+- [ ] `ComposerStoring` protocol + `ComposerStore` (delegates `createRecord` + `uploadBlob` to store); refactor `ComposerViewModel`
 - [ ] **Validate:** Post with text, images, mention, link card; reply to thread
 
 ---
@@ -296,6 +312,8 @@ Validate each module end-to-end before starting the next.
 - [x] Content label settings (hide/warn/show per label)
 - [x] Report dialog (post, profile, list)
 - [x] Adult content toggle
+- [ ] `ModerationStoring` protocol + `ModerationStore`; refactor `ModerationViewModel`
+- [ ] Fix `ReportDialog` (2 direct network calls) to call `ModerationStore` instead
 - [ ] **Validate:** Mute/block applies immediately; labeler settings filter content
 
 ---
@@ -313,6 +331,8 @@ Validate each module end-to-end before starting the next.
 - [x] Content & media (autoplay, alt text requirement, external embeds)
 - [x] Find contacts flow
 - [x] About (version, legal links)
+- [ ] `SettingsStoring` protocol + `SettingsStore`; refactor `SettingsViewModel`
+- [ ] Fix `FindContactsScreen` (5 direct network calls) to go through `SettingsViewModel` → `SettingsStore`
 - [ ] **Validate:** Each setting persists and takes immediate effect
 
 ---
@@ -326,6 +346,8 @@ Validate each module end-to-end before starting the next.
 - [x] Lists (view, create, edit)
 - [x] Labeler profile page
 - [x] App passwords
+- [ ] `ListsStoring` protocol + `ListsStore`; refactor `ListsViewModel` + `ListDetailViewModel`
+- [ ] Fix `StarterPackCreateSheet` (1 direct network call) and `StarterPackScreen` (2 calls) to go through `ListsStore`
 - [ ] **Validate:** Each screen reaches feature parity with RN app
 
 ---
@@ -333,6 +355,9 @@ Validate each module end-to-end before starting the next.
 ## Validation Protocol (per module)
 
 1. Build succeeds with zero warnings
+1.5. ViewModel source files contain zero `network.get(` / `network.post(` / `network.upload(` calls
+1.6. Each Feature Store reads from `CacheStore` before its network fetch (stale-while-revalidate)
+1.7. Each Feature Store writes to `CacheStore` after a successful network fetch
 2. Run on iPhone Simulator (latest iOS)
 3. Run on iPad Simulator (verify adaptive layout)
 4. Run on macOS (verify sidebar navigation, keyboard/mouse input)

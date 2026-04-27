@@ -83,7 +83,7 @@ The 15 modules from `Migrate-ReactNative-to-SwiftUI.md` group into four phases. 
 9. Follow/unfollow/block/mute actions
 10. Edit profile sheet with avatar upload
 
-**Phase milestone:** Browse timeline → open a thread → view a profile → follow someone → edit own profile. All interactions persist across refresh. First internal TestFlight build.
+**Phase milestone:** Browse timeline → open a thread → view a profile → follow someone → edit own profile. All interactions persist across refresh. Store layer: all feature module ViewModels observe Feature Stores; zero direct `NetworkClient` calls in any ViewModel file. First internal TestFlight build.
 
 ---
 
@@ -126,6 +126,8 @@ The 15 modules from `Migrate-ReactNative-to-SwiftUI.md` group into four phases. 
 
 **Zero-warning policy:** Each module compiles with zero warnings before its validation gate is marked passed. Swift 6 strict concurrency warnings are treated as errors.
 
+**Store discipline:** A ViewModel that calls `network.get()` or `network.post()` directly fails the module's validation gate, even if all other gate criteria pass. All `NetworkClient` calls live in Feature Stores.
+
 **Test discipline:**
 - `BlueskyCore`: pure unit tests (encode/decode fixture JSON)
 - `BlueskyNetworking`: integration tests against `public.api.bsky.app` for unauthenticated endpoints; mocked for auth-gated ones
@@ -146,6 +148,7 @@ The 15 modules from `Migrate-ReactNative-to-SwiftUI.md` group into four phases. 
 | Swift 6 `@MainActor` propagation causing unexpected build failures in new modules | High | Low | Set `SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor` in the xcconfig (already done); address violations as they appear, not retroactively |
 | macOS / iPad layout debt accumulating | Medium | Medium | Run all three simulators at each module gate, not only at the end of a phase |
 | Scope creep into RN app parity edge cases too early | Medium | Medium | Stay in phase order; log any "nice to have" observations as GitHub issues, don't implement until Phase 4 |
+| Store layer migration breaks existing ViewModel callers | High | Medium | Migrate `BlueskyFeed` first (proof-of-concept), validate compile + end-to-end feed, then roll out the same pattern to remaining modules. Protocol-first approach (`FeedStoring`) allows ViewModels to compile against the protocol before the concrete store is complete. |
 
 ---
 

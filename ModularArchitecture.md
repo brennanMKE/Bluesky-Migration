@@ -22,12 +22,12 @@ Layer 0 — BlueskyCore (shared models, no dependencies)
 Layer 1 — BlueskyKit (protocols + bootstrap, depends on BlueskyCore)
 
 Layer 2 — Implementations (each depends on BlueskyKit + BlueskyCore)
-  BlueskyAuth    BlueskyDataStore    BlueskyUI    BlueskyNetworking (planned)
+  BlueskyAuth    BlueskyDataStore    BlueskyUI    BlueskyNetworking
 
-Layer 3 — Feature modules (future, depend on Layer 2 as needed)
+Layer 3 — Feature modules (depend on Layer 2 as needed)
   BlueskyFeed    BlueskyProfile    BlueskyNotifications
   BlueskyMessages    BlueskySearch    BlueskyComposer
-  BlueskyModeration    BlueskySettings
+  BlueskyModeration    BlueskySettings    BlueskyLists
 ```
 
 Arrow direction = "depends on". Higher layers may depend on any lower layer, never the reverse.
@@ -61,11 +61,7 @@ BlueskyKit/
     └── BlueskyKitTests/
 ```
 
-**Planned additions** (not yet in `Package.swift`):
-- `BlueskyNetworking` — AT Protocol / XRPC networking (Layer 2)
-- Feature modules: `BlueskyFeed`, `BlueskyProfile`, etc. (Layer 3)
-
-As modules are added, register them in `Package.swift` and scaffold with `setup.sh`. See `ProjectStructure.md` for the step-by-step process.
+See `ProjectStructure.md` for the process of adding new modules to `Package.swift`.
 
 ---
 
@@ -78,8 +74,9 @@ As modules are added, register them in `Package.swift` and scaffold with `setup.
 | 2 | `BlueskyAuth` | `SessionManager` implementation, `Account` model, `LoginView`, `AccountPickerView` |
 | 2 | `BlueskyDataStore` | Keychain account store, UserDefaults preferences, SwiftData/SQLite cache |
 | 2 | `BlueskyUI` | Design system: themes, spacing tokens, typography; shared components: `PostCard`, `AvatarView`, `RichTextView`, `EmbedView` |
-| 2 | `BlueskyNetworking` *(planned)* | `URLSession`-based XRPC client, token refresh interceptor, lexicon request/response types |
-| 3 | Feature modules *(future)* | Per-feature logic + SwiftUI views, each depending on the Layer 2 modules it needs |
+| 2 | `BlueskyNetworking` | `URLSession`-based XRPC client, token refresh interceptor, lexicon request/response types |
+| 3 | Feature modules | ViewModels, Feature Stores, SwiftUI screens; one module per feature area |
+| 3 | Feature Stores | `@Observable` classes that own canonical data, call `NetworkClient`, and read/write `CacheStore`. One or more per feature module. |
 
 ---
 
@@ -135,6 +132,33 @@ public protocol SessionManaging: AnyObject, Observable, Sendable {
 
 ---
 
+## Protocol-First Pattern (Example: Feature Store)
+
+```swift
+// BlueskyKit — public protocol (Layer 1)
+
+public protocol FeedStoring: AnyObject, Observable {
+    var posts: [FeedViewPost] { get }
+    var isLoading: Bool { get }
+
+    func load(selection: FeedSelection, reset: Bool) async
+    func like(post: PostView) async
+    func unlike(post: PostView) async
+    func repost(post: PostView) async
+    func unrepost(post: PostView) async
+}
+```
+
+`BlueskyFeed` provides the concrete `FeedStore`. `FeedViewModel` holds `any FeedStoring` and
+derives its displayed data via computed properties — it contains no `NetworkClient` reference.
+Tests inject a `MockFeedStore`.
+
+The store pattern applies to every feature module:
+`FeedStore`, `ThreadStore`, `BookmarksStore`, `ProfileStore`, `SearchStore`,
+`NotificationsStore`, `ConversationStore`, `ModerationStore`, `ListsStore`, `SettingsStore`.
+
+---
+
 ## Dependency Injection
 
 Dependencies flow downward through initializers and the SwiftUI environment — no global singletons, no service locator.
@@ -144,18 +168,21 @@ Dependencies flow downward through initializers and the SwiftUI environment — 
 @main
 struct BlueskyApp: App {
     private let accountStore = makeAccountStore()
-    private let prefsStore   = makePreferencesStore()
+    private let cache        = makeCacheStore()
     private let networking   = makeNetworkingClient()
     private let session      = makeSessionManager(
         networking: networking,
         accountStore: accountStore
     )
+    private let feedStore    = FeedStore(network: networking, cache: cache)
+    // … one store per feature module
 
     var body: some Scene {
         WindowGroup {
             RootView()
                 .environment(session)
-                .environment(prefsStore)
+                .environment(feedStore)
+                // … inject remaining stores
         }
     }
 }
@@ -199,4 +226,6 @@ The app selects which factory to call at the composition root. Everything else i
 | `BlueskyNetworking` | Integration tests against `public.api.bsky.app` (unauthenticated endpoints) |
 | `BlueskyDataStore` | Unit tests using in-memory mocks (`InMemoryAccountStore`, etc.) |
 | `BlueskyAuth` | Unit tests with `MockNetworking` + `MockAccountStore` |
-| Feature modules | Unit tests with mocked auth + networking; snapshot tests via `#Preview` |
+| Feature Stores | Unit tests with `MockNetworkClient` + `MockCacheStore`; verify stale-while-revalidate and optimistic-update revert paths |
+| Feature ViewModels | Unit tests with mock stores (e.g. `MockFeedStore`); verify view-specific state machines only |
+| Feature modules | `#Preview` blocks for visual validation; integration tests with real stores against `public.api.bsky.app` |

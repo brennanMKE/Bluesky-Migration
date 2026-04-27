@@ -10,14 +10,14 @@ The migration targets this commit of the React Native app. When the RN repo adva
 
 | | |
 |---|---|
-| **Commit** | `a90bb66d67db47e61f015c6204f9b5fd42e43efd` |
-| **Date** | 2026-04-24 |
-| **Message** | Nightly source-language update |
-| **Last reviewed** | 2026-04-24 |
+| **Commit** | `46b8a5819b446c5d837aecd3f4f4bc89a9d356ab` |
+| **Date** | 2026-04-25 |
+| **Message** | Harden iOS build extraction in bundle-deploy workflow (#10372) |
+| **Last reviewed** | 2026-04-26 |
 
 To check for drift:
 ```
-git -C ../Bluesky-ReactNative log a90bb66d67db47e61f015c6204f9b5fd42e43efd..HEAD --oneline
+git -C ../Bluesky-ReactNative log 46b8a5819b446c5d837aecd3f4f4bc89a9d356ab..HEAD --oneline
 ```
 
 When you review a new RN commit and confirm nothing affects the migration plan, update **Commit**, **Date**, **Message**, and **Last reviewed** above.
@@ -30,7 +30,7 @@ When you review a new RN commit and confirm nothing affects the migration plan, 
 |---|---|
 | **Phase** | 0 — Foundation |
 | **Active module** | Module 15 — Remaining Screens |
-| **Active item** | Module 15 complete — all items implemented; gate pending live app |
+| **Active item** | Phase 0 — Foundation — next module gates |
 | **Blockers** | None |
 
 ---
@@ -38,6 +38,16 @@ When you review a new RN commit and confirm nothing affects the migration plan, 
 ## Up Next
 
 These are the first items to work on in order. Cross them off here and tick the checkbox in `Migrate-ReactNative-to-SwiftUI.md` when each is done.
+
+### Architecture prerequisite — Store Layer (complete before Phase 4 gates)
+
+- [x] Define store protocols in `BlueskyKit`: `FeedStoring`, `ThreadStoring`, `BookmarksStoring`, `ProfileStoring`, `SearchStoring`, `NotificationsStoring`, `ConversationStoring`, `ModerationStoring`, `ListsStoring`, `SettingsStoring`, `ComposerStoring`
+- [x] Implement `FeedStore` + refactor `FeedViewModel` (proof-of-concept: validate compile + feed works end-to-end)
+- [x] Roll out store pattern to all remaining feature modules (Profile, Search, Notifications, Messages, Composer, Moderation, Settings, Lists)
+- [x] Fix 4 views with direct network calls: `FindContactsScreen` (5 calls), `ReportDialog` (2 calls), `StarterPackCreateSheet` (1 call), `StarterPackScreen` (2 calls)
+- [x] **Gate:** `grep -r 'network\.\(get\|post\|upload\)' BlueskyKit/Sources/Bluesky{Feed,Profile,Search,Notifications,Messages,Composer,Moderation,Settings,Lists}` returns zero results
+
+---
 
 ### Phase 0 — Foundation
 
@@ -168,7 +178,10 @@ These are the first items to work on in order. Cross them off here and tick the 
 - [x] `MessageThreadViewModel`: `load/loadOlder/sendMessage/markRead`; `isOwn(_:)` for bubble alignment
 - [x] `ConversationListScreen`: ConvoRow + unread badge; swipe actions (Leave, Mute/Unmute); `navigationDestination` → `MessageThreadScreen`
 - [x] `MessageThreadScreen`: `ScrollViewReader` + `LazyVStack`; chat bubbles (own=accent right, other=secondary left); compose bar
-- [ ] Send image attachment; group chat settings; message requests inbox
+- [ ] Send image attachment; message requests inbox
+- [ ] Group chat — `chat.bsky.group.*` lexicons in `BlueskyCore`; `ConvoWithDetails` discriminated union; update `MessageThreadViewModel` and `ConvoItem.relatedProfiles` to use `[DID: ProfileBasic]`
+- [ ] Group chat — `ConversationSettingsScreen`: member list with roles, add/remove members, edit group name
+- [ ] Group chat — Join links (`createJoinLink / editJoinLink / enableJoinLink / disableJoinLink`); `InviteLinkSheet`; lock/unlock conversation
 - [ ] **Gate:** Send/receive messages (needs live app)
 
 **Module 12 — Composer**
@@ -340,6 +353,7 @@ _Record any deferred decisions from `Strategy.md` once resolved._
 | `BlueskyCore` actor isolation | **None** — BlueskyCore has no `defaultIsolation` setting. Data types must be decodable from any context (networking tasks). All other modules keep `defaultIsolation(MainActor.self)`. | 2026-04-23 |
 | `SessionManaging` isolation | **`@MainActor`** — `currentAccount` and `accounts` are UI state observed by SwiftUI. Implementation will be a `@MainActor @Observable` class. Async methods dispatch network work internally via `await`-ing a `nonisolated NetworkClient`. | 2026-04-24 |
 | `AccountStore` / `PreferencesStore` / `NetworkClient` isolation | **`nonisolated` requirements** — These are I/O-bound protocols. Their requirements are marked `nonisolated` so implementations can be actor-isolated (e.g. a Keychain actor) without inheriting `@MainActor`. | 2026-04-24 |
+| Feature Store pattern | Each feature module gets one or more `@Observable` Feature Stores that own canonical data, call `NetworkClient`, and read/write `CacheStore`. ViewModels observe stores and hold only view-specific state; they contain no `NetworkClient` reference. This is the required architecture for all modules. | 2026-04-25 |
 | Cache store backend | — | — |
 | Networking library | URLSession (see Strategy.md recommendation) | — |
 | TestFlight beta tracks | — | — |
@@ -349,6 +363,22 @@ _Record any deferred decisions from `Strategy.md` once resolved._
 ---
 
 ## Session Notes
+
+**2026-04-26 — RN drift review: Group Clops feature branch (#10360)**
+
+7 new commits since baseline `a90bb66`. The only migration-impacting change is the **Group Clops** feature branch (`cdb8d4bfb`), which shipped a full group chat implementation.
+
+What changed in RN and what it means for the Swift migration:
+
+- **`chat.bsky.group.*` — new lexicon namespace** (distinct from `chat.bsky.convo.*`): `addMembers`, `removeFromGroup`, `editGroupChatName`, `lockConversation`, and four join-link mutations (`createJoinLink`, `editJoinLink`, `enableJoinLink`, `disableJoinLink`). These need new Codable types in `BlueskyCore`.
+- **`ConvoWithDetails` discriminated union** — `ConvoView` now discriminates into `'group'` (has `GroupConvo` details, owner + member roles) vs. `'direct'` (has `DirectConvo` details, one primary member). `MessageThreadViewModel` should carry `ConvoWithDetails` instead of a raw `ConvoView`. The helper `parseConvoView(convoView:ownDID:)` handles the parsing.
+- **`ConvoItem.relatedProfiles`** changed from `ProfileViewBasic[]` to `Map<DID, ProfileViewBasic>` — the Swift equivalent is `[DID: ProfileBasic]` on `ConvoItem`.
+- **`ConversationSettingsScreen`** — refactored from a single screen into a directory of components: member list with `owner`/`standard` roles, add-members flow, remove-member action, rename group, join-link management (`InviteLinkSheet`), lock/unlock conversation.
+- `deb3f26d3` (send-button fix for post-share DM), `5bf38e372` (avatar bubble size fix), gate changes — minor, no structural impact on the migration plan.
+
+Module 11 Up Next and `Migrate-ReactNative-to-SwiftUI.md` expanded with the group chat subtasks.
+
+---
 
 **2026-04-25 — Module 14 (BlueskySettings) complete; Module 15 (Remaining Screens) next**
 
