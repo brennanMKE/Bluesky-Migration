@@ -4,6 +4,23 @@ All completed work, most recent first. Mirrors the Completion Log in `Progress.m
 
 ---
 
+## 2026-04-26 — Planning: store layer architecture + RN drift review
+
+### Architecture — Store Layer
+- Added "Architecture prerequisite — Store Layer" section to `Progress.md` (complete, all items ticked)
+- Added `FeedStoring`, `ProfileStoring`, `SearchStoring`, `NotificationsStoring`, `ConversationStoring`, `ModerationStoring`, `SettingsStoring`, `ComposerStoring`, `ListsStoring`, `BookmarksStoring`, `ThreadStoring` protocol items to each respective module in `Migrate-ReactNative-to-SwiftUI.md`
+- Each feature module checklist now includes: protocol in `BlueskyKit`, `@Observable` store in the feature target (reads/writes `CacheStore`), and ViewModel refactor (zero direct `network.*` calls)
+- Recorded "Feature Store pattern" decision in `Progress.md` Decisions Made table
+- `ModularArchitecture.md` and `Strategy.md` updated with store layer requirements and risk entry
+
+### RN Drift — Group Clops feature branch (#10360)
+- RN baseline advanced from `a90bb66` (2026-04-24) to `46b8a58` (2026-04-25)
+- `chat.bsky.group.*` lexicon namespace identified as new (distinct from `chat.bsky.convo.*`): `addMembers`, `removeFromGroup`, `editGroupChatName`, `lockConversation`, plus four join-link mutations
+- `ConvoWithDetails` discriminated union (group vs. direct) and updated `ConvoItem.relatedProfiles` (`[DID: ProfileBasic]` dictionary) identified as required changes to Module 11
+- Module 11 group chat subtasks expanded in both `Progress.md` and `Migrate-ReactNative-to-SwiftUI.md`
+
+---
+
 ## 2026-04-25 — Module 15: Remaining Screens complete
 
 ### BlueskyCore
