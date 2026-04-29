@@ -43,7 +43,7 @@ window.ISSUES_DATA = [
   {
     "id": "0005",
     "title": "Repost button not functional on post cells",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -399,5 +399,15 @@ window.ISSUES_DATA = [
     "first_seen": "2026-04-29",
     "closed": "",
     "description": "The current color palette in `BlueskyTheme` is functional but has not been reviewed for design quality. Colors should be revisited to ensure they align with the Bluesky brand, look polished across light and dark modes, and feel cohesive throughout the app."
+  },
+  {
+    "id": "0041",
+    "title": "Action button state may be stale when toggled",
+    "status": "open",
+    "module": "BlueskyFeed",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "The repost, like, and other action buttons in the post action bar use the `PostView.viewer` state that was captured when the feed was last loaded. If the user leaves the feed open for more than a few seconds and acts on a post from another client (or the post's state is mutated remotely), the local state can be stale. The toggle logic (`viewer?.repost != nil`) then performs the wrong operation — e.g., reposting a post that was already reposted from another device, or undoing a repost that no longer exists on the server."
   }
 ];

@@ -76,6 +76,14 @@ Open `issues/index.html` directly in a browser — no web server required.
 4. Add a row to the Index table above.
 5. Run `python3 issues/generate.py` to update the visualization data.
 
+## How to update an existing issue
+
+Any change to an issue — status update, added notes, new attachment, or any other edit — requires these steps:
+
+1. Edit `issues/NNNN.md` with the change.
+2. If the status changed, update the matching row in the Index table above.
+3. Run `python3 issues/generate.py` to refresh the visualization data.
+
 **Adding screenshots:** Claude cannot copy files from `~/Desktop` due to macOS privacy restrictions. To attach a screenshot, run the copy yourself — paste this into the Claude Code prompt, substituting the actual filename:
 
 ```
