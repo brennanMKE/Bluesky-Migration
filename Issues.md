@@ -11,7 +11,8 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | # | Title | Module | Platform | Status |
 |---|-------|--------|----------|--------|
 | [0001](issues/0001.md) | Account session not persisted across app launches | BlueskyDataStore | macOS | resolved |
-| [0002](issues/0002.md) | Home feed posts not loaded after sign-in | BlueskyFeed | All | open |
+| [0002](issues/0002.md) | Home feed posts not loaded after sign-in | BlueskyFeed | All | resolved |
+| [0003](issues/0003.md) | Feed list ignores Dark Mode — white background with black text | BlueskyFeed | macOS | open |
 
 ---
 
