@@ -27,6 +27,19 @@ The React Native reference app is in `../Bluesky-ReactNative/`.
 | `Migrate-ReactNative-to-SwiftUI.md` | Authoritative per-module checklists (15 modules) and validation gates — the spec for what to build |
 | `ModularArchitecture.md` | Layered Swift package design, protocol-first DI, dependency graph, what goes in each layer |
 | `ProjectStructure.md` | Four sibling repos, workspace setup, bridge package pattern, how to add a new library module |
+| `Issues.md` | Index of open bugs and regressions; template for filing new issues |
+| `issues/NNNN.md` | Individual issue files (four-digit zero-padded number); attachments in `issues/NNNN/` |
+
+## Issue workflow
+
+When a bug or regression is spotted during testing, **file it rather than fixing it immediately**:
+
+1. Read `Issues.md` to find the next available number.
+2. Create `issues/NNNN.md` from the template in `Issues.md`.
+3. Drop any screenshots or attachments in `issues/NNNN/`.
+4. Add a row to the index table in `Issues.md`.
+
+When an issue is fixed: update its `Status` to `resolved` in `issues/NNNN.md` and in the `Issues.md` index.
 
 ## Tracking workflow
 

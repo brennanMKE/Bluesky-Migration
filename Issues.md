@@ -12,7 +12,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 |---|-------|--------|----------|--------|
 | [0001](issues/0001.md) | Account session not persisted across app launches | BlueskyDataStore | macOS | resolved |
 | [0002](issues/0002.md) | Home feed posts not loaded after sign-in | BlueskyFeed | All | resolved |
-| [0003](issues/0003.md) | Feed list ignores Dark Mode — white background with black text | BlueskyFeed | macOS | open |
+| [0003](issues/0003.md) | Feed list ignores Dark Mode — white background with black text | BlueskyFeed | macOS | resolved |
 | [0004](issues/0004.md) | Reply button not functional on post cells | BlueskyFeed | All | open |
 | [0005](issues/0005.md) | Repost button not functional on post cells | BlueskyFeed | All | open |
 | [0006](issues/0006.md) | Like/Reaction button not functional on post cells | BlueskyFeed | All | open |
@@ -48,6 +48,8 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0036](issues/0036.md) | Module 13 gate: moderation live validation | BlueskyModeration | All | open |
 | [0037](issues/0037.md) | Module 14 gate: settings persistence live validation | BlueskySettings | All | open |
 | [0038](issues/0038.md) | Module 15 gate: remaining screens feature parity validation | BlueskyLists / BlueskyFeed / BlueskyModeration / BlueskySettings | All | open |
+| [0039](issues/0039.md) | Tapping a post navigates to a blank screen | BlueskyFeed | All | open |
+| [0040](issues/0040.md) | Design refinement: revisit app color palette | BlueskyUI | All | open |
 
 ---
 
