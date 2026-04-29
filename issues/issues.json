@@ -1,0 +1,402 @@
+[
+  {
+    "id": "0001",
+    "title": "Account session not persisted across app launches",
+    "status": "closed",
+    "module": "BlueskyDataStore",
+    "platform": "macOS",
+    "first_seen": "2026-04-29",
+    "closed": "2026-04-29",
+    "description": "After signing in successfully, the session is not persisted across app launches. On every relaunch the user is presented with the sign-in screen and must re-authenticate."
+  },
+  {
+    "id": "0002",
+    "title": "Home feed posts not loaded after sign-in",
+    "status": "resolved",
+    "module": "BlueskyFeed",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "2026-04-29",
+    "description": "After signing in, the home feed screen shows no posts. Two distinct fetch errors were logged: the primary timeline request was cancelled before it completed, and a secondary decoding failure occurred for post embeds."
+  },
+  {
+    "id": "0003",
+    "title": "Feed list ignores Dark Mode — white background with black text",
+    "status": "resolved",
+    "module": "BlueskyFeed",
+    "platform": "macOS",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "With macOS Dark Mode enabled the home feed renders with a white background and black text. The sidebar and navigation chrome adapt correctly to dark mode, but the post list area does not. The Bluesky website shows a dark background with light text in the same OS appearance."
+  },
+  {
+    "id": "0004",
+    "title": "Reply button not functional on post cells",
+    "status": "resolved",
+    "module": "BlueskyFeed",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "The reply (speech bubble) button below each post in the feed has no effect when tapped or clicked."
+  },
+  {
+    "id": "0005",
+    "title": "Repost button not functional on post cells",
+    "status": "open",
+    "module": "BlueskyFeed",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "The repost (recycling-arrows) button below each post in the feed has no effect when tapped or clicked."
+  },
+  {
+    "id": "0006",
+    "title": "Like/Reaction button not functional on post cells",
+    "status": "open",
+    "module": "BlueskyFeed",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "The like (heart) button below each post in the feed has no effect when tapped or clicked."
+  },
+  {
+    "id": "0007",
+    "title": "Share button not functional on post cells",
+    "status": "open",
+    "module": "BlueskyFeed",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "The share (box-with-arrow) button below each post in the feed has no effect when tapped or clicked."
+  },
+  {
+    "id": "0008",
+    "title": "Bookmark button missing from post action bar",
+    "status": "open",
+    "module": "BlueskyFeed",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "The post action bar shows only four buttons (reply, repost, like, share). The bookmark button is absent entirely — it has not been added to the action bar layout."
+  },
+  {
+    "id": "0009",
+    "title": "Post action buttons lack tooltips on macOS",
+    "status": "open",
+    "module": "BlueskyFeed",
+    "platform": "macOS",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "Hovering the cursor over the post action buttons (reply, repost, like, share, bookmark) shows no tooltip. On macOS, users expect a tooltip to appear after a short hover delay identifying the button's action."
+  },
+  {
+    "id": "0010",
+    "title": "`getFeed` XRPC call missing required `feed` query parameter",
+    "status": "open",
+    "module": "BlueskyFeed",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "Switching to a custom feed (e.g. \"What's Hot\") results in a blank feed. The server rejects the `app.bsky.feed.getFeed` XRPC call with `InvalidRequest` because the `feed` query parameter is absent from the outgoing HTTP request, even though the URI is available locally."
+  },
+  {
+    "id": "0011",
+    "title": "Module 1 gate: session restore not validated",
+    "status": "open",
+    "module": "BlueskyAuth / BlueskyDataStore",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "The Module 1 gate — login, force-quit the app, relaunch, and confirm the session is automatically restored without showing the login screen — has never been run against a live build."
+  },
+  {
+    "id": "0012",
+    "title": "Module 2 gate: networking endpoint groups not live-tested",
+    "status": "open",
+    "module": "BlueskyNetworking / BlueskyCore",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "The Module 2 gate requires unit tests hitting `public.api.bsky.app` to validate every Codable lexicon group: feed, actor, notification, graph, repo, chat, moderation. No live network tests have been written or run."
+  },
+  {
+    "id": "0013",
+    "title": "Module 3 gate: preferences persistence and cache stale-while-revalidate not validated",
+    "status": "open",
+    "module": "BlueskyDataStore",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "The Module 3 gate — preferences survive app restart and `SwiftDataCacheStore` serves stale content while a fresh fetch loads — has not been validated in a running app."
+  },
+  {
+    "id": "0014",
+    "title": "Module 4: #Preview canvas not validated in Xcode",
+    "status": "open",
+    "module": "BlueskyUI",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "All `BlueskyUI` components have `#Preview` blocks but they have never been opened in Xcode Canvas and visually verified. Layout issues, missing assets, or theme misapplication could be lurking."
+  },
+  {
+    "id": "0015",
+    "title": "Module 4 gate: component gallery not validated",
+    "status": "open",
+    "module": "BlueskyUI",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "The Module 4 gate requires a component gallery covering all states of every `BlueskyUI` component. No such gallery screen exists in the app target."
+  },
+  {
+    "id": "0016",
+    "title": "Module 5 gate: navigation shell not validated (tabs, back nav, deep links)",
+    "status": "open",
+    "module": "Bluesky-SwiftUI",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "The Module 5 gate — confirm all 5 tabs switch correctly, back navigation pops correctly within each tab's `NavigationStack`, and `bsky://` / `https://bsky.app` deep links open the correct screen — has not been run."
+  },
+  {
+    "id": "0017",
+    "title": "Module 6 feature: feed filter toggles (hide replies / hide reposts) not implemented",
+    "status": "open",
+    "module": "BlueskyFeed",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "The home feed has no per-feed filter toggles to hide replies or hide reposts. In the React Native app these are per-feed preferences displayed in a filter menu above or within each feed."
+  },
+  {
+    "id": "0018",
+    "title": "Module 6 gate: home feed live validation (load, scroll, interactions)",
+    "status": "open",
+    "module": "BlueskyFeed",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "The Module 6 gate — confirm the home feed loads posts, infinite scroll works, pull-to-refresh works, and like/repost interactions persist across a refresh — has not been validated against the live API."
+  },
+  {
+    "id": "0019",
+    "title": "Module 7 feature: reply composer not implemented",
+    "status": "open",
+    "module": "BlueskyFeed",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "Tapping the reply button on a post in `ThreadView` (or resolving issue 0004 for the feed) should open a composer pre-filled with the parent post context. No such composer integration exists in `ThreadView`."
+  },
+  {
+    "id": "0020",
+    "title": "Module 7 feature: inline post expansion not implemented",
+    "status": "open",
+    "module": "BlueskyFeed",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "In the React Native app, tapping a post in the thread view expands it inline to show full text, embeds, and the action bar without navigating to a new screen. The SwiftUI `ThreadView` does not have this behaviour."
+  },
+  {
+    "id": "0021",
+    "title": "Module 7 gate: thread view live validation",
+    "status": "open",
+    "module": "BlueskyFeed",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "The Module 7 gate — confirm the thread view renders the full reply tree with correct parent/child nesting against the live API — has not been validated."
+  },
+  {
+    "id": "0022",
+    "title": "Module 8 feature: profile Feeds and Lists tabs not implemented",
+    "status": "open",
+    "module": "BlueskyProfile",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "`ProfileScreen` has Posts, Replies, Media, and Likes tabs but is missing the Feeds tab (feeds the user has created or pinned) and the Lists tab (lists the user has created)."
+  },
+  {
+    "id": "0023",
+    "title": "Module 8 feature: verified badges and labeler badges not shown on profiles",
+    "status": "open",
+    "module": "BlueskyProfile",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "`ProfileHeaderView` does not display verification badges or labeler badges next to the display name or handle. These are present in the React Native app for accounts that have labels applied by labelers or are verified handles."
+  },
+  {
+    "id": "0024",
+    "title": "Module 8 feature: known followers chip not shown on profiles",
+    "status": "open",
+    "module": "BlueskyProfile",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "When viewing another user's profile, the React Native app shows a \"Followed by X, Y, and Z others you follow\" chip below the stats row. This chip is absent from `ProfileHeaderView`."
+  },
+  {
+    "id": "0025",
+    "title": "Module 8 gate: profile live validation",
+    "status": "open",
+    "module": "BlueskyProfile",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "The Module 8 gate — confirm own profile, another user's profile, the edit profile flow, and follow/unfollow all work correctly against the live API — has not been validated."
+  },
+  {
+    "id": "0026",
+    "title": "Module 9 feature: trending topics section not implemented",
+    "status": "open",
+    "module": "BlueskySearch",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "The Search screen is missing the trending topics section that appears in the React Native app when the search bar is empty. Currently only suggested accounts are shown."
+  },
+  {
+    "id": "0027",
+    "title": "Module 9 feature: hashtag and topic views not implemented",
+    "status": "open",
+    "module": "BlueskySearch",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "Tapping a hashtag in a post or a trending topic should open a dedicated view showing posts for that tag. No such `HashtagView` or `TopicView` exists."
+  },
+  {
+    "id": "0028",
+    "title": "Module 9 gate: search live validation",
+    "status": "open",
+    "module": "BlueskySearch",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "The Module 9 gate — confirm search returns results for actors, posts, and feeds, and that tapping a hashtag opens a post list — has not been validated against the live API."
+  },
+  {
+    "id": "0029",
+    "title": "Module 10 feature: grouped notifications not implemented",
+    "status": "open",
+    "module": "BlueskyNotifications",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "The Notifications screen shows each notification as an individual row. The React Native app groups related notifications (e.g. \"3 people liked your post\") into a single collapsed row."
+  },
+  {
+    "id": "0030",
+    "title": "Module 10 feature: push notification receipt does not open the correct thread",
+    "status": "open",
+    "module": "BlueskyNotifications / Bluesky-SwiftUI",
+    "platform": "iOS",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "When a push notification is received (like, reply, follow, mention), tapping it should navigate directly to the relevant post thread or profile. This deep-link handling from APNs is not implemented."
+  },
+  {
+    "id": "0031",
+    "title": "Module 10 gate: notifications live validation",
+    "status": "open",
+    "module": "BlueskyNotifications",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "The Module 10 gate — confirm the notifications list loads and updates, the unread badge on the tab clears when the screen is opened, and pull-to-refresh works — has not been validated."
+  },
+  {
+    "id": "0032",
+    "title": "Module 11 feature: image attachments and message requests inbox not implemented",
+    "status": "open",
+    "module": "BlueskyMessages",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "The DM composer bar has no image attachment button. The message requests inbox (for messages from accounts not followed) is also absent from `ConversationListScreen`."
+  },
+  {
+    "id": "0033",
+    "title": "Module 11 gate: DM and group chat live validation",
+    "status": "open",
+    "module": "BlueskyMessages",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "The Module 11 gate — confirm send/receive messages, the conversation list loads, and group chat management works — has not been validated. The group chat implementation (branch `group-chat`) also requires live testing with an actual group conversation."
+  },
+  {
+    "id": "0034",
+    "title": "Module 12 feature: video picker, link card preview, thread composer, and draft persistence not implemented",
+    "status": "open",
+    "module": "BlueskyComposer",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "`ComposerSheet` is missing four features present in the React Native composer:\n\n1. **Video picker + upload** — select a video from the library, upload as a blob, and embed it.\n2. **Link card preview** — paste a URL in the text and a card preview (title, description, thumbnail) appears.\n3. **Thread / multi-post** — add additional posts to compose a thread in one shot.\n4. **Draft persistence** — closing the composer mid-draft saves it and restores it on next open."
+  },
+  {
+    "id": "0035",
+    "title": "Module 12 gate: composer live validation (text, images, mentions)",
+    "status": "open",
+    "module": "BlueskyComposer",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "The Module 12 gate — confirm posting with plain text, image attachments, and @mentions all work end-to-end — has not been validated against the live API."
+  },
+  {
+    "id": "0036",
+    "title": "Module 13 gate: moderation live validation",
+    "status": "open",
+    "module": "BlueskyModeration",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "The Module 13 gate — confirm muting and blocking an account takes immediate effect, labeler content filter settings filter content in the feed, and `ReportDialog` submits successfully — has not been validated."
+  },
+  {
+    "id": "0037",
+    "title": "Module 14 gate: settings persistence live validation",
+    "status": "open",
+    "module": "BlueskySettings",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "The Module 14 gate — confirm every setting persists after app restart and takes immediate visual effect — has not been validated."
+  },
+  {
+    "id": "0038",
+    "title": "Module 15 gate: remaining screens feature parity validation",
+    "status": "open",
+    "module": "BlueskyLists / BlueskyFeed / BlueskyModeration / BlueskySettings",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "The Module 15 gate — confirm each remaining screen reaches feature parity with its React Native counterpart — has not been validated. Screens include: Lists, Starter Packs, Saved Feeds, Video Feed, Labeler Profile, App Passwords, Bookmarks."
+  },
+  {
+    "id": "0039",
+    "title": "Tapping a post navigates to a blank screen",
+    "status": "open",
+    "module": "BlueskyFeed",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "Tapping a post in the feed navigates to the thread screen, but the screen is blank — no root post, no replies, no loading indicator."
+  },
+  {
+    "id": "0040",
+    "title": "Design refinement: revisit app color palette",
+    "status": "open",
+    "module": "BlueskyUI",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "The current color palette in `BlueskyTheme` is functional but has not been reviewed for design quality. Colors should be revisited to ensure they align with the Bluesky brand, look polished across light and dark modes, and feel cohesive throughout the app."
+  }
+]

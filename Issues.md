@@ -13,7 +13,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0001](issues/0001.md) | Account session not persisted across app launches | BlueskyDataStore | macOS | resolved |
 | [0002](issues/0002.md) | Home feed posts not loaded after sign-in | BlueskyFeed | All | resolved |
 | [0003](issues/0003.md) | Feed list ignores Dark Mode — white background with black text | BlueskyFeed | macOS | resolved |
-| [0004](issues/0004.md) | Reply button not functional on post cells | BlueskyFeed | All | open |
+| [0004](issues/0004.md) | Reply button not functional on post cells | BlueskyFeed | All | resolved |
 | [0005](issues/0005.md) | Repost button not functional on post cells | BlueskyFeed | All | open |
 | [0006](issues/0006.md) | Like/Reaction button not functional on post cells | BlueskyFeed | All | open |
 | [0007](issues/0007.md) | Share button not functional on post cells | BlueskyFeed | All | open |
@@ -53,12 +53,27 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 
 ---
 
+## Issue visualization
+
+`issues/index.html` is an interactive dashboard with swimlane, timeline, and list views. It loads data from `issues/issues.js`, which is generated from the individual `.md` files.
+
+**After filing or updating any issue, regenerate the data file:**
+
+```
+! python3 issues/generate.py
+```
+
+Open `issues/index.html` directly in a browser — no web server required.
+
+---
+
 ## How to file an issue
 
 1. Pick the next number from the index above.
 2. Create `issues/NNNN.md` using the template below.
 3. If there are screenshots or other attachments, drop them in `issues/NNNN/` and add them to the Attachments section using inline image syntax (see template).
 4. Add a row to the Index table above.
+5. Run `python3 issues/generate.py` to update the visualization data.
 
 **Adding screenshots:** Claude cannot copy files from `~/Desktop` due to macOS privacy restrictions. To attach a screenshot, run the copy yourself — paste this into the Claude Code prompt, substituting the actual filename:
 

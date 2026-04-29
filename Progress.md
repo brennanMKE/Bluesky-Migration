@@ -179,9 +179,9 @@ These are the first items to work on in order. Cross them off here and tick the 
 - [x] `ConversationListScreen`: ConvoRow + unread badge; swipe actions (Leave, Mute/Unmute); `navigationDestination` → `MessageThreadScreen`
 - [x] `MessageThreadScreen`: `ScrollViewReader` + `LazyVStack`; chat bubbles (own=accent right, other=secondary left); compose bar
 - [ ] Send image attachment; message requests inbox
-- [ ] Group chat — `chat.bsky.group.*` lexicons in `BlueskyCore`; `ConvoWithDetails` discriminated union; update `MessageThreadViewModel` and `ConvoItem.relatedProfiles` to use `[DID: ProfileBasic]`
-- [ ] Group chat — `ConversationSettingsScreen`: member list with roles, add/remove members, edit group name
-- [ ] Group chat — Join links (`createJoinLink / editJoinLink / enableJoinLink / disableJoinLink`); `InviteLinkSheet`; lock/unlock conversation
+- [x] Group chat — `chat.bsky.group.*` lexicons in `BlueskyCore`; `ConvoWithDetails` discriminated union + `parseConvoWithDetails`; `ConvoView` extended with `convoType`/`groupConvo`/`membersByDID`; `MessageThreadViewModel`/`ConversationStore` updated to use `ConvoWithDetails`
+- [x] Group chat — `ConversationSettingsScreen`: member list with owner/standard role badges, swipe-to-remove (owner only), edit group name, lock/unlock toggle
+- [x] Group chat — Join links (`createJoinLink / editJoinLink / enableJoinLink / disableJoinLink`); `InviteLinkSheet`; lock/unlock conversation (`lockConversation`)
 - [ ] **Gate:** Send/receive messages (needs live app)
 
 **Module 12 — Composer**
@@ -234,6 +234,7 @@ _Append entries here as items are finished. Most recent at the top._
 
 | Date | Module | Item |
 |------|--------|------|
+| 2026-04-29 | BlueskyMessages | Group chat: `GroupConvo`, `GroupConvoMember`, `GroupJoinLink`, all `chat.bsky.group.*` request types in `BlueskyCore`; `ConvoWithDetails` discriminated union + `parseConvoWithDetails`; `ConversationSettingsScreen` (member list + roles + edit name + lock); `InviteLinkSheet` (create/enable/disable/expiry); `MessageThreadStore` group operations; settings gear button in `MessageThreadScreen` |
 | 2026-04-25 | BlueskyFeed | `BookmarksScreen` + `BookmarksViewModel`: paginated list with swipe-to-remove; `app.bsky.bookmark.*` lexicons in `BlueskyCore/Bookmark.swift` |
 | 2026-04-25 | BlueskyFeed | Gate pending: each screen reaches feature parity with RN app (needs live app) |
 | 2026-04-25 | BlueskySettings | Gate pending: each screen reaches feature parity with RN app (needs live app) |
