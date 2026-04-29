@@ -86,13 +86,19 @@ Any change to an issue — status update, added notes, new attachment, or any ot
 2. If the status changed, update the matching row in the Index table above.
 3. Run `python3 issues/generate.py` to refresh the visualization data.
 
-**Adding screenshots:** Claude cannot copy files from `~/Desktop` due to macOS privacy restrictions. To attach a screenshot, run the copy yourself — paste this into the Claude Code prompt, substituting the actual filename:
+**Adding screenshots:** macOS screenshot filenames contain a **narrow no-break space** (U+202F) before AM/PM — visually identical to a regular space but distinct in bytes. Quoting the literal filename in a `cp` command will fail with "No such file or directory" because of this character.
+
+Claude handles this automatically using a glob that skips the problematic character:
+
+```bash
+cp /Users/brennan/Desktop/Screenshot\ YYYY-MM-DD\ at\ H.MM.SS*XM.png issues/NNNN/screenshot.png
+```
+
+If Claude cannot copy the file (e.g. no Desktop access), run the copy yourself using the `!` prefix in the Claude Code prompt — your shell has the necessary permissions:
 
 ```
-! cp ~/Desktop/"Screenshot YYYY-MM-DD at H.MM.SS XM.png" issues/NNNN/screenshot.png
+! cp /Users/brennan/Desktop/Screenshot\ YYYY-MM-DD\ at\ H.MM.SS*XM.png issues/NNNN/screenshot.png
 ```
-
-Alternatively, save or move the screenshot directly into `issues/NNNN/` before asking Claude to reference it.
 
 **Status values:** `open` · `in-progress` · `resolved` · `wontfix`
 
