@@ -409,5 +409,25 @@ window.ISSUES_DATA = [
     "first_seen": "2026-04-29",
     "closed": "",
     "description": "The repost, like, and other action buttons in the post action bar use the `PostView.viewer` state that was captured when the feed was last loaded. If the user leaves the feed open for more than a few seconds and acts on a post from another client (or the post's state is mutated remotely), the local state can be stale. The toggle logic (`viewer?.repost != nil`) then performs the wrong operation — e.g., reposting a post that was already reposted from another device, or undoing a repost that no longer exists on the server."
+  },
+  {
+    "id": "0042",
+    "title": "Toolbar list button is centered instead of right-aligned",
+    "status": "open",
+    "module": "BlueskyFeed",
+    "platform": "macOS",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "The list/feed-switcher button (≡) in the Home screen navigation bar is positioned in the center of the toolbar rather than being grouped with the other trailing toolbar buttons (compose and >>). This leaves an odd gap and breaks the expected right-aligned button cluster."
+  },
+  {
+    "id": "0043",
+    "title": "Pull-to-refresh not implemented for feeds, replies, and search",
+    "status": "open",
+    "module": "BlueskyFeed / BlueskyProfile / BlueskySearch",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "Pull-to-refresh (swipe down from the top of a scroll view) has no effect or is not available in the home feed, the replies/notifications view, and the search results view. Users expect this standard gesture to reload content."
   }
 ];

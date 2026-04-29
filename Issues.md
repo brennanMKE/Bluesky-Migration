@@ -51,6 +51,8 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0039](issues/0039.md) | Tapping a post navigates to a blank screen | BlueskyFeed | All | open |
 | [0040](issues/0040.md) | Design refinement: revisit app color palette | BlueskyUI | All | open |
 | [0041](issues/0041.md) | Action button state may be stale when toggled | BlueskyFeed | All | open |
+| [0042](issues/0042.md) | Toolbar list button is centered instead of right-aligned | BlueskyFeed | macOS | open |
+| [0043](issues/0043.md) | Pull-to-refresh not implemented for feeds, replies, and search | BlueskyFeed / BlueskyProfile / BlueskySearch | All | open |
 
 ---
 
