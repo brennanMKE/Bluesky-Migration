@@ -102,7 +102,7 @@
   {
     "id": "0011",
     "title": "Module 1 gate: session restore not validated",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyAuth / BlueskyDataStore",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -112,7 +112,7 @@
   {
     "id": "0012",
     "title": "Module 2 gate: networking endpoint groups not live-tested",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyNetworking / BlueskyCore",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -122,7 +122,7 @@
   {
     "id": "0013",
     "title": "Module 3 gate: preferences persistence and cache stale-while-revalidate not validated",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyDataStore",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -132,7 +132,7 @@
   {
     "id": "0014",
     "title": "Module 4: #Preview canvas not validated in Xcode",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyUI",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -142,7 +142,7 @@
   {
     "id": "0015",
     "title": "Module 4 gate: component gallery not validated",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyUI",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -152,7 +152,7 @@
   {
     "id": "0016",
     "title": "Module 5 gate: navigation shell not validated (tabs, back nav, deep links)",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "Bluesky-SwiftUI",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -172,7 +172,7 @@
   {
     "id": "0018",
     "title": "Module 6 gate: home feed live validation (load, scroll, interactions)",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -202,7 +202,7 @@
   {
     "id": "0021",
     "title": "Module 7 gate: thread view live validation",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -242,7 +242,7 @@
   {
     "id": "0025",
     "title": "Module 8 gate: profile live validation",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyProfile",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -272,7 +272,7 @@
   {
     "id": "0028",
     "title": "Module 9 gate: search live validation",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskySearch",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -352,7 +352,7 @@
   {
     "id": "0036",
     "title": "Module 13 gate: moderation live validation",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyModeration",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -428,5 +428,145 @@
     "first_seen": "2026-04-29",
     "closed": "",
     "description": "Pull-to-refresh (swipe down from the top of a scroll view) has no effect or is not available in the home feed, the replies/notifications view, and the search results view. Users expect this standard gesture to reload content."
+  },
+  {
+    "id": "0044",
+    "title": "Feed fails to load: missing `$type` in embedded quote record",
+    "status": "resolved",
+    "module": "BlueskyCore",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "The home feed fails to load with a decoding error when any post in the timeline contains a quoted post embed whose `record` object is missing the `$type` field. Because `EmbedRecordContent.init(from:)` uses a hard `try c.decode(String.self, forKey: .type)` call, a single missing `$type` in any feed item throws and aborts decoding of the entire response."
+  },
+  {
+    "id": "0045",
+    "title": "Thread view styling is broken: collapsed rows, connector lines, dark mode failure",
+    "status": "resolved",
+    "module": "BlueskyFeed",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "The thread (post detail) view has several major visual problems:\n\n1. Replies are collapsed by default into tiny compact rows with a small avatar and 2-line text preview. The user must tap each reply to expand it — this is not how Bluesky works and makes the thread unusable.\n2. A vertical connector line (left-side border) is rendered alongside replies, adding visual noise and indenting the content incorrectly.\n3. The focal post has a white background even in dark mode, breaking the color scheme.\n4. Overall the thread looks nothing like the main feed or the Bluesky reference app."
+  },
+  {
+    "id": "0046",
+    "title": "Tapping a post author avatar does not navigate to their profile",
+    "status": "open",
+    "module": "BlueskyFeed / BlueskyProfile",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "Tapping the avatar or author name on a post card in the feed does nothing. Navigation to the tapped author's profile is not wired up, so there is no way to view another user's profile, follow or unfollow them, or browse their posts from the feed."
+  },
+  {
+    "id": "0047",
+    "title": "Ellipsis (…) context menu missing from post action bar",
+    "status": "in-progress",
+    "module": "BlueskyFeed / BlueskyUI",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "Post cards in the feed and thread view have no ellipsis (…) button. On the Bluesky website and mobile app, tapping the three-dot button opens a context menu with actions including: delete post (own posts), copy post text, mute thread, mute words & tags, translate, pin to profile, and edit interaction settings."
+  },
+  {
+    "id": "0048",
+    "title": "Feed cache not used: no stale content shown when offline",
+    "status": "open",
+    "module": "BlueskyFeed / BlueskyDataStore",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "Launching the app without a network connection shows an error state with zero posts. The `SwiftDataCacheStore` is passed into `FeedView` and `FeedViewModel` but the feed store never reads from it before attempting the network fetch, so there is no stale-while-revalidate behavior — offline or slow-network users see nothing."
+  },
+  {
+    "id": "0049",
+    "title": "FeedView task fires twice on launch, creating duplicate FeedViewModels",
+    "status": "open",
+    "module": "BlueskyFeed",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "On every launch, `FeedView`'s `.task(id: selection)` fires twice with the same `selection` value. Both firings find `viewModels[selection] == nil` and create separate `FeedViewModel` instances, triggering two concurrent network fetches. The first fetch is cancelled (error -999) when the original view is torn down; the second succeeds or fails independently."
+  },
+  {
+    "id": "0050",
+    "title": "Add Light and Dark #Preview blocks to all views missing them",
+    "status": "open",
+    "module": "All",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "Following the work in #0015, the component gallery views now have Light and Dark previews, but the majority of screens and views across all modules have no `#Preview` at all. These should each get a \"— Light\" and \"— Dark\" named preview using `.preferredColorScheme` at the preview root (and `.blueskyTheme(.dark)` where the Bluesky theme is used), following the pattern established in `dark-mode.md`."
+  },
+  {
+    "id": "0051",
+    "title": "Search results post cards have white background in dark mode",
+    "status": "open",
+    "module": "BlueskySearch",
+    "platform": "All",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "Post cards in search results (hashtag feed, post search results) render with a white/light background even when the app is in dark mode. The surrounding chrome (sidebar, navigation bar) is dark, but each post card has an unthemed white background."
+  },
+  {
+    "id": "0052",
+    "title": "Deep link opens a new window instead of routing in the existing window",
+    "status": "open",
+    "module": "Bluesky-SwiftUI",
+    "platform": "macOS",
+    "first_seen": "2026-04-29",
+    "closed": "",
+    "description": "Opening a `bluesky://` URL (e.g. `open \"bluesky://profile/brennan.sstools.co\"`) causes macOS to open a new app window rather than routing within the existing window. The `onOpenURL` handler in `MainTabView` is called but the SwiftUI scene machinery creates a second window instead of reusing the first."
+  },
+  {
+    "id": "0053",
+    "title": "Like state does not persist after tapping the like button",
+    "status": "open",
+    "module": "BlueskyFeed",
+    "platform": "All",
+    "first_seen": "2026-04-30",
+    "closed": "",
+    "description": "Tapping the like button on a post appears to fire a network request (multiple `_loadCurrentDID` calls visible in the log) but the like state does not stick — the heart returns to unfilled and the like count does not increment. This is a regression; liking was previously confirmed working."
+  },
+  {
+    "id": "0054",
+    "title": "Cannot tap a reply in thread view to navigate into it",
+    "status": "open",
+    "module": "BlueskyFeed",
+    "platform": "All",
+    "first_seen": "2026-04-30",
+    "closed": "",
+    "description": "In the thread view, tapping on a reply post card does nothing. Each reply may itself have replies (sub-threads), but there is no way to drill into them because the tap gesture is not wired up."
+  },
+  {
+    "id": "0055",
+    "title": "Switching tabs while in a thread does not change the active tab",
+    "status": "open",
+    "module": "Bluesky-SwiftUI",
+    "platform": "macOS",
+    "first_seen": "2026-04-30",
+    "closed": "",
+    "description": "When the Home tab is showing a thread view (pushed via NavigationStack), clicking a different tab in the sidebar (e.g. Profile) does not switch to that tab. The thread view remains visible. The sidebar highlights the new tab but the detail pane does not change."
+  },
+  {
+    "id": "0056",
+    "title": "Profile screen missing banner, avatar placeholder broken, post cards not dark mode",
+    "status": "open",
+    "module": "BlueskyProfile",
+    "platform": "All",
+    "first_seen": "2026-04-30",
+    "closed": "",
+    "description": "The profile screen has several visual bugs:\n\n1. **No banner image** — the banner area at the top is blank/dark grey even when the account has a banner set on bsky.app.\n2. **Avatar placeholder not themed** — the avatar shows a plain grey circle with the initial \"B\" rather than the styled `AvatarView` used elsewhere.\n3. **Post cards have white background in dark mode** — the posts tab renders cards with a white background, the same issue seen in search results (#0051)."
+  },
+  {
+    "id": "0057",
+    "title": "Bookmarks not implemented: requires a server-side or local storage solution",
+    "status": "open",
+    "module": "BlueskyFeed / BlueskyDataStore",
+    "platform": "All",
+    "first_seen": "2026-04-30",
+    "closed": "",
+    "description": "The bookmark button exists in the `PostCard` action bar but is wired to a no-op (`a.onBookmark = { _ in }`). Bluesky's AT Protocol does not have a native bookmark lexicon — bookmarks must be implemented as either a private list (`app.bsky.graph.list` with a curatelist purpose) or local storage (e.g. SwiftData). Neither approach is currently implemented."
   }
 ]
