@@ -523,7 +523,7 @@ window.ISSUES_DATA = [
   {
     "id": "0053",
     "title": "Like state does not persist after tapping the like button",
-    "status": "open",
+    "status": "in-progress",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-30",
