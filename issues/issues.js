@@ -473,7 +473,7 @@ window.ISSUES_DATA = [
   {
     "id": "0048",
     "title": "Feed cache not used: no stale content shown when offline",
-    "status": "open",
+    "status": "in-progress",
     "module": "BlueskyFeed / BlueskyDataStore",
     "platform": "All",
     "first_seen": "2026-04-29",
