@@ -512,7 +512,7 @@
   {
     "id": "0052",
     "title": "Deep link opens a new window instead of routing in the existing window",
-    "status": "open",
+    "status": "in-progress",
     "module": "Bluesky-SwiftUI",
     "platform": "macOS",
     "first_seen": "2026-04-29",
