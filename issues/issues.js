@@ -533,7 +533,7 @@ window.ISSUES_DATA = [
   {
     "id": "0054",
     "title": "Cannot tap a reply in thread view to navigate into it",
-    "status": "open",
+    "status": "in-progress",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-30",
