@@ -103,7 +103,7 @@ window.ISSUES_DATA = [
   {
     "id": "0011",
     "title": "Module 1 gate: session restore not validated",
-    "status": "incomplete",
+    "status": "in-progress",
     "module": "BlueskyAuth / BlueskyDataStore",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -113,7 +113,7 @@ window.ISSUES_DATA = [
   {
     "id": "0012",
     "title": "Module 2 gate: networking endpoint groups not live-tested",
-    "status": "incomplete",
+    "status": "in-progress",
     "module": "BlueskyNetworking / BlueskyCore",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -123,7 +123,7 @@ window.ISSUES_DATA = [
   {
     "id": "0013",
     "title": "Module 3 gate: preferences persistence and cache stale-while-revalidate not validated",
-    "status": "incomplete",
+    "status": "in-progress",
     "module": "BlueskyDataStore",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -133,7 +133,7 @@ window.ISSUES_DATA = [
   {
     "id": "0014",
     "title": "Module 4: #Preview canvas not validated in Xcode",
-    "status": "incomplete",
+    "status": "in-progress",
     "module": "BlueskyUI",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -143,7 +143,7 @@ window.ISSUES_DATA = [
   {
     "id": "0015",
     "title": "Module 4 gate: component gallery not validated",
-    "status": "incomplete",
+    "status": "in-progress",
     "module": "BlueskyUI",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -153,7 +153,7 @@ window.ISSUES_DATA = [
   {
     "id": "0016",
     "title": "Module 5 gate: navigation shell not validated (tabs, back nav, deep links)",
-    "status": "incomplete",
+    "status": "in-progress",
     "module": "Bluesky-SwiftUI",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -173,7 +173,7 @@ window.ISSUES_DATA = [
   {
     "id": "0018",
     "title": "Module 6 gate: home feed live validation (load, scroll, interactions)",
-    "status": "incomplete",
+    "status": "in-progress",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -203,7 +203,7 @@ window.ISSUES_DATA = [
   {
     "id": "0021",
     "title": "Module 7 gate: thread view live validation",
-    "status": "incomplete",
+    "status": "in-progress",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -243,7 +243,7 @@ window.ISSUES_DATA = [
   {
     "id": "0025",
     "title": "Module 8 gate: profile live validation",
-    "status": "incomplete",
+    "status": "in-progress",
     "module": "BlueskyProfile",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -273,7 +273,7 @@ window.ISSUES_DATA = [
   {
     "id": "0028",
     "title": "Module 9 gate: search live validation",
-    "status": "incomplete",
+    "status": "in-progress",
     "module": "BlueskySearch",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -303,7 +303,7 @@ window.ISSUES_DATA = [
   {
     "id": "0031",
     "title": "Module 10 gate: notifications live validation",
-    "status": "incomplete",
+    "status": "in-progress",
     "module": "BlueskyNotifications",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -323,7 +323,7 @@ window.ISSUES_DATA = [
   {
     "id": "0033",
     "title": "Module 11 gate: DM and group chat live validation",
-    "status": "incomplete",
+    "status": "in-progress",
     "module": "BlueskyMessages",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -343,7 +343,7 @@ window.ISSUES_DATA = [
   {
     "id": "0035",
     "title": "Module 12 gate: composer live validation (text, images, mentions)",
-    "status": "incomplete",
+    "status": "in-progress",
     "module": "BlueskyComposer",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -353,7 +353,7 @@ window.ISSUES_DATA = [
   {
     "id": "0036",
     "title": "Module 13 gate: moderation live validation",
-    "status": "incomplete",
+    "status": "in-progress",
     "module": "BlueskyModeration",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -363,7 +363,7 @@ window.ISSUES_DATA = [
   {
     "id": "0037",
     "title": "Module 14 gate: settings persistence live validation",
-    "status": "incomplete",
+    "status": "in-progress",
     "module": "BlueskySettings",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -373,7 +373,7 @@ window.ISSUES_DATA = [
   {
     "id": "0038",
     "title": "Module 15 gate: remaining screens feature parity validation",
-    "status": "incomplete",
+    "status": "in-progress",
     "module": "BlueskyLists / BlueskyFeed / BlueskyModeration / BlueskySettings",
     "platform": "All",
     "first_seen": "2026-04-29",

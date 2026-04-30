@@ -20,34 +20,34 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0008](issues/0008.md) | Bookmark button missing from post action bar | BlueskyFeed | All | implemented |
 | [0009](issues/0009.md) | Post action buttons lack tooltips on macOS | BlueskyFeed | macOS | implemented |
 | [0010](issues/0010.md) | `getFeed` XRPC call missing required `feed` query parameter | BlueskyFeed | All | implemented |
-| [0011](issues/0011.md) | Module 1 gate: session restore not validated | BlueskyAuth / BlueskyDataStore | All | incomplete |
-| [0012](issues/0012.md) | Module 2 gate: networking endpoint groups not live-tested | BlueskyNetworking / BlueskyCore | All | incomplete |
-| [0013](issues/0013.md) | Module 3 gate: preferences persistence and cache stale-while-revalidate not validated | BlueskyDataStore | All | incomplete |
-| [0014](issues/0014.md) | Module 4: #Preview canvas not validated in Xcode | BlueskyUI | All | incomplete |
-| [0015](issues/0015.md) | Module 4 gate: component gallery not validated | BlueskyUI | All | incomplete |
-| [0016](issues/0016.md) | Module 5 gate: navigation shell not validated (tabs, back nav, deep links) | Bluesky-SwiftUI | All | incomplete |
+| [0011](issues/0011.md) | Module 1 gate: session restore not validated | BlueskyAuth / BlueskyDataStore | All | in-progress |
+| [0012](issues/0012.md) | Module 2 gate: networking endpoint groups not live-tested | BlueskyNetworking / BlueskyCore | All | in-progress |
+| [0013](issues/0013.md) | Module 3 gate: preferences persistence and cache stale-while-revalidate not validated | BlueskyDataStore | All | in-progress |
+| [0014](issues/0014.md) | Module 4: #Preview canvas not validated in Xcode | BlueskyUI | All | in-progress |
+| [0015](issues/0015.md) | Module 4 gate: component gallery not validated | BlueskyUI | All | in-progress |
+| [0016](issues/0016.md) | Module 5 gate: navigation shell not validated (tabs, back nav, deep links) | Bluesky-SwiftUI | All | in-progress |
 | [0017](issues/0017.md) | Module 6 feature: feed filter toggles (hide replies / hide reposts) not implemented | BlueskyFeed | All | implemented |
-| [0018](issues/0018.md) | Module 6 gate: home feed live validation | BlueskyFeed | All | incomplete |
+| [0018](issues/0018.md) | Module 6 gate: home feed live validation | BlueskyFeed | All | in-progress |
 | [0019](issues/0019.md) | Module 7 feature: reply composer not implemented | BlueskyFeed | All | implemented |
 | [0020](issues/0020.md) | Module 7 feature: inline post expansion not implemented | BlueskyFeed | All | implemented |
-| [0021](issues/0021.md) | Module 7 gate: thread view live validation | BlueskyFeed | All | incomplete |
+| [0021](issues/0021.md) | Module 7 gate: thread view live validation | BlueskyFeed | All | in-progress |
 | [0022](issues/0022.md) | Module 8 feature: profile Feeds and Lists tabs not implemented | BlueskyProfile | All | implemented |
 | [0023](issues/0023.md) | Module 8 feature: verified badges and labeler badges not shown on profiles | BlueskyProfile | All | implemented |
 | [0024](issues/0024.md) | Module 8 feature: known followers chip not shown on profiles | BlueskyProfile | All | implemented |
-| [0025](issues/0025.md) | Module 8 gate: profile live validation | BlueskyProfile | All | incomplete |
+| [0025](issues/0025.md) | Module 8 gate: profile live validation | BlueskyProfile | All | in-progress |
 | [0026](issues/0026.md) | Module 9 feature: trending topics section not implemented | BlueskySearch | All | implemented |
 | [0027](issues/0027.md) | Module 9 feature: hashtag and topic views not implemented | BlueskySearch | All | implemented |
-| [0028](issues/0028.md) | Module 9 gate: search live validation | BlueskySearch | All | incomplete |
+| [0028](issues/0028.md) | Module 9 gate: search live validation | BlueskySearch | All | in-progress |
 | [0029](issues/0029.md) | Module 10 feature: grouped notifications not implemented | BlueskyNotifications | All | implemented |
 | [0030](issues/0030.md) | Module 10 feature: push notification receipt does not open the correct thread | BlueskyNotifications | iOS | implemented |
-| [0031](issues/0031.md) | Module 10 gate: notifications live validation | BlueskyNotifications | All | incomplete |
+| [0031](issues/0031.md) | Module 10 gate: notifications live validation | BlueskyNotifications | All | in-progress |
 | [0032](issues/0032.md) | Module 11 feature: image attachments and message requests inbox not implemented | BlueskyMessages | All | implemented |
-| [0033](issues/0033.md) | Module 11 gate: DM and group chat live validation | BlueskyMessages | All | incomplete |
+| [0033](issues/0033.md) | Module 11 gate: DM and group chat live validation | BlueskyMessages | All | in-progress |
 | [0034](issues/0034.md) | Module 12 feature: video picker, link card preview, thread composer, draft persistence not implemented | BlueskyComposer | All | implemented |
-| [0035](issues/0035.md) | Module 12 gate: composer live validation | BlueskyComposer | All | incomplete |
-| [0036](issues/0036.md) | Module 13 gate: moderation live validation | BlueskyModeration | All | incomplete |
-| [0037](issues/0037.md) | Module 14 gate: settings persistence live validation | BlueskySettings | All | incomplete |
-| [0038](issues/0038.md) | Module 15 gate: remaining screens feature parity validation | BlueskyLists / BlueskyFeed / BlueskyModeration / BlueskySettings | All | incomplete |
+| [0035](issues/0035.md) | Module 12 gate: composer live validation | BlueskyComposer | All | in-progress |
+| [0036](issues/0036.md) | Module 13 gate: moderation live validation | BlueskyModeration | All | in-progress |
+| [0037](issues/0037.md) | Module 14 gate: settings persistence live validation | BlueskySettings | All | in-progress |
+| [0038](issues/0038.md) | Module 15 gate: remaining screens feature parity validation | BlueskyLists / BlueskyFeed / BlueskyModeration / BlueskySettings | All | in-progress |
 | [0039](issues/0039.md) | Tapping a post navigates to a blank screen | BlueskyFeed | All | implemented |
 | [0040](issues/0040.md) | Design refinement: revisit app color palette | BlueskyUI | All | implemented |
 | [0041](issues/0041.md) | Action button state may be stale when toggled | BlueskyFeed | All | implemented |
