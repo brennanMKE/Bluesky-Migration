@@ -58,7 +58,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0046](issues/0046.md) | Tapping a post author avatar does not navigate to their profile | BlueskyFeed / BlueskyProfile | All | open |
 | [0047](issues/0047.md) | Ellipsis (…) context menu missing from post action bar | BlueskyFeed / BlueskyUI | All | resolved |
 | [0048](issues/0048.md) | Feed cache not used: no stale content shown when offline | BlueskyFeed / BlueskyDataStore | All | resolved |
-| [0049](issues/0049.md) | FeedView task fires twice on launch, creating duplicate FeedViewModels | BlueskyFeed | All | in-progress |
+| [0049](issues/0049.md) | FeedView task fires twice on launch, creating duplicate FeedViewModels | BlueskyFeed | All | resolved |
 | [0050](issues/0050.md) | Add Light and Dark #Preview blocks to all views missing them | All | All | in-progress |
 | [0051](issues/0051.md) | Search results post cards have white background in dark mode | BlueskySearch | All | in-progress |
 | [0052](issues/0052.md) | Deep link opens a new window instead of routing in the existing window | Bluesky-SwiftUI | macOS | in-progress |
