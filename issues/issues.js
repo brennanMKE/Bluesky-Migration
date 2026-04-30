@@ -483,7 +483,7 @@ window.ISSUES_DATA = [
   {
     "id": "0049",
     "title": "FeedView task fires twice on launch, creating duplicate FeedViewModels",
-    "status": "open",
+    "status": "in-progress",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
