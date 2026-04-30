@@ -543,7 +543,7 @@ window.ISSUES_DATA = [
   {
     "id": "0055",
     "title": "Switching tabs while in a thread does not change the active tab",
-    "status": "open",
+    "status": "in-progress",
     "module": "Bluesky-SwiftUI",
     "platform": "macOS",
     "first_seen": "2026-04-30",
