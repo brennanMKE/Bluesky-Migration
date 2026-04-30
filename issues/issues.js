@@ -463,7 +463,7 @@ window.ISSUES_DATA = [
   {
     "id": "0047",
     "title": "Ellipsis (…) context menu missing from post action bar",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyFeed / BlueskyUI",
     "platform": "All",
     "first_seen": "2026-04-29",
