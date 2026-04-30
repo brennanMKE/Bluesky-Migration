@@ -65,7 +65,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0053](issues/0053.md) | Like state does not persist after tapping the like button | BlueskyFeed | All | in-progress |
 | [0054](issues/0054.md) | Cannot tap a reply in thread view to navigate into it | BlueskyFeed | All | in-progress |
 | [0055](issues/0055.md) | Switching tabs while in a thread does not change the active tab | Bluesky-SwiftUI | macOS | in-progress |
-| [0056](issues/0056.md) | Profile screen missing banner, avatar placeholder broken, post cards not dark mode | BlueskyProfile | All | open |
+| [0056](issues/0056.md) | Profile screen missing banner, avatar placeholder broken, post cards not dark mode | BlueskyProfile | All | in-progress |
 | [0057](issues/0057.md) | Bookmarks not implemented: requires server-side or local storage solution | BlueskyFeed / BlueskyDataStore | All | open |
 
 ---

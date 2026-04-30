@@ -553,7 +553,7 @@ window.ISSUES_DATA = [
   {
     "id": "0056",
     "title": "Profile screen missing banner, avatar placeholder broken, post cards not dark mode",
-    "status": "open",
+    "status": "in-progress",
     "module": "BlueskyProfile",
     "platform": "All",
     "first_seen": "2026-04-30",
