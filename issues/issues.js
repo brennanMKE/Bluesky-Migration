@@ -503,7 +503,7 @@ window.ISSUES_DATA = [
   {
     "id": "0051",
     "title": "Search results post cards have white background in dark mode",
-    "status": "open",
+    "status": "in-progress",
     "module": "BlueskySearch",
     "platform": "All",
     "first_seen": "2026-04-29",
