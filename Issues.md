@@ -59,7 +59,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0047](issues/0047.md) | Ellipsis (…) context menu missing from post action bar | BlueskyFeed / BlueskyUI | All | in-progress |
 | [0048](issues/0048.md) | Feed cache not used: no stale content shown when offline | BlueskyFeed / BlueskyDataStore | All | in-progress |
 | [0049](issues/0049.md) | FeedView task fires twice on launch, creating duplicate FeedViewModels | BlueskyFeed | All | in-progress |
-| [0050](issues/0050.md) | Add Light and Dark #Preview blocks to all views missing them | All | All | open |
+| [0050](issues/0050.md) | Add Light and Dark #Preview blocks to all views missing them | All | All | in-progress |
 | [0051](issues/0051.md) | Search results post cards have white background in dark mode | BlueskySearch | All | open |
 | [0052](issues/0052.md) | Deep link opens a new window instead of routing in the existing window | Bluesky-SwiftUI | macOS | open |
 | [0053](issues/0053.md) | Like state does not persist after tapping the like button | BlueskyFeed | All | open |

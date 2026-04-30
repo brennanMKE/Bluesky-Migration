@@ -493,7 +493,7 @@ window.ISSUES_DATA = [
   {
     "id": "0050",
     "title": "Add Light and Dark #Preview blocks to all views missing them",
-    "status": "open",
+    "status": "in-progress",
     "module": "All",
     "platform": "All",
     "first_seen": "2026-04-29",
