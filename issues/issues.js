@@ -563,7 +563,7 @@ window.ISSUES_DATA = [
   {
     "id": "0057",
     "title": "Bookmarks not implemented: requires a server-side or local storage solution",
-    "status": "open",
+    "status": "in-progress",
     "module": "BlueskyFeed / BlueskyDataStore",
     "platform": "All",
     "first_seen": "2026-04-30",
