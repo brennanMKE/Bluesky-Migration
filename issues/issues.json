@@ -472,7 +472,7 @@
   {
     "id": "0048",
     "title": "Feed cache not used: no stale content shown when offline",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyFeed / BlueskyDataStore",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -568,5 +568,25 @@
     "first_seen": "2026-04-30",
     "closed": "",
     "description": "The bookmark button exists in the `PostCard` action bar but is wired to a no-op (`a.onBookmark = { _ in }`). Bluesky's AT Protocol does not have a native bookmark lexicon — bookmarks must be implemented as either a private list (`app.bsky.graph.list` with a curatelist purpose) or local storage (e.g. SwiftData). Neither approach is currently implemented."
+  },
+  {
+    "id": "0058",
+    "title": "Audit and eliminate `try?` to prevent silent failures",
+    "status": "open",
+    "module": "All",
+    "platform": "All",
+    "first_seen": "2026-04-30",
+    "closed": "",
+    "description": "`try?` swallows thrown errors and converts them to `nil`, which causes failures to disappear without any log, telemetry, or surfaced UI state. This is an anti-pattern that hides real bugs (decoding failures, network errors, persistence failures) and makes them effectively undebuggable. Every existing use of `try?` in the Swift code under `../BlueskyKit/` and `../Bluesky-SwiftUI/` should be audited and replaced with explicit error handling."
+  },
+  {
+    "id": "0059",
+    "title": "Network reachability gating using Network framework",
+    "status": "open",
+    "module": "BlueskyNetworking / BlueskyKit",
+    "platform": "All",
+    "first_seen": "2026-04-30",
+    "closed": "",
+    "description": "The app currently issues network requests without first checking whether a viable network path exists. When the device is offline (no Wi-Fi, no cellular, airplane mode, captive portal blocking), requests fail late at the URLSession layer, producing slow timeouts, noisy errors, and wasted retries. We should use Apple's `Network` framework (`NWPathMonitor`) to track reachability continuously, gate outbound requests on a viable path, and automatically refresh the feed and other relevant data the moment connectivity is restored."
   }
 ]

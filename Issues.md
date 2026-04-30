@@ -57,7 +57,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0045](issues/0045.md) | Thread view styling is broken: collapsed rows, connector lines, dark mode failure | BlueskyFeed | All | resolved |
 | [0046](issues/0046.md) | Tapping a post author avatar does not navigate to their profile | BlueskyFeed / BlueskyProfile | All | open |
 | [0047](issues/0047.md) | Ellipsis (…) context menu missing from post action bar | BlueskyFeed / BlueskyUI | All | resolved |
-| [0048](issues/0048.md) | Feed cache not used: no stale content shown when offline | BlueskyFeed / BlueskyDataStore | All | in-progress |
+| [0048](issues/0048.md) | Feed cache not used: no stale content shown when offline | BlueskyFeed / BlueskyDataStore | All | resolved |
 | [0049](issues/0049.md) | FeedView task fires twice on launch, creating duplicate FeedViewModels | BlueskyFeed | All | in-progress |
 | [0050](issues/0050.md) | Add Light and Dark #Preview blocks to all views missing them | All | All | in-progress |
 | [0051](issues/0051.md) | Search results post cards have white background in dark mode | BlueskySearch | All | in-progress |
@@ -67,6 +67,8 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0055](issues/0055.md) | Switching tabs while in a thread does not change the active tab | Bluesky-SwiftUI | macOS | in-progress |
 | [0056](issues/0056.md) | Profile screen missing banner, avatar placeholder broken, post cards not dark mode | BlueskyProfile | All | in-progress |
 | [0057](issues/0057.md) | Bookmarks not implemented: requires server-side or local storage solution | BlueskyFeed / BlueskyDataStore | All | in-progress |
+| [0058](issues/0058.md) | Audit and eliminate `try?` to prevent silent failures | All | All | open |
+| [0059](issues/0059.md) | Network reachability gating using Network framework | BlueskyNetworking / BlueskyKit | All | open |
 
 ---
 
