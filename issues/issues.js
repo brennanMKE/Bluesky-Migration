@@ -53,7 +53,7 @@ window.ISSUES_DATA = [
   {
     "id": "0006",
     "title": "Like/Reaction button not functional on post cells",
-    "status": "open",
+    "status": "implemented",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -63,7 +63,7 @@ window.ISSUES_DATA = [
   {
     "id": "0007",
     "title": "Share button not functional on post cells",
-    "status": "open",
+    "status": "implemented",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -73,7 +73,7 @@ window.ISSUES_DATA = [
   {
     "id": "0008",
     "title": "Bookmark button missing from post action bar",
-    "status": "open",
+    "status": "implemented",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -83,7 +83,7 @@ window.ISSUES_DATA = [
   {
     "id": "0009",
     "title": "Post action buttons lack tooltips on macOS",
-    "status": "open",
+    "status": "implemented",
     "module": "BlueskyFeed",
     "platform": "macOS",
     "first_seen": "2026-04-29",
@@ -93,7 +93,7 @@ window.ISSUES_DATA = [
   {
     "id": "0010",
     "title": "`getFeed` XRPC call missing required `feed` query parameter",
-    "status": "open",
+    "status": "implemented",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -103,7 +103,7 @@ window.ISSUES_DATA = [
   {
     "id": "0011",
     "title": "Module 1 gate: session restore not validated",
-    "status": "open",
+    "status": "incomplete",
     "module": "BlueskyAuth / BlueskyDataStore",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -113,7 +113,7 @@ window.ISSUES_DATA = [
   {
     "id": "0012",
     "title": "Module 2 gate: networking endpoint groups not live-tested",
-    "status": "open",
+    "status": "incomplete",
     "module": "BlueskyNetworking / BlueskyCore",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -123,7 +123,7 @@ window.ISSUES_DATA = [
   {
     "id": "0013",
     "title": "Module 3 gate: preferences persistence and cache stale-while-revalidate not validated",
-    "status": "open",
+    "status": "incomplete",
     "module": "BlueskyDataStore",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -133,7 +133,7 @@ window.ISSUES_DATA = [
   {
     "id": "0014",
     "title": "Module 4: #Preview canvas not validated in Xcode",
-    "status": "open",
+    "status": "incomplete",
     "module": "BlueskyUI",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -143,7 +143,7 @@ window.ISSUES_DATA = [
   {
     "id": "0015",
     "title": "Module 4 gate: component gallery not validated",
-    "status": "open",
+    "status": "incomplete",
     "module": "BlueskyUI",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -153,7 +153,7 @@ window.ISSUES_DATA = [
   {
     "id": "0016",
     "title": "Module 5 gate: navigation shell not validated (tabs, back nav, deep links)",
-    "status": "open",
+    "status": "incomplete",
     "module": "Bluesky-SwiftUI",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -163,7 +163,7 @@ window.ISSUES_DATA = [
   {
     "id": "0017",
     "title": "Module 6 feature: feed filter toggles (hide replies / hide reposts) not implemented",
-    "status": "open",
+    "status": "implemented",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -173,7 +173,7 @@ window.ISSUES_DATA = [
   {
     "id": "0018",
     "title": "Module 6 gate: home feed live validation (load, scroll, interactions)",
-    "status": "open",
+    "status": "incomplete",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -183,7 +183,7 @@ window.ISSUES_DATA = [
   {
     "id": "0019",
     "title": "Module 7 feature: reply composer not implemented",
-    "status": "open",
+    "status": "implemented",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -193,7 +193,7 @@ window.ISSUES_DATA = [
   {
     "id": "0020",
     "title": "Module 7 feature: inline post expansion not implemented",
-    "status": "open",
+    "status": "implemented",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -203,7 +203,7 @@ window.ISSUES_DATA = [
   {
     "id": "0021",
     "title": "Module 7 gate: thread view live validation",
-    "status": "open",
+    "status": "incomplete",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -213,7 +213,7 @@ window.ISSUES_DATA = [
   {
     "id": "0022",
     "title": "Module 8 feature: profile Feeds and Lists tabs not implemented",
-    "status": "open",
+    "status": "implemented",
     "module": "BlueskyProfile",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -223,7 +223,7 @@ window.ISSUES_DATA = [
   {
     "id": "0023",
     "title": "Module 8 feature: verified badges and labeler badges not shown on profiles",
-    "status": "open",
+    "status": "implemented",
     "module": "BlueskyProfile",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -233,7 +233,7 @@ window.ISSUES_DATA = [
   {
     "id": "0024",
     "title": "Module 8 feature: known followers chip not shown on profiles",
-    "status": "open",
+    "status": "implemented",
     "module": "BlueskyProfile",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -243,7 +243,7 @@ window.ISSUES_DATA = [
   {
     "id": "0025",
     "title": "Module 8 gate: profile live validation",
-    "status": "open",
+    "status": "incomplete",
     "module": "BlueskyProfile",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -253,7 +253,7 @@ window.ISSUES_DATA = [
   {
     "id": "0026",
     "title": "Module 9 feature: trending topics section not implemented",
-    "status": "open",
+    "status": "implemented",
     "module": "BlueskySearch",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -263,7 +263,7 @@ window.ISSUES_DATA = [
   {
     "id": "0027",
     "title": "Module 9 feature: hashtag and topic views not implemented",
-    "status": "open",
+    "status": "implemented",
     "module": "BlueskySearch",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -273,7 +273,7 @@ window.ISSUES_DATA = [
   {
     "id": "0028",
     "title": "Module 9 gate: search live validation",
-    "status": "open",
+    "status": "incomplete",
     "module": "BlueskySearch",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -283,7 +283,7 @@ window.ISSUES_DATA = [
   {
     "id": "0029",
     "title": "Module 10 feature: grouped notifications not implemented",
-    "status": "open",
+    "status": "implemented",
     "module": "BlueskyNotifications",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -293,7 +293,7 @@ window.ISSUES_DATA = [
   {
     "id": "0030",
     "title": "Module 10 feature: push notification receipt does not open the correct thread",
-    "status": "open",
+    "status": "implemented",
     "module": "BlueskyNotifications / Bluesky-SwiftUI",
     "platform": "iOS",
     "first_seen": "2026-04-29",
@@ -303,7 +303,7 @@ window.ISSUES_DATA = [
   {
     "id": "0031",
     "title": "Module 10 gate: notifications live validation",
-    "status": "open",
+    "status": "incomplete",
     "module": "BlueskyNotifications",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -313,7 +313,7 @@ window.ISSUES_DATA = [
   {
     "id": "0032",
     "title": "Module 11 feature: image attachments and message requests inbox not implemented",
-    "status": "open",
+    "status": "implemented",
     "module": "BlueskyMessages",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -323,7 +323,7 @@ window.ISSUES_DATA = [
   {
     "id": "0033",
     "title": "Module 11 gate: DM and group chat live validation",
-    "status": "open",
+    "status": "incomplete",
     "module": "BlueskyMessages",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -333,7 +333,7 @@ window.ISSUES_DATA = [
   {
     "id": "0034",
     "title": "Module 12 feature: video picker, link card preview, thread composer, and draft persistence not implemented",
-    "status": "open",
+    "status": "implemented",
     "module": "BlueskyComposer",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -343,7 +343,7 @@ window.ISSUES_DATA = [
   {
     "id": "0035",
     "title": "Module 12 gate: composer live validation (text, images, mentions)",
-    "status": "open",
+    "status": "incomplete",
     "module": "BlueskyComposer",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -353,7 +353,7 @@ window.ISSUES_DATA = [
   {
     "id": "0036",
     "title": "Module 13 gate: moderation live validation",
-    "status": "open",
+    "status": "incomplete",
     "module": "BlueskyModeration",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -363,7 +363,7 @@ window.ISSUES_DATA = [
   {
     "id": "0037",
     "title": "Module 14 gate: settings persistence live validation",
-    "status": "open",
+    "status": "incomplete",
     "module": "BlueskySettings",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -373,7 +373,7 @@ window.ISSUES_DATA = [
   {
     "id": "0038",
     "title": "Module 15 gate: remaining screens feature parity validation",
-    "status": "open",
+    "status": "incomplete",
     "module": "BlueskyLists / BlueskyFeed / BlueskyModeration / BlueskySettings",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -383,7 +383,7 @@ window.ISSUES_DATA = [
   {
     "id": "0039",
     "title": "Tapping a post navigates to a blank screen",
-    "status": "open",
+    "status": "implemented",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -393,7 +393,7 @@ window.ISSUES_DATA = [
   {
     "id": "0040",
     "title": "Design refinement: revisit app color palette",
-    "status": "open",
+    "status": "implemented",
     "module": "BlueskyUI",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -403,7 +403,7 @@ window.ISSUES_DATA = [
   {
     "id": "0041",
     "title": "Action button state may be stale when toggled",
-    "status": "open",
+    "status": "implemented",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -413,7 +413,7 @@ window.ISSUES_DATA = [
   {
     "id": "0042",
     "title": "Toolbar list button is centered instead of right-aligned",
-    "status": "open",
+    "status": "implemented",
     "module": "BlueskyFeed",
     "platform": "macOS",
     "first_seen": "2026-04-29",
@@ -423,7 +423,7 @@ window.ISSUES_DATA = [
   {
     "id": "0043",
     "title": "Pull-to-refresh not implemented for feeds, replies, and search",
-    "status": "open",
+    "status": "implemented",
     "module": "BlueskyFeed / BlueskyProfile / BlueskySearch",
     "platform": "All",
     "first_seen": "2026-04-29",
