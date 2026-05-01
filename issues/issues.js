@@ -53,7 +53,7 @@ window.ISSUES_DATA = [
   {
     "id": "0006",
     "title": "Like/Reaction button not functional on post cells",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -63,7 +63,7 @@ window.ISSUES_DATA = [
   {
     "id": "0007",
     "title": "Share button not functional on post cells",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -73,7 +73,7 @@ window.ISSUES_DATA = [
   {
     "id": "0008",
     "title": "Bookmark button missing from post action bar",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -83,7 +83,7 @@ window.ISSUES_DATA = [
   {
     "id": "0009",
     "title": "Post action buttons lack tooltips on macOS",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyFeed",
     "platform": "macOS",
     "first_seen": "2026-04-29",
@@ -93,7 +93,7 @@ window.ISSUES_DATA = [
   {
     "id": "0010",
     "title": "`getFeed` XRPC call missing required `feed` query parameter",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",

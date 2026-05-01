@@ -18,7 +18,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0006](issues/0006.md) | Like/Reaction button not functional on post cells | BlueskyFeed | All | resolved |
 | [0007](issues/0007.md) | Share button not functional on post cells | BlueskyFeed | All | resolved |
 | [0008](issues/0008.md) | Bookmark button missing from post action bar | BlueskyFeed | All | resolved |
-| [0009](issues/0009.md) | Post action buttons lack tooltips on macOS | BlueskyFeed | macOS | in-progress |
+| [0009](issues/0009.md) | Post action buttons lack tooltips on macOS | BlueskyFeed | macOS | resolved |
 | [0010](issues/0010.md) | `getFeed` XRPC call missing required `feed` query parameter | BlueskyFeed | All | resolved |
 | [0011](issues/0011.md) | Module 1 gate: session restore not validated | BlueskyAuth / BlueskyDataStore | All | resolved |
 | [0012](issues/0012.md) | Module 2 gate: networking endpoint groups not live-tested | BlueskyNetworking / BlueskyCore | All | resolved |
