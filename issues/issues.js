@@ -53,7 +53,7 @@ window.ISSUES_DATA = [
   {
     "id": "0006",
     "title": "Like/Reaction button not functional on post cells",
-    "status": "implemented",
+    "status": "in-progress",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -63,7 +63,7 @@ window.ISSUES_DATA = [
   {
     "id": "0007",
     "title": "Share button not functional on post cells",
-    "status": "implemented",
+    "status": "in-progress",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -73,7 +73,7 @@ window.ISSUES_DATA = [
   {
     "id": "0008",
     "title": "Bookmark button missing from post action bar",
-    "status": "implemented",
+    "status": "in-progress",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -83,7 +83,7 @@ window.ISSUES_DATA = [
   {
     "id": "0009",
     "title": "Post action buttons lack tooltips on macOS",
-    "status": "implemented",
+    "status": "in-progress",
     "module": "BlueskyFeed",
     "platform": "macOS",
     "first_seen": "2026-04-29",
@@ -93,7 +93,7 @@ window.ISSUES_DATA = [
   {
     "id": "0010",
     "title": "`getFeed` XRPC call missing required `feed` query parameter",
-    "status": "implemented",
+    "status": "in-progress",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -163,7 +163,7 @@ window.ISSUES_DATA = [
   {
     "id": "0017",
     "title": "Module 6 feature: feed filter toggles (hide replies / hide reposts) not implemented",
-    "status": "implemented",
+    "status": "in-progress",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -183,7 +183,7 @@ window.ISSUES_DATA = [
   {
     "id": "0019",
     "title": "Module 7 feature: reply composer not implemented",
-    "status": "implemented",
+    "status": "in-progress",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -193,7 +193,7 @@ window.ISSUES_DATA = [
   {
     "id": "0020",
     "title": "Module 7 feature: inline post expansion not implemented",
-    "status": "implemented",
+    "status": "in-progress",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -213,7 +213,7 @@ window.ISSUES_DATA = [
   {
     "id": "0022",
     "title": "Module 8 feature: profile Feeds and Lists tabs not implemented",
-    "status": "implemented",
+    "status": "in-progress",
     "module": "BlueskyProfile",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -223,7 +223,7 @@ window.ISSUES_DATA = [
   {
     "id": "0023",
     "title": "Module 8 feature: verified badges and labeler badges not shown on profiles",
-    "status": "implemented",
+    "status": "in-progress",
     "module": "BlueskyProfile",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -233,7 +233,7 @@ window.ISSUES_DATA = [
   {
     "id": "0024",
     "title": "Module 8 feature: known followers chip not shown on profiles",
-    "status": "implemented",
+    "status": "in-progress",
     "module": "BlueskyProfile",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -253,7 +253,7 @@ window.ISSUES_DATA = [
   {
     "id": "0026",
     "title": "Module 9 feature: trending topics section not implemented",
-    "status": "implemented",
+    "status": "in-progress",
     "module": "BlueskySearch",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -263,7 +263,7 @@ window.ISSUES_DATA = [
   {
     "id": "0027",
     "title": "Module 9 feature: hashtag and topic views not implemented",
-    "status": "implemented",
+    "status": "in-progress",
     "module": "BlueskySearch",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -283,7 +283,7 @@ window.ISSUES_DATA = [
   {
     "id": "0029",
     "title": "Module 10 feature: grouped notifications not implemented",
-    "status": "implemented",
+    "status": "in-progress",
     "module": "BlueskyNotifications",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -293,7 +293,7 @@ window.ISSUES_DATA = [
   {
     "id": "0030",
     "title": "Module 10 feature: push notification receipt does not open the correct thread",
-    "status": "implemented",
+    "status": "in-progress",
     "module": "BlueskyNotifications / Bluesky-SwiftUI",
     "platform": "iOS",
     "first_seen": "2026-04-29",
@@ -313,7 +313,7 @@ window.ISSUES_DATA = [
   {
     "id": "0032",
     "title": "Module 11 feature: image attachments and message requests inbox not implemented",
-    "status": "implemented",
+    "status": "in-progress",
     "module": "BlueskyMessages",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -333,7 +333,7 @@ window.ISSUES_DATA = [
   {
     "id": "0034",
     "title": "Module 12 feature: video picker, link card preview, thread composer, and draft persistence not implemented",
-    "status": "implemented",
+    "status": "in-progress",
     "module": "BlueskyComposer",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -383,7 +383,7 @@ window.ISSUES_DATA = [
   {
     "id": "0039",
     "title": "Tapping a post navigates to a blank screen",
-    "status": "implemented",
+    "status": "in-progress",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -393,7 +393,7 @@ window.ISSUES_DATA = [
   {
     "id": "0040",
     "title": "Design refinement: revisit app color palette",
-    "status": "implemented",
+    "status": "in-progress",
     "module": "BlueskyUI",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -403,7 +403,7 @@ window.ISSUES_DATA = [
   {
     "id": "0041",
     "title": "Action button state may be stale when toggled",
-    "status": "implemented",
+    "status": "in-progress",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -413,7 +413,7 @@ window.ISSUES_DATA = [
   {
     "id": "0042",
     "title": "Toolbar list button is centered instead of right-aligned",
-    "status": "implemented",
+    "status": "in-progress",
     "module": "BlueskyFeed",
     "platform": "macOS",
     "first_seen": "2026-04-29",
@@ -423,7 +423,7 @@ window.ISSUES_DATA = [
   {
     "id": "0043",
     "title": "Pull-to-refresh not implemented for feeds, replies, and search",
-    "status": "implemented",
+    "status": "in-progress",
     "module": "BlueskyFeed / BlueskyProfile / BlueskySearch",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -503,7 +503,7 @@ window.ISSUES_DATA = [
   {
     "id": "0051",
     "title": "Search results post cards have white background in dark mode",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskySearch",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -553,7 +553,7 @@ window.ISSUES_DATA = [
   {
     "id": "0056",
     "title": "Profile screen missing banner, avatar placeholder broken, post cards not dark mode",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyProfile",
     "platform": "All",
     "first_seen": "2026-04-30",
@@ -563,7 +563,7 @@ window.ISSUES_DATA = [
   {
     "id": "0057",
     "title": "Bookmarks not implemented: requires a server-side or local storage solution",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyFeed / BlueskyDataStore",
     "platform": "All",
     "first_seen": "2026-04-30",
@@ -589,5 +589,15 @@ window.ISSUES_DATA = [
     "first_seen": "2026-04-30",
     "closed": "",
     "description": "The app currently issues network requests without first checking whether a viable network path exists. When the device is offline (no Wi-Fi, no cellular, airplane mode, captive portal blocking), requests fail late at the URLSession layer, producing slow timeouts, noisy errors, and wasted retries. We should use Apple's `Network` framework (`NWPathMonitor`) to track reachability continuously, gate outbound requests on a viable path, and automatically refresh the feed and other relevant data the moment connectivity is restored."
+  },
+  {
+    "id": "0060",
+    "title": "Saved Posts section does not match Bluesky website UX",
+    "status": "open",
+    "module": "BlueskyFeed / Bluesky-SwiftUI",
+    "platform": "All",
+    "first_seen": "2026-05-01",
+    "closed": "",
+    "description": "The Bluesky website has a dedicated \"Saved\" section in the sidebar that lists all bookmarked posts as a scrollable feed. In the SwiftUI app, bookmarks are accessible only via the `•••` menu on the Profile tab → \"Bookmarks\", which is not discoverable. The `BookmarksScreen` also needs visual parity with the website's Saved Posts experience."
   }
 ];

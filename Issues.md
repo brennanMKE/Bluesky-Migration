@@ -15,44 +15,44 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0003](issues/0003.md) | Feed list ignores Dark Mode — white background with black text | BlueskyFeed | macOS | resolved |
 | [0004](issues/0004.md) | Reply button not functional on post cells | BlueskyFeed | All | resolved |
 | [0005](issues/0005.md) | Repost button not functional on post cells | BlueskyFeed | All | resolved |
-| [0006](issues/0006.md) | Like/Reaction button not functional on post cells | BlueskyFeed | All | implemented |
-| [0007](issues/0007.md) | Share button not functional on post cells | BlueskyFeed | All | implemented |
-| [0008](issues/0008.md) | Bookmark button missing from post action bar | BlueskyFeed | All | implemented |
-| [0009](issues/0009.md) | Post action buttons lack tooltips on macOS | BlueskyFeed | macOS | implemented |
-| [0010](issues/0010.md) | `getFeed` XRPC call missing required `feed` query parameter | BlueskyFeed | All | implemented |
+| [0006](issues/0006.md) | Like/Reaction button not functional on post cells | BlueskyFeed | All | in-progress |
+| [0007](issues/0007.md) | Share button not functional on post cells | BlueskyFeed | All | in-progress |
+| [0008](issues/0008.md) | Bookmark button missing from post action bar | BlueskyFeed | All | in-progress |
+| [0009](issues/0009.md) | Post action buttons lack tooltips on macOS | BlueskyFeed | macOS | in-progress |
+| [0010](issues/0010.md) | `getFeed` XRPC call missing required `feed` query parameter | BlueskyFeed | All | in-progress |
 | [0011](issues/0011.md) | Module 1 gate: session restore not validated | BlueskyAuth / BlueskyDataStore | All | resolved |
 | [0012](issues/0012.md) | Module 2 gate: networking endpoint groups not live-tested | BlueskyNetworking / BlueskyCore | All | resolved |
 | [0013](issues/0013.md) | Module 3 gate: preferences persistence and cache stale-while-revalidate not validated | BlueskyDataStore | All | resolved |
 | [0014](issues/0014.md) | Module 4: #Preview canvas not validated in Xcode | BlueskyUI | All | resolved |
 | [0015](issues/0015.md) | Module 4 gate: component gallery not validated | BlueskyUI | All | resolved |
 | [0016](issues/0016.md) | Module 5 gate: navigation shell not validated (tabs, back nav, deep links) | Bluesky-SwiftUI | All | resolved |
-| [0017](issues/0017.md) | Module 6 feature: feed filter toggles (hide replies / hide reposts) not implemented | BlueskyFeed | All | implemented |
+| [0017](issues/0017.md) | Module 6 feature: feed filter toggles (hide replies / hide reposts) not implemented | BlueskyFeed | All | in-progress |
 | [0018](issues/0018.md) | Module 6 gate: home feed live validation | BlueskyFeed | All | resolved |
-| [0019](issues/0019.md) | Module 7 feature: reply composer not implemented | BlueskyFeed | All | implemented |
-| [0020](issues/0020.md) | Module 7 feature: inline post expansion not implemented | BlueskyFeed | All | implemented |
+| [0019](issues/0019.md) | Module 7 feature: reply composer not implemented | BlueskyFeed | All | in-progress |
+| [0020](issues/0020.md) | Module 7 feature: inline post expansion not implemented | BlueskyFeed | All | in-progress |
 | [0021](issues/0021.md) | Module 7 gate: thread view live validation | BlueskyFeed | All | resolved |
-| [0022](issues/0022.md) | Module 8 feature: profile Feeds and Lists tabs not implemented | BlueskyProfile | All | implemented |
-| [0023](issues/0023.md) | Module 8 feature: verified badges and labeler badges not shown on profiles | BlueskyProfile | All | implemented |
-| [0024](issues/0024.md) | Module 8 feature: known followers chip not shown on profiles | BlueskyProfile | All | implemented |
+| [0022](issues/0022.md) | Module 8 feature: profile Feeds and Lists tabs not implemented | BlueskyProfile | All | in-progress |
+| [0023](issues/0023.md) | Module 8 feature: verified badges and labeler badges not shown on profiles | BlueskyProfile | All | in-progress |
+| [0024](issues/0024.md) | Module 8 feature: known followers chip not shown on profiles | BlueskyProfile | All | in-progress |
 | [0025](issues/0025.md) | Module 8 gate: profile live validation | BlueskyProfile | All | resolved |
-| [0026](issues/0026.md) | Module 9 feature: trending topics section not implemented | BlueskySearch | All | implemented |
-| [0027](issues/0027.md) | Module 9 feature: hashtag and topic views not implemented | BlueskySearch | All | implemented |
+| [0026](issues/0026.md) | Module 9 feature: trending topics section not implemented | BlueskySearch | All | in-progress |
+| [0027](issues/0027.md) | Module 9 feature: hashtag and topic views not implemented | BlueskySearch | All | in-progress |
 | [0028](issues/0028.md) | Module 9 gate: search live validation | BlueskySearch | All | resolved |
-| [0029](issues/0029.md) | Module 10 feature: grouped notifications not implemented | BlueskyNotifications | All | implemented |
-| [0030](issues/0030.md) | Module 10 feature: push notification receipt does not open the correct thread | BlueskyNotifications | iOS | implemented |
+| [0029](issues/0029.md) | Module 10 feature: grouped notifications not implemented | BlueskyNotifications | All | in-progress |
+| [0030](issues/0030.md) | Module 10 feature: push notification receipt does not open the correct thread | BlueskyNotifications | iOS | in-progress |
 | [0031](issues/0031.md) | Module 10 gate: notifications live validation | BlueskyNotifications | All | in-progress |
-| [0032](issues/0032.md) | Module 11 feature: image attachments and message requests inbox not implemented | BlueskyMessages | All | implemented |
+| [0032](issues/0032.md) | Module 11 feature: image attachments and message requests inbox not implemented | BlueskyMessages | All | in-progress |
 | [0033](issues/0033.md) | Module 11 gate: DM and group chat live validation | BlueskyMessages | All | in-progress |
-| [0034](issues/0034.md) | Module 12 feature: video picker, link card preview, thread composer, draft persistence not implemented | BlueskyComposer | All | implemented |
+| [0034](issues/0034.md) | Module 12 feature: video picker, link card preview, thread composer, draft persistence not implemented | BlueskyComposer | All | in-progress |
 | [0035](issues/0035.md) | Module 12 gate: composer live validation | BlueskyComposer | All | in-progress |
 | [0036](issues/0036.md) | Module 13 gate: moderation live validation | BlueskyModeration | All | resolved |
 | [0037](issues/0037.md) | Module 14 gate: settings persistence live validation | BlueskySettings | All | in-progress |
 | [0038](issues/0038.md) | Module 15 gate: remaining screens feature parity validation | BlueskyLists / BlueskyFeed / BlueskyModeration / BlueskySettings | All | in-progress |
-| [0039](issues/0039.md) | Tapping a post navigates to a blank screen | BlueskyFeed | All | implemented |
-| [0040](issues/0040.md) | Design refinement: revisit app color palette | BlueskyUI | All | implemented |
-| [0041](issues/0041.md) | Action button state may be stale when toggled | BlueskyFeed | All | implemented |
-| [0042](issues/0042.md) | Toolbar list button is centered instead of right-aligned | BlueskyFeed | macOS | implemented |
-| [0043](issues/0043.md) | Pull-to-refresh not implemented for feeds, replies, and search | BlueskyFeed / BlueskyProfile / BlueskySearch | All | implemented |
+| [0039](issues/0039.md) | Tapping a post navigates to a blank screen | BlueskyFeed | All | in-progress |
+| [0040](issues/0040.md) | Design refinement: revisit app color palette | BlueskyUI | All | in-progress |
+| [0041](issues/0041.md) | Action button state may be stale when toggled | BlueskyFeed | All | in-progress |
+| [0042](issues/0042.md) | Toolbar list button is centered instead of right-aligned | BlueskyFeed | macOS | in-progress |
+| [0043](issues/0043.md) | Pull-to-refresh not implemented for feeds, replies, and search | BlueskyFeed / BlueskyProfile / BlueskySearch | All | in-progress |
 | [0044](issues/0044.md) | Feed fails to load: missing `$type` in embedded quote record | BlueskyCore | All | resolved |
 | [0045](issues/0045.md) | Thread view styling is broken: collapsed rows, connector lines, dark mode failure | BlueskyFeed | All | resolved |
 | [0046](issues/0046.md) | Tapping a post author avatar does not navigate to their profile | BlueskyFeed / BlueskyProfile | All | open |
@@ -60,15 +60,16 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0048](issues/0048.md) | Feed cache not used: no stale content shown when offline | BlueskyFeed / BlueskyDataStore | All | resolved |
 | [0049](issues/0049.md) | FeedView task fires twice on launch, creating duplicate FeedViewModels | BlueskyFeed | All | resolved |
 | [0050](issues/0050.md) | Add Light and Dark #Preview blocks to all views missing them | All | All | resolved |
-| [0051](issues/0051.md) | Search results post cards have white background in dark mode | BlueskySearch | All | in-progress |
+| [0051](issues/0051.md) | Search results post cards have white background in dark mode | BlueskySearch | All | resolved |
 | [0052](issues/0052.md) | Deep link opens a new window instead of routing in the existing window | Bluesky-SwiftUI | macOS | in-progress |
 | [0053](issues/0053.md) | Like state does not persist after tapping the like button | BlueskyFeed | All | in-progress |
 | [0054](issues/0054.md) | Cannot tap a reply in thread view to navigate into it | BlueskyFeed | All | in-progress |
 | [0055](issues/0055.md) | Switching tabs while in a thread does not change the active tab | Bluesky-SwiftUI | macOS | in-progress |
-| [0056](issues/0056.md) | Profile screen missing banner, avatar placeholder broken, post cards not dark mode | BlueskyProfile | All | in-progress |
-| [0057](issues/0057.md) | Bookmarks not implemented: requires server-side or local storage solution | BlueskyFeed / BlueskyDataStore | All | in-progress |
+| [0056](issues/0056.md) | Profile screen missing banner, avatar placeholder broken, post cards not dark mode | BlueskyProfile | All | resolved |
+| [0057](issues/0057.md) | Bookmarks not implemented: requires server-side or local storage solution | BlueskyFeed / BlueskyDataStore | All | resolved |
 | [0058](issues/0058.md) | Audit and eliminate `try?` to prevent silent failures | All | All | open |
 | [0059](issues/0059.md) | Network reachability gating using Network framework | BlueskyNetworking / BlueskyKit | All | open |
+| [0060](issues/0060.md) | Saved Posts section does not match Bluesky website UX | BlueskyFeed / Bluesky-SwiftUI | All | open |
 
 ---
 
