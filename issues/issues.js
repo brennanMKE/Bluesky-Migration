@@ -163,7 +163,7 @@ window.ISSUES_DATA = [
   {
     "id": "0017",
     "title": "Module 6 feature: feed filter toggles (hide replies / hide reposts) not implemented",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",

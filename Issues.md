@@ -26,7 +26,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0014](issues/0014.md) | Module 4: #Preview canvas not validated in Xcode | BlueskyUI | All | resolved |
 | [0015](issues/0015.md) | Module 4 gate: component gallery not validated | BlueskyUI | All | resolved |
 | [0016](issues/0016.md) | Module 5 gate: navigation shell not validated (tabs, back nav, deep links) | Bluesky-SwiftUI | All | resolved |
-| [0017](issues/0017.md) | Module 6 feature: feed filter toggles (hide replies / hide reposts) not implemented | BlueskyFeed | All | in-progress |
+| [0017](issues/0017.md) | Module 6 feature: feed filter toggles (hide replies / hide reposts) not implemented | BlueskyFeed | All | resolved |
 | [0018](issues/0018.md) | Module 6 gate: home feed live validation | BlueskyFeed | All | resolved |
 | [0019](issues/0019.md) | Module 7 feature: reply composer not implemented | BlueskyFeed | All | in-progress |
 | [0020](issues/0020.md) | Module 7 feature: inline post expansion not implemented | BlueskyFeed | All | in-progress |
