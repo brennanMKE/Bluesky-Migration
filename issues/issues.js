@@ -183,7 +183,7 @@ window.ISSUES_DATA = [
   {
     "id": "0019",
     "title": "Module 7 feature: reply composer not implemented",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -193,7 +193,7 @@ window.ISSUES_DATA = [
   {
     "id": "0020",
     "title": "Module 7 feature: inline post expansion not implemented",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
