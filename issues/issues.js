@@ -383,7 +383,7 @@ window.ISSUES_DATA = [
   {
     "id": "0039",
     "title": "Tapping a post navigates to a blank screen",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -423,7 +423,7 @@ window.ISSUES_DATA = [
   {
     "id": "0043",
     "title": "Pull-to-refresh not implemented for feeds, replies, and search",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyFeed / BlueskyProfile / BlueskySearch",
     "platform": "All",
     "first_seen": "2026-04-29",
