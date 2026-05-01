@@ -213,7 +213,7 @@ window.ISSUES_DATA = [
   {
     "id": "0022",
     "title": "Module 8 feature: profile Feeds and Lists tabs not implemented",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyProfile",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -223,7 +223,7 @@ window.ISSUES_DATA = [
   {
     "id": "0023",
     "title": "Module 8 feature: verified badges and labeler badges not shown on profiles",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyProfile",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -233,7 +233,7 @@ window.ISSUES_DATA = [
   {
     "id": "0024",
     "title": "Module 8 feature: known followers chip not shown on profiles",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyProfile",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -253,7 +253,7 @@ window.ISSUES_DATA = [
   {
     "id": "0026",
     "title": "Module 9 feature: trending topics section not implemented",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskySearch",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -263,7 +263,7 @@ window.ISSUES_DATA = [
   {
     "id": "0027",
     "title": "Module 9 feature: hashtag and topic views not implemented",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskySearch",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -283,7 +283,7 @@ window.ISSUES_DATA = [
   {
     "id": "0029",
     "title": "Module 10 feature: grouped notifications not implemented",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyNotifications",
     "platform": "All",
     "first_seen": "2026-04-29",

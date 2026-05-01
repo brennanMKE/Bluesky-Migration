@@ -31,14 +31,14 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0019](issues/0019.md) | Module 7 feature: reply composer not implemented | BlueskyFeed | All | resolved |
 | [0020](issues/0020.md) | Module 7 feature: inline post expansion not implemented | BlueskyFeed | All | resolved |
 | [0021](issues/0021.md) | Module 7 gate: thread view live validation | BlueskyFeed | All | resolved |
-| [0022](issues/0022.md) | Module 8 feature: profile Feeds and Lists tabs not implemented | BlueskyProfile | All | in-progress |
-| [0023](issues/0023.md) | Module 8 feature: verified badges and labeler badges not shown on profiles | BlueskyProfile | All | in-progress |
-| [0024](issues/0024.md) | Module 8 feature: known followers chip not shown on profiles | BlueskyProfile | All | in-progress |
+| [0022](issues/0022.md) | Module 8 feature: profile Feeds and Lists tabs not implemented | BlueskyProfile | All | resolved |
+| [0023](issues/0023.md) | Module 8 feature: verified badges and labeler badges not shown on profiles | BlueskyProfile | All | resolved |
+| [0024](issues/0024.md) | Module 8 feature: known followers chip not shown on profiles | BlueskyProfile | All | resolved |
 | [0025](issues/0025.md) | Module 8 gate: profile live validation | BlueskyProfile | All | resolved |
-| [0026](issues/0026.md) | Module 9 feature: trending topics section not implemented | BlueskySearch | All | in-progress |
-| [0027](issues/0027.md) | Module 9 feature: hashtag and topic views not implemented | BlueskySearch | All | in-progress |
+| [0026](issues/0026.md) | Module 9 feature: trending topics section not implemented | BlueskySearch | All | resolved |
+| [0027](issues/0027.md) | Module 9 feature: hashtag and topic views not implemented | BlueskySearch | All | resolved |
 | [0028](issues/0028.md) | Module 9 gate: search live validation | BlueskySearch | All | resolved |
-| [0029](issues/0029.md) | Module 10 feature: grouped notifications not implemented | BlueskyNotifications | All | in-progress |
+| [0029](issues/0029.md) | Module 10 feature: grouped notifications not implemented | BlueskyNotifications | All | resolved |
 | [0030](issues/0030.md) | Module 10 feature: push notification receipt does not open the correct thread | BlueskyNotifications | iOS | in-progress |
 | [0031](issues/0031.md) | Module 10 gate: notifications live validation | BlueskyNotifications | All | in-progress |
 | [0032](issues/0032.md) | Module 11 feature: image attachments and message requests inbox not implemented | BlueskyMessages | All | in-progress |
