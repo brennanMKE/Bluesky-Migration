@@ -11,6 +11,21 @@ Planning and tracking documents only. There is no code here. The actual Swift co
 
 The React Native reference app is in `../Bluesky-ReactNative/`.
 
+## Porting from React Native — read this before writing code
+
+**This project is a port.** `../Bluesky-ReactNative/` is the official Bluesky client we are re-implementing in SwiftUI for iOS and macOS. The goal is **UI and behavior parity with the RN client**, adapted to native Apple platform conventions where it makes sense (e.g. macOS uses a sidebar / toolbar layout RN doesn't have). When in doubt, **RN is the source of truth**.
+
+What this means in practice for any code work:
+
+- Before implementing a screen, behavior, or visual detail, **find and read the equivalent in `../Bluesky-ReactNative/src/`** — `view/screens/`, `view/com/`, and `state/queries/` are the most useful trees. The RN code is what users currently see; deviating from it requires a deliberate reason.
+- For data shapes (lexicons, query parameters, response decoding), **prefer what RN does** — it's known to work against the AT Proto API. `state/queries/` is the canonical reference.
+- For visual styling (icon shapes, ordering, label casing, padding, animation timing), **match RN unless the issue spec explicitly says otherwise**. "Looks roughly right" is not parity; pixel-level decisions in RN encode shipped product judgment.
+- When an issue says "RN does X", that's not a guideline — it's the spec. Read the cited RN file and confirm the behavior firsthand instead of guessing.
+- Disagreements between this project's planning docs and the live RN code: trust the live RN code and flag the doc drift. Planning docs can lag.
+- iOS- and macOS-specific divergences from RN are explicit: take native platform conventions where the RN web/mobile patterns don't translate (macOS sidebar, keyboard shortcuts, hover states, multi-window). When in doubt, ask before diverging.
+
+The drift check in the Session Start Protocol below records the RN baseline commit so we know how far ahead the upstream is. If RN has shipped new UI since the baseline, surface the diff before assuming the SwiftUI behavior should match an older snapshot.
+
 ## Session start protocol
 
 **Always read `Progress.md` first.** It contains the current phase, active module, active checklist item, and the running completion log. This is the fastest way to resume work without re-reading all the planning docs.
