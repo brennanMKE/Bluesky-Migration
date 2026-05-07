@@ -1432,11 +1432,11 @@
   {
     "id": "0144",
     "title": "Post menu missing \"Copy link to post\" and \"Open in browser\"",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyFeed / BlueskyUI",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "The React Native post share menu includes **Copy link to post** (puts the bsky.app URL on the clipboard) and an implicit **Open in browser** (the web profile link). The SwiftUI `PostCard` exposes a `ShareLink` for native sharing and an ellipsis menu with Copy text / Mute / Report — but nothing for copying just the post URL or opening the post on the web."
   },
   {
