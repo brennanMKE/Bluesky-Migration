@@ -1103,11 +1103,11 @@ window.ISSUES_DATA = [
   {
     "id": "0111",
     "title": "Message thread doesn't render system messages (e.g. \"@alice added @bob\")",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyMessages",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-06",
     "description": "Both 1:1 and group threads can include system events that look like messages but aren't authored by anyone: \"@alice left the group\", \"@bob added @carol\", \"Conversation locked\", \"Group name changed to <new>\", message-deleted tombstones, etc. React Native renders these as italicized centered text (no bubble, no avatar). The SwiftUI thread loop only handles `MessageView` and skips other variants of the discriminated union — system events don't render at all, breaking the narrative of the conversation."
   },
   {
