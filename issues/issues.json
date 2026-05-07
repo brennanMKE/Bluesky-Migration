@@ -1498,5 +1498,25 @@
     "first_seen": "2026-05-07",
     "closed": "2026-05-07",
     "description": "The hamburger-triggered sidebar drawer was added in #0072 with a small set of navigation rows. The React Native reference (attached) shows a much richer drawer with three distinct zones, and the SwiftUI version is missing most of them.\n\n**RN drawer (top to bottom):**\n\n1. **Profile header**\n   - Avatar (circular, ~64pt).\n   - Display name (large, bold).\n   - Handle (\"@brennan.sstools.co\").\n   - \"286 followers · 359 following\" stats row.\n   - Tappable — navigates to the user's profile.\n2. **Navigation rows** (each with a leading SF-Symbol-equivalent icon):\n   - 🔍 Explore\n   - 🏠 Home (highlighted as the active tab when on Home)\n   - 💬 Chat\n   - 🔔 Notifications\n   - \\# Feeds\n   - ☰ Lists\n   - 🔖 Saved\n   - 👤 Profile\n   - ⚙️ Settings\n3. **Footer**\n   - Terms of Service (link)\n   - Privacy Policy (link)\n   - Two pill buttons: **Feedback** (with chat icon) and **Help**.\n\nThe current SwiftUI drawer ships only a subset of the navigation rows and none of the header/footer chrome."
+  },
+  {
+    "id": "0151",
+    "title": "Composer opens with stale text pre-filled when no draft was resumed",
+    "status": "resolved",
+    "module": "BlueskyComposer",
+    "platform": "All",
+    "first_seen": "2026-05-07",
+    "closed": "2026-05-07",
+    "description": "Tapping the compose button (FAB / pencil icon / inline \"What's up?\" prompt) opens the composer with text **already in the editor** — leftover from a previous session that the user never saved as a draft. There was no draft-resume action; the user expected a blank editor.\n\nThis is the legacy single-slot auto-save (force-quit safety net) from #0034 firing on every fresh open. After #0100 shipped an explicit Drafts list with Save Draft / Discard / Keep Editing on cancel, the safety-net auto-restore is no longer the right default — it's surfacing pre-cancelled / pre-discarded state without consent."
+  },
+  {
+    "id": "0152",
+    "title": "Bookmarks fail to load: Codable decoding error on `bookmarks[0].uri`",
+    "status": "open",
+    "module": "BlueskyCore / BlueskyFeed",
+    "platform": "All",
+    "first_seen": "2026-05-07",
+    "closed": "",
+    "description": "Opening the Bookmarks screen surfaces a fatal decoding error and the list never renders:\n\n> Response decoding failed: DecodingError.keyNotFound: Key 'uri' not found in keyed decoding container. Path: `bookmarks[0]`. Debug description: No value associated with key CodingKeys(stringValue: \"uri\", intValue: nil) (\"uri\").\n\nThe SwiftUI `BookmarkView` (or whatever decodes the `app.bsky.bookmark.getBookmarks` response items) expects `uri` directly on each bookmark item, but the wire shape doesn't carry `uri` at that level. The JSON likely nests the post under a different key (commonly `subject`, `item`, or `post`), so the AT-URI lives at `bookmarks[0].subject.uri` — not `bookmarks[0].uri`."
   }
 ]
