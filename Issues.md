@@ -98,6 +98,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0139](issues/0139.md) | Liked-by, Reposted-by, and Quotes-of screens are missing | BlueskyFeed / BlueskyProfile | All | resolved |
 | [0140](issues/0140.md) | Thread view has no reply-sort dropdown | BlueskyFeed | All | resolved |
 | [0142](issues/0142.md) | Posts have no "Show more" / "Show less" expansion for long text | BlueskyFeed / BlueskyUI | All | resolved |
+| [0143](issues/0143.md) | Posts have no Translate option in the menu | BlueskyFeed / BlueskyUI | iOS / All | resolved |
 
 ---
 

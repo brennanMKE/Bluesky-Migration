@@ -1423,11 +1423,11 @@ window.ISSUES_DATA = [
   {
     "id": "0143",
     "title": "Posts have no Translate option in the menu",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyFeed / BlueskyUI",
     "platform": "iOS / All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "The React Native post controls include a **Translate** option (visible inline near the post body when language differs from app language, and also in the ellipsis menu). When tapped, it routes through the platform translate API or the web Translate service. The SwiftUI `PostCard` ellipsis menu (added in #0047) has Copy text / Mute thread / Report — no Translate option."
   },
   {
