@@ -1092,11 +1092,11 @@
   {
     "id": "0110",
     "title": "Message reactions (emoji) are not implemented",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyMessages",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-06",
     "description": "The React Native chat client supports per-message emoji reactions: a user picks an emoji from a picker, the reaction attaches to the message, and a small reaction strip renders below the bubble showing each emoji and its count. Tapping the strip opens a dialog listing who reacted with what. RN exposes the picker via the per-message context menu (covered by #0106) and via a \"+\" affordance on long-press.\n\nThe SwiftUI client has no reactions UI: no picker, no rendered reaction strip, no dialog."
   },
   {

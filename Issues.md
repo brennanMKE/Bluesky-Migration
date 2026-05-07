@@ -75,6 +75,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0107](issues/0107.md) | Message thread missing per-message timestamps and date dividers | BlueskyMessages | All | resolved |
 | [0108](issues/0108.md) | Message thread doesn't render link cards or post embeds inside bubbles | BlueskyMessages | All | resolved |
 | [0109](issues/0109.md) | Message thread has no scroll-to-bottom button or new-messages divider | BlueskyMessages | All | resolved |
+| [0110](issues/0110.md) | Message reactions (emoji) are not implemented | BlueskyMessages | All | resolved |
 
 ---
 
