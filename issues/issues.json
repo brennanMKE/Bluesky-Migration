@@ -972,11 +972,11 @@
   {
     "id": "0098",
     "title": "Composer is missing the threadgate / postgate (reply + quote permissions) picker",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyComposer",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-06",
     "description": "The React Native composer lets the author restrict who can reply to (`threadgate`) and who can quote (`postgate`) the post being created. RN exposes a `ThreadgateBtn` in the toolbar that opens a dialog with options: **Everyone**, **People you follow**, **People you mention**, **Lists** (multi-select of moderation lists), and **Nobody**. Quote permissions are similarly configurable.\n\nThese records are written alongside the post:\n\n- `app.bsky.feed.threadgate` — controls reply permissions.\n- `app.bsky.feed.postgate` — controls embed/quote permissions.\n\nThe SwiftUI composer has no threadgate / postgate UI. Every post is implicitly open to all replies and quotes, which is a privacy + control regression vs. RN."
   },
   {
