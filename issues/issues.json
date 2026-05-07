@@ -1538,5 +1538,25 @@
     "first_seen": "2026-05-07",
     "closed": "2026-05-07",
     "description": "After #0152 fixed the outer-item shape (`subject.uri` instead of flat `uri`) the Bookmarks screen still fails to load with a different decoding error:\n\n> Response decoding failed: DecodingError.keyNotFound: Key 'cid' not found in keyed decoding container. Path: `bookmarks[38].item`. Debug description: No value associated with key CodingKeys(stringValue: \"cid\", intValue: nil) (\"cid\").\n\nThis is *not* a re-occurrence of #0152. The path is now `bookmarks[38].item` — the embedded `item` field on the 38th bookmark is missing `cid`. #0152 modeled `item` as `PostView?`, but in the AT Proto lexicon `app.bsky.bookmark.defs#bookmarkView.item` is a **discriminated union** keyed on `$type`:\n\n- `app.bsky.feed.defs#postView` — a normal post (has `uri` + `cid`).\n- `app.bsky.feed.defs#notFoundPost` — `{ uri, notFound: true }` — **no `cid`**.\n- `app.bsky.feed.defs#blockedPost` — `{ uri, blocked: true, author }` — **no `cid`**.\n\nBookmark 38's `item` is one of the latter two variants (deleted or blocked post), and the current `PostView` decoder rejects it."
+  },
+  {
+    "id": "0155",
+    "title": "Profile content clipped on the leading edge (regression of #0089)",
+    "status": "resolved",
+    "module": "BlueskyProfile",
+    "platform": "iOS",
+    "first_seen": "2026-05-07",
+    "closed": "2026-05-07",
+    "description": "The Profile screen's content is shifted off the leading edge again — every text element below the banner has its first character (or more) clipped beyond the screen. This is the same symptom #0089 fixed (commit `54dcaf1`); the bug has either regressed or a sibling layout path is reproducing the same offset.\n\nVisible in the SwiftUI iPhone screenshot:\n\n- Display name renders as \"**rennan**\" (B clipped).\n- Handle as \"**brennan.sstools.co**\" (`@` clipped).\n- Stats row shows \"**86 followers**\" / \"359 following\" / \"1.4K posts\" (the `2` of `286` clipped).\n- Bio reads \"**adicalized by Teenage Mutant Ninja Turtles in the 0's**\" (R + 9 clipped).\n- \"**an Francisco, California**\" (S clipped).\n- Website URL \"**rennan.sstools.co**\" (b clipped).\n- Avatar circle on the banner is partially clipped on its left edge.\n- Tab strip ends at \"Likes\"; \"Feeds\" is pushed off-screen entirely.\n\nThe RN reference (attached) renders the same content correctly on the same iPhone width — every line starts at a normal leading inset and all six tabs (Posts / Replies / Media / Videos / Likes / Feeds) are visible."
+  },
+  {
+    "id": "0156",
+    "title": "iPhone bottom tab bar: profile-tab avatar selected-state has an oversized ring; tab spacing off",
+    "status": "open",
+    "module": "Bluesky-SwiftUI / BlueskyUI",
+    "platform": "iOS",
+    "first_seen": "2026-05-07",
+    "closed": "",
+    "description": "The custom bottom tab bar on the iPhone (from #0071) has a layout problem on the **Profile-tab-selected** state. The trailing avatar tab item shows a thick blue ring around the avatar that's substantially larger than the other tab icons, throwing the tab bar's visual rhythm off:\n\n- The four leading tabs (Home / Search / Chat / Notifications) render at one icon size with normal spacing.\n- The trailing Profile tab's selected-state ring is bigger than those icons, so the avatar+ring takes up more horizontal space than its slot allows.\n- Even spacing across the five tabs is broken — the avatar visually \"leans\" trailing.\n\nThe RN reference (attached, image #12 in the parent dispatch) shows the same five-tab bar with an evenly-spaced layout: when the Home tab is the active one in RN, the active state is a slight tint, not an oversized ring. There's no avatar in the RN bottom tab bar — it shows a profile silhouette icon."
   }
 ]
