@@ -1162,11 +1162,11 @@
   {
     "id": "0117",
     "title": "Following Feed Preferences screen is missing (hide replies / reposts / quotes)",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskySettings / BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "React Native exposes a dedicated **Following Feed Preferences** screen (Settings → Content & Media → Following feed preferences) where the user controls how the Following timeline composes:\n\n- Show replies (toggle) + \"From people you follow more than\" threshold slider.\n- Show reposts (toggle).\n- Show quote posts (toggle).\n- Show samples from your other feeds (Merge feed lab toggle).\n\nThese preferences live at `app.bsky.actor.defs#feedViewPref` keyed by `home`. The SwiftUI client has #0017 (filter toggles) marked resolved, but the implementation is per-tab transient state, not preference-backed and not exposed via Settings."
   },
   {
