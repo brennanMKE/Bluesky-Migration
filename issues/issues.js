@@ -993,11 +993,11 @@ window.ISSUES_DATA = [
   {
     "id": "0100",
     "title": "Composer is missing a Drafts list / save UI",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyComposer",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-06",
     "description": "The React Native composer has a `DraftsButton` in the top toolbar that opens a list of saved drafts: each draft shows a preview, timestamp, and tap-to-resume / swipe-to-delete affordances. A separate \"Save Draft\" action lets the user save the in-progress composer state without posting. The SwiftUI composer has only auto-save-on-dismiss persistence (per #0034), which means the user has no way to see, manage, or load past drafts.\n\nThis is filed separately from #0034 because that issue covers draft *persistence* mechanics; this one covers the user-facing **drafts UI** (button + list + manage)."
   },
   {
