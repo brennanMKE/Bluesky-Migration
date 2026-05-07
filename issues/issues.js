@@ -1443,11 +1443,11 @@ window.ISSUES_DATA = [
   {
     "id": "0145",
     "title": "Thread view doesn't honor or display threadgate-hidden replies",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "When the original poster has set a threadgate (composer issue #0098 covers writing one) restricting who can reply, the thread response from `getPostThread` flags certain replies as \"hidden by threadgate\". React Native renders these as either a tombstone (\"This reply is hidden\") or in a collapsed \"Hidden replies\" section below the visible replies, with a divider. The `ThreadView` in SwiftUI does neither — hidden replies either don't show or render alongside visible ones with no distinction.\n\nThere's also an OP-controlled mechanism to hide individual replies even without a threadgate; same UX applies."
   },
   {

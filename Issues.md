@@ -100,6 +100,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0142](issues/0142.md) | Posts have no "Show more" / "Show less" expansion for long text | BlueskyFeed / BlueskyUI | All | resolved |
 | [0143](issues/0143.md) | Posts have no Translate option in the menu | BlueskyFeed / BlueskyUI | iOS / All | resolved |
 | [0144](issues/0144.md) | Post menu missing "Copy link to post" and "Open in browser" | BlueskyFeed / BlueskyUI | All | resolved |
+| [0145](issues/0145.md) | Thread view doesn't honor or display threadgate-hidden replies | BlueskyFeed | All | resolved |
 
 ---
 
