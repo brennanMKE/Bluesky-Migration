@@ -1083,11 +1083,11 @@ window.ISSUES_DATA = [
   {
     "id": "0109",
     "title": "Message thread has no scroll-to-bottom button or new-messages divider",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyMessages",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-06",
     "description": "When a user scrolls up through history in a message thread and a new message arrives, the React Native client:\n\n1. **Does not auto-scroll** if the user is reading older messages — instead it shows a floating **\"Jump to newest\"** pill (FAB-style) anchored to the bottom-right.\n2. Renders a **\"New messages\"** centered divider above the first unread message so it's clear where you left off.\n\nThe SwiftUI implementation auto-scrolls to the bottom on every new message regardless of where the user is reading, which yanks them out of context. There's no FAB and no divider."
   },
   {
