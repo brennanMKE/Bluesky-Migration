@@ -1002,11 +1002,11 @@
   {
     "id": "0101",
     "title": "Composer doesn't warn when alt-text-required is on but images have no alt text",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyComposer",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-06",
     "description": "The React Native composer respects an \"alt text required\" preference (set in Accessibility settings). When that preference is on and the user has attached images without alt text, RN displays an `Admonition` error banner above the action bar reading approximately \"All images must have alt text\" and disables the Post button until alt text is provided.\n\nThe SwiftUI composer has the preference stored in `SettingsViewModel` (Accessibility) but doesn't consult it. A user with the preference enabled can still post without alt text, defeating the accessibility setting."
   },
   {
