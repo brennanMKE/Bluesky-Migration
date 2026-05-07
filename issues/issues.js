@@ -1183,11 +1183,11 @@ window.ISSUES_DATA = [
   {
     "id": "0119",
     "title": "Appearance settings missing color mode picker, dark theme variant, and font selection",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskySettings / BlueskyUI",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "`AppearanceSettingsScreen` currently shows only a font-size slider (12–24pt) and a static text note. The React Native equivalent has:\n\n- **Color mode** (radio): **System** / **Light** / **Dark**.\n- **Dark theme variant** (radio when Dark or System+dark): **Dark** / **Dim** (the lower-contrast OLED-friendly variant).\n- **Font** (radio): **System** / **Theme** (RN's branded font, Inter).\n- **Font size** (radio with 5 fixed levels) — RN uses 5 named tiers (XS / S / M / L / XL) rather than a continuous slider.\n\nThe SwiftUI `Theme` enum (`light` / `dark` / `dim`) already exists in `BlueskyUI`, but no UI lets the user pick. The app currently follows the system trait collection always, which means Dim is unreachable and Light/Dark can't be forced."
   },
   {
