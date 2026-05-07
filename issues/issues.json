@@ -932,11 +932,11 @@
   {
     "id": "0094",
     "title": "Deactivated-account screen is missing",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyAuth / Bluesky-SwiftUI",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-06",
     "description": "When a user signs in with an account whose status is `deactivated`, the React Native client shows a dedicated screen at `Bluesky-ReactNative/src/screens/Deactivated.tsx` with: an explanatory message, a \"Reactivate your account\" button (calls `com.atproto.server.activateAccount`), a \"Sign out\" button, and an account picker so the user can switch to a non-deactivated account. The SwiftUI client has no equivalent — at best the user lands on a broken/empty MainTabView, since `SessionManager` doesn't branch on the deactivated status."
   },
   {
