@@ -84,6 +84,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0116](issues/0116.md) | Thread Preferences screen is missing (sort order, group replies) | BlueskySettings | All | resolved |
 | [0117](issues/0117.md) | Following Feed Preferences screen is missing (hide replies / reposts / quotes) | BlueskySettings / BlueskyFeed | All | resolved |
 | [0118](issues/0118.md) | External Media Preferences screen is missing (per-source toggles for YouTube, Spotify, etc.) | BlueskySettings | All | resolved |
+| [0120](issues/0120.md) | Language settings missing app language and content-language multi-select | BlueskySettings | All | resolved |
 
 ---
 

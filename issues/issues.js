@@ -1193,11 +1193,11 @@ window.ISSUES_DATA = [
   {
     "id": "0120",
     "title": "Language settings missing app language and content-language multi-select",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskySettings",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "The React Native Language Settings screen has three distinct controls:\n\n1. **App language** — a single-select picker for the UI's display language (locale), applied via the i18n layer.\n2. **Primary post language** — single-select; the default `langs[]` value attached to new posts.\n3. **Content languages** — **multi-select** of which languages the user wants to see in feeds; posts in unselected languages are filtered.\n\nThe SwiftUI `LanguageSettingsScreen` only shows a hardcoded single-select list of 12 languages used as Post Languages. App language and content-language multi-select are missing entirely."
   },
   {
