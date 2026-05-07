@@ -1468,5 +1468,35 @@
     "first_seen": "2026-05-06",
     "closed": "2026-05-07",
     "description": "`PostEmbedView` renders a video embed as a still thumbnail with a play-icon overlay. Tapping it does nothing visible. The React Native client renders the video inline in feed (auto-playing muted when the cell is on screen, similar to Twitter / Instagram) and supports a fullscreen / lightbox playback mode on tap with player controls (scrubber, mute, time).\n\nThis is independent of the dedicated `VideoFeedView` (which has its own gaps in #0130) — it's the in-feed and in-thread playback path."
+  },
+  {
+    "id": "0148",
+    "title": "macOS top-right toolbar shows three icons (compose / list-star / chevrons) crammed in a single capsule",
+    "status": "resolved",
+    "module": "Bluesky-SwiftUI / BlueskyUI",
+    "platform": "macOS",
+    "first_seen": "2026-05-07",
+    "closed": "2026-05-07",
+    "description": "The top-right of the macOS SwiftUI app shows three icons packed into a single rounded capsule: a compose square (pencil), a list-with-stars glyph, and a `>>` double-chevron. The grouping reads as \"one button\" until you look closely; the icons are unequally sized, the capsule has a thin border that makes them look like a segmented control, and there's no spacing between them.\n\nThere is no Mac RN reference. The iOS RN reference (`Bluesky-ReactNative`, see attachment) places the equivalent affordances individually:\n\n- **Hamburger** at the very leading edge of the top bar (opens the sidebar drawer).\n- **Butterfly logo** centered.\n- **Hash (`#`)** at the trailing edge (opens \"My Feeds\" — see #0073).\n\nThe SwiftUI macOS top bar is conflating multiple concepts into one capsule, and the `>>` glyph in particular has no obvious purpose for the user — it's likely the macOS \"expand sidebar\" / \"show inspector\" affordance that has visually merged with the action cluster."
+  },
+  {
+    "id": "0149",
+    "title": "Raw rkey leaks into a feed/list row (\"77a502dfc060\" rendered as text)",
+    "status": "open",
+    "module": "BlueskyFeed / BlueskyUI",
+    "platform": "macOS",
+    "first_seen": "2026-05-07",
+    "closed": "",
+    "description": "In the macOS app, a feed/list row shows the feed name \"Popular With Friends\" alongside a raw 12-character hex string `77a502dfc060`. That string is the **rkey** of an `at://` URI (e.g. the trailing path component of `at://did:plc:.../app.bsky.feed.generator/77a502dfc060`) — internal storage detail that should never be user-visible.\n\nThis is a debug leak: somewhere in the feed/list row builder a developer-debug `Text(uri.rkey)` (or equivalent) is being rendered next to the proper display name.\n\nThe React Native iOS reference shows feed rows with name + creator handle + description + like count — never the rkey."
+  },
+  {
+    "id": "0150",
+    "title": "Sidebar drawer parity with React Native: profile header, full nav rows, footer legal links",
+    "status": "open",
+    "module": "Bluesky-SwiftUI",
+    "platform": "iOS / macOS",
+    "first_seen": "2026-05-07",
+    "closed": "",
+    "description": "The hamburger-triggered sidebar drawer was added in #0072 with a small set of navigation rows. The React Native reference (attached) shows a much richer drawer with three distinct zones, and the SwiftUI version is missing most of them.\n\n**RN drawer (top to bottom):**\n\n1. **Profile header**\n   - Avatar (circular, ~64pt).\n   - Display name (large, bold).\n   - Handle (\"@brennan.sstools.co\").\n   - \"286 followers · 359 following\" stats row.\n   - Tappable — navigates to the user's profile.\n2. **Navigation rows** (each with a leading SF-Symbol-equivalent icon):\n   - 🔍 Explore\n   - 🏠 Home (highlighted as the active tab when on Home)\n   - 💬 Chat\n   - 🔔 Notifications\n   - \\# Feeds\n   - ☰ Lists\n   - 🔖 Saved\n   - 👤 Profile\n   - ⚙️ Settings\n3. **Footer**\n   - Terms of Service (link)\n   - Privacy Policy (link)\n   - Two pill buttons: **Feedback** (with chat icon) and **Help**.\n\nThe current SwiftUI drawer ships only a subset of the navigation rows and none of the header/footer chrome."
   }
 ]

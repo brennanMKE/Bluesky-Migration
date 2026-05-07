@@ -103,6 +103,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0145](issues/0145.md) | Thread view doesn't honor or display threadgate-hidden replies | BlueskyFeed | All | resolved |
 | [0146](issues/0146.md) | Focal post in thread view has no visual emphasis (larger avatar, larger text, full date, expanded stats) | BlueskyFeed / BlueskyUI | All | resolved |
 | [0147](issues/0147.md) | Video embeds render as a thumbnail; need inline / fullscreen player | BlueskyUI / BlueskyFeed | All | resolved |
+| [0148](issues/0148.md) | macOS top-right toolbar shows three icons crammed in a single capsule | Bluesky-SwiftUI / BlueskyUI | macOS | resolved |
 
 ---
 
