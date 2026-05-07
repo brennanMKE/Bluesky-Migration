@@ -92,6 +92,8 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0126](issues/0126.md) | List detail screen missing the "About" tab | BlueskyLists | All | resolved |
 | [0127](issues/0127.md) | Lists have no edit or delete UI | BlueskyLists | All | resolved |
 | [0128](issues/0128.md) | Starter Pack create is a single sheet; RN uses a multi-step wizard | BlueskyLists | All | resolved |
+| [0134](issues/0134.md) | Mutes / Blocks lists have no search field | BlueskyModeration | All | resolved |
+| [0135](issues/0135.md) | Report dialog uses flat reasons; needs categorized picker + labeler selection | BlueskyModeration | All | resolved |
 
 ---
 

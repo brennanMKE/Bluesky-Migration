@@ -1292,61 +1292,61 @@
   {
     "id": "0130",
     "title": "Video feed has no interactive overlays (mute, like, comment, share, profile)",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "`VideoFeedView` renders a vertical paging `TabView` of `AVPlayer`-backed videos with an avatar, handle, bio, and post text overlay. It is missing the interactive controls the React Native video feed has (TikTok-style):\n\n- **Mute toggle** (top-right or bottom-right) — videos default muted; users tap to unmute.\n- **Like / repost / reply / share** action buttons stacked vertically on the right edge, with counts.\n- **Comments / replies** entry — opens the post's thread.\n- **Avatar/handle** is tappable to navigate to the author's profile.\n- **Scrubber** at the bottom showing playback progress.\n- **Tap to pause** in the center — RN supports a long-press / tap-to-pause gesture overlay.\n\nWithout these, the video feed is a passive viewer with no engagement affordances."
   },
   {
     "id": "0131",
     "title": "Lists hub missing \"My Lists\" vs \"Subscribed\" sections",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyLists",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "`ListsScreen` shows a single flat list of every list the user can see (created + subscribed). The React Native reference splits this into segmented sections — **My Lists** (ones the viewer created) and **Subscribed Lists** (ones the viewer has subscribed to without owning) — typically as either tabs or labeled sections in a single scroll. This separation matters because the actions per row differ: edit/delete on owned lists, unsubscribe on subscribed."
   },
   {
     "id": "0132",
     "title": "Muted Words & Tags screen is missing",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyModeration",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "The React Native moderation hub includes a **Muted Words & Tags** entry that opens a screen (or dialog) where users curate a list of strings to filter from feeds. Each entry can target tag-only or text-anywhere matches, and can target specific timeframes (forever / 24h / 7d / 30d) and contexts (content vs tags). The SwiftUI moderation surface has no equivalent — there is no way to mute a specific word, hashtag, or domain.\n\nThis is one of the most-used moderation tools in RN and its absence is a significant gap."
   },
   {
     "id": "0133",
     "title": "Moderation hub missing rows (Interaction settings, Verification, Advanced labelers) and proper section grouping",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyModeration",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "The React Native moderation hub is divided into three labeled sections, each with specific rows. The SwiftUI `ModerationScreen` uses different (and fewer) sections and skips several rows.\n\n**RN section structure:**\n\n- **Moderation tools**: Interaction settings → Muted words & tags → Moderation lists → Muted accounts → Blocked accounts → Verification settings.\n- **Content filters**: Adult content toggle (gated by age assurance) → per-label visibility prefs.\n- **Advanced**: Subscribed labelers (with availability status + cleanup action).\n\n**SwiftUI current state**: two sections (\"Account Actions\", \"Content\") containing only Mutes, Blocks, Mod Lists, and (under Content) Adult-content / Filters. Missing rows: **Interaction settings**, **Muted words & tags** (filed separately as #0132), **Verification settings**, **Advanced / labelers** section with subscribed-labeler list."
   },
   {
     "id": "0134",
     "title": "Mutes / Blocks lists have no search field",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyModeration",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "`MutesScreen` and `BlocksScreen` render flat paginated lists with no search affordance. The React Native equivalents (built on `ProfileCard`) include a search field at the top so users with long mute/block lists can find and unmute/unblock a specific account quickly."
   },
   {
     "id": "0135",
     "title": "Report dialog uses flat reasons; needs categorized picker + labeler selection",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyModeration",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "`ReportDialog` exposes a small flat list of report reasons (six entries). The React Native reference uses a richer model:\n\n1. **Categorized reason tree** — top-level categories (Spam, Harassment, Sexual content, Violence/threats, Illegal, Misleading, Rude, Other) with sub-reasons under each. RN maps these to Ozone-namespaced types (`REASONVIOLENCE`, `REASONSEXUAL`, `REASONHARASSMENT`, etc.) and falls back to base `com.atproto.moderation.defs#reason*` codes for older labelers.\n2. **Labeler picker** — when multiple labelers can handle a category, RN shows a labeler list so the user can choose which moderation service to send the report to. The available labelers are filtered by both the subject type and the chosen reason.\n\nThe SwiftUI version skips both: reasons are flat, and the report always goes to a single hard-coded labeler (or no labeler at all)."
   },
   {
