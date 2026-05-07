@@ -1112,11 +1112,11 @@
   {
     "id": "0112",
     "title": "Compose bar in DMs doesn't detect mentions, links, or hashtags (no facets)",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyMessages",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-06",
     "description": "When a user types `@alice` or `https://example.com` or `#tech` in the React Native message composer, RN runs the same facet-builder used by the post composer (`useExtractEmbedFromFacets`) and:\n\n- Resolves `@handle` to a DID and includes a mention facet in the sent message.\n- Detects URLs and either includes a link facet, or upgrades the message to include a link-card embed.\n- Highlights mentions/links inline as the user types.\n\nThe SwiftUI compose bar (`MessageThreadScreen.swift` ~lines 104–128) sends the raw text via `MessageInput.text` without facets and without inline highlighting. Recipients see plain text where mentions and links should be tappable."
   },
   {
