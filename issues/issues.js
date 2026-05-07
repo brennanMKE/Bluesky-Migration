@@ -1203,11 +1203,11 @@ window.ISSUES_DATA = [
   {
     "id": "0121",
     "title": "Accessibility settings missing larger-alt-badge toggle and haptic feedback toggle",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskySettings",
     "platform": "iOS / All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "The React Native Accessibility settings screen offers three controls SwiftUI doesn't:\n\n- **Display larger alt-text badges** — toggle that increases the size of the small \"ALT\" badge on images, for low-vision users who want to know at a glance which images are described.\n- **Disable haptic feedback** (iOS only) — toggle to disable taptic feedback on actions.\n- **Require alt text** — already in SwiftUI but not consumed by composer (see #0101).\n\nSwiftUI's `AccessibilitySettingsScreen` has Reduce Motion, Open Links In-App, and Require Alt Text, but is missing the larger-badge toggle and the haptics toggle."
   },
   {
