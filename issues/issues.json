@@ -1222,31 +1222,31 @@
   {
     "id": "0123",
     "title": "Settings hub missing Help link",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskySettings",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "The React Native Settings hub includes a **Help** row between Languages and About that opens the Bluesky help desk in the system browser (`https://blueskyweb.zendesk.com/` or whatever `HELP_DESK_URL` resolves to). The SwiftUI `SettingsScreen` has no Help row at all."
   },
   {
     "id": "0124",
     "title": "About screen missing system-info section, status link, and dev-mode tools",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskySettings",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "The React Native About screen contains, in addition to the version and legal links the SwiftUI version has:\n\n- **System Info** section: device model, OS version, build number, build channel (release / TestFlight / dev), session DID — copyable for support tickets.\n- **Status Page** link to the Bluesky status site.\n- **Cache management**: \"Clear cache\" button that wipes the cache store (matches \"Clear data\" on Android / \"Reset\" on iOS).\n- **Dev / Debug tools** (only visible in dev builds): toggles for verbose logging, force a specific feature flag, etc.\n- **Build details** beyond version: build hash, build date.\n\nThe SwiftUI `AboutScreen` shows only Version, ToS, Privacy, Community Guidelines, Source Code."
   },
   {
     "id": "0125",
     "title": "List detail screen missing header (avatar, name, description, creator, action buttons)",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyLists",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "`ListDetailScreen` jumps straight to a tab strip (Members / Feed) with no header. The React Native reference (`Bluesky-ReactNative/src/screens/ProfileList/`) renders a full header above the tabs:\n\n- List avatar (square thumbnail, ~64pt).\n- List name (large title).\n- Purpose badge (Curate / Moderation).\n- Description text.\n- Creator handle row (\"by @alice.bsky.social\", tappable to profile).\n- Member count + subscriber count.\n- **Primary action**: Subscribe / Unsubscribe (for mod lists) or Pin / Unpin (for curate lists).\n- **Secondary actions menu** (ellipsis): Mute list, Block list (mod lists), Share list (copy link / sheet), Report list, Edit list (covered separately in #0127), Delete list (covered separately in #0127).\n\nWithout a header, users have no context about what list they're looking at and no way to subscribe/manage."
   },
   {
