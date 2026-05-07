@@ -1283,11 +1283,11 @@ window.ISSUES_DATA = [
   {
     "id": "0129",
     "title": "Starter Pack screen missing included feeds, share button, and QR/deep-link affordances",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyLists",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "`StarterPackScreen` shows the header, member count, and a list of sample members. The React Native reference also displays:\n\n- **Included feeds** — a section listing feed generators bundled in the pack with Pin / Add buttons.\n- **Share** — a button that opens a system share sheet with the deep link (`https://bsky.app/starter-pack/<did>/<rkey>`).\n- **QR code** — RN can render a QR for the deep link inside a sheet, useful for in-person sharing.\n- **Copy link** — quick affordance for clipboard.\n\nThe \"Follow All\" button exists in SwiftUI, but the discoverability and shareability features are missing."
   },
   {
