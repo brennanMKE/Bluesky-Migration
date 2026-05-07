@@ -962,11 +962,11 @@
   {
     "id": "0097",
     "title": "Composer is missing the self-labels (content warning) picker",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyComposer",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-06",
     "description": "Before posting, the React Native composer lets a user attach self-labels — content warnings that downstream clients use to blur or hide the post. The labels include `nudity`, `sexual`, `porn`, and `graphic-media` (this set follows the AT Proto self-label vocabulary). RN exposes them via a `LabelsBtn` in the composer toolbar that opens a dialog with toggleable rows (`Bluesky-ReactNative/src/view/com/composer/labels/`).\n\nThe SwiftUI composer has no UI for self-labels. A user cannot mark their own post as NSFW, which means SwiftUI-posted content is mis-categorized when viewed by users who hide adult content."
   },
   {
