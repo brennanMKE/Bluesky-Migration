@@ -71,6 +71,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0059](issues/0059.md) | Network reachability gating using Network framework | BlueskyNetworking / BlueskyKit | All | open |
 | [0060](issues/0060.md) | Saved Posts section does not match Bluesky website UX | BlueskyFeed / Bluesky-SwiftUI | All | open |
 | [0105](issues/0105.md) | Group chat thread bubbles missing sender info row | BlueskyMessages | All | resolved |
+| [0106](issues/0106.md) | Message bubbles have no per-message context menu | BlueskyMessages | All | resolved |
 
 ---
 

@@ -1053,11 +1053,11 @@ window.ISSUES_DATA = [
   {
     "id": "0106",
     "title": "Message bubbles have no per-message context menu",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyMessages",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-06",
     "description": "In React Native, long-pressing (or right-clicking on web) any message bubble opens a context menu with: **React** (emoji picker), **Copy**, **Translate**, **Delete** (own messages only), and **Report** (others' messages). The SwiftUI `MessageBubble` has no gesture handlers and no menu — taps and long-presses do nothing. There's no way to copy a message, delete a sent mistake, or report abuse from the thread surface."
   },
   {
