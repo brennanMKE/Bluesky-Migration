@@ -1212,11 +1212,11 @@
   {
     "id": "0122",
     "title": "Activity Privacy settings screen is missing",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskySettings",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "React Native has a dedicated **Activity Privacy Settings** screen (Settings → Privacy → Activity privacy) controlling who is allowed to receive notifications when you interact with their content (likes, reposts):\n\n- \"Allow others to be notified of your likes / reposts\" — radio: **Anyone** / **People you follow** / **Mutuals only** / **Nobody**.\n\nThis maps to `app.bsky.actor.defs#postInteractionSettingsPref` (or the activity-privacy variant). SwiftUI's `PrivacySettingsScreen` is a stub (see #0114) and does not link out to a per-activity privacy screen."
   },
   {
