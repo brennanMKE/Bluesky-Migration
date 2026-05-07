@@ -1483,11 +1483,11 @@ window.ISSUES_DATA = [
   {
     "id": "0149",
     "title": "Raw rkey leaks into a feed/list row (\"77a502dfc060\" rendered as text)",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyFeed / BlueskyUI",
     "platform": "macOS",
     "first_seen": "2026-05-07",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "In the macOS app, a feed/list row shows the feed name \"Popular With Friends\" alongside a raw 12-character hex string `77a502dfc060`. That string is the **rkey** of an `at://` URI (e.g. the trailing path component of `at://did:plc:.../app.bsky.feed.generator/77a502dfc060`) — internal storage detail that should never be user-visible.\n\nThis is a debug leak: somewhere in the feed/list row builder a developer-debug `Text(uri.rkey)` (or equivalent) is being rendered next to the proper display name.\n\nThe React Native iOS reference shows feed rows with name + creator handle + description + like count — never the rkey."
   },
   {
