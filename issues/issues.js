@@ -1013,41 +1013,41 @@ window.ISSUES_DATA = [
   {
     "id": "0102",
     "title": "Composer image grid does not support reordering",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyComposer",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-06",
     "description": "When multiple images are attached to a post, the React Native composer's `Gallery` lets the user drag-and-drop them to reorder before posting. The SwiftUI composer renders a fixed 2-column grid (`imageGrid`) with no reorder affordance. The order is effectively the pick order, and the user has to remove + re-pick to change it."
   },
   {
     "id": "0103",
     "title": "Composer video attachment is missing the captions / subtitles upload",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyComposer",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-06",
     "description": "The React Native composer lets a video attachment carry both alt text *and* a captions track (WebVTT). RN's `SubtitleDialogBtn` opens a `SubtitleDialog` where the user can upload a `.vtt` file (or paste captions inline) and the captions blob is uploaded alongside the video and referenced from `app.bsky.embed.video.captions`.\n\nThe SwiftUI composer supports alt text on videos but has no captions UI. A SwiftUI-posted video cannot carry captions, which fails accessibility parity with RN."
   },
   {
     "id": "0104",
     "title": "Conversation list row missing timestamp, system-message handling, and multi-line preview",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyMessages",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-06",
     "description": "The SwiftUI `ConvoRow` (in `ConversationListScreen.swift` ~lines 168–179) shows the avatar, display name, and a single-line of `message.text`. The React Native reference shows several more details:\n\n- **Relative timestamp** right-aligned next to the unread badge (e.g. \"2h\").\n- **System message handling**: when the last \"message\" is actually a system event (\"Conversation deleted\", \"@alice left the group\", \"@bob added @carol\"), RN renders an italicized system text instead of `message.text`.\n- **Two-line preview** with truncation, not single-line. Long messages or multi-line content are properly handled.\n- **Sender prefix on group chats**: e.g. \"@alice: hello\" so the row identifies who sent the last message in a group thread."
   },
   {
     "id": "0105",
     "title": "Group chat thread bubbles missing sender info row",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyMessages",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-06",
     "description": "In a group chat, the React Native message thread shows the sender's display name (or handle) above the first bubble in a run from each participant. SwiftUI's `MessageBubble` (`MessageThreadScreen.swift` ~lines 163–186) renders the bubble alone, with no per-sender attribution. In a 5-person group thread, every \"other\" bubble looks the same; the user can't tell who said what without tapping into the avatar.\n\nIn direct (1:1) threads the omission is fine — there's only one \"other\" sender. The bug is specifically the group case."
   },
   {
