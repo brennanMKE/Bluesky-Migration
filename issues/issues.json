@@ -1492,11 +1492,11 @@
   {
     "id": "0150",
     "title": "Sidebar drawer parity with React Native: profile header, full nav rows, footer legal links",
-    "status": "open",
+    "status": "resolved",
     "module": "Bluesky-SwiftUI",
     "platform": "iOS / macOS",
     "first_seen": "2026-05-07",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "The hamburger-triggered sidebar drawer was added in #0072 with a small set of navigation rows. The React Native reference (attached) shows a much richer drawer with three distinct zones, and the SwiftUI version is missing most of them.\n\n**RN drawer (top to bottom):**\n\n1. **Profile header**\n   - Avatar (circular, ~64pt).\n   - Display name (large, bold).\n   - Handle (\"@brennan.sstools.co\").\n   - \"286 followers · 359 following\" stats row.\n   - Tappable — navigates to the user's profile.\n2. **Navigation rows** (each with a leading SF-Symbol-equivalent icon):\n   - 🔍 Explore\n   - 🏠 Home (highlighted as the active tab when on Home)\n   - 💬 Chat\n   - 🔔 Notifications\n   - \\# Feeds\n   - ☰ Lists\n   - 🔖 Saved\n   - 👤 Profile\n   - ⚙️ Settings\n3. **Footer**\n   - Terms of Service (link)\n   - Privacy Policy (link)\n   - Two pill buttons: **Feedback** (with chat icon) and **Help**.\n\nThe current SwiftUI drawer ships only a subset of the navigation rows and none of the header/footer chrome."
   }
 ]

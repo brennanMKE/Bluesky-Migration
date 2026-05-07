@@ -105,6 +105,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0147](issues/0147.md) | Video embeds render as a thumbnail; need inline / fullscreen player | BlueskyUI / BlueskyFeed | All | resolved |
 | [0148](issues/0148.md) | macOS top-right toolbar shows three icons crammed in a single capsule | Bluesky-SwiftUI / BlueskyUI | macOS | resolved |
 | [0149](issues/0149.md) | Raw rkey leaks into a feed/list row ("77a502dfc060" rendered as text) | BlueskyFeed / BlueskyUI | macOS | resolved |
+| [0150](issues/0150.md) | Sidebar drawer parity with React Native: profile header, full nav rows, footer legal links | Bluesky-SwiftUI | iOS / macOS | resolved |
 
 ---
 
