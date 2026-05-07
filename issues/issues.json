@@ -1272,11 +1272,11 @@
   {
     "id": "0128",
     "title": "Starter Pack create is a single sheet; RN uses a multi-step wizard",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyLists",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "`StarterPackCreateSheet` collects name, description, and a list selection in a single sheet. The React Native client uses a multi-step wizard at `Bluesky-ReactNative/src/screens/StarterPack/Wizard/`:\n\n1. **Profiles** — actor picker; the user searches and selects accounts to include directly (without needing to first build a list).\n2. **Feeds** — feed picker; up to N feeds to include.\n3. **Details** — name, description, optional banner.\n4. **Preview** — preview how the starter pack will appear; final Create button.\n\nThe single-sheet version misses the feeds slot entirely and forces the user to pre-build a list before creating the pack."
   },
   {
