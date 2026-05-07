@@ -72,6 +72,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0060](issues/0060.md) | Saved Posts section does not match Bluesky website UX | BlueskyFeed / Bluesky-SwiftUI | All | open |
 | [0105](issues/0105.md) | Group chat thread bubbles missing sender info row | BlueskyMessages | All | resolved |
 | [0106](issues/0106.md) | Message bubbles have no per-message context menu | BlueskyMessages | All | resolved |
+| [0107](issues/0107.md) | Message thread missing per-message timestamps and date dividers | BlueskyMessages | All | resolved |
 
 ---
 

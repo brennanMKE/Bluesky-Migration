@@ -1062,11 +1062,11 @@
   {
     "id": "0107",
     "title": "Message thread missing per-message timestamps and date dividers",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyMessages",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-06",
     "description": "Two related gaps in the SwiftUI message thread:\n\n1. **No per-message timestamps.** RN shows a relative timestamp under each bubble (or under the last bubble in a clustered run from one sender). SwiftUI bubbles have no timestamp at all.\n2. **No date dividers.** RN renders a centered date pill (\"Today\", \"Yesterday\", \"Mar 4\") between groups of messages from different days. SwiftUI's `LazyVStack` is one continuous list with no day separators.\n\nTogether these make it hard to anchor a conversation in time."
   },
   {
