@@ -922,11 +922,11 @@
   {
     "id": "0093",
     "title": "Forgot-password recovery flow is missing",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyAuth",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-06",
     "description": "The React Native client lets a user reset a forgotten password directly inside the app: **`ForgotPasswordForm`** (enter email, request reset token), **`SetNewPasswordForm`** (enter token + new password) and **`PasswordUpdatedForm`** (confirmation). The entry point is a \"Forgot?\" link inline with the password field in `LoginForm.tsx` (lines 256–266).\n\nThe SwiftUI `LoginView` has no \"Forgot password?\" link and no recovery screens at all. A user who has forgotten their password is locked out unless they leave the app and reset on bsky.app."
   },
   {
