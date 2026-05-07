@@ -102,6 +102,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0144](issues/0144.md) | Post menu missing "Copy link to post" and "Open in browser" | BlueskyFeed / BlueskyUI | All | resolved |
 | [0145](issues/0145.md) | Thread view doesn't honor or display threadgate-hidden replies | BlueskyFeed | All | resolved |
 | [0146](issues/0146.md) | Focal post in thread view has no visual emphasis (larger avatar, larger text, full date, expanded stats) | BlueskyFeed / BlueskyUI | All | resolved |
+| [0147](issues/0147.md) | Video embeds render as a thumbnail; need inline / fullscreen player | BlueskyUI / BlueskyFeed | All | resolved |
 
 ---
 

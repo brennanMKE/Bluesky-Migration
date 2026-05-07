@@ -1462,11 +1462,11 @@
   {
     "id": "0147",
     "title": "Video embeds render as a thumbnail; need inline / fullscreen player",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyUI / BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "`PostEmbedView` renders a video embed as a still thumbnail with a play-icon overlay. Tapping it does nothing visible. The React Native client renders the video inline in feed (auto-playing muted when the cell is on screen, similar to Twitter / Instagram) and supports a fullscreen / lightbox playback mode on tap with player controls (scrubber, mute, time).\n\nThis is independent of the dedicated `VideoFeedView` (which has its own gaps in #0130) — it's the in-feed and in-thread playback path."
   }
 ]
