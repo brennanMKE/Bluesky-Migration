@@ -81,6 +81,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0113](issues/0113.md) | Account settings is a stub; needs full implementation (email, password, handle, birthday, deactivate, export) | BlueskySettings | All | resolved |
 | [0114](issues/0114.md) | Privacy & Security settings missing inline 2FA toggle, app-passwords link with badge, and PWI opt-out | BlueskySettings | All | resolved |
 | [0115](issues/0115.md) | Notification settings missing per-type sub-screens, push permission UI, and email toggles | BlueskySettings | iOS / All | resolved |
+| [0116](issues/0116.md) | Thread Preferences screen is missing (sort order, group replies) | BlueskySettings | All | resolved |
 
 ---
 

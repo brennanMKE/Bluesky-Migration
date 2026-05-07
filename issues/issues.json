@@ -1152,11 +1152,11 @@
   {
     "id": "0116",
     "title": "Thread Preferences screen is missing (sort order, group replies)",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskySettings",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-06",
     "description": "The React Native client has a dedicated **Thread Preferences** screen at Settings → Content & Media → Thread preferences (`Bluesky-ReactNative/src/screens/Settings/ThreadPreferences/`). It has:\n\n- **Sort replies** — radio: **Hot** (engagement), **Top** (likes), **Newest**, **Oldest**, **Random**.\n- **Group threads** — toggle: tree-style (grouped by sub-conversation) vs flat.\n- **Hide replies by muted accounts**, **Hide replies by people you don't follow** — toggles.\n\nThese preferences ride in `app.bsky.actor.defs#threadViewPref` inside `app.bsky.actor.putPreferences`. The SwiftUI app has no Thread Preferences screen and the thread view (per audit feed) doesn't honor these prefs anyway."
   },
   {
