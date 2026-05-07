@@ -983,11 +983,11 @@ window.ISSUES_DATA = [
   {
     "id": "0099",
     "title": "Composer is missing the GIF picker (Tenor)",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyComposer",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-06",
     "description": "The React Native composer toolbar includes a GIF button (`SelectGifBtn`) that opens a Tenor-backed GIF search dialog. The selected GIF is attached to the post as an external embed (`app.bsky.embed.external` pointing at the Tenor URL with thumbnail). The SwiftUI composer toolbar has only image and video pickers — no GIF support.\n\nTracked separately from #0034 (which lists video picker / link card preview / threading / drafts) because GIF is a distinct media path with its own search UI and embed type."
   },
   {
