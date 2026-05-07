@@ -942,11 +942,11 @@
   {
     "id": "0095",
     "title": "Takendown / suspended-account appeal screen is missing",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyAuth / Bluesky-SwiftUI",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-06",
     "description": "When a user signs in to an account whose status is `takendown` (or `suspended`), the React Native client routes to a dedicated screen at `Bluesky-ReactNative/src/screens/Takendown.tsx` that explains the suspension, links to the moderation policy, and includes an in-app appeal submission UI. The SwiftUI client has no equivalent — a takendown account currently has no surface and lands on a broken MainTabView the same way #0094 (deactivated) does."
   },
   {
