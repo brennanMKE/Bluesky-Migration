@@ -1133,11 +1133,11 @@ window.ISSUES_DATA = [
   {
     "id": "0114",
     "title": "Privacy & Security settings missing inline 2FA toggle, app-passwords link with badge, and PWI opt-out",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskySettings",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-06",
     "description": "`PrivacySettingsScreen` (lines 26–49) is a stub with placeholder text. The React Native equivalent is a full screen with:\n\n- **Two-factor authentication** — inline `Email2FAToggle` showing current state and flipping it via `com.atproto.server.update2faEmail`.\n- **App passwords** — link row with a badge showing the count of active app passwords. (Currently SwiftUI has the `AppPasswordsScreen` but no entry point from Privacy.)\n- **Logged-out visibility (PWI opt-out)** — toggle + admonition explaining \"When off, signed-out users cannot view your profile or posts on the web\". This is the `noUnauthenticated` label on the actor.\n- **Activity privacy** (covered separately by #0122) — link to dedicated screen.\n- **Interaction settings** — link to \"Who can reply / quote / DM\" screen (covered by #0140 once filed in moderation pass — but the privacy entry point is here)."
   },
   {

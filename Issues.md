@@ -79,6 +79,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0111](issues/0111.md) | Message thread doesn't render system messages (e.g. "@alice added @bob") | BlueskyMessages | All | resolved |
 | [0112](issues/0112.md) | Compose bar in DMs doesn't detect mentions, links, or hashtags (no facets) | BlueskyMessages | All | resolved |
 | [0113](issues/0113.md) | Account settings is a stub; needs full implementation (email, password, handle, birthday, deactivate, export) | BlueskySettings | All | resolved |
+| [0114](issues/0114.md) | Privacy & Security settings missing inline 2FA toggle, app-passwords link with badge, and PWI opt-out | BlueskySettings | All | resolved |
 
 ---
 
