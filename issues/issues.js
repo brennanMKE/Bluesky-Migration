@@ -1453,11 +1453,11 @@ window.ISSUES_DATA = [
   {
     "id": "0146",
     "title": "Focal post in thread view has no visual emphasis (larger avatar, larger text, full date, expanded stats)",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyFeed / BlueskyUI",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "In the React Native thread view, the **focal** post (the one the user navigated to) is visually distinct from its parents and replies. RN's `ThreadItemAnchor`:\n\n- Uses a **larger avatar** (~42pt vs the ~32pt used elsewhere).\n- Uses **larger text** (`text_lg` body).\n- Shows a **full timestamp** (\"Mar 4, 2026 · 10:42 AM\"), not just the relative \"2h\" used in feed.\n- Renders an **expanded stats section**: tappable \"X likes · Y reposts · Z quotes\" rows that open the screens in #0139.\n- Includes a **\"Who can reply\"** badge if the thread has a threadgate.\n- The avatar/handle/body block has more vertical breathing room.\n\nThe SwiftUI `ThreadView` reuses the same `PostCard` for every node with no per-position styling. The user can't immediately tell which post they tapped into."
   },
   {
