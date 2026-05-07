@@ -1382,11 +1382,11 @@
   {
     "id": "0139",
     "title": "Liked-by, Reposted-by, and Quotes-of screens are missing",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyFeed / BlueskyProfile",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "In the React Native client, tapping the like, repost, or quote count on a focal post in `ThreadView` opens a paginated list of the corresponding actors / posts:\n\n- **Liked by** — `app.bsky.feed.getLikes` → list of profiles who liked.\n- **Reposted by** — `app.bsky.feed.getRepostedBy` → list of profiles who reposted.\n- **Quotes of** — `app.bsky.feed.getQuotes` → feed of posts quoting this one.\n\nThe SwiftUI thread view shows the counts (or doesn't, in the focal-post case) but the counts are not tappable and the destination screens don't exist."
   },
   {

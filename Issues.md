@@ -95,6 +95,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0134](issues/0134.md) | Mutes / Blocks lists have no search field | BlueskyModeration | All | resolved |
 | [0135](issues/0135.md) | Report dialog uses flat reasons; needs categorized picker + labeler selection | BlueskyModeration | All | resolved |
 | [0138](issues/0138.md) | Post Interaction Settings screen tree is missing (default reply / quote / DM rules) | BlueskyModeration | All | resolved |
+| [0139](issues/0139.md) | Liked-by, Reposted-by, and Quotes-of screens are missing | BlueskyFeed / BlueskyProfile | All | resolved |
 
 ---
 
