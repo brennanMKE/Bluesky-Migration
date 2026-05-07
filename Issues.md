@@ -78,6 +78,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0110](issues/0110.md) | Message reactions (emoji) are not implemented | BlueskyMessages | All | resolved |
 | [0111](issues/0111.md) | Message thread doesn't render system messages (e.g. "@alice added @bob") | BlueskyMessages | All | resolved |
 | [0112](issues/0112.md) | Compose bar in DMs doesn't detect mentions, links, or hashtags (no facets) | BlueskyMessages | All | resolved |
+| [0113](issues/0113.md) | Account settings is a stub; needs full implementation (email, password, handle, birthday, deactivate, export) | BlueskySettings | All | resolved |
 
 ---
 

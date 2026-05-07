@@ -1122,11 +1122,11 @@
   {
     "id": "0113",
     "title": "Account settings is a stub; needs full implementation (email, password, handle, birthday, deactivate, export)",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskySettings",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-06",
     "description": "`AccountSettingsScreen` is currently a private stub inside `SettingsScreen.swift` (lines 120–133) that displays a note directing users to bsky.app for email / password / 2FA changes. The React Native client implements all of these inline:\n\n- **Email**: change email + verification status with badge color (verified / unverified) + resend verification.\n- **Password**: change password (current + new + confirm) inline.\n- **Handle**: change handle (with `.bsky.social` domain or custom domain — `com.atproto.identity.updateHandle`).\n- **Birthday**: edit birthdate.\n- **Two-factor (Email 2FA)**: toggle.\n- **Switch hosting provider / migrate PDS**: advanced.\n- **Export my data**: download CAR file.\n- **Deactivate account**: with warning + final-confirm.\n- **Delete account**: end-of-life flow.\n\nThe stub directs users out of the app, which is a usability regression — these are core account operations that RN handles natively."
   },
   {
