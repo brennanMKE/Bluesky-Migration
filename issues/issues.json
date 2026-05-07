@@ -1392,31 +1392,31 @@
   {
     "id": "0140",
     "title": "Thread view has no reply-sort dropdown",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "The React Native thread view exposes a header dropdown (RN's `HeaderDropdown`) where the user picks how replies are sorted: **Hot** (engagement-weighted), **Top** (likes), **Newest**, **Oldest**, **Random**. The default comes from the user's Thread Preferences (see #0116). The SwiftUI thread renders replies in API order with no UI to change sort."
   },
   {
     "id": "0141",
     "title": "Thread view doesn't render nested reply tree (no indentation, no connectors, no \"show more replies\")",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "`ThreadView` flattens replies with `flattenThread()` and renders them in a single column at uniform indentation. The React Native client renders a tree:\n\n- **Indentation** per nesting level (RN uses a `TREE_INDENT` constant).\n- **Vertical connector lines** on the left edge of each row, joining a reply to its parent above.\n- **\"Show N more replies\"** expanders for collapsed branches deeper than the default depth.\n- **Avatar clustering**: the thinner left rail uses smaller avatars when nested.\n\nWithout this rendering, multi-branch threads collapse into a flat sequence and the conversation structure is lost."
   },
   {
     "id": "0142",
     "title": "Posts have no \"Show more\" / \"Show less\" expansion for long text",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyFeed / BlueskyUI",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "The React Native client clamps long post bodies to ~25 lines (`MAX_POST_LINES`) and shows a **\"Show more\"** button below; tapping expands the full text and replaces the button with **\"Show less\"**. The SwiftUI `PostCard` / `PostBodyView` either renders the full body uncapped (in feed) or applies a fixed `lineLimit` set by the caller (in compact contexts) — but there's no expansion control either way. Long-form posts break the feed visually with massive cards."
   },
   {
