@@ -87,6 +87,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0120](issues/0120.md) | Language settings missing app language and content-language multi-select | BlueskySettings | All | resolved |
 | [0121](issues/0121.md) | Accessibility settings missing larger-alt-badge toggle and haptic feedback toggle | BlueskySettings | iOS / All | resolved |
 | [0122](issues/0122.md) | Activity Privacy settings screen is missing | BlueskySettings | All | resolved |
+| [0124](issues/0124.md) | About screen missing system-info section, status link, and dev-mode tools | BlueskySettings | All | resolved |
 
 ---
 
