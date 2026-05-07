@@ -109,6 +109,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0151](issues/0151.md) | Composer opens with stale text pre-filled when no draft was resumed | BlueskyComposer | All | resolved |
 | [0152](issues/0152.md) | Bookmarks fail to load: Codable decoding error on `bookmarks[0].uri` | BlueskyCore / BlueskyFeed | All | resolved |
 | [0153](issues/0153.md) | App icon asset catalog is empty; populate from `AppIcon.png` for iOS / iPadOS / macOS | Bluesky-SwiftUI | All | resolved |
+| [0154](issues/0154.md) | Bookmarks decoding still fails: `bookmarks[*].item` is a discriminated union, not a plain PostView | BlueskyCore / BlueskyFeed | All | resolved |
 
 ---
 

@@ -1528,5 +1528,15 @@
     "first_seen": "2026-05-07",
     "closed": "2026-05-07",
     "description": "`Bluesky-SwiftUI/Bluesky-SwiftUI/Assets.xcassets/AppIcon.appiconset/` exists but contains only a `Contents.json` with **macOS-only** size declarations and **no image files** referenced. The result: the app ships with a generic placeholder icon, no iOS / iPadOS coverage, and no chance for the home-screen / Dock / Finder to render the proper Bluesky butterfly icon.\n\nA 1024×1024 source `AppIcon.png` has been placed at `/Users/brennan/Developer/ReactNative/Bluesky-SwiftUI/AppIcon.png` (verified: 1024×1024 RGBA, 18 KB) ready to be processed."
+  },
+  {
+    "id": "0154",
+    "title": "Bookmarks decoding still fails: `bookmarks[38].item` is a discriminated union, not a plain PostView",
+    "status": "resolved",
+    "module": "BlueskyCore / BlueskyFeed",
+    "platform": "All",
+    "first_seen": "2026-05-07",
+    "closed": "2026-05-07",
+    "description": "After #0152 fixed the outer-item shape (`subject.uri` instead of flat `uri`) the Bookmarks screen still fails to load with a different decoding error:\n\n> Response decoding failed: DecodingError.keyNotFound: Key 'cid' not found in keyed decoding container. Path: `bookmarks[38].item`. Debug description: No value associated with key CodingKeys(stringValue: \"cid\", intValue: nil) (\"cid\").\n\nThis is *not* a re-occurrence of #0152. The path is now `bookmarks[38].item` — the embedded `item` field on the 38th bookmark is missing `cid`. #0152 modeled `item` as `PostView?`, but in the AT Proto lexicon `app.bsky.bookmark.defs#bookmarkView.item` is a **discriminated union** keyed on `$type`:\n\n- `app.bsky.feed.defs#postView` — a normal post (has `uri` + `cid`).\n- `app.bsky.feed.defs#notFoundPost` — `{ uri, notFound: true }` — **no `cid`**.\n- `app.bsky.feed.defs#blockedPost` — `{ uri, blocked: true, author }` — **no `cid`**.\n\nBookmark 38's `item` is one of the latter two variants (deleted or blocked post), and the current `PostView` decoder rejects it."
   }
 ]
