@@ -107,6 +107,8 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0149](issues/0149.md) | Raw rkey leaks into a feed/list row ("77a502dfc060" rendered as text) | BlueskyFeed / BlueskyUI | macOS | resolved |
 | [0150](issues/0150.md) | Sidebar drawer parity with React Native: profile header, full nav rows, footer legal links | Bluesky-SwiftUI | iOS / macOS | resolved |
 | [0151](issues/0151.md) | Composer opens with stale text pre-filled when no draft was resumed | BlueskyComposer | All | resolved |
+| [0152](issues/0152.md) | Bookmarks fail to load: Codable decoding error on `bookmarks[0].uri` | BlueskyCore / BlueskyFeed | All | resolved |
+| [0153](issues/0153.md) | App icon asset catalog is empty; populate from `AppIcon.png` for iOS / iPadOS / macOS | Bluesky-SwiftUI | All | resolved |
 
 ---
 

@@ -1512,11 +1512,21 @@
   {
     "id": "0152",
     "title": "Bookmarks fail to load: Codable decoding error on `bookmarks[0].uri`",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyCore / BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-05-07",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "Opening the Bookmarks screen surfaces a fatal decoding error and the list never renders:\n\n> Response decoding failed: DecodingError.keyNotFound: Key 'uri' not found in keyed decoding container. Path: `bookmarks[0]`. Debug description: No value associated with key CodingKeys(stringValue: \"uri\", intValue: nil) (\"uri\").\n\nThe SwiftUI `BookmarkView` (or whatever decodes the `app.bsky.bookmark.getBookmarks` response items) expects `uri` directly on each bookmark item, but the wire shape doesn't carry `uri` at that level. The JSON likely nests the post under a different key (commonly `subject`, `item`, or `post`), so the AT-URI lives at `bookmarks[0].subject.uri` — not `bookmarks[0].uri`."
+  },
+  {
+    "id": "0153",
+    "title": "App icon asset catalog is empty; populate from `AppIcon.png` for iOS / iPadOS / macOS",
+    "status": "resolved",
+    "module": "Bluesky-SwiftUI",
+    "platform": "All",
+    "first_seen": "2026-05-07",
+    "closed": "2026-05-07",
+    "description": "`Bluesky-SwiftUI/Bluesky-SwiftUI/Assets.xcassets/AppIcon.appiconset/` exists but contains only a `Contents.json` with **macOS-only** size declarations and **no image files** referenced. The result: the app ships with a generic placeholder icon, no iOS / iPadOS coverage, and no chance for the home-screen / Dock / Finder to render the proper Bluesky butterfly icon.\n\nA 1024×1024 source `AppIcon.png` has been placed at `/Users/brennan/Developer/ReactNative/Bluesky-SwiftUI/AppIcon.png` (verified: 1024×1024 RGBA, 18 KB) ready to be processed."
   }
 ]
