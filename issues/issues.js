@@ -13,7 +13,7 @@ window.ISSUES_DATA = [
   {
     "id": "0002",
     "title": "Home feed posts not loaded after sign-in",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -23,7 +23,7 @@ window.ISSUES_DATA = [
   {
     "id": "0003",
     "title": "Feed list ignores Dark Mode — white background with black text",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyFeed",
     "platform": "macOS",
     "first_seen": "2026-04-29",
@@ -33,7 +33,7 @@ window.ISSUES_DATA = [
   {
     "id": "0004",
     "title": "Reply button not functional on post cells",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -43,7 +43,7 @@ window.ISSUES_DATA = [
   {
     "id": "0005",
     "title": "Repost button not functional on post cells",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -53,7 +53,7 @@ window.ISSUES_DATA = [
   {
     "id": "0006",
     "title": "Like/Reaction button not functional on post cells",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -63,7 +63,7 @@ window.ISSUES_DATA = [
   {
     "id": "0007",
     "title": "Share button not functional on post cells",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -73,7 +73,7 @@ window.ISSUES_DATA = [
   {
     "id": "0008",
     "title": "Bookmark button missing from post action bar",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -83,7 +83,7 @@ window.ISSUES_DATA = [
   {
     "id": "0009",
     "title": "Post action buttons lack tooltips on macOS",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyFeed",
     "platform": "macOS",
     "first_seen": "2026-04-29",
@@ -93,7 +93,7 @@ window.ISSUES_DATA = [
   {
     "id": "0010",
     "title": "`getFeed` XRPC call missing required `feed` query parameter",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -103,7 +103,7 @@ window.ISSUES_DATA = [
   {
     "id": "0011",
     "title": "Module 1 gate: session restore not validated",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyAuth / BlueskyDataStore",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -113,7 +113,7 @@ window.ISSUES_DATA = [
   {
     "id": "0012",
     "title": "Module 2 gate: networking endpoint groups not live-tested",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyNetworking / BlueskyCore",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -123,7 +123,7 @@ window.ISSUES_DATA = [
   {
     "id": "0013",
     "title": "Module 3 gate: preferences persistence and cache stale-while-revalidate not validated",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyDataStore",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -133,7 +133,7 @@ window.ISSUES_DATA = [
   {
     "id": "0014",
     "title": "Module 4: #Preview canvas not validated in Xcode",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyUI",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -143,7 +143,7 @@ window.ISSUES_DATA = [
   {
     "id": "0015",
     "title": "Module 4 gate: component gallery not validated",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyUI",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -153,7 +153,7 @@ window.ISSUES_DATA = [
   {
     "id": "0016",
     "title": "Module 5 gate: navigation shell not validated (tabs, back nav, deep links)",
-    "status": "resolved",
+    "status": "closed",
     "module": "Bluesky-SwiftUI",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -163,7 +163,7 @@ window.ISSUES_DATA = [
   {
     "id": "0017",
     "title": "Module 6 feature: feed filter toggles (hide replies / hide reposts) not implemented",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -173,7 +173,7 @@ window.ISSUES_DATA = [
   {
     "id": "0018",
     "title": "Module 6 gate: home feed live validation (load, scroll, interactions)",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -183,7 +183,7 @@ window.ISSUES_DATA = [
   {
     "id": "0019",
     "title": "Module 7 feature: reply composer not implemented",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -193,7 +193,7 @@ window.ISSUES_DATA = [
   {
     "id": "0020",
     "title": "Module 7 feature: inline post expansion not implemented",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -203,7 +203,7 @@ window.ISSUES_DATA = [
   {
     "id": "0021",
     "title": "Module 7 gate: thread view live validation",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -213,7 +213,7 @@ window.ISSUES_DATA = [
   {
     "id": "0022",
     "title": "Module 8 feature: profile Feeds and Lists tabs not implemented",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyProfile",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -223,7 +223,7 @@ window.ISSUES_DATA = [
   {
     "id": "0023",
     "title": "Module 8 feature: verified badges and labeler badges not shown on profiles",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyProfile",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -233,7 +233,7 @@ window.ISSUES_DATA = [
   {
     "id": "0024",
     "title": "Module 8 feature: known followers chip not shown on profiles",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyProfile",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -243,7 +243,7 @@ window.ISSUES_DATA = [
   {
     "id": "0025",
     "title": "Module 8 gate: profile live validation",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyProfile",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -253,7 +253,7 @@ window.ISSUES_DATA = [
   {
     "id": "0026",
     "title": "Module 9 feature: trending topics section not implemented",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskySearch",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -263,7 +263,7 @@ window.ISSUES_DATA = [
   {
     "id": "0027",
     "title": "Module 9 feature: hashtag and topic views not implemented",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskySearch",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -273,7 +273,7 @@ window.ISSUES_DATA = [
   {
     "id": "0028",
     "title": "Module 9 gate: search live validation",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskySearch",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -283,7 +283,7 @@ window.ISSUES_DATA = [
   {
     "id": "0029",
     "title": "Module 10 feature: grouped notifications not implemented",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyNotifications",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -293,7 +293,7 @@ window.ISSUES_DATA = [
   {
     "id": "0030",
     "title": "Module 10 feature: push notification receipt does not open the correct thread",
-    "status": "in-progress",
+    "status": "open",
     "module": "BlueskyNotifications / Bluesky-SwiftUI",
     "platform": "iOS",
     "first_seen": "2026-04-29",
@@ -303,7 +303,7 @@ window.ISSUES_DATA = [
   {
     "id": "0031",
     "title": "Module 10 gate: notifications live validation",
-    "status": "in-progress",
+    "status": "open",
     "module": "BlueskyNotifications",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -313,39 +313,39 @@ window.ISSUES_DATA = [
   {
     "id": "0032",
     "title": "Module 11 feature: image attachments and message requests inbox not implemented",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyMessages",
     "platform": "All",
     "first_seen": "2026-04-29",
-    "closed": "",
+    "closed": "2026-05-05",
     "description": "The DM composer bar has no image attachment button. The message requests inbox (for messages from accounts not followed) is also absent from `ConversationListScreen`."
   },
   {
     "id": "0033",
     "title": "Module 11 gate: DM and group chat live validation",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyMessages",
     "platform": "All",
     "first_seen": "2026-04-29",
-    "closed": "",
+    "closed": "2026-05-05",
     "description": "The Module 11 gate — confirm send/receive messages, the conversation list loads, and group chat management works — has not been validated. The group chat implementation (branch `group-chat`) also requires live testing with an actual group conversation."
   },
   {
     "id": "0034",
     "title": "Module 12 feature: video picker, link card preview, thread composer, and draft persistence not implemented",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyComposer",
     "platform": "All",
     "first_seen": "2026-04-29",
-    "closed": "",
+    "closed": "2026-05-05",
     "description": "`ComposerSheet` is missing four features present in the React Native composer:\n\n1. **Video picker + upload** — select a video from the library, upload as a blob, and embed it.\n2. **Link card preview** — paste a URL in the text and a card preview (title, description, thumbnail) appears.\n3. **Thread / multi-post** — add additional posts to compose a thread in one shot.\n4. **Draft persistence** — closing the composer mid-draft saves it and restores it on next open."
   },
   {
     "id": "0035",
-    "title": "Module 12 gate: composer live validation (text, images, mentions)",
-    "status": "in-progress",
+    "title": "Module 12 gate (macOS): composer live validation (text, images, mentions)",
+    "status": "open",
     "module": "BlueskyComposer",
-    "platform": "All",
+    "platform": "macOS",
     "first_seen": "2026-04-29",
     "closed": "",
     "description": "The Module 12 gate — confirm posting with plain text, image attachments, and @mentions all work end-to-end — has not been validated against the live API."
@@ -353,7 +353,7 @@ window.ISSUES_DATA = [
   {
     "id": "0036",
     "title": "Module 13 gate: moderation live validation",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyModeration",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -362,20 +362,20 @@ window.ISSUES_DATA = [
   },
   {
     "id": "0037",
-    "title": "Module 14 gate: settings persistence live validation",
-    "status": "in-progress",
+    "title": "Module 14 gate (macOS): settings persistence live validation",
+    "status": "open",
     "module": "BlueskySettings",
-    "platform": "All",
+    "platform": "macOS",
     "first_seen": "2026-04-29",
     "closed": "",
     "description": "The Module 14 gate — confirm every setting persists after app restart and takes immediate visual effect — has not been validated."
   },
   {
     "id": "0038",
-    "title": "Module 15 gate: remaining screens feature parity validation",
-    "status": "in-progress",
+    "title": "Module 15 gate (macOS): remaining screens feature parity validation",
+    "status": "open",
     "module": "BlueskyLists / BlueskyFeed / BlueskyModeration / BlueskySettings",
-    "platform": "All",
+    "platform": "macOS",
     "first_seen": "2026-04-29",
     "closed": "",
     "description": "The Module 15 gate — confirm each remaining screen reaches feature parity with its React Native counterpart — has not been validated. Screens include: Lists, Starter Packs, Saved Feeds, Video Feed, Labeler Profile, App Passwords, Bookmarks."
@@ -383,7 +383,7 @@ window.ISSUES_DATA = [
   {
     "id": "0039",
     "title": "Tapping a post navigates to a blank screen",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -393,7 +393,7 @@ window.ISSUES_DATA = [
   {
     "id": "0040",
     "title": "Design refinement: revisit app color palette",
-    "status": "in-progress",
+    "status": "open",
     "module": "BlueskyUI",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -403,27 +403,27 @@ window.ISSUES_DATA = [
   {
     "id": "0041",
     "title": "Action button state may be stale when toggled",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
-    "closed": "",
+    "closed": "2026-05-05",
     "description": "The repost, like, and other action buttons in the post action bar use the `PostView.viewer` state that was captured when the feed was last loaded. If the user leaves the feed open for more than a few seconds and acts on a post from another client (or the post's state is mutated remotely), the local state can be stale. The toggle logic (`viewer?.repost != nil`) then performs the wrong operation — e.g., reposting a post that was already reposted from another device, or undoing a repost that no longer exists on the server."
   },
   {
     "id": "0042",
     "title": "Toolbar list button is centered instead of right-aligned",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyFeed",
     "platform": "macOS",
     "first_seen": "2026-04-29",
-    "closed": "",
+    "closed": "2026-05-05",
     "description": "The list/feed-switcher button (≡) in the Home screen navigation bar is positioned in the center of the toolbar rather than being grouped with the other trailing toolbar buttons (compose and >>). This leaves an odd gap and breaks the expected right-aligned button cluster."
   },
   {
     "id": "0043",
     "title": "Pull-to-refresh not implemented for feeds, replies, and search",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyFeed / BlueskyProfile / BlueskySearch",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -433,7 +433,7 @@ window.ISSUES_DATA = [
   {
     "id": "0044",
     "title": "Feed fails to load: missing `$type` in embedded quote record",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyCore",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -443,7 +443,7 @@ window.ISSUES_DATA = [
   {
     "id": "0045",
     "title": "Thread view styling is broken: collapsed rows, connector lines, dark mode failure",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -453,17 +453,17 @@ window.ISSUES_DATA = [
   {
     "id": "0046",
     "title": "Tapping a post author avatar does not navigate to their profile",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyFeed / BlueskyProfile",
     "platform": "All",
     "first_seen": "2026-04-29",
-    "closed": "",
+    "closed": "2026-05-05",
     "description": "Tapping the avatar or author name on a post card in the feed does nothing. Navigation to the tapped author's profile is not wired up, so there is no way to view another user's profile, follow or unfollow them, or browse their posts from the feed."
   },
   {
     "id": "0047",
     "title": "Ellipsis (…) context menu missing from post action bar",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyFeed / BlueskyUI",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -473,17 +473,17 @@ window.ISSUES_DATA = [
   {
     "id": "0048",
     "title": "Feed cache not used: no stale content shown when offline",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyFeed / BlueskyDataStore",
     "platform": "All",
     "first_seen": "2026-04-29",
-    "closed": "",
+    "closed": "2026-04-30",
     "description": "Launching the app without a network connection shows an error state with zero posts. The `SwiftDataCacheStore` is passed into `FeedView` and `FeedViewModel` but the feed store never reads from it before attempting the network fetch, so there is no stale-while-revalidate behavior — offline or slow-network users see nothing."
   },
   {
     "id": "0049",
     "title": "FeedView task fires twice on launch, creating duplicate FeedViewModels",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -493,7 +493,7 @@ window.ISSUES_DATA = [
   {
     "id": "0050",
     "title": "Add Light and Dark #Preview blocks to all views missing them",
-    "status": "resolved",
+    "status": "closed",
     "module": "All",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -503,7 +503,7 @@ window.ISSUES_DATA = [
   {
     "id": "0051",
     "title": "Search results post cards have white background in dark mode",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskySearch",
     "platform": "All",
     "first_seen": "2026-04-29",
@@ -513,47 +513,47 @@ window.ISSUES_DATA = [
   {
     "id": "0052",
     "title": "Deep link opens a new window instead of routing in the existing window",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "Bluesky-SwiftUI",
     "platform": "macOS",
     "first_seen": "2026-04-29",
-    "closed": "",
+    "closed": "2026-05-05",
     "description": "Opening a `bluesky://` URL (e.g. `open \"bluesky://profile/brennan.sstools.co\"`) causes macOS to open a new app window rather than routing within the existing window. The `onOpenURL` handler in `MainTabView` is called but the SwiftUI scene machinery creates a second window instead of reusing the first."
   },
   {
     "id": "0053",
     "title": "Like state does not persist after tapping the like button",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-30",
-    "closed": "",
+    "closed": "2026-05-05",
     "description": "Tapping the like button on a post appears to fire a network request (multiple `_loadCurrentDID` calls visible in the log) but the like state does not stick — the heart returns to unfilled and the like count does not increment. This is a regression; liking was previously confirmed working."
   },
   {
     "id": "0054",
     "title": "Cannot tap a reply in thread view to navigate into it",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "BlueskyFeed",
     "platform": "All",
     "first_seen": "2026-04-30",
-    "closed": "",
+    "closed": "2026-05-05",
     "description": "In the thread view, tapping on a reply post card does nothing. Each reply may itself have replies (sub-threads), but there is no way to drill into them because the tap gesture is not wired up."
   },
   {
     "id": "0055",
     "title": "Switching tabs while in a thread does not change the active tab",
-    "status": "in-progress",
+    "status": "resolved",
     "module": "Bluesky-SwiftUI",
     "platform": "macOS",
     "first_seen": "2026-04-30",
-    "closed": "",
+    "closed": "2026-05-05",
     "description": "When the Home tab is showing a thread view (pushed via NavigationStack), clicking a different tab in the sidebar (e.g. Profile) does not switch to that tab. The thread view remains visible. The sidebar highlights the new tab but the detail pane does not change."
   },
   {
     "id": "0056",
     "title": "Profile screen missing banner, avatar placeholder broken, post cards not dark mode",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyProfile",
     "platform": "All",
     "first_seen": "2026-04-30",
@@ -563,7 +563,7 @@ window.ISSUES_DATA = [
   {
     "id": "0057",
     "title": "Bookmarks not implemented: requires a server-side or local storage solution",
-    "status": "resolved",
+    "status": "closed",
     "module": "BlueskyFeed / BlueskyDataStore",
     "platform": "All",
     "first_seen": "2026-04-30",
@@ -573,31 +573,901 @@ window.ISSUES_DATA = [
   {
     "id": "0058",
     "title": "Audit and eliminate `try?` to prevent silent failures",
-    "status": "open",
+    "status": "resolved",
     "module": "All",
     "platform": "All",
     "first_seen": "2026-04-30",
-    "closed": "",
+    "closed": "2026-05-05",
     "description": "`try?` swallows thrown errors and converts them to `nil`, which causes failures to disappear without any log, telemetry, or surfaced UI state. This is an anti-pattern that hides real bugs (decoding failures, network errors, persistence failures) and makes them effectively undebuggable. Every existing use of `try?` in the Swift code under `../BlueskyKit/` and `../Bluesky-SwiftUI/` should be audited and replaced with explicit error handling."
   },
   {
     "id": "0059",
     "title": "Network reachability gating using Network framework",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyNetworking / BlueskyKit",
     "platform": "All",
     "first_seen": "2026-04-30",
-    "closed": "",
+    "closed": "2026-05-05",
     "description": "The app currently issues network requests without first checking whether a viable network path exists. When the device is offline (no Wi-Fi, no cellular, airplane mode, captive portal blocking), requests fail late at the URLSession layer, producing slow timeouts, noisy errors, and wasted retries. We should use Apple's `Network` framework (`NWPathMonitor`) to track reachability continuously, gate outbound requests on a viable path, and automatically refresh the feed and other relevant data the moment connectivity is restored."
   },
   {
     "id": "0060",
     "title": "Saved Posts section does not match Bluesky website UX",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyFeed / Bluesky-SwiftUI",
     "platform": "All",
     "first_seen": "2026-05-01",
-    "closed": "",
+    "closed": "2026-05-05",
     "description": "The Bluesky website has a dedicated \"Saved\" section in the sidebar that lists all bookmarked posts as a scrollable feed. In the SwiftUI app, bookmarks are accessible only via the `•••` menu on the Profile tab → \"Bookmarks\", which is not discoverable. The `BookmarksScreen` also needs visual parity with the website's Saved Posts experience."
+  },
+  {
+    "id": "0061",
+    "title": "iOS build fails; audit and fix all iOS-specific compile errors",
+    "status": "resolved",
+    "module": "BlueskyComposer / Bluesky-SwiftUI",
+    "platform": "iOS",
+    "first_seen": "2026-05-05",
+    "closed": "2026-05-05",
+    "description": "The Bluesky-SwiftUI app target does not build for iOS. A `PhotosPickerItem` error in `BlueskyKit/Sources/BlueskyComposer/ComposerViewModel.swift` is the immediate symptom, but a full iOS build audit is needed — most development has been done on macOS, so other iOS-only paths may have drifted out of sync (PhotosUI imports, `#if os(iOS)` gating, `UIKit` vs. `AppKit` shims, deployment-target API availability, etc.).\n\nThis issue blocks #0030 (push notification routing) because that work requires installing the app on a real iOS device."
+  },
+  {
+    "id": "0062",
+    "title": "Tapping a notification shows raw at:// URI text instead of navigating to the thread",
+    "status": "open",
+    "module": "BlueskyNotifications",
+    "platform": "All",
+    "first_seen": "2026-05-05",
+    "closed": "",
+    "description": "Tapping a notification row in the Notifications tab should navigate to the relevant destination — the thread for likes/replies/quotes/mentions/reposts, the actor's profile for follows, the feed for `feedgen-like` / `starterpack-joined`, and the activity view for `subscribed-post`. Today the destination is a placeholder that just renders the raw AT-URI as text (`Thread: at://did:plc:…/app.bsky.feed.post/…`), so the user has no working navigation from notifications."
+  },
+  {
+    "id": "0063",
+    "title": "Notification reason labels incomplete (`subscribed-post` and others render verbatim)",
+    "status": "open",
+    "module": "BlueskyNotifications",
+    "platform": "All",
+    "first_seen": "2026-05-05",
+    "closed": "",
+    "description": "The Notifications screen maps a notification's `reason` string to a human-readable phrase (\"liked your post\", \"followed you\", etc.). The current mapping covers six reasons; the AT Proto notification API surfaces several more, and unrecognized reasons fall through a `default` case that prints the raw `reason` string. Most visibly, `subscribed-post` notifications show the literal text `\"subscribed-post\"` instead of a real label."
+  },
+  {
+    "id": "0064",
+    "title": "Module 12 gate (iOS): composer live validation on iPhone",
+    "status": "open",
+    "module": "BlueskyComposer",
+    "platform": "iOS",
+    "first_seen": "2026-05-05",
+    "closed": "",
+    "description": "Once the iOS build is restored (#0061), the Module 12 composer gate must be re-validated on a real iPhone. iOS uses a different image picker (`PHPickerViewController` via `PhotosPicker` / `PhotosPickerItem`) and different keyboard / safe-area / rubber-band scroll behavior than macOS, and several composer code paths are gated `#if os(iOS)` — they have not been exercised since #0034 landed.\n\nThis issue split off from #0035, which now focuses on the macOS gate."
+  },
+  {
+    "id": "0065",
+    "title": "Module 14 gate (iOS): settings persistence on iPhone",
+    "status": "open",
+    "module": "BlueskySettings",
+    "platform": "iOS",
+    "first_seen": "2026-05-05",
+    "closed": "",
+    "description": "Once the iOS build is restored (#0061), the Module 14 settings-persistence gate must be re-run on a real iPhone. Most settings store via `UserDefaultsPreferencesStore` and are platform-agnostic, but the Appearance behavior diverges from macOS — on iOS the app does not yet defer to the system appearance the same way, and the Settings UI surfaces some controls that don't apply on macOS (haptics, in-app browser, etc.). Each persistence path needs to round-trip through a force-quit + relaunch cycle on iOS.\n\nThis issue split off from #0037, which now focuses on the macOS gate."
+  },
+  {
+    "id": "0066",
+    "title": "Module 15 gate (iOS): remaining screens feature parity on iPhone",
+    "status": "open",
+    "module": "BlueskyLists / BlueskyFeed / BlueskyModeration / BlueskySettings",
+    "platform": "iOS",
+    "first_seen": "2026-05-05",
+    "closed": "",
+    "description": "Once the iOS build is restored (#0061), the Module 15 feature-parity gate must be re-run on a real iPhone. Most screens are platform-agnostic, but several have iOS-specific behavior that cannot be exercised on macOS — most notably the Video Feed (TikTok-style full-screen vertical scroll) and any screens that rely on iOS swipe gestures, the share sheet, or the system PHPicker.\n\nThis issue split off from #0038, which now focuses on the macOS gate."
+  },
+  {
+    "id": "0067",
+    "title": "Search field does not match against issue numbers",
+    "status": "resolved",
+    "module": "Issues.app",
+    "platform": "macOS",
+    "first_seen": "2026-05-05",
+    "closed": "2026-05-05",
+    "description": "The search field in the Issues Mac app does not search the issue number. Typing `31` does not narrow the list to issue 0031, and typing `003` does not narrow the list to all issues whose number starts with `003` (0030, 0031, 0032, …). Today the search appears to match against title (and possibly module/platform) only.\n\nThe issue number is the most stable identifier — it's how issues are referenced in commit messages, conversations, and cross-issue links — so it should be the most searchable field."
+  },
+  {
+    "id": "0068",
+    "title": "iOS Home feed diverges significantly from the React Native reference",
+    "status": "resolved",
+    "module": "BlueskyFeed / Bluesky-SwiftUI",
+    "platform": "iOS",
+    "first_seen": "2026-05-05",
+    "closed": "2026-05-06",
+    "description": "Live testing of the SwiftUI iOS build against the official Bluesky React Native app reveals broad divergence on the Home feed surface — top chrome, tab strip, post cards, action bar, and bottom tab bar all differ. Many of these gaps are platform-conventions that were never wired up because development was macOS-led, and individual pieces will be tracked as their own follow-up issues. This issue captures the side-by-side audit so the gaps can be triaged together."
+  },
+  {
+    "id": "0069",
+    "title": "iOS Notifications screen diverges significantly from the React Native reference",
+    "status": "resolved",
+    "module": "BlueskyNotifications / Bluesky-SwiftUI",
+    "platform": "iOS",
+    "first_seen": "2026-05-05",
+    "closed": "2026-05-06",
+    "description": "Live testing of the SwiftUI iOS Notifications tab against the official Bluesky React Native app shows broad divergence. The SwiftUI screen is a flat list of \"row per notification\" with the actor name and a raw reason string (\"subscribed-post\"), while RN renders rich grouped cards with stacked avatars, an inline post-content preview, expandable groups, segmented \"All / Mentions\" tabs, and a settings entry point. Most importantly, the SwiftUI rows are not tappable — a user can see *that* something happened but cannot read the post or jump to the actor's profile.\n\nThis overlaps with #0062 (tap routes to raw at:// instead of the thread) and #0063 (reason labels render verbatim), but the broader UX gap (post preview, multi-avatar grouping, segmented tabs, inline reply indicator, settings entry) is bigger than either of those alone and warrants its own audit."
+  },
+  {
+    "id": "0070",
+    "title": "iOS Profile screen diverges significantly from the React Native reference",
+    "status": "resolved",
+    "module": "BlueskyProfile / Bluesky-SwiftUI",
+    "platform": "iOS",
+    "first_seen": "2026-05-05",
+    "closed": "2026-05-06",
+    "description": "Live testing of the SwiftUI iOS Profile tab against the official Bluesky React Native app shows broad divergence. The most visible problems: a giant handle title floats above the banner, the stats row puts \"Following\" first (RN puts \"Followers\" first), the \"Followed by …\" known-followers chip is shown on the user's own profile (it should only appear on other users' profiles), pinned posts are not rendered, the Videos tab is missing from the segmented selector, and the profile-feed surface inherits all the same iOS chrome gaps tracked in #0068 (labeled bottom tab bar, generic profile-tab icon, no compose FAB)."
+  },
+  {
+    "id": "0071",
+    "title": "iOS bottom chrome: redesign tab bar and add floating compose button",
+    "status": "resolved",
+    "module": "Bluesky-SwiftUI / BlueskyUI",
+    "platform": "iOS",
+    "first_seen": "2026-05-05",
+    "closed": "2026-05-05",
+    "description": "The iOS bottom chrome (tab bar + compose entry) needs to match the React Native reference. Today the iOS app uses a labeled five-tab bar with a generic \"person\" icon for the Profile tab and no floating compose button — the compose action lives in the top-right of every screen. RN ships an icon-only tab bar, uses the user's avatar for the Profile tab, indicates selection by swapping outline icons for filled ones, and surfaces a primary blue floating compose button (FAB) at bottom-right that overlaps the feed.\n\nThis is part of the larger iOS parity audit in #0068."
+  },
+  {
+    "id": "0072",
+    "title": "iOS top chrome: replace \"Home\" headline with hamburger / butterfly / hash bar",
+    "status": "resolved",
+    "module": "Bluesky-SwiftUI / BlueskyFeed / BlueskyUI",
+    "platform": "iOS",
+    "first_seen": "2026-05-05",
+    "closed": "2026-05-05",
+    "description": "The iOS Home tab currently shows a giant \"Home\" headline taking ~25% of the screen above the feed. The React Native reference replaces this with a slim, fixed top bar containing three controls — a hamburger button on the left (opens a side drawer), the Bluesky butterfly logo centered, and a `#` button on the right (navigates to a \"My Feeds\" screen). Mirroring this layout is the simplest, highest-impact change to make the iOS UI feel like the official Bluesky app.\n\nThis is part of the larger iOS parity audit in #0068."
+  },
+  {
+    "id": "0073",
+    "title": "Build \"My Feeds\" screen (destination for the # button in the top bar)",
+    "status": "resolved",
+    "module": "BlueskyFeed / Bluesky-SwiftUI",
+    "platform": "All",
+    "first_seen": "2026-05-05",
+    "closed": "2026-05-05",
+    "description": "The iOS top bar (#0072) introduces a `#` button that, in the React Native reference, navigates to a \"My Feeds\" screen. That screen does not yet exist in the SwiftUI app and needs to be built. It is the home for managing custom feeds — the user's pinned feeds, saved feeds, suggested feeds, and a search/discovery entry point. It is one of the most-used screens in the RN client because it's the only way to switch the active feed beyond the small set in the Home tab strip."
+  },
+  {
+    "id": "0074",
+    "title": "iOS Home: expand feed tab strip to scrollable, multi-feed selector",
+    "status": "resolved",
+    "module": "BlueskyFeed / Bluesky-SwiftUI",
+    "platform": "iOS",
+    "first_seen": "2026-05-05",
+    "closed": "2026-05-05",
+    "description": "The Home feed currently has only two tabs — Following and Discover — rendered in a fixed two-tab strip. The React Native reference uses a horizontal scroller with at least four built-in tabs (Following, Mentions, Discover, Popular With Friends) plus the user's pinned custom feeds appended to the right. The user can swipe between feeds horizontally and the strip scrolls to keep the active tab visible.\n\nThis is a follow-up to the iOS parity audit in #0068."
+  },
+  {
+    "id": "0075",
+    "title": "iOS Home: add inline \"What's up?\" composer prompt",
+    "status": "resolved",
+    "module": "BlueskyFeed / BlueskyComposer",
+    "platform": "iOS",
+    "first_seen": "2026-05-05",
+    "closed": "2026-05-05",
+    "description": "The React Native reference shows an inline composer prompt at the very top of the Home feed, between the tab strip and the first post. It contains the user's avatar on the left, the prompt text \"What's up?\" centered, and a camera icon plus a photo-library icon on the right. Tapping anywhere in the row opens the full `ComposerSheet`. The SwiftUI iOS app has no equivalent — the only composer entry is the top-right pencil icon (replaced by a FAB in #0071).\n\nAdding this prompt closes a discoverability gap and matches the long-standing RN pattern."
+  },
+  {
+    "id": "0076",
+    "title": "Post card polish: verified badge, action bar order, repost count, image embed sizing",
+    "status": "resolved",
+    "module": "BlueskyFeed / BlueskyUI",
+    "platform": "All",
+    "first_seen": "2026-05-05",
+    "closed": "2026-05-05",
+    "description": "A bundle of four small polish items on the post card to match the React Native reference. Bundling because they all touch `PostCardView` (or its subcomponents) and can ship as one focused PR; splitting would make four near-identical sub-PRs against the same file.\n\nThis is a follow-up to the iOS parity audit in #0068."
+  },
+  {
+    "id": "0077",
+    "title": "iOS Notifications: replace headline with slim top bar (hamburger / title / gear)",
+    "status": "resolved",
+    "module": "BlueskyNotifications / Bluesky-SwiftUI / BlueskySettings",
+    "platform": "iOS",
+    "first_seen": "2026-05-05",
+    "closed": "2026-05-05",
+    "description": "The Notifications tab currently shows a giant left-aligned \"Notifications\" headline that takes ~25% of the screen above the list — same anti-pattern as the Home tab. The React Native reference uses a slim top bar with a hamburger button (left), centered \"Notifications\" title, and a gear icon (right) that opens the notification settings screen.\n\nThis is a follow-up to the iOS Notifications parity audit in #0069."
+  },
+  {
+    "id": "0078",
+    "title": "Notifications: add segmented \"All / Mentions\" tabs",
+    "status": "resolved",
+    "module": "BlueskyNotifications",
+    "platform": "All",
+    "first_seen": "2026-05-05",
+    "closed": "2026-05-05",
+    "description": "The Notifications screen needs a two-tab segmented selector at the top — **All** and **Mentions** — matching the React Native reference. Today the screen is a flat list with no filter. The Mentions filter is critical UX because it lets users jump straight to direct interactions without scrolling past likes/follows/reposts/etc.\n\nThis is a follow-up to the iOS Notifications parity audit in #0069."
+  },
+  {
+    "id": "0079",
+    "title": "Notifications: render inline post-content preview on each row",
+    "status": "resolved",
+    "module": "BlueskyNotifications / BlueskyFeed",
+    "platform": "All",
+    "first_seen": "2026-05-05",
+    "closed": "2026-05-05",
+    "description": "Each notification row in the React Native client renders an inline preview of the relevant post text — multi-line, with bullet points and link cards — so the user can read the content without tapping through to the thread. The SwiftUI client currently shows only the actor name and the reason label; there is no post body, making notifications useless for at-a-glance reading. This is the single biggest UX gap on the Notifications screen.\n\nThis is a follow-up to the iOS Notifications parity audit in #0069."
+  },
+  {
+    "id": "0080",
+    "title": "Notifications: stacked actor avatars with expand chevron",
+    "status": "resolved",
+    "module": "BlueskyNotifications",
+    "platform": "All",
+    "first_seen": "2026-05-05",
+    "closed": "2026-05-06",
+    "description": "When multiple actors trigger the same notification group (e.g. five different people liked the same post), the React Native client displays up to 5 stacked actor avatars in the row, with a chevron (`v`) to expand the rest. The SwiftUI client currently shows only the first actor's avatar — losing the social context that \"Point-Free **and 3 others** subscribed to this post\" is meant to convey.\n\nThis is a follow-up to the iOS Notifications parity audit in #0069."
+  },
+  {
+    "id": "0081",
+    "title": "Notifications: add \"Replied to you\" affordance on reply rows",
+    "status": "resolved",
+    "module": "BlueskyNotifications",
+    "platform": "All",
+    "first_seen": "2026-05-05",
+    "closed": "2026-05-06",
+    "description": "When the notification reason is `reply`, the React Native client renders the row in a slightly different shape: the responder's avatar leads at the left edge (instead of being part of the bell+avatar-stack region), and a small \"↳ Replied to you\" prefix appears above the post text. This makes reply notifications visually distinct from likes/reposts/follows so the user can spot direct interactions at a glance.\n\nThis is a follow-up to the iOS Notifications parity audit in #0069."
+  },
+  {
+    "id": "0082",
+    "title": "Notifications row polish: concise time format and filled-bell unread state",
+    "status": "resolved",
+    "module": "BlueskyNotifications / BlueskyUI",
+    "platform": "All",
+    "first_seen": "2026-05-05",
+    "closed": "2026-05-06",
+    "description": "Two small visual polish items on the Notifications screen, bundled because they each touch one tiny piece of the row layout. Splitting would make two near-identical sub-PRs.\n\nThis is a follow-up to the iOS Notifications parity audit in #0069."
+  },
+  {
+    "id": "0083",
+    "title": "Profile: redesign banner area (drop handle headline, banner edge-to-edge, Edit Profile row)",
+    "status": "resolved",
+    "module": "BlueskyProfile / Bluesky-SwiftUI",
+    "platform": "iOS",
+    "first_seen": "2026-05-05",
+    "closed": "2026-05-06",
+    "description": "The Profile screen's banner area diverges from the React Native reference in three coordinated ways: a giant handle (\"brennan.sstools.co\") is rendered as a navigation title above the banner, the banner image sits in the middle third of the header instead of running edge-to-edge under the status bar, and the \"Edit Profile\" pill plus the blue-dotted ellipsis are not arranged in their own row below the banner. Together these change how the top of the profile feels — and they should ship as one redesign.\n\nThis is a follow-up to the iOS Profile parity audit in #0070."
+  },
+  {
+    "id": "0084",
+    "title": "Profile info row polish: stat order, label casing, count abbreviation, URL protocol",
+    "status": "resolved",
+    "module": "BlueskyProfile / BlueskyUI",
+    "platform": "All",
+    "first_seen": "2026-05-05",
+    "closed": "2026-05-06",
+    "description": "The profile info row (stats and URL) has four small differences from the React Native reference. Bundling because they all touch the same row layout and ship as one focused PR.\n\nThis is a follow-up to the iOS Profile parity audit in #0070."
+  },
+  {
+    "id": "0085",
+    "title": "Bug: \"Followed by …\" known-followers chip shows on the user's own profile",
+    "status": "resolved",
+    "module": "BlueskyProfile",
+    "platform": "All",
+    "first_seen": "2026-05-05",
+    "closed": "2026-05-06",
+    "description": "The \"Followed by @ibrews.bsky.social, @martinp7r.com, and others you follow\" chip is rendered on the signed-in user's **own** profile. This is meaningless — the known-followers context exists to tell the viewer \"here are mutuals you both follow\" when they look at *another* user. On your own profile, every follower of yours is by definition someone *you* follow back (or don't), and the chip's framing doesn't apply.\n\nThe React Native reference suppresses this chip on the viewer's own profile. The SwiftUI client doesn't.\n\nThis is a follow-up to the iOS Profile parity audit in #0070."
+  },
+  {
+    "id": "0086",
+    "title": "Profile tab strip: add Videos tab and drop pill capsule background",
+    "status": "resolved",
+    "module": "BlueskyProfile / BlueskyUI",
+    "platform": "All",
+    "first_seen": "2026-05-05",
+    "closed": "2026-05-06",
+    "description": "Two coordinated changes to the profile-page tab strip (the segmented selector for Posts / Replies / Media / Likes / Feeds / Lists). First, the Videos tab — present in the React Native reference between Media and Likes — is missing. Second, the SwiftUI strip uses a pill-shaped capsule background around the entire tab strip, while RN renders the tabs inline with just an underline on the selected tab.\n\nThis is a follow-up to the iOS Profile parity audit in #0070."
+  },
+  {
+    "id": "0087",
+    "title": "Profile feed: render pinned post at the top with pin indicator",
+    "status": "resolved",
+    "module": "BlueskyProfile / BlueskyFeed",
+    "platform": "All",
+    "first_seen": "2026-05-05",
+    "closed": "2026-05-06",
+    "description": "The Posts tab on a profile should pin the user's pinned post (if any) at the top of the feed with a `📌 Pinned` indicator above the byline. The React Native reference does this; the SwiftUI client currently shows the user's posts in pure chronological order with no pinned-post handling.\n\nThis is a follow-up to the iOS Profile parity audit in #0070."
+  },
+  {
+    "id": "0088",
+    "title": "iOS top safe-area gap on every screen",
+    "status": "resolved",
+    "module": "Bluesky-SwiftUI / BlueskyUI",
+    "platform": "iOS",
+    "first_seen": "2026-05-06",
+    "closed": "2026-05-06",
+    "description": "A black gap sits between the iOS status bar and the top of the app's chrome on every screen — Home, Notifications, Search, and Profile. The status bar is rendered against a black backing rather than the screen's background, so the slim top bars (#0072, #0077) and the Profile banner (#0083) appear to \"float\" with a dead band above them. The React Native reference has no such gap — the app fills behind the status bar.\n\nThe user's diagnosis is on the nose: the screens are respecting the top safe-area inset where they should be ignoring it (banner / top bar should extend behind the status bar, with the *content* respecting the safe area)."
+  },
+  {
+    "id": "0089",
+    "title": "Profile content clipped on the leading edge",
+    "status": "resolved",
+    "module": "BlueskyProfile",
+    "platform": "iOS",
+    "first_seen": "2026-05-06",
+    "closed": "2026-05-06",
+    "description": "On the Profile screen, every text element below the banner is shifted so far to the leading edge that the first character of every line is cut off the screen. The display name reads \"rennan\" instead of \"Brennan\", the bio's first lines read \"adicalized by Teenage Mutant Ninja Turtles\" / \"an Francisco, California\" / \"rennan.sstools.co\", the followers count is missing its leading digit (\"36 followers\" instead of \"286 followers\"), and the known-followers chip starts mid-word (\"ollowed by …\"). The avatar at the leading edge of the banner is also partially cut off on its left side.\n\nThis is a regression introduced (or surfaced) by the #0083 banner redesign — the iOS-only `iosAvatarAndActions` layout introduced negative offsets for the avatar half-overlap, and something in the surrounding stack is propagating a negative leading inset to all the content below the banner."
+  },
+  {
+    "id": "0090",
+    "title": "iOS Search screen needs slim top bar to match Home / Notifications",
+    "status": "resolved",
+    "module": "BlueskySearch / Bluesky-SwiftUI",
+    "platform": "iOS",
+    "first_seen": "2026-05-06",
+    "closed": "2026-05-06",
+    "description": "The Search tab still uses a giant left-aligned \"Search\" headline taking ~25% of the screen — the same anti-pattern that #0072 (Home) and #0077 (Notifications) already fixed for their respective tabs. To match the React Native reference and feel consistent with Home and Notifications, Search needs the same slim top-bar treatment: hamburger / inline title / appropriate trailing action."
+  },
+  {
+    "id": "0091",
+    "title": "Signup flow is entirely missing from the SwiftUI app",
+    "status": "resolved",
+    "module": "BlueskyAuth / Bluesky-SwiftUI",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "2026-05-06",
+    "description": "The React Native client supports new-account creation directly inside the app via a multi-step signup flow (`Bluesky-ReactNative/src/screens/Signup/`): **StepInfo** (email + password + birthdate), **StepHandle** (handle picker with availability check) and **StepCaptcha** (device attestation). The SwiftUI port has no signup UI at all — a brand-new user has nowhere to go from `LoginView`. The only way to create an account is to leave the app and use bsky.app, then return to log in.\n\nFor parity (and so the SwiftUI app is usable as a primary client), signup needs to be implemented as a SwiftUI flow that mirrors the RN steps and posts to the same `com.atproto.server.createAccount` endpoint."
+  },
+  {
+    "id": "0092",
+    "title": "Post-signup onboarding flow is missing",
+    "status": "resolved",
+    "module": "BlueskyAuth / BlueskyOnboarding / Bluesky-SwiftUI",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "2026-05-06",
+    "description": "After a successful create-account in the React Native client, the user is dropped into a multi-step onboarding flow at `Bluesky-ReactNative/src/screens/Onboarding/` that shapes the empty home feed into something useful. It includes (roughly): profile setup (display name + avatar pick), **interests** picker (multi-select of topic chips that seeds Discover), **suggested accounts** to follow (per-interest), **suggested feeds**, **suggested starter packs**, and a completion screen. The SwiftUI app has none of this — even if signup landed (#0091), a brand-new user would arrive at an empty Home with no recommendations.\n\nThis is also relevant for *existing* RN users who haven't been through onboarding yet, which RN handles via the `hasOnboarded` preference flag in `app.bsky.actor.preferences`."
+  },
+  {
+    "id": "0093",
+    "title": "Forgot-password recovery flow is missing",
+    "status": "open",
+    "module": "BlueskyAuth",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "The React Native client lets a user reset a forgotten password directly inside the app: **`ForgotPasswordForm`** (enter email, request reset token), **`SetNewPasswordForm`** (enter token + new password) and **`PasswordUpdatedForm`** (confirmation). The entry point is a \"Forgot?\" link inline with the password field in `LoginForm.tsx` (lines 256–266).\n\nThe SwiftUI `LoginView` has no \"Forgot password?\" link and no recovery screens at all. A user who has forgotten their password is locked out unless they leave the app and reset on bsky.app."
+  },
+  {
+    "id": "0094",
+    "title": "Deactivated-account screen is missing",
+    "status": "open",
+    "module": "BlueskyAuth / Bluesky-SwiftUI",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "When a user signs in with an account whose status is `deactivated`, the React Native client shows a dedicated screen at `Bluesky-ReactNative/src/screens/Deactivated.tsx` with: an explanatory message, a \"Reactivate your account\" button (calls `com.atproto.server.activateAccount`), a \"Sign out\" button, and an account picker so the user can switch to a non-deactivated account. The SwiftUI client has no equivalent — at best the user lands on a broken/empty MainTabView, since `SessionManager` doesn't branch on the deactivated status."
+  },
+  {
+    "id": "0095",
+    "title": "Takendown / suspended-account appeal screen is missing",
+    "status": "open",
+    "module": "BlueskyAuth / Bluesky-SwiftUI",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "When a user signs in to an account whose status is `takendown` (or `suspended`), the React Native client routes to a dedicated screen at `Bluesky-ReactNative/src/screens/Takendown.tsx` that explains the suspension, links to the moderation policy, and includes an in-app appeal submission UI. The SwiftUI client has no equivalent — a takendown account currently has no surface and lands on a broken MainTabView the same way #0094 (deactivated) does."
+  },
+  {
+    "id": "0096",
+    "title": "Composer character counter is plain text instead of a circular progress ring",
+    "status": "open",
+    "module": "BlueskyComposer",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "The React Native composer renders the character counter as a circular progress ring (RN uses `ProgressCircle` / `ProgressPie`) that fills as the post grows toward the 300-character cap. The ring color shifts from primary to amber when fewer than 20 characters remain and to red when the post is over the limit. The numeric count appears inside or beside the ring.\n\nThe SwiftUI composer (`ComposerSheet.swift` lines 569–574) shows only a plain `Text` count. There's no ring, no color transition, and the affordance reads as a generic counter rather than the at-a-glance gauge RN provides."
+  },
+  {
+    "id": "0097",
+    "title": "Composer is missing the self-labels (content warning) picker",
+    "status": "open",
+    "module": "BlueskyComposer",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "Before posting, the React Native composer lets a user attach self-labels — content warnings that downstream clients use to blur or hide the post. The labels include `nudity`, `sexual`, `porn`, and `graphic-media` (this set follows the AT Proto self-label vocabulary). RN exposes them via a `LabelsBtn` in the composer toolbar that opens a dialog with toggleable rows (`Bluesky-ReactNative/src/view/com/composer/labels/`).\n\nThe SwiftUI composer has no UI for self-labels. A user cannot mark their own post as NSFW, which means SwiftUI-posted content is mis-categorized when viewed by users who hide adult content."
+  },
+  {
+    "id": "0098",
+    "title": "Composer is missing the threadgate / postgate (reply + quote permissions) picker",
+    "status": "open",
+    "module": "BlueskyComposer",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "The React Native composer lets the author restrict who can reply to (`threadgate`) and who can quote (`postgate`) the post being created. RN exposes a `ThreadgateBtn` in the toolbar that opens a dialog with options: **Everyone**, **People you follow**, **People you mention**, **Lists** (multi-select of moderation lists), and **Nobody**. Quote permissions are similarly configurable.\n\nThese records are written alongside the post:\n\n- `app.bsky.feed.threadgate` — controls reply permissions.\n- `app.bsky.feed.postgate` — controls embed/quote permissions.\n\nThe SwiftUI composer has no threadgate / postgate UI. Every post is implicitly open to all replies and quotes, which is a privacy + control regression vs. RN."
+  },
+  {
+    "id": "0099",
+    "title": "Composer is missing the GIF picker (Tenor)",
+    "status": "open",
+    "module": "BlueskyComposer",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "The React Native composer toolbar includes a GIF button (`SelectGifBtn`) that opens a Tenor-backed GIF search dialog. The selected GIF is attached to the post as an external embed (`app.bsky.embed.external` pointing at the Tenor URL with thumbnail). The SwiftUI composer toolbar has only image and video pickers — no GIF support.\n\nTracked separately from #0034 (which lists video picker / link card preview / threading / drafts) because GIF is a distinct media path with its own search UI and embed type."
+  },
+  {
+    "id": "0100",
+    "title": "Composer is missing a Drafts list / save UI",
+    "status": "open",
+    "module": "BlueskyComposer",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "The React Native composer has a `DraftsButton` in the top toolbar that opens a list of saved drafts: each draft shows a preview, timestamp, and tap-to-resume / swipe-to-delete affordances. A separate \"Save Draft\" action lets the user save the in-progress composer state without posting. The SwiftUI composer has only auto-save-on-dismiss persistence (per #0034), which means the user has no way to see, manage, or load past drafts.\n\nThis is filed separately from #0034 because that issue covers draft *persistence* mechanics; this one covers the user-facing **drafts UI** (button + list + manage)."
+  },
+  {
+    "id": "0101",
+    "title": "Composer doesn't warn when alt-text-required is on but images have no alt text",
+    "status": "open",
+    "module": "BlueskyComposer",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "The React Native composer respects an \"alt text required\" preference (set in Accessibility settings). When that preference is on and the user has attached images without alt text, RN displays an `Admonition` error banner above the action bar reading approximately \"All images must have alt text\" and disables the Post button until alt text is provided.\n\nThe SwiftUI composer has the preference stored in `SettingsViewModel` (Accessibility) but doesn't consult it. A user with the preference enabled can still post without alt text, defeating the accessibility setting."
+  },
+  {
+    "id": "0102",
+    "title": "Composer image grid does not support reordering",
+    "status": "open",
+    "module": "BlueskyComposer",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "When multiple images are attached to a post, the React Native composer's `Gallery` lets the user drag-and-drop them to reorder before posting. The SwiftUI composer renders a fixed 2-column grid (`imageGrid`) with no reorder affordance. The order is effectively the pick order, and the user has to remove + re-pick to change it."
+  },
+  {
+    "id": "0103",
+    "title": "Composer video attachment is missing the captions / subtitles upload",
+    "status": "open",
+    "module": "BlueskyComposer",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "The React Native composer lets a video attachment carry both alt text *and* a captions track (WebVTT). RN's `SubtitleDialogBtn` opens a `SubtitleDialog` where the user can upload a `.vtt` file (or paste captions inline) and the captions blob is uploaded alongside the video and referenced from `app.bsky.embed.video.captions`.\n\nThe SwiftUI composer supports alt text on videos but has no captions UI. A SwiftUI-posted video cannot carry captions, which fails accessibility parity with RN."
+  },
+  {
+    "id": "0104",
+    "title": "Conversation list row missing timestamp, system-message handling, and multi-line preview",
+    "status": "open",
+    "module": "BlueskyMessages",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "The SwiftUI `ConvoRow` (in `ConversationListScreen.swift` ~lines 168–179) shows the avatar, display name, and a single-line of `message.text`. The React Native reference shows several more details:\n\n- **Relative timestamp** right-aligned next to the unread badge (e.g. \"2h\").\n- **System message handling**: when the last \"message\" is actually a system event (\"Conversation deleted\", \"@alice left the group\", \"@bob added @carol\"), RN renders an italicized system text instead of `message.text`.\n- **Two-line preview** with truncation, not single-line. Long messages or multi-line content are properly handled.\n- **Sender prefix on group chats**: e.g. \"@alice: hello\" so the row identifies who sent the last message in a group thread."
+  },
+  {
+    "id": "0105",
+    "title": "Group chat thread bubbles missing sender info row",
+    "status": "open",
+    "module": "BlueskyMessages",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "In a group chat, the React Native message thread shows the sender's display name (or handle) above the first bubble in a run from each participant. SwiftUI's `MessageBubble` (`MessageThreadScreen.swift` ~lines 163–186) renders the bubble alone, with no per-sender attribution. In a 5-person group thread, every \"other\" bubble looks the same; the user can't tell who said what without tapping into the avatar.\n\nIn direct (1:1) threads the omission is fine — there's only one \"other\" sender. The bug is specifically the group case."
+  },
+  {
+    "id": "0106",
+    "title": "Message bubbles have no per-message context menu",
+    "status": "open",
+    "module": "BlueskyMessages",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "In React Native, long-pressing (or right-clicking on web) any message bubble opens a context menu with: **React** (emoji picker), **Copy**, **Translate**, **Delete** (own messages only), and **Report** (others' messages). The SwiftUI `MessageBubble` has no gesture handlers and no menu — taps and long-presses do nothing. There's no way to copy a message, delete a sent mistake, or report abuse from the thread surface."
+  },
+  {
+    "id": "0107",
+    "title": "Message thread missing per-message timestamps and date dividers",
+    "status": "open",
+    "module": "BlueskyMessages",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "Two related gaps in the SwiftUI message thread:\n\n1. **No per-message timestamps.** RN shows a relative timestamp under each bubble (or under the last bubble in a clustered run from one sender). SwiftUI bubbles have no timestamp at all.\n2. **No date dividers.** RN renders a centered date pill (\"Today\", \"Yesterday\", \"Mar 4\") between groups of messages from different days. SwiftUI's `LazyVStack` is one continuous list with no day separators.\n\nTogether these make it hard to anchor a conversation in time."
+  },
+  {
+    "id": "0108",
+    "title": "Message thread doesn't render link cards or post embeds inside bubbles",
+    "status": "open",
+    "module": "BlueskyMessages",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "In React Native, a message bubble can contain rich embeds the same way a post can: link cards (`app.bsky.embed.external`), quoted posts (`app.bsky.embed.record`), and record-with-media compounds. RN's `MessageItemEmbed` renders all three. SwiftUI's `MessageBubble` only handles raw image embeds — link previews and shared posts inside DMs render as plain text URLs or worse, are silently dropped.\n\nA practical consequence: when a user shares a Bluesky post into a DM, the recipient sees the at:// URI as text instead of an inline preview of the post."
+  },
+  {
+    "id": "0109",
+    "title": "Message thread has no scroll-to-bottom button or new-messages divider",
+    "status": "open",
+    "module": "BlueskyMessages",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "When a user scrolls up through history in a message thread and a new message arrives, the React Native client:\n\n1. **Does not auto-scroll** if the user is reading older messages — instead it shows a floating **\"Jump to newest\"** pill (FAB-style) anchored to the bottom-right.\n2. Renders a **\"New messages\"** centered divider above the first unread message so it's clear where you left off.\n\nThe SwiftUI implementation auto-scrolls to the bottom on every new message regardless of where the user is reading, which yanks them out of context. There's no FAB and no divider."
+  },
+  {
+    "id": "0110",
+    "title": "Message reactions (emoji) are not implemented",
+    "status": "open",
+    "module": "BlueskyMessages",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "The React Native chat client supports per-message emoji reactions: a user picks an emoji from a picker, the reaction attaches to the message, and a small reaction strip renders below the bubble showing each emoji and its count. Tapping the strip opens a dialog listing who reacted with what. RN exposes the picker via the per-message context menu (covered by #0106) and via a \"+\" affordance on long-press.\n\nThe SwiftUI client has no reactions UI: no picker, no rendered reaction strip, no dialog."
+  },
+  {
+    "id": "0111",
+    "title": "Message thread doesn't render system messages (e.g. \"@alice added @bob\")",
+    "status": "open",
+    "module": "BlueskyMessages",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "Both 1:1 and group threads can include system events that look like messages but aren't authored by anyone: \"@alice left the group\", \"@bob added @carol\", \"Conversation locked\", \"Group name changed to <new>\", message-deleted tombstones, etc. React Native renders these as italicized centered text (no bubble, no avatar). The SwiftUI thread loop only handles `MessageView` and skips other variants of the discriminated union — system events don't render at all, breaking the narrative of the conversation."
+  },
+  {
+    "id": "0112",
+    "title": "Compose bar in DMs doesn't detect mentions, links, or hashtags (no facets)",
+    "status": "open",
+    "module": "BlueskyMessages",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "When a user types `@alice` or `https://example.com` or `#tech` in the React Native message composer, RN runs the same facet-builder used by the post composer (`useExtractEmbedFromFacets`) and:\n\n- Resolves `@handle` to a DID and includes a mention facet in the sent message.\n- Detects URLs and either includes a link facet, or upgrades the message to include a link-card embed.\n- Highlights mentions/links inline as the user types.\n\nThe SwiftUI compose bar (`MessageThreadScreen.swift` ~lines 104–128) sends the raw text via `MessageInput.text` without facets and without inline highlighting. Recipients see plain text where mentions and links should be tappable."
+  },
+  {
+    "id": "0113",
+    "title": "Account settings is a stub; needs full implementation (email, password, handle, birthday, deactivate, export)",
+    "status": "open",
+    "module": "BlueskySettings",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "`AccountSettingsScreen` is currently a private stub inside `SettingsScreen.swift` (lines 120–133) that displays a note directing users to bsky.app for email / password / 2FA changes. The React Native client implements all of these inline:\n\n- **Email**: change email + verification status with badge color (verified / unverified) + resend verification.\n- **Password**: change password (current + new + confirm) inline.\n- **Handle**: change handle (with `.bsky.social` domain or custom domain — `com.atproto.identity.updateHandle`).\n- **Birthday**: edit birthdate.\n- **Two-factor (Email 2FA)**: toggle.\n- **Switch hosting provider / migrate PDS**: advanced.\n- **Export my data**: download CAR file.\n- **Deactivate account**: with warning + final-confirm.\n- **Delete account**: end-of-life flow.\n\nThe stub directs users out of the app, which is a usability regression — these are core account operations that RN handles natively."
+  },
+  {
+    "id": "0114",
+    "title": "Privacy & Security settings missing inline 2FA toggle, app-passwords link with badge, and PWI opt-out",
+    "status": "open",
+    "module": "BlueskySettings",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "`PrivacySettingsScreen` (lines 26–49) is a stub with placeholder text. The React Native equivalent is a full screen with:\n\n- **Two-factor authentication** — inline `Email2FAToggle` showing current state and flipping it via `com.atproto.server.update2faEmail`.\n- **App passwords** — link row with a badge showing the count of active app passwords. (Currently SwiftUI has the `AppPasswordsScreen` but no entry point from Privacy.)\n- **Logged-out visibility (PWI opt-out)** — toggle + admonition explaining \"When off, signed-out users cannot view your profile or posts on the web\". This is the `noUnauthenticated` label on the actor.\n- **Activity privacy** (covered separately by #0122) — link to dedicated screen.\n- **Interaction settings** — link to \"Who can reply / quote / DM\" screen (covered by #0140 once filed in moderation pass — but the privacy entry point is here)."
+  },
+  {
+    "id": "0115",
+    "title": "Notification settings missing per-type sub-screens, push permission UI, and email toggles",
+    "status": "open",
+    "module": "BlueskySettings",
+    "platform": "iOS / All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "`NotificationSettingsScreen` is a single screen with 6 toggles (likes, reposts, follows, mentions, replies, quotes). The React Native equivalent has:\n\n- **Push permission gate** at the top: detects iOS notification permissions; if not granted, shows a \"Push notifications are off — turn them on in Settings\" admonition + a deep link to system Settings.\n- **Per-type sub-screens** for each notification kind (Likes, Reposts, Mentions, Replies, Quotes, Follows, Subscribed Posts, Verifications). Each sub-screen has separate toggles for **push** and **email** delivery and an \"Include from\" filter (Anyone / People I follow / Verified accounts).\n- **Email notifications** as a separate top-level group with their own toggles (digest, security alerts).\n- **DM notifications** toggle."
+  },
+  {
+    "id": "0116",
+    "title": "Thread Preferences screen is missing (sort order, group replies)",
+    "status": "open",
+    "module": "BlueskySettings",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "The React Native client has a dedicated **Thread Preferences** screen at Settings → Content & Media → Thread preferences (`Bluesky-ReactNative/src/screens/Settings/ThreadPreferences/`). It has:\n\n- **Sort replies** — radio: **Hot** (engagement), **Top** (likes), **Newest**, **Oldest**, **Random**.\n- **Group threads** — toggle: tree-style (grouped by sub-conversation) vs flat.\n- **Hide replies by muted accounts**, **Hide replies by people you don't follow** — toggles.\n\nThese preferences ride in `app.bsky.actor.defs#threadViewPref` inside `app.bsky.actor.putPreferences`. The SwiftUI app has no Thread Preferences screen and the thread view (per audit feed) doesn't honor these prefs anyway."
+  },
+  {
+    "id": "0117",
+    "title": "Following Feed Preferences screen is missing (hide replies / reposts / quotes)",
+    "status": "open",
+    "module": "BlueskySettings / BlueskyFeed",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "React Native exposes a dedicated **Following Feed Preferences** screen (Settings → Content & Media → Following feed preferences) where the user controls how the Following timeline composes:\n\n- Show replies (toggle) + \"From people you follow more than\" threshold slider.\n- Show reposts (toggle).\n- Show quote posts (toggle).\n- Show samples from your other feeds (Merge feed lab toggle).\n\nThese preferences live at `app.bsky.actor.defs#feedViewPref` keyed by `home`. The SwiftUI client has #0017 (filter toggles) marked resolved, but the implementation is per-tab transient state, not preference-backed and not exposed via Settings."
+  },
+  {
+    "id": "0118",
+    "title": "External Media Preferences screen is missing (per-source toggles for YouTube, Spotify, etc.)",
+    "status": "open",
+    "module": "BlueskySettings",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "The React Native client has an **External Media Preferences** screen (Settings → Content & Media → External media) with per-source toggles for which embedded players to inline-render: YouTube, YouTube Music, Spotify, Apple Music, Twitch, SoundCloud, Vimeo, Giphy, Tenor, Flickr, etc. Sources that are off render as plain link cards instead of inline players.\n\nThe SwiftUI `ContentSettingsScreen` has only a single boolean \"Load external embeds\" toggle. The per-source granularity is lost; users either get all third-party iframes or none."
+  },
+  {
+    "id": "0119",
+    "title": "Appearance settings missing color mode picker, dark theme variant, and font selection",
+    "status": "open",
+    "module": "BlueskySettings / BlueskyUI",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "`AppearanceSettingsScreen` currently shows only a font-size slider (12–24pt) and a static text note. The React Native equivalent has:\n\n- **Color mode** (radio): **System** / **Light** / **Dark**.\n- **Dark theme variant** (radio when Dark or System+dark): **Dark** / **Dim** (the lower-contrast OLED-friendly variant).\n- **Font** (radio): **System** / **Theme** (RN's branded font, Inter).\n- **Font size** (radio with 5 fixed levels) — RN uses 5 named tiers (XS / S / M / L / XL) rather than a continuous slider.\n\nThe SwiftUI `Theme` enum (`light` / `dark` / `dim`) already exists in `BlueskyUI`, but no UI lets the user pick. The app currently follows the system trait collection always, which means Dim is unreachable and Light/Dark can't be forced."
+  },
+  {
+    "id": "0120",
+    "title": "Language settings missing app language and content-language multi-select",
+    "status": "open",
+    "module": "BlueskySettings",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "The React Native Language Settings screen has three distinct controls:\n\n1. **App language** — a single-select picker for the UI's display language (locale), applied via the i18n layer.\n2. **Primary post language** — single-select; the default `langs[]` value attached to new posts.\n3. **Content languages** — **multi-select** of which languages the user wants to see in feeds; posts in unselected languages are filtered.\n\nThe SwiftUI `LanguageSettingsScreen` only shows a hardcoded single-select list of 12 languages used as Post Languages. App language and content-language multi-select are missing entirely."
+  },
+  {
+    "id": "0121",
+    "title": "Accessibility settings missing larger-alt-badge toggle and haptic feedback toggle",
+    "status": "open",
+    "module": "BlueskySettings",
+    "platform": "iOS / All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "The React Native Accessibility settings screen offers three controls SwiftUI doesn't:\n\n- **Display larger alt-text badges** — toggle that increases the size of the small \"ALT\" badge on images, for low-vision users who want to know at a glance which images are described.\n- **Disable haptic feedback** (iOS only) — toggle to disable taptic feedback on actions.\n- **Require alt text** — already in SwiftUI but not consumed by composer (see #0101).\n\nSwiftUI's `AccessibilitySettingsScreen` has Reduce Motion, Open Links In-App, and Require Alt Text, but is missing the larger-badge toggle and the haptics toggle."
+  },
+  {
+    "id": "0122",
+    "title": "Activity Privacy settings screen is missing",
+    "status": "open",
+    "module": "BlueskySettings",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "React Native has a dedicated **Activity Privacy Settings** screen (Settings → Privacy → Activity privacy) controlling who is allowed to receive notifications when you interact with their content (likes, reposts):\n\n- \"Allow others to be notified of your likes / reposts\" — radio: **Anyone** / **People you follow** / **Mutuals only** / **Nobody**.\n\nThis maps to `app.bsky.actor.defs#postInteractionSettingsPref` (or the activity-privacy variant). SwiftUI's `PrivacySettingsScreen` is a stub (see #0114) and does not link out to a per-activity privacy screen."
+  },
+  {
+    "id": "0123",
+    "title": "Settings hub missing Help link",
+    "status": "open",
+    "module": "BlueskySettings",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "The React Native Settings hub includes a **Help** row between Languages and About that opens the Bluesky help desk in the system browser (`https://blueskyweb.zendesk.com/` or whatever `HELP_DESK_URL` resolves to). The SwiftUI `SettingsScreen` has no Help row at all."
+  },
+  {
+    "id": "0124",
+    "title": "About screen missing system-info section, status link, and dev-mode tools",
+    "status": "open",
+    "module": "BlueskySettings",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "The React Native About screen contains, in addition to the version and legal links the SwiftUI version has:\n\n- **System Info** section: device model, OS version, build number, build channel (release / TestFlight / dev), session DID — copyable for support tickets.\n- **Status Page** link to the Bluesky status site.\n- **Cache management**: \"Clear cache\" button that wipes the cache store (matches \"Clear data\" on Android / \"Reset\" on iOS).\n- **Dev / Debug tools** (only visible in dev builds): toggles for verbose logging, force a specific feature flag, etc.\n- **Build details** beyond version: build hash, build date.\n\nThe SwiftUI `AboutScreen` shows only Version, ToS, Privacy, Community Guidelines, Source Code."
+  },
+  {
+    "id": "0125",
+    "title": "List detail screen missing header (avatar, name, description, creator, action buttons)",
+    "status": "open",
+    "module": "BlueskyLists",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "`ListDetailScreen` jumps straight to a tab strip (Members / Feed) with no header. The React Native reference (`Bluesky-ReactNative/src/screens/ProfileList/`) renders a full header above the tabs:\n\n- List avatar (square thumbnail, ~64pt).\n- List name (large title).\n- Purpose badge (Curate / Moderation).\n- Description text.\n- Creator handle row (\"by @alice.bsky.social\", tappable to profile).\n- Member count + subscriber count.\n- **Primary action**: Subscribe / Unsubscribe (for mod lists) or Pin / Unpin (for curate lists).\n- **Secondary actions menu** (ellipsis): Mute list, Block list (mod lists), Share list (copy link / sheet), Report list, Edit list (covered separately in #0127), Delete list (covered separately in #0127).\n\nWithout a header, users have no context about what list they're looking at and no way to subscribe/manage."
+  },
+  {
+    "id": "0126",
+    "title": "List detail screen missing the \"About\" tab",
+    "status": "open",
+    "module": "BlueskyLists",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "`ListDetailScreen` has only Members and Feed tabs. The React Native reference adds an **About** tab with: full list description, creation date, creator, list URI (copyable), labels applied (for mod lists), and metadata. Without an About tab, list metadata is split awkwardly into the header and not all of it has a home."
+  },
+  {
+    "id": "0127",
+    "title": "Lists have no edit or delete UI",
+    "status": "open",
+    "module": "BlueskyLists",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "Once a list is created in the SwiftUI app, it cannot be edited or deleted. The React Native client lets the list creator:\n\n- **Edit** the list — change name, description, avatar, purpose. Reuses the create form in edit mode.\n- **Delete** the list — destructive confirmation, then `com.atproto.repo.deleteRecord` on `app.bsky.graph.list`.\n- **Add / remove members** — managed inline from the Members tab.\n\nSwiftUI has `ListCreateSheet` for creation but no edit path and no delete affordance."
+  },
+  {
+    "id": "0128",
+    "title": "Starter Pack create is a single sheet; RN uses a multi-step wizard",
+    "status": "open",
+    "module": "BlueskyLists",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "`StarterPackCreateSheet` collects name, description, and a list selection in a single sheet. The React Native client uses a multi-step wizard at `Bluesky-ReactNative/src/screens/StarterPack/Wizard/`:\n\n1. **Profiles** — actor picker; the user searches and selects accounts to include directly (without needing to first build a list).\n2. **Feeds** — feed picker; up to N feeds to include.\n3. **Details** — name, description, optional banner.\n4. **Preview** — preview how the starter pack will appear; final Create button.\n\nThe single-sheet version misses the feeds slot entirely and forces the user to pre-build a list before creating the pack."
+  },
+  {
+    "id": "0129",
+    "title": "Starter Pack screen missing included feeds, share button, and QR/deep-link affordances",
+    "status": "open",
+    "module": "BlueskyLists",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "`StarterPackScreen` shows the header, member count, and a list of sample members. The React Native reference also displays:\n\n- **Included feeds** — a section listing feed generators bundled in the pack with Pin / Add buttons.\n- **Share** — a button that opens a system share sheet with the deep link (`https://bsky.app/starter-pack/<did>/<rkey>`).\n- **QR code** — RN can render a QR for the deep link inside a sheet, useful for in-person sharing.\n- **Copy link** — quick affordance for clipboard.\n\nThe \"Follow All\" button exists in SwiftUI, but the discoverability and shareability features are missing."
+  },
+  {
+    "id": "0130",
+    "title": "Video feed has no interactive overlays (mute, like, comment, share, profile)",
+    "status": "open",
+    "module": "BlueskyFeed",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "`VideoFeedView` renders a vertical paging `TabView` of `AVPlayer`-backed videos with an avatar, handle, bio, and post text overlay. It is missing the interactive controls the React Native video feed has (TikTok-style):\n\n- **Mute toggle** (top-right or bottom-right) — videos default muted; users tap to unmute.\n- **Like / repost / reply / share** action buttons stacked vertically on the right edge, with counts.\n- **Comments / replies** entry — opens the post's thread.\n- **Avatar/handle** is tappable to navigate to the author's profile.\n- **Scrubber** at the bottom showing playback progress.\n- **Tap to pause** in the center — RN supports a long-press / tap-to-pause gesture overlay.\n\nWithout these, the video feed is a passive viewer with no engagement affordances."
+  },
+  {
+    "id": "0131",
+    "title": "Lists hub missing \"My Lists\" vs \"Subscribed\" sections",
+    "status": "open",
+    "module": "BlueskyLists",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "`ListsScreen` shows a single flat list of every list the user can see (created + subscribed). The React Native reference splits this into segmented sections — **My Lists** (ones the viewer created) and **Subscribed Lists** (ones the viewer has subscribed to without owning) — typically as either tabs or labeled sections in a single scroll. This separation matters because the actions per row differ: edit/delete on owned lists, unsubscribe on subscribed."
+  },
+  {
+    "id": "0132",
+    "title": "Muted Words & Tags screen is missing",
+    "status": "open",
+    "module": "BlueskyModeration",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "The React Native moderation hub includes a **Muted Words & Tags** entry that opens a screen (or dialog) where users curate a list of strings to filter from feeds. Each entry can target tag-only or text-anywhere matches, and can target specific timeframes (forever / 24h / 7d / 30d) and contexts (content vs tags). The SwiftUI moderation surface has no equivalent — there is no way to mute a specific word, hashtag, or domain.\n\nThis is one of the most-used moderation tools in RN and its absence is a significant gap."
+  },
+  {
+    "id": "0133",
+    "title": "Moderation hub missing rows (Interaction settings, Verification, Advanced labelers) and proper section grouping",
+    "status": "open",
+    "module": "BlueskyModeration",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "The React Native moderation hub is divided into three labeled sections, each with specific rows. The SwiftUI `ModerationScreen` uses different (and fewer) sections and skips several rows.\n\n**RN section structure:**\n\n- **Moderation tools**: Interaction settings → Muted words & tags → Moderation lists → Muted accounts → Blocked accounts → Verification settings.\n- **Content filters**: Adult content toggle (gated by age assurance) → per-label visibility prefs.\n- **Advanced**: Subscribed labelers (with availability status + cleanup action).\n\n**SwiftUI current state**: two sections (\"Account Actions\", \"Content\") containing only Mutes, Blocks, Mod Lists, and (under Content) Adult-content / Filters. Missing rows: **Interaction settings**, **Muted words & tags** (filed separately as #0132), **Verification settings**, **Advanced / labelers** section with subscribed-labeler list."
+  },
+  {
+    "id": "0134",
+    "title": "Mutes / Blocks lists have no search field",
+    "status": "open",
+    "module": "BlueskyModeration",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "`MutesScreen` and `BlocksScreen` render flat paginated lists with no search affordance. The React Native equivalents (built on `ProfileCard`) include a search field at the top so users with long mute/block lists can find and unmute/unblock a specific account quickly."
+  },
+  {
+    "id": "0135",
+    "title": "Report dialog uses flat reasons; needs categorized picker + labeler selection",
+    "status": "open",
+    "module": "BlueskyModeration",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "`ReportDialog` exposes a small flat list of report reasons (six entries). The React Native reference uses a richer model:\n\n1. **Categorized reason tree** — top-level categories (Spam, Harassment, Sexual content, Violence/threats, Illegal, Misleading, Rude, Other) with sub-reasons under each. RN maps these to Ozone-namespaced types (`REASONVIOLENCE`, `REASONSEXUAL`, `REASONHARASSMENT`, etc.) and falls back to base `com.atproto.moderation.defs#reason*` codes for older labelers.\n2. **Labeler picker** — when multiple labelers can handle a category, RN shows a labeler list so the user can choose which moderation service to send the report to. The available labelers are filtered by both the subject type and the chosen reason.\n\nThe SwiftUI version skips both: reasons are flat, and the report always goes to a single hard-coded labeler (or no labeler at all)."
+  },
+  {
+    "id": "0136",
+    "title": "Content filter settings show only global labels; need per-labeler preferences",
+    "status": "open",
+    "module": "BlueskyModeration",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "`ContentFilterSettingsScreen` exposes a fixed set of global Bluesky labels (porn, sexual, nudity, graphic-media, hate, spam) with hide/warn/show pickers. The React Native reference builds the screen dynamically from each subscribed labeler's `labelValueDefinitions`:\n\n- Each labeler gets its own section.\n- Each section lists every label the labeler defines (which can be custom — e.g., a labeler might define `politics`, `news-outlet`, etc.).\n- Per-label visibility picker writes to `ContentLabelPref` keyed by `(labeler DID, label name)`.\n- Some labels are \"self-applied only\" or \"system\" — those rows are read-only.\n\nThe SwiftUI version cannot configure custom labeler labels; only the built-in global set works."
+  },
+  {
+    "id": "0137",
+    "title": "Moderation Lists screen doesn't separate Created vs Subscribed lists",
+    "status": "open",
+    "module": "BlueskyModeration",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "`ModerationListsScreen` renders a single flat list of every moderation list the viewer has touched. The React Native reference splits these into two sections (or tabs): **My moderation lists** (lists the viewer created) and **Subscribed moderation lists** (lists the viewer subscribes to but does not own). The actions per row differ — own lists support edit/delete; subscribed lists support unsubscribe — so combining them is awkward UX."
+  },
+  {
+    "id": "0138",
+    "title": "Post Interaction Settings screen tree is missing (default reply / quote / DM rules)",
+    "status": "open",
+    "module": "BlueskyModeration",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "The React Native client has a dedicated **Post Interaction Settings** screen (`Bluesky-ReactNative/src/screens/ModerationInteractionSettings/`) where the user sets *defaults* for who can interact with their posts and DMs:\n\n- **Allow replies from**: Everyone / People you follow / Mentioned / Lists / Nobody.\n- **Allow quotes from**: Everyone / Nobody (or list combo).\n- **Allow incoming DMs from**: Everyone / People you follow / Nobody.\n\nThese defaults are written via `app.bsky.actor.putPreferences` (specifically `app.bsky.actor.defs#postInteractionSettingsPref` and the DM-allowance pref) and applied as the default `threadgate` / `postgate` on new posts (see composer issue #0098) and as the DM allow-list.\n\nSwiftUI has no Interaction Settings surface at all — neither in Moderation nor in Privacy."
+  },
+  {
+    "id": "0139",
+    "title": "Liked-by, Reposted-by, and Quotes-of screens are missing",
+    "status": "open",
+    "module": "BlueskyFeed / BlueskyProfile",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "In the React Native client, tapping the like, repost, or quote count on a focal post in `ThreadView` opens a paginated list of the corresponding actors / posts:\n\n- **Liked by** — `app.bsky.feed.getLikes` → list of profiles who liked.\n- **Reposted by** — `app.bsky.feed.getRepostedBy` → list of profiles who reposted.\n- **Quotes of** — `app.bsky.feed.getQuotes` → feed of posts quoting this one.\n\nThe SwiftUI thread view shows the counts (or doesn't, in the focal-post case) but the counts are not tappable and the destination screens don't exist."
+  },
+  {
+    "id": "0140",
+    "title": "Thread view has no reply-sort dropdown",
+    "status": "open",
+    "module": "BlueskyFeed",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "The React Native thread view exposes a header dropdown (RN's `HeaderDropdown`) where the user picks how replies are sorted: **Hot** (engagement-weighted), **Top** (likes), **Newest**, **Oldest**, **Random**. The default comes from the user's Thread Preferences (see #0116). The SwiftUI thread renders replies in API order with no UI to change sort."
+  },
+  {
+    "id": "0141",
+    "title": "Thread view doesn't render nested reply tree (no indentation, no connectors, no \"show more replies\")",
+    "status": "open",
+    "module": "BlueskyFeed",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "`ThreadView` flattens replies with `flattenThread()` and renders them in a single column at uniform indentation. The React Native client renders a tree:\n\n- **Indentation** per nesting level (RN uses a `TREE_INDENT` constant).\n- **Vertical connector lines** on the left edge of each row, joining a reply to its parent above.\n- **\"Show N more replies\"** expanders for collapsed branches deeper than the default depth.\n- **Avatar clustering**: the thinner left rail uses smaller avatars when nested.\n\nWithout this rendering, multi-branch threads collapse into a flat sequence and the conversation structure is lost."
+  },
+  {
+    "id": "0142",
+    "title": "Posts have no \"Show more\" / \"Show less\" expansion for long text",
+    "status": "open",
+    "module": "BlueskyFeed / BlueskyUI",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "The React Native client clamps long post bodies to ~25 lines (`MAX_POST_LINES`) and shows a **\"Show more\"** button below; tapping expands the full text and replaces the button with **\"Show less\"**. The SwiftUI `PostCard` / `PostBodyView` either renders the full body uncapped (in feed) or applies a fixed `lineLimit` set by the caller (in compact contexts) — but there's no expansion control either way. Long-form posts break the feed visually with massive cards."
+  },
+  {
+    "id": "0143",
+    "title": "Posts have no Translate option in the menu",
+    "status": "open",
+    "module": "BlueskyFeed / BlueskyUI",
+    "platform": "iOS / All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "The React Native post controls include a **Translate** option (visible inline near the post body when language differs from app language, and also in the ellipsis menu). When tapped, it routes through the platform translate API or the web Translate service. The SwiftUI `PostCard` ellipsis menu (added in #0047) has Copy text / Mute thread / Report — no Translate option."
+  },
+  {
+    "id": "0144",
+    "title": "Post menu missing \"Copy link to post\" and \"Open in browser\"",
+    "status": "open",
+    "module": "BlueskyFeed / BlueskyUI",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "The React Native post share menu includes **Copy link to post** (puts the bsky.app URL on the clipboard) and an implicit **Open in browser** (the web profile link). The SwiftUI `PostCard` exposes a `ShareLink` for native sharing and an ellipsis menu with Copy text / Mute / Report — but nothing for copying just the post URL or opening the post on the web."
+  },
+  {
+    "id": "0145",
+    "title": "Thread view doesn't honor or display threadgate-hidden replies",
+    "status": "open",
+    "module": "BlueskyFeed",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "When the original poster has set a threadgate (composer issue #0098 covers writing one) restricting who can reply, the thread response from `getPostThread` flags certain replies as \"hidden by threadgate\". React Native renders these as either a tombstone (\"This reply is hidden\") or in a collapsed \"Hidden replies\" section below the visible replies, with a divider. The `ThreadView` in SwiftUI does neither — hidden replies either don't show or render alongside visible ones with no distinction.\n\nThere's also an OP-controlled mechanism to hide individual replies even without a threadgate; same UX applies."
+  },
+  {
+    "id": "0146",
+    "title": "Focal post in thread view has no visual emphasis (larger avatar, larger text, full date, expanded stats)",
+    "status": "open",
+    "module": "BlueskyFeed / BlueskyUI",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "In the React Native thread view, the **focal** post (the one the user navigated to) is visually distinct from its parents and replies. RN's `ThreadItemAnchor`:\n\n- Uses a **larger avatar** (~42pt vs the ~32pt used elsewhere).\n- Uses **larger text** (`text_lg` body).\n- Shows a **full timestamp** (\"Mar 4, 2026 · 10:42 AM\"), not just the relative \"2h\" used in feed.\n- Renders an **expanded stats section**: tappable \"X likes · Y reposts · Z quotes\" rows that open the screens in #0139.\n- Includes a **\"Who can reply\"** badge if the thread has a threadgate.\n- The avatar/handle/body block has more vertical breathing room.\n\nThe SwiftUI `ThreadView` reuses the same `PostCard` for every node with no per-position styling. The user can't immediately tell which post they tapped into."
+  },
+  {
+    "id": "0147",
+    "title": "Video embeds render as a thumbnail; need inline / fullscreen player",
+    "status": "open",
+    "module": "BlueskyUI / BlueskyFeed",
+    "platform": "All",
+    "first_seen": "2026-05-06",
+    "closed": "",
+    "description": "`PostEmbedView` renders a video embed as a still thumbnail with a play-icon overlay. Tapping it does nothing visible. The React Native client renders the video inline in feed (auto-playing muted when the cell is on screen, similar to Twitter / Instagram) and supports a fullscreen / lightbox playback mode on tap with player controls (scrubber, mute, time).\n\nThis is independent of the dedicated `VideoFeedView` (which has its own gaps in #0130) — it's the in-feed and in-thread playback path."
   }
 ];
