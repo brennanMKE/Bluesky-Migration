@@ -1353,31 +1353,31 @@ window.ISSUES_DATA = [
   {
     "id": "0136",
     "title": "Content filter settings show only global labels; need per-labeler preferences",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyModeration",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "`ContentFilterSettingsScreen` exposes a fixed set of global Bluesky labels (porn, sexual, nudity, graphic-media, hate, spam) with hide/warn/show pickers. The React Native reference builds the screen dynamically from each subscribed labeler's `labelValueDefinitions`:\n\n- Each labeler gets its own section.\n- Each section lists every label the labeler defines (which can be custom — e.g., a labeler might define `politics`, `news-outlet`, etc.).\n- Per-label visibility picker writes to `ContentLabelPref` keyed by `(labeler DID, label name)`.\n- Some labels are \"self-applied only\" or \"system\" — those rows are read-only.\n\nThe SwiftUI version cannot configure custom labeler labels; only the built-in global set works."
   },
   {
     "id": "0137",
     "title": "Moderation Lists screen doesn't separate Created vs Subscribed lists",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyModeration",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "`ModerationListsScreen` renders a single flat list of every moderation list the viewer has touched. The React Native reference splits these into two sections (or tabs): **My moderation lists** (lists the viewer created) and **Subscribed moderation lists** (lists the viewer subscribes to but does not own). The actions per row differ — own lists support edit/delete; subscribed lists support unsubscribe — so combining them is awkward UX."
   },
   {
     "id": "0138",
     "title": "Post Interaction Settings screen tree is missing (default reply / quote / DM rules)",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyModeration",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "The React Native client has a dedicated **Post Interaction Settings** screen (`Bluesky-ReactNative/src/screens/ModerationInteractionSettings/`) where the user sets *defaults* for who can interact with their posts and DMs:\n\n- **Allow replies from**: Everyone / People you follow / Mentioned / Lists / Nobody.\n- **Allow quotes from**: Everyone / Nobody (or list combo).\n- **Allow incoming DMs from**: Everyone / People you follow / Nobody.\n\nThese defaults are written via `app.bsky.actor.putPreferences` (specifically `app.bsky.actor.defs#postInteractionSettingsPref` and the DM-allowance pref) and applied as the default `threadgate` / `postgate` on new posts (see composer issue #0098) and as the DM allow-list.\n\nSwiftUI has no Interaction Settings surface at all — neither in Moderation nor in Privacy."
   },
   {
