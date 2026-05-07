@@ -952,11 +952,11 @@
   {
     "id": "0096",
     "title": "Composer character counter is plain text instead of a circular progress ring",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyComposer",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-06",
     "description": "The React Native composer renders the character counter as a circular progress ring (RN uses `ProgressCircle` / `ProgressPie`) that fills as the post grows toward the 300-character cap. The ring color shifts from primary to amber when fewer than 20 characters remain and to red when the post is over the limit. The numeric count appears inside or beside the ring.\n\nThe SwiftUI composer (`ComposerSheet.swift` lines 569–574) shows only a plain `Text` count. There's no ring, no color transition, and the affordance reads as a generic counter rather than the at-a-glance gauge RN provides."
   },
   {
