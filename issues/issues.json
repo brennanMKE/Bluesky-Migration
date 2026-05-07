@@ -1262,11 +1262,11 @@
   {
     "id": "0127",
     "title": "Lists have no edit or delete UI",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyLists",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "Once a list is created in the SwiftUI app, it cannot be edited or deleted. The React Native client lets the list creator:\n\n- **Edit** the list — change name, description, avatar, purpose. Reuses the create form in edit mode.\n- **Delete** the list — destructive confirmation, then `com.atproto.repo.deleteRecord` on `app.bsky.graph.list`.\n- **Add / remove members** — managed inline from the Members tab.\n\nSwiftUI has `ListCreateSheet` for creation but no edit path and no delete affordance."
   },
   {

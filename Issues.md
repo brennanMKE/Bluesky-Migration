@@ -90,6 +90,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0124](issues/0124.md) | About screen missing system-info section, status link, and dev-mode tools | BlueskySettings | All | resolved |
 | [0125](issues/0125.md) | List detail screen missing header (avatar, name, description, creator, action buttons) | BlueskyLists | All | resolved |
 | [0126](issues/0126.md) | List detail screen missing the "About" tab | BlueskyLists | All | resolved |
+| [0127](issues/0127.md) | Lists have no edit or delete UI | BlueskyLists | All | resolved |
 
 ---
 
