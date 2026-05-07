@@ -1142,11 +1142,11 @@
   {
     "id": "0115",
     "title": "Notification settings missing per-type sub-screens, push permission UI, and email toggles",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskySettings",
     "platform": "iOS / All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-06",
     "description": "`NotificationSettingsScreen` is a single screen with 6 toggles (likes, reposts, follows, mentions, replies, quotes). The React Native equivalent has:\n\n- **Push permission gate** at the top: detects iOS notification permissions; if not granted, shows a \"Push notifications are off — turn them on in Settings\" admonition + a deep link to system Settings.\n- **Per-type sub-screens** for each notification kind (Likes, Reposts, Mentions, Replies, Quotes, Follows, Subscribed Posts, Verifications). Each sub-screen has separate toggles for **push** and **email** delivery and an \"Include from\" filter (Anyone / People I follow / Verified accounts).\n- **Email notifications** as a separate top-level group with their own toggles (digest, security alerts).\n- **DM notifications** toggle."
   },
   {
