@@ -1253,11 +1253,11 @@ window.ISSUES_DATA = [
   {
     "id": "0126",
     "title": "List detail screen missing the \"About\" tab",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyLists",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "`ListDetailScreen` has only Members and Feed tabs. The React Native reference adds an **About** tab with: full list description, creation date, creator, list URI (copyable), labels applied (for mod lists), and metadata. Without an About tab, list metadata is split awkwardly into the header and not all of it has a home."
   },
   {
