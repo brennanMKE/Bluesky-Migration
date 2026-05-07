@@ -1173,11 +1173,11 @@ window.ISSUES_DATA = [
   {
     "id": "0118",
     "title": "External Media Preferences screen is missing (per-source toggles for YouTube, Spotify, etc.)",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskySettings",
     "platform": "All",
     "first_seen": "2026-05-06",
-    "closed": "",
+    "closed": "2026-05-07",
     "description": "The React Native client has an **External Media Preferences** screen (Settings → Content & Media → External media) with per-source toggles for which embedded players to inline-render: YouTube, YouTube Music, Spotify, Apple Music, Twitch, SoundCloud, Vimeo, Giphy, Tenor, Flickr, etc. Sources that are off render as plain link cards instead of inline players.\n\nThe SwiftUI `ContentSettingsScreen` has only a single boolean \"Load external embeds\" toggle. The per-source granularity is lost; users either get all third-party iframes or none."
   },
   {
