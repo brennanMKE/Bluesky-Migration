@@ -1572,11 +1572,11 @@
   {
     "id": "0159",
     "title": "Profile screen reached from a notification: like / repost / bookmark / share buttons are unresponsive on the post rows",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyProfile / BlueskyFeed / Bluesky-SwiftUI",
     "platform": "All",
     "first_seen": "2026-05-11",
-    "closed": "",
+    "closed": "2026-05-12",
     "description": "Tapping an actor's avatar in a notification row navigates to that user's Profile screen (in this case `@twostraws.bsky.social` / Paul Hudson). The Profile screen renders correctly — header, bio, stats, tab strip, and a list of the user's posts. But the action-bar buttons on each post row (reply / repost / like / bookmark / share / ellipsis) are **dead**: tapping them produces no response — no like state flip, no compose sheet, no toast, no error.\n\nThe same actions on post rows in the Home feed work as expected. The breakage is specific to the Profile screen reached via the notifications navigation path."
   },
   {

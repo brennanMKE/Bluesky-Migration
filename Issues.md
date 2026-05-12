@@ -111,6 +111,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0153](issues/0153.md) | App icon asset catalog is empty; populate from `AppIcon.png` for iOS / iPadOS / macOS | Bluesky-SwiftUI | All | resolved |
 | [0154](issues/0154.md) | Bookmarks decoding still fails: `bookmarks[*].item` is a discriminated union, not a plain PostView | BlueskyCore / BlueskyFeed | All | resolved |
 | [0155](issues/0155.md) | Profile content clipped on the leading edge (regression of #0089) | BlueskyProfile | iOS | resolved |
+| [0159](issues/0159.md) | Profile screen reached from a notification: like / repost / bookmark / share buttons are unresponsive on the post rows | BlueskyProfile / BlueskyFeed / Bluesky-SwiftUI | All | resolved |
 
 ---
 
