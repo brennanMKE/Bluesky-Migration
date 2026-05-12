@@ -1583,11 +1583,11 @@ window.ISSUES_DATA = [
   {
     "id": "0160",
     "title": "Tapping a notification opens a Thread placeholder showing only the AT-URI text instead of the actual thread",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyNotifications / BlueskyFeed / Bluesky-SwiftUI",
     "platform": "All",
     "first_seen": "2026-05-11",
-    "closed": "",
+    "closed": "2026-05-12",
     "description": "Tapping a notification row (a like, reply, mention, quote, or subscribed-post) navigates to a screen titled \"Thread\" whose entire body is a single centered line of debug text:\n\n> Thread: at://did:plc:2izaurqsrmguegexlfoc7pps/app.bsky.feed.post/3mllevupzac2j\n\nThere is no post, no parent chain, no replies, no compose bar — just the raw AT-URI rendered as a label. The placeholder is what `BlueskyProfile.ThreadPlaceholder` (or an equivalent stub view) renders when `BlueskyProfile` was scaffolded with a stand-in for the real `ThreadView` to avoid a circular `BlueskyProfile → BlueskyFeed` dependency (see Progress.md notes from 2026-04-24 — \"ThreadView in the profile context uses a `ThreadPlaceholder` stub to avoid a circular dependency\").\n\nThe notifications tab is hitting the same stub. The real `ThreadView` from `BlueskyFeed` exists and works (the Home feed → tap a post → see thread path is functional per #0039 / #0045 / #0054). The notifications tab's `navigationDestination` for thread URIs is wired to the placeholder, not the real view.\n\nThis regresses / extends #0062 (\"Tapping a notification shows raw at:// URI text instead of navigating to the thread\") which is already filed and `open`. The screenshot here makes the symptom concrete: the user sees the AT-URI verbatim because the placeholder's body literally renders the URI as text."
   }
 ];
