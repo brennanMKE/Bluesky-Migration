@@ -622,11 +622,11 @@
   {
     "id": "0063",
     "title": "Notification reason labels incomplete (`subscribed-post` and others render verbatim)",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyNotifications",
     "platform": "All",
     "first_seen": "2026-05-05",
-    "closed": "",
+    "closed": "2026-05-12",
     "description": "The Notifications screen maps a notification's `reason` string to a human-readable phrase (\"liked your post\", \"followed you\", etc.). The current mapping covers six reasons; the AT Proto notification API surfaces several more, and unrecognized reasons fall through a `default` case that prints the raw `reason` string. Most visibly, `subscribed-post` notifications show the literal text `\"subscribed-post\"` instead of a real label."
   },
   {

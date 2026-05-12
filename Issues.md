@@ -70,6 +70,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0058](issues/0058.md) | Audit and eliminate `try?` to prevent silent failures | All | All | open |
 | [0059](issues/0059.md) | Network reachability gating using Network framework | BlueskyNetworking / BlueskyKit | All | open |
 | [0060](issues/0060.md) | Saved Posts section does not match Bluesky website UX | BlueskyFeed / Bluesky-SwiftUI | All | open |
+| [0063](issues/0063.md) | Notification reason labels incomplete (`subscribed-post` and others render verbatim) | BlueskyNotifications | All | resolved |
 | [0105](issues/0105.md) | Group chat thread bubbles missing sender info row | BlueskyMessages | All | resolved |
 | [0106](issues/0106.md) | Message bubbles have no per-message context menu | BlueskyMessages | All | resolved |
 | [0107](issues/0107.md) | Message thread missing per-message timestamps and date dividers | BlueskyMessages | All | resolved |
