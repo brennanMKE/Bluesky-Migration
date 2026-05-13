@@ -113,6 +113,18 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0154](issues/0154.md) | Bookmarks decoding still fails: `bookmarks[*].item` is a discriminated union, not a plain PostView | BlueskyCore / BlueskyFeed | All | resolved |
 | [0155](issues/0155.md) | Profile content clipped on the leading edge (regression of #0089) | BlueskyProfile | iOS | resolved |
 | [0159](issues/0159.md) | Profile screen reached from a notification: like / repost / bookmark / share buttons are unresponsive on the post rows | BlueskyProfile / BlueskyFeed / Bluesky-SwiftUI | All | resolved |
+| [0161](issues/0161.md) | Sign-off: Authentication & session parity (RN) | BlueskyAuth | All | open |
+| [0162](issues/0162.md) | Sign-off: Home feed parity (RN) | BlueskyFeed | All | open |
+| [0163](issues/0163.md) | Sign-off: Thread view & post action parity (RN) | BlueskyFeed | All | open |
+| [0164](issues/0164.md) | Sign-off: Profile parity (own & others) | BlueskyProfile | All | open |
+| [0165](issues/0165.md) | Sign-off: Search & discovery parity (RN) | BlueskySearch | All | open |
+| [0166](issues/0166.md) | Sign-off: Notifications parity (RN) | BlueskyNotifications | All | open |
+| [0167](issues/0167.md) | Sign-off: Direct messages parity (RN) | BlueskyMessages | All | open |
+| [0168](issues/0168.md) | Sign-off: Composer parity (RN) | BlueskyComposer | All | open |
+| [0169](issues/0169.md) | Sign-off: Settings parity (RN) | BlueskySettings | All | open |
+| [0170](issues/0170.md) | Sign-off: Moderation parity (RN) | BlueskyModeration | All | open |
+| [0171](issues/0171.md) | Sign-off: Lists, Starter Packs & Bookmarks parity (RN) | BlueskyLists / BlueskyFeed | All | open |
+| [0172](issues/0172.md) | Sign-off: Navigation shell & deep links parity (RN) | Bluesky-SwiftUI | All | open |
 
 ---
 

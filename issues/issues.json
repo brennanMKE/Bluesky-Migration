@@ -1588,5 +1588,125 @@
     "first_seen": "2026-05-11",
     "closed": "2026-05-12",
     "description": "Tapping a notification row (a like, reply, mention, quote, or subscribed-post) navigates to a screen titled \"Thread\" whose entire body is a single centered line of debug text:\n\n> Thread: at://did:plc:2izaurqsrmguegexlfoc7pps/app.bsky.feed.post/3mllevupzac2j\n\nThere is no post, no parent chain, no replies, no compose bar — just the raw AT-URI rendered as a label. The placeholder is what `BlueskyProfile.ThreadPlaceholder` (or an equivalent stub view) renders when `BlueskyProfile` was scaffolded with a stand-in for the real `ThreadView` to avoid a circular `BlueskyProfile → BlueskyFeed` dependency (see Progress.md notes from 2026-04-24 — \"ThreadView in the profile context uses a `ThreadPlaceholder` stub to avoid a circular dependency\").\n\nThe notifications tab is hitting the same stub. The real `ThreadView` from `BlueskyFeed` exists and works (the Home feed → tap a post → see thread path is functional per #0039 / #0045 / #0054). The notifications tab's `navigationDestination` for thread URIs is wired to the placeholder, not the real view.\n\nThis regresses / extends #0062 (\"Tapping a notification shows raw at:// URI text instead of navigating to the thread\") which is already filed and `open`. The screenshot here makes the symptom concrete: the user sees the AT-URI verbatim because the placeholder's body literally renders the URI as text."
+  },
+  {
+    "id": "0161",
+    "title": "Sign-off: Authentication & session parity (RN)",
+    "status": "open",
+    "module": "BlueskyAuth",
+    "platform": "All",
+    "first_seen": "2026-05-12",
+    "closed": "",
+    "description": "Manual sign-off pass for authentication and session management against\nthe React Native reference. Confirm the SwiftUI app reaches feature\nparity with the RN client's sign-in, sign-out, and multi-account flows.\n\nThis is a test plan, not a bug report — fill in the **Actual behavior**\ncolumn as you walk through it. File one issue per problem found rather\nthan expanding this one."
+  },
+  {
+    "id": "0162",
+    "title": "Sign-off: Home feed parity (RN)",
+    "status": "open",
+    "module": "BlueskyFeed",
+    "platform": "All",
+    "first_seen": "2026-05-12",
+    "closed": "",
+    "description": "Manual sign-off for the Home feed against the React Native reference.\nCovers feed switching, content rendering, infinite scroll, pull-to-\nrefresh, and the post action bar."
+  },
+  {
+    "id": "0163",
+    "title": "Sign-off: Thread view & post action parity (RN)",
+    "status": "open",
+    "module": "BlueskyFeed",
+    "platform": "All",
+    "first_seen": "2026-05-12",
+    "closed": "",
+    "description": "Manual sign-off for the thread view — focal post styling, parent chain,\nreply tree, reply/repost/quote/bookmark composer entry points, and the\nfocal-post stat row (Liked by / Reposted by / Quotes of)."
+  },
+  {
+    "id": "0164",
+    "title": "Sign-off: Profile parity (own & others)",
+    "status": "open",
+    "module": "BlueskyProfile",
+    "platform": "All",
+    "first_seen": "2026-05-12",
+    "closed": "",
+    "description": "Manual sign-off for ProfileScreen — the user's own profile and other\nusers' profiles. Covers header (banner, avatar, name, handle, bio,\ncounts, badges), tabs (Posts / Replies / Media / Feeds / Lists /\nStarter Packs), and the follow / block / mute / report flows."
+  },
+  {
+    "id": "0165",
+    "title": "Sign-off: Search & discovery parity (RN)",
+    "status": "open",
+    "module": "BlueskySearch",
+    "platform": "All",
+    "first_seen": "2026-05-12",
+    "closed": "",
+    "description": "Manual sign-off for the Search tab — typeahead, search results, hashtag\nviews, and the discovery / trending sections."
+  },
+  {
+    "id": "0166",
+    "title": "Sign-off: Notifications parity (RN)",
+    "status": "open",
+    "module": "BlueskyNotifications",
+    "platform": "All",
+    "first_seen": "2026-05-12",
+    "closed": "",
+    "description": "Manual sign-off for the Notifications tab — list rendering, reason\nlabelling, grouping, tap navigation, and the unread badge lifecycle."
+  },
+  {
+    "id": "0167",
+    "title": "Sign-off: Direct messages parity (RN)",
+    "status": "open",
+    "module": "BlueskyMessages",
+    "platform": "All",
+    "first_seen": "2026-05-12",
+    "closed": "",
+    "description": "Manual sign-off for the Direct Messages tab — conversation list, message\nthreads, sending text and media, reactions, message requests inbox, and\ngroup chats."
+  },
+  {
+    "id": "0168",
+    "title": "Sign-off: Composer parity (RN)",
+    "status": "open",
+    "module": "BlueskyComposer",
+    "platform": "All",
+    "first_seen": "2026-05-12",
+    "closed": "",
+    "description": "Manual sign-off for the post composer — text input, mention/link/\nhashtag detection, image and video attachments, alt text, drafts,\nthreading (multi-post), replies, and quote-post composition."
+  },
+  {
+    "id": "0169",
+    "title": "Sign-off: Settings parity (RN)",
+    "status": "open",
+    "module": "BlueskySettings",
+    "platform": "All",
+    "first_seen": "2026-05-12",
+    "closed": "",
+    "description": "Manual sign-off for the Settings tree — confirm every RN sub-screen\nexists, persists across launches, and the destructive flows (sign out,\ndeactivate account, delete account) work."
+  },
+  {
+    "id": "0170",
+    "title": "Sign-off: Moderation parity (RN)",
+    "status": "open",
+    "module": "BlueskyModeration",
+    "platform": "All",
+    "first_seen": "2026-05-12",
+    "closed": "",
+    "description": "Manual sign-off for the moderation suite — blocks, mutes, mute lists,\ncontent labelers, the report flow, and post-interaction settings."
+  },
+  {
+    "id": "0171",
+    "title": "Sign-off: Lists, Starter Packs & Bookmarks parity (RN)",
+    "status": "open",
+    "module": "BlueskyLists / BlueskyFeed",
+    "platform": "All",
+    "first_seen": "2026-05-12",
+    "closed": "",
+    "description": "Manual sign-off for the curated-content surfaces — user lists, starter\npacks, and bookmarks (Saved)."
+  },
+  {
+    "id": "0172",
+    "title": "Sign-off: Navigation shell & deep links parity (RN)",
+    "status": "open",
+    "module": "Bluesky-SwiftUI",
+    "platform": "All",
+    "first_seen": "2026-05-12",
+    "closed": "",
+    "description": "Manual sign-off for the app shell — tab bar (iOS / iPad), sidebar\n(macOS), top-right toolbar, deep-link routing, push-notification\nrouting, and back-stack behaviour across tab switches."
   }
 ]
