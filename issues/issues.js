@@ -613,11 +613,11 @@ window.ISSUES_DATA = [
   {
     "id": "0062",
     "title": "Tapping a notification shows raw at:// URI text instead of navigating to the thread",
-    "status": "open",
+    "status": "resolved",
     "module": "BlueskyNotifications",
     "platform": "All",
     "first_seen": "2026-05-05",
-    "closed": "",
+    "closed": "2026-05-12",
     "description": "Tapping a notification row in the Notifications tab should navigate to the relevant destination — the thread for likes/replies/quotes/mentions/reposts, the actor's profile for follows, the feed for `feedgen-like` / `starterpack-joined`, and the activity view for `subscribed-post`. Today the destination is a placeholder that just renders the raw AT-URI as text (`Thread: at://did:plc:…/app.bsky.feed.post/…`), so the user has no working navigation from notifications."
   },
   {
