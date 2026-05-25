@@ -139,27 +139,12 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 
 ---
 
-## Issue visualization
-
-`issues/index.html` is an interactive dashboard with swimlane, timeline, and list views. It loads data from `issues/issues.js`, which is generated from the individual `.md` files.
-
-**After filing or updating any issue, regenerate the data file:**
-
-```
-! python3 issues/generate.py
-```
-
-Open `issues/index.html` directly in a browser — no web server required.
-
----
-
 ## How to file an issue
 
 1. Pick the next number from the index above.
 2. Create `issues/NNNN.md` using the template below.
 3. If there are screenshots or other attachments, drop them in `issues/NNNN/` and add them to the Attachments section using inline image syntax (see template).
 4. Add a row to the Index table above.
-5. Run `python3 issues/generate.py` to update the visualization data.
 
 ## How to update an existing issue
 
@@ -167,7 +152,6 @@ Any change to an issue — status update, added notes, new attachment, or any ot
 
 1. Edit `issues/NNNN.md` with the change.
 2. If the status changed, update the matching row in the Index table above.
-3. Run `python3 issues/generate.py` to refresh the visualization data.
 
 **Adding screenshots:** macOS screenshot filenames contain a **narrow no-break space** (U+202F) before AM/PM — visually identical to a regular space but distinct in bytes. Quoting the literal filename in a `cp` command will fail with "No such file or directory" because of this character.
 

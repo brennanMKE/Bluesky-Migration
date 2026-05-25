@@ -53,11 +53,10 @@ When a bug or regression is spotted during testing, **file it rather than fixing
 2. Create `issues/NNNN.md` from the template in `Issues.md`.
 3. Drop any screenshots or attachments in `issues/NNNN/`.
 4. Add a row to the index table in `Issues.md`.
-5. Run `python3 issues/generate.py` to update the visualization data.
 
-When an issue is fixed: update its `Status` to `resolved` in `issues/NNNN.md` and in the `Issues.md` index, then run `python3 issues/generate.py` to refresh the visualization.
+When an issue is fixed: update its `Status` to `resolved` in `issues/NNNN.md` and in the `Issues.md` index.
 
-Any other change to an existing issue (adding notes, attaching files, changing status) also requires running `python3 issues/generate.py` afterward.
+Any other change to an existing issue (adding notes, attaching files, changing status) requires editing `issues/NNNN.md` and updating the matching row in the `Issues.md` index.
 
 ## Tracking workflow
 
