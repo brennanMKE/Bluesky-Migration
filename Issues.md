@@ -125,6 +125,8 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0170](issues/0170.md) | Sign-off: Moderation parity (RN) | BlueskyModeration | All | open |
 | [0171](issues/0171.md) | Sign-off: Lists, Starter Packs & Bookmarks parity (RN) | BlueskyLists / BlueskyFeed | All | open |
 | [0172](issues/0172.md) | Sign-off: Navigation shell & deep links parity (RN) | Bluesky-SwiftUI | All | open |
+| [0173](issues/0173.md) | Separate Bundle ID for development vs release builds via xcconfig schemes | Build / Config | All | resolved |
+| [0174](issues/0174.md) | Automated screenshot capture script for iterating through app screens | Build / Config | All | resolved |
 
 ---
 
