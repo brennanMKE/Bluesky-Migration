@@ -127,6 +127,15 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0172](issues/0172.md) | Sign-off: Navigation shell & deep links parity (RN) | Bluesky-SwiftUI | All | open |
 | [0173](issues/0173.md) | Separate Bundle ID for development vs release builds via xcconfig schemes | Build / Config | All | resolved |
 | [0174](issues/0174.md) | Automated screenshot capture script for iterating through app screens | Build / Config | All | resolved |
+| [0175](issues/0175.md) | UI test automation foundation: launch-arg navigation driver and screenshot harness | Tests / Bluesky-SwiftUI | All | open |
+| [0176](issues/0176.md) | UI test suite: home feed (load, rendering, and post interactions) | Tests / BlueskyFeed | All | open |
+| [0177](issues/0177.md) | UI test suite: thread view and post action buttons | Tests / BlueskyFeed | All | open |
+| [0178](issues/0178.md) | UI test suite: profile screen (own and others) | Tests / BlueskyProfile | All | open |
+| [0179](issues/0179.md) | UI test suite: search and discovery | Tests / BlueskySearch | All | open |
+| [0180](issues/0180.md) | UI test suite: notifications (list, grouping, and tap routing) | Tests / BlueskyNotifications | All | open |
+| [0181](issues/0181.md) | UI test suite: direct messages (conversation list and thread) | Tests / BlueskyMessages | All | open |
+| [0182](issues/0182.md) | UI test suite: composer (sheet, character count, and post submission) | Tests / BlueskyComposer | All | open |
+| [0183](issues/0183.md) | UI test suite: settings, moderation, and account screens | Tests / BlueskySettings / BlueskyModeration | All | open |
 
 ---
 
