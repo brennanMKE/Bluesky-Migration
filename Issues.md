@@ -138,6 +138,15 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0183](issues/0183.md) | UI test suite: settings, moderation, and account screens | Tests / BlueskySettings / BlueskyModeration | All | resolved |
 | [0184](issues/0184.md) | Search result rows don't navigate: SearchScreen mounted without onActorTap/onPostTap | BlueskySearch / Bluesky-SwiftUI | All | open |
 | [0185](issues/0185.md) | UI-test navigator openSettings/openModeration intents don't reliably push on iOS | Tests / Bluesky-SwiftUI | iOS | open |
+| [0186](issues/0186.md) | macOS UI test foundation: cross-platform navigation driver, harness, and signing on the Mac | Tests / Bluesky-SwiftUI | macOS | open |
+| [0187](issues/0187.md) | macOS UI test suite: home feed (load, rendering, and post interactions) | Tests / BlueskyFeed | macOS | open |
+| [0188](issues/0188.md) | macOS UI test suite: thread view and post action buttons | Tests / BlueskyFeed | macOS | open |
+| [0189](issues/0189.md) | macOS UI test suite: profile screen (own and others) | Tests / BlueskyProfile | macOS | open |
+| [0190](issues/0190.md) | macOS UI test suite: search and discovery | Tests / BlueskySearch | macOS | open |
+| [0191](issues/0191.md) | macOS UI test suite: notifications (list, grouping, and tap routing) | Tests / BlueskyNotifications | macOS | open |
+| [0192](issues/0192.md) | macOS UI test suite: direct messages (conversation list and thread) | Tests / BlueskyMessages | macOS | open |
+| [0193](issues/0193.md) | macOS UI test suite: composer (sheet, character count, and post submission) | Tests / BlueskyComposer | macOS | open |
+| [0194](issues/0194.md) | macOS UI test suite: settings, moderation, and account screens | Tests / BlueskySettings / BlueskyModeration | macOS | open |
 
 ---
 
