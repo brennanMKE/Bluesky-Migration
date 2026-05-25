@@ -133,7 +133,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0178](issues/0178.md) | UI test suite: profile screen (own and others) | Tests / BlueskyProfile | All | resolved |
 | [0179](issues/0179.md) | UI test suite: search and discovery | Tests / BlueskySearch | All | resolved |
 | [0180](issues/0180.md) | UI test suite: notifications (list, grouping, and tap routing) | Tests / BlueskyNotifications | All | resolved |
-| [0181](issues/0181.md) | UI test suite: direct messages (conversation list and thread) | Tests / BlueskyMessages | All | open |
+| [0181](issues/0181.md) | UI test suite: direct messages (conversation list and thread) | Tests / BlueskyMessages | All | resolved |
 | [0182](issues/0182.md) | UI test suite: composer (sheet, character count, and post submission) | Tests / BlueskyComposer | All | open |
 | [0183](issues/0183.md) | UI test suite: settings, moderation, and account screens | Tests / BlueskySettings / BlueskyModeration | All | open |
 
