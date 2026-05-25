@@ -128,7 +128,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0173](issues/0173.md) | Separate Bundle ID for development vs release builds via xcconfig schemes | Build / Config | All | resolved |
 | [0174](issues/0174.md) | Automated screenshot capture script for iterating through app screens | Build / Config | All | resolved |
 | [0175](issues/0175.md) | UI test automation foundation: launch-arg navigation driver and screenshot harness | Tests / Bluesky-SwiftUI | All | resolved |
-| [0176](issues/0176.md) | UI test suite: home feed (load, rendering, and post interactions) | Tests / BlueskyFeed | All | open |
+| [0176](issues/0176.md) | UI test suite: home feed (load, rendering, and post interactions) | Tests / BlueskyFeed | All | resolved |
 | [0177](issues/0177.md) | UI test suite: thread view and post action buttons | Tests / BlueskyFeed | All | open |
 | [0178](issues/0178.md) | UI test suite: profile screen (own and others) | Tests / BlueskyProfile | All | open |
 | [0179](issues/0179.md) | UI test suite: search and discovery | Tests / BlueskySearch | All | open |
