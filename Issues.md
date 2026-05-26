@@ -136,7 +136,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0181](issues/0181.md) | UI test suite: direct messages (conversation list and thread) | Tests / BlueskyMessages | All | resolved |
 | [0182](issues/0182.md) | UI test suite: composer (sheet, character count, and post submission) | Tests / BlueskyComposer | All | resolved |
 | [0183](issues/0183.md) | UI test suite: settings, moderation, and account screens | Tests / BlueskySettings / BlueskyModeration | All | resolved |
-| [0184](issues/0184.md) | Search result rows don't navigate: SearchScreen mounted without onActorTap/onPostTap | BlueskySearch / Bluesky-SwiftUI | All | open |
+| [0184](issues/0184.md) | Search result rows don't navigate: SearchScreen mounted without onActorTap/onPostTap | BlueskySearch / Bluesky-SwiftUI | All | resolved |
 | [0185](issues/0185.md) | UI-test navigator openSettings/openModeration intents don't reliably push on iOS | Tests / Bluesky-SwiftUI | iOS | open |
 | [0186](issues/0186.md) | macOS UI test foundation: cross-platform navigation driver, harness, and signing on the Mac | Tests / Bluesky-SwiftUI | macOS | open |
 | [0187](issues/0187.md) | macOS UI test suite: home feed (load, rendering, and post interactions) | Tests / BlueskyFeed | macOS | open |
