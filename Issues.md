@@ -136,6 +136,8 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0181](issues/0181.md) | UI test suite: direct messages (conversation list and thread) | Tests / BlueskyMessages | All | open |
 | [0182](issues/0182.md) | UI test suite: composer (sheet, character count, and post submission) | Tests / BlueskyComposer | All | open |
 | [0183](issues/0183.md) | UI test suite: settings, moderation, and account screens | Tests / BlueskySettings / BlueskyModeration | All | open |
+| [0184](issues/0184.md) | Quote-with-media embeds fail to decode: `recordWithMedia` misses the nested `record` wrapper | BlueskyCore / BlueskyFeed | All | open |
+| [0185](issues/0185.md) | Launch-time feed and preference fetches are cancelled mid-flight and logged as errors | BlueskyFeed / BlueskySettings / BlueskyNetworking | macOS | open |
 
 ---
 
