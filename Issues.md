@@ -142,6 +142,9 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0187](issues/0187.md) | Feed fetch repeatedly fails with `UpstreamFailure: feed unavailable`; verify retry behavior and error UI | BlueskyFeed | All | open |
 | [0188](issues/0188.md) | Create a distinct Beta app icon so dev/test builds are visually distinguishable | Bluesky-SwiftUI / Build / Config | All | open |
 | [0189](issues/0189.md) | "Modifying state during view update" — `MainTabView.savedStoreOrCreate()` mutates `@State` inside body evaluation | Bluesky-SwiftUI | All | open |
+| [0190](issues/0190.md) | Add Sparkle automatic updates to the Mac app | Bluesky-SwiftUI / BlueskyKit / Build / Config | macOS | open |
+| [0191](issues/0191.md) | Release pipeline: code-signed, notarized, stapled DMG for direct distribution | Bluesky-SwiftUI / Build / Config | macOS | open |
+| [0192](issues/0192.md) | Release website: hosting for downloads, appcast, and changelog | Bluesky-SwiftUI / Website | macOS | open |
 
 ---
 
