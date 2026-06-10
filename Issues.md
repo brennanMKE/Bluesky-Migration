@@ -138,6 +138,10 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0183](issues/0183.md) | UI test suite: settings, moderation, and account screens | Tests / BlueskySettings / BlueskyModeration | All | open |
 | [0184](issues/0184.md) | Quote-with-media embeds fail to decode: `recordWithMedia` misses the nested `record` wrapper | BlueskyCore / BlueskyFeed | All | open |
 | [0185](issues/0185.md) | Launch-time feed and preference fetches are cancelled mid-flight and logged as errors | BlueskyFeed / BlueskySettings / BlueskyNetworking | macOS | open |
+| [0186](issues/0186.md) | DM conversation list fails to load: `chat.bsky.convo.listConvos` returns `MethodNotImplemented` | BlueskyMessages / BlueskyNetworking | All | open |
+| [0187](issues/0187.md) | Feed fetch repeatedly fails with `UpstreamFailure: feed unavailable`; verify retry behavior and error UI | BlueskyFeed | All | open |
+| [0188](issues/0188.md) | Create a distinct Beta app icon so dev/test builds are visually distinguishable | Bluesky-SwiftUI / Build / Config | All | open |
+| [0189](issues/0189.md) | "Modifying state during view update" — `MainTabView.savedStoreOrCreate()` mutates `@State` inside body evaluation | Bluesky-SwiftUI | All | open |
 
 ---
 
