@@ -150,7 +150,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0194](issues/0194.md) | macOS UI test suite: settings, moderation, and account screens | Tests / BlueskySettings / BlueskyModeration | macOS | open |
 | [0195](issues/0195.md) | macOS app intermittently crashes on launch (`_AVKit_SwiftUI` getSuperclassMetadata) | BlueskyUI / BlueskyFeed / Bluesky-SwiftUI | macOS | resolved |
 | [0196](issues/0196.md) | Notifications unread badge is never populated (`getUnreadCount` has no callers) | BlueskyNotifications / Bluesky-SwiftUI | All | open |
-| [0197](issues/0197.md) | Composer media posts rejected by PDS: `BlobRef` encodes without `$type: "blob"` | BlueskyCore / BlueskyComposer | All | open |
+| [0197](issues/0197.md) | Composer media posts rejected by PDS: `BlobRef` encodes without `$type: "blob"` | BlueskyCore / BlueskyComposer | All | resolved |
 | [0198](issues/0198.md) | Mention autocomplete overlay lingers after a mention is completed | BlueskyComposer | All | open |
 
 ---
