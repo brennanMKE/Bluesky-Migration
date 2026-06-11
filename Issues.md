@@ -39,7 +39,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0027](issues/0027.md) | Module 9 feature: hashtag and topic views not implemented | BlueskySearch | All | resolved |
 | [0028](issues/0028.md) | Module 9 gate: search live validation | BlueskySearch | All | resolved |
 | [0029](issues/0029.md) | Module 10 feature: grouped notifications not implemented | BlueskyNotifications | All | resolved |
-| [0030](issues/0030.md) | Module 10 feature: push notification receipt does not open the correct thread | BlueskyNotifications | iOS | in-progress |
+| [0030](issues/0030.md) | Module 10 feature: push notification receipt does not open the correct thread | BlueskyNotifications | iOS | resolved |
 | [0031](issues/0031.md) | Module 10 gate: notifications live validation | BlueskyNotifications | All | in-progress |
 | [0032](issues/0032.md) | Module 11 feature: image attachments and message requests inbox not implemented | BlueskyMessages | All | in-progress |
 | [0033](issues/0033.md) | Module 11 gate: DM and group chat live validation | BlueskyMessages | All | in-progress |
