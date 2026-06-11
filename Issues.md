@@ -156,7 +156,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0197](issues/0197.md) | Composer media posts rejected by PDS: `BlobRef` encodes without `$type: "blob"` | BlueskyCore / BlueskyComposer | All | resolved |
 | [0198](issues/0198.md) | Mention autocomplete overlay lingers after a mention is completed | BlueskyComposer | All | resolved |
 | [0199](issues/0199.md) | Dim dark-theme variant not applied to feed/thread/profile/search surfaces | BlueskyUI / BlueskyFeed / BlueskyProfile / BlueskySearch | All | resolved |
-| [0200](issues/0200.md) | Font size setting has no effect outside the Appearance preview | BlueskyUI / BlueskyKit | All | open |
+| [0200](issues/0200.md) | Font size setting has no effect outside the Appearance preview | BlueskyUI / BlueskyKit | All | resolved |
 | [0201](issues/0201.md) | `putPreferences` writes single-preference bodies, wiping all other server preferences | BlueskyCore / BlueskySettings / BlueskyFeed / BlueskyModeration / BlueskyAuth | All | resolved |
 | [0202](issues/0202.md) | Labeler subscription state tracked in `savedFeeds` instead of `labelersPref` | BlueskyModeration | All | open |
 | [0203](issues/0203.md) | Created list never appears in the Lists hub (re-fetch races AppView indexing) | BlueskyLists | All | open |
