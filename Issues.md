@@ -40,7 +40,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0028](issues/0028.md) | Module 9 gate: search live validation | BlueskySearch | All | resolved |
 | [0029](issues/0029.md) | Module 10 feature: grouped notifications not implemented | BlueskyNotifications | All | resolved |
 | [0030](issues/0030.md) | Module 10 feature: push notification receipt does not open the correct thread | BlueskyNotifications | iOS | resolved |
-| [0031](issues/0031.md) | Module 10 gate: notifications live validation | BlueskyNotifications | All | in-progress |
+| [0031](issues/0031.md) | Module 10 gate: notifications live validation | BlueskyNotifications | All | open |
 | [0032](issues/0032.md) | Module 11 feature: image attachments and message requests inbox not implemented | BlueskyMessages | All | in-progress |
 | [0033](issues/0033.md) | Module 11 gate: DM and group chat live validation | BlueskyMessages | All | in-progress |
 | [0034](issues/0034.md) | Module 12 feature: video picker, link card preview, thread composer, draft persistence not implemented | BlueskyComposer | All | in-progress |
@@ -148,6 +148,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0193](issues/0193.md) | macOS UI test suite: composer (sheet, character count, and post submission) | Tests / BlueskyComposer | macOS | open |
 | [0194](issues/0194.md) | macOS UI test suite: settings, moderation, and account screens | Tests / BlueskySettings / BlueskyModeration | macOS | open |
 | [0195](issues/0195.md) | macOS app intermittently crashes on launch (`_AVKit_SwiftUI` getSuperclassMetadata) | BlueskyUI / BlueskyFeed / Bluesky-SwiftUI | macOS | resolved |
+| [0196](issues/0196.md) | Notifications unread badge is never populated (`getUnreadCount` has no callers) | BlueskyNotifications / Bluesky-SwiftUI | All | open |
 
 ---
 
