@@ -55,7 +55,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0043](issues/0043.md) | Pull-to-refresh not implemented for feeds, replies, and search | BlueskyFeed / BlueskyProfile / BlueskySearch | All | resolved |
 | [0044](issues/0044.md) | Feed fails to load: missing `$type` in embedded quote record | BlueskyCore | All | resolved |
 | [0045](issues/0045.md) | Thread view styling is broken: collapsed rows, connector lines, dark mode failure | BlueskyFeed | All | resolved |
-| [0046](issues/0046.md) | Tapping a post author avatar does not navigate to their profile | BlueskyFeed / BlueskyProfile | All | open |
+| [0046](issues/0046.md) | Tapping a post author avatar does not navigate to their profile | BlueskyFeed / BlueskyProfile | All | resolved |
 | [0047](issues/0047.md) | Ellipsis (…) context menu missing from post action bar | BlueskyFeed / BlueskyUI | All | resolved |
 | [0048](issues/0048.md) | Feed cache not used: no stale content shown when offline | BlueskyFeed / BlueskyDataStore | All | resolved |
 | [0049](issues/0049.md) | FeedView task fires twice on launch, creating duplicate FeedViewModels | BlueskyFeed | All | resolved |
@@ -67,9 +67,9 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0055](issues/0055.md) | Switching tabs while in a thread does not change the active tab | Bluesky-SwiftUI | macOS | in-progress |
 | [0056](issues/0056.md) | Profile screen missing banner, avatar placeholder broken, post cards not dark mode | BlueskyProfile | All | resolved |
 | [0057](issues/0057.md) | Bookmarks not implemented: requires server-side or local storage solution | BlueskyFeed / BlueskyDataStore | All | resolved |
-| [0058](issues/0058.md) | Audit and eliminate `try?` to prevent silent failures | All | All | open |
-| [0059](issues/0059.md) | Network reachability gating using Network framework | BlueskyNetworking / BlueskyKit | All | open |
-| [0060](issues/0060.md) | Saved Posts section does not match Bluesky website UX | BlueskyFeed / Bluesky-SwiftUI | All | open |
+| [0058](issues/0058.md) | Audit and eliminate `try?` to prevent silent failures | All | All | resolved |
+| [0059](issues/0059.md) | Network reachability gating using Network framework | BlueskyNetworking / BlueskyKit | All | resolved |
+| [0060](issues/0060.md) | Saved Posts section does not match Bluesky website UX | BlueskyFeed / Bluesky-SwiftUI | All | resolved |
 | [0063](issues/0063.md) | Notification reason labels incomplete (`subscribed-post` and others render verbatim) | BlueskyNotifications | All | resolved |
 | [0105](issues/0105.md) | Group chat thread bubbles missing sender info row | BlueskyMessages | All | resolved |
 | [0106](issues/0106.md) | Message bubbles have no per-message context menu | BlueskyMessages | All | resolved |
@@ -147,6 +147,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0192](issues/0192.md) | macOS UI test suite: direct messages (conversation list and thread) | Tests / BlueskyMessages | macOS | open |
 | [0193](issues/0193.md) | macOS UI test suite: composer (sheet, character count, and post submission) | Tests / BlueskyComposer | macOS | open |
 | [0194](issues/0194.md) | macOS UI test suite: settings, moderation, and account screens | Tests / BlueskySettings / BlueskyModeration | macOS | open |
+| [0195](issues/0195.md) | macOS app intermittently crashes on launch (`_AVKit_SwiftUI` getSuperclassMetadata) | BlueskyUI / BlueskyFeed / Bluesky-SwiftUI | macOS | resolved |
 
 ---
 
