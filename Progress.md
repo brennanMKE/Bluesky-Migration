@@ -365,6 +365,19 @@ _Record any deferred decisions from `Strategy.md` once resolved._
 
 ## Session Notes
 
+**2026-06-11 — Fix sweep: 20 of 25 audit issues fixed & committed (BlueskyKit)**
+
+After filing #0208–#0232, fixed 20 of them in BlueskyKit, working module by
+module with `swift build` + the 142-test suite after each batch (no app launch).
+Fixed: #0208/#0210/#0211/#0212/#0213/#0214/#0215/#0217/#0218/#0219/#0220/#0223/
+#0224/#0225/#0227/#0228/#0229/#0230/#0231/#0232. Notable: #0210 (profile-edit
+data loss) now read-modify-writes the raw profile record so avatar/banner/
+pinnedPost survive; #0208 single-flight refresh; #0213 reply-root threading;
+#0214 fractional-second dates. BlueskyKit commits `0198b27`, `43ae39d`, `89213bd`.
+**Deferred 5** (notes added to each): #0209, #0216 (app-shell, need simulator),
+#0221, #0222, #0226 (cross-cutting / need live validation). All 142 tests still
+pass.
+
 **2026-06-11 — AFK multi-agent bug-hunt audit; 25 issues filed (#0208–#0232)**
 
 User went AFK and asked to "get as much work done using subagents." Did only

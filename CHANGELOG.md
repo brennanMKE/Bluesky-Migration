@@ -4,6 +4,36 @@ All completed work, most recent first. Mirrors the Completion Log in `Progress.m
 
 ---
 
+## 2026-06-11 — Fix sweep: 20 of the 25 audit issues (#0208–#0232)
+
+Fixed and committed (BlueskyKit), each verified by `swift build` + the 142-test
+suite (no app launch):
+
+- **Networking/Core:** #0208 single-flight 401 refresh (no stampede); #0214
+  fractional-second ISO8601 date decoding; #0225 `PostRecord` emits `$type`.
+- **Auth:** #0217 switchAccount rolls back on persist failure; #0218 removeAccount
+  promotes another account.
+- **Search:** #0211 Feeds tab uses getPopularFeedGenerators?query=; #0227 Feeds
+  pagination; #0219 fresh-search supersedes in-flight (tab-switch race).
+- **Profile:** #0210 updateProfile read-modify-writes the raw record (no more
+  avatar/banner/pinnedPost wipe); #0228 relationship-mutation in-flight guard.
+- **Composer:** #0213 reply.root inherits the parent's thread root; #0224 grapheme
+  character count.
+- **Feed:** #0223 video end-observer removed via its token; #0229 detached
+  quote-with-media filtered; #0230 SavedFeeds reload guarded against unsaved edits.
+- **Messages:** #0212 viewport-height key de-duplicated (isAtBottom fixed); #0220
+  thread refreshes the convo via getConvo.
+- **Moderation:** #0215 optimistic mod-list unsubscribe; #0231 report 300-char cap
+  enforced; #0232 muted-word delete matches full identity.
+
+Deferred (need a running app to implement/validate; notes added to each issue):
+#0209 deep-link profile/post routing, #0216 reconnect auto-refresh, #0221 DM
+relatedProfiles, #0222 DM unread-badge propagation, #0226 list-report labeler proxy.
+
+BlueskyKit commits: `0198b27`, `43ae39d`, `89213bd` (+ this doc commit).
+
+---
+
 ## 2026-06-11 — AFK multi-agent bug-hunt audit (filed #0208–#0232); health check; index reconciliation
 
 ### Audit — 25 new issues filed (#0208–#0232)
