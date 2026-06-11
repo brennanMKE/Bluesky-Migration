@@ -73,6 +73,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0063](issues/0063.md) | Notification reason labels incomplete (`subscribed-post` and others render verbatim) | BlueskyNotifications | All | resolved |
 | [0064](issues/0064.md) | Module 12 gate (iOS): composer live validation on iPhone | BlueskyComposer | iOS | open |
 | [0065](issues/0065.md) | Module 14 gate (iOS): settings persistence on iPhone | BlueskySettings | iOS | open |
+| [0066](issues/0066.md) | Module 15 gate (iOS): remaining screens feature parity on iPhone | BlueskyLists / BlueskyFeed / BlueskyModeration / BlueskySettings | iOS | open |
 | [0105](issues/0105.md) | Group chat thread bubbles missing sender info row | BlueskyMessages | All | resolved |
 | [0106](issues/0106.md) | Message bubbles have no per-message context menu | BlueskyMessages | All | resolved |
 | [0107](issues/0107.md) | Message thread missing per-message timestamps and date dividers | BlueskyMessages | All | resolved |
@@ -155,6 +156,12 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0198](issues/0198.md) | Mention autocomplete overlay lingers after a mention is completed | BlueskyComposer | All | open |
 | [0199](issues/0199.md) | Dim dark-theme variant not applied to feed/thread/profile/search surfaces | BlueskyUI / BlueskyFeed / BlueskyProfile / BlueskySearch | All | open |
 | [0200](issues/0200.md) | Font size setting has no effect outside the Appearance preview | BlueskyUI / BlueskyKit | All | open |
+| [0201](issues/0201.md) | `putPreferences` writes single-preference bodies, wiping all other server preferences | BlueskyCore / BlueskySettings / BlueskyFeed / BlueskyModeration / BlueskyAuth | All | open |
+| [0202](issues/0202.md) | Labeler subscription state tracked in `savedFeeds` instead of `labelersPref` | BlueskyModeration | All | open |
+| [0203](issues/0203.md) | Created list never appears in the Lists hub (re-fetch races AppView indexing) | BlueskyLists | All | open |
+| [0204](issues/0204.md) | List member management UI missing (add / remove members) | BlueskyLists | All | open |
+| [0205](issues/0205.md) | Video Feed screen unreachable: `VideoFeedView` has no entry point | BlueskyFeed / Bluesky-SwiftUI | All | open |
+| [0206](issues/0206.md) | Starter packs unreachable: no browse/create entry; screen only mounts from a notification | BlueskyLists / BlueskyProfile / Bluesky-SwiftUI | All | open |
 
 ---
 
