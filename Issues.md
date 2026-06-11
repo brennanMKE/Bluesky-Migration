@@ -162,7 +162,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0203](issues/0203.md) | Created list never appears in the Lists hub (re-fetch races AppView indexing) | BlueskyLists | All | resolved |
 | [0204](issues/0204.md) | List member management UI missing (add / remove members) | BlueskyLists | All | resolved |
 | [0205](issues/0205.md) | Video Feed screen unreachable: `VideoFeedView` has no entry point | BlueskyFeed / Bluesky-SwiftUI | All | resolved |
-| [0206](issues/0206.md) | Starter packs unreachable: no browse/create entry; screen only mounts from a notification | BlueskyLists / BlueskyProfile / Bluesky-SwiftUI | All | open |
+| [0206](issues/0206.md) | Starter packs unreachable: no browse/create entry; screen only mounts from a notification | BlueskyLists / BlueskyProfile / Bluesky-SwiftUI | All | resolved |
 
 ---
 
