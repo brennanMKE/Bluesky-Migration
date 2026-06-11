@@ -159,7 +159,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0200](issues/0200.md) | Font size setting has no effect outside the Appearance preview | BlueskyUI / BlueskyKit | All | resolved |
 | [0201](issues/0201.md) | `putPreferences` writes single-preference bodies, wiping all other server preferences | BlueskyCore / BlueskySettings / BlueskyFeed / BlueskyModeration / BlueskyAuth | All | resolved |
 | [0202](issues/0202.md) | Labeler subscription state tracked in `savedFeeds` instead of `labelersPref` | BlueskyModeration | All | resolved |
-| [0203](issues/0203.md) | Created list never appears in the Lists hub (re-fetch races AppView indexing) | BlueskyLists | All | open |
+| [0203](issues/0203.md) | Created list never appears in the Lists hub (re-fetch races AppView indexing) | BlueskyLists | All | resolved |
 | [0204](issues/0204.md) | List member management UI missing (add / remove members) | BlueskyLists | All | open |
 | [0205](issues/0205.md) | Video Feed screen unreachable: `VideoFeedView` has no entry point | BlueskyFeed / Bluesky-SwiftUI | All | open |
 | [0206](issues/0206.md) | Starter packs unreachable: no browse/create entry; screen only mounts from a notification | BlueskyLists / BlueskyProfile / Bluesky-SwiftUI | All | open |
