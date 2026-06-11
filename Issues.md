@@ -71,7 +71,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0059](issues/0059.md) | Network reachability gating using Network framework | BlueskyNetworking / BlueskyKit | All | resolved |
 | [0060](issues/0060.md) | Saved Posts section does not match Bluesky website UX | BlueskyFeed / Bluesky-SwiftUI | All | resolved |
 | [0063](issues/0063.md) | Notification reason labels incomplete (`subscribed-post` and others render verbatim) | BlueskyNotifications | All | resolved |
-| [0064](issues/0064.md) | Module 12 gate (iOS): composer live validation on iPhone | BlueskyComposer | iOS | in-progress |
+| [0064](issues/0064.md) | Module 12 gate (iOS): composer live validation on iPhone | BlueskyComposer | iOS | resolved |
 | [0065](issues/0065.md) | Module 14 gate (iOS): settings persistence on iPhone | BlueskySettings | iOS | resolved |
 | [0066](issues/0066.md) | Module 15 gate (iOS): remaining screens feature parity on iPhone | BlueskyLists / BlueskyFeed / BlueskyModeration / BlueskySettings | iOS | open |
 | [0105](issues/0105.md) | Group chat thread bubbles missing sender info row | BlueskyMessages | All | resolved |
