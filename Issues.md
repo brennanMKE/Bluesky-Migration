@@ -156,7 +156,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0198](issues/0198.md) | Mention autocomplete overlay lingers after a mention is completed | BlueskyComposer | All | open |
 | [0199](issues/0199.md) | Dim dark-theme variant not applied to feed/thread/profile/search surfaces | BlueskyUI / BlueskyFeed / BlueskyProfile / BlueskySearch | All | open |
 | [0200](issues/0200.md) | Font size setting has no effect outside the Appearance preview | BlueskyUI / BlueskyKit | All | open |
-| [0201](issues/0201.md) | `putPreferences` writes single-preference bodies, wiping all other server preferences | BlueskyCore / BlueskySettings / BlueskyFeed / BlueskyModeration / BlueskyAuth | All | open |
+| [0201](issues/0201.md) | `putPreferences` writes single-preference bodies, wiping all other server preferences | BlueskyCore / BlueskySettings / BlueskyFeed / BlueskyModeration / BlueskyAuth | All | resolved |
 | [0202](issues/0202.md) | Labeler subscription state tracked in `savedFeeds` instead of `labelersPref` | BlueskyModeration | All | open |
 | [0203](issues/0203.md) | Created list never appears in the Lists hub (re-fetch races AppView indexing) | BlueskyLists | All | open |
 | [0204](issues/0204.md) | List member management UI missing (add / remove members) | BlueskyLists | All | open |
