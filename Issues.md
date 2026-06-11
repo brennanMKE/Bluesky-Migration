@@ -154,7 +154,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0195](issues/0195.md) | macOS app intermittently crashes on launch (`_AVKit_SwiftUI` getSuperclassMetadata) | BlueskyUI / BlueskyFeed / Bluesky-SwiftUI | macOS | resolved |
 | [0196](issues/0196.md) | Notifications unread badge is never populated (`getUnreadCount` has no callers) | BlueskyNotifications / Bluesky-SwiftUI | All | resolved |
 | [0197](issues/0197.md) | Composer media posts rejected by PDS: `BlobRef` encodes without `$type: "blob"` | BlueskyCore / BlueskyComposer | All | resolved |
-| [0198](issues/0198.md) | Mention autocomplete overlay lingers after a mention is completed | BlueskyComposer | All | open |
+| [0198](issues/0198.md) | Mention autocomplete overlay lingers after a mention is completed | BlueskyComposer | All | resolved |
 | [0199](issues/0199.md) | Dim dark-theme variant not applied to feed/thread/profile/search surfaces | BlueskyUI / BlueskyFeed / BlueskyProfile / BlueskySearch | All | open |
 | [0200](issues/0200.md) | Font size setting has no effect outside the Appearance preview | BlueskyUI / BlueskyKit | All | open |
 | [0201](issues/0201.md) | `putPreferences` writes single-preference bodies, wiping all other server preferences | BlueskyCore / BlueskySettings / BlueskyFeed / BlueskyModeration / BlueskyAuth | All | resolved |
