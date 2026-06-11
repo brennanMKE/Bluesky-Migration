@@ -41,17 +41,17 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0029](issues/0029.md) | Module 10 feature: grouped notifications not implemented | BlueskyNotifications | All | resolved |
 | [0030](issues/0030.md) | Module 10 feature: push notification receipt does not open the correct thread | BlueskyNotifications | iOS | resolved |
 | [0031](issues/0031.md) | Module 10 gate: notifications live validation | BlueskyNotifications | All | open |
-| [0032](issues/0032.md) | Module 11 feature: image attachments and message requests inbox not implemented | BlueskyMessages | All | in-progress |
-| [0033](issues/0033.md) | Module 11 gate: DM and group chat live validation | BlueskyMessages | All | in-progress |
-| [0034](issues/0034.md) | Module 12 feature: video picker, link card preview, thread composer, draft persistence not implemented | BlueskyComposer | All | in-progress |
-| [0035](issues/0035.md) | Module 12 gate: composer live validation | BlueskyComposer | All | in-progress |
+| [0032](issues/0032.md) | Module 11 feature: image attachments and message requests inbox not implemented | BlueskyMessages | All | resolved |
+| [0033](issues/0033.md) | Module 11 gate: DM and group chat live validation | BlueskyMessages | All | resolved |
+| [0034](issues/0034.md) | Module 12 feature: video picker, link card preview, thread composer, draft persistence not implemented | BlueskyComposer | All | resolved |
+| [0035](issues/0035.md) | Module 12 gate: composer live validation | BlueskyComposer | All | open |
 | [0036](issues/0036.md) | Module 13 gate: moderation live validation | BlueskyModeration | All | resolved |
-| [0037](issues/0037.md) | Module 14 gate: settings persistence live validation | BlueskySettings | All | in-progress |
-| [0038](issues/0038.md) | Module 15 gate: remaining screens feature parity validation | BlueskyLists / BlueskyFeed / BlueskyModeration / BlueskySettings | All | in-progress |
+| [0037](issues/0037.md) | Module 14 gate: settings persistence live validation | BlueskySettings | All | open |
+| [0038](issues/0038.md) | Module 15 gate: remaining screens feature parity validation | BlueskyLists / BlueskyFeed / BlueskyModeration / BlueskySettings | All | open |
 | [0039](issues/0039.md) | Tapping a post navigates to a blank screen | BlueskyFeed | All | resolved |
 | [0040](issues/0040.md) | Design refinement: revisit app color palette | BlueskyUI | All | resolved |
-| [0041](issues/0041.md) | Action button state may be stale when toggled | BlueskyFeed | All | in-progress |
-| [0042](issues/0042.md) | Toolbar list button is centered instead of right-aligned | BlueskyFeed | macOS | in-progress |
+| [0041](issues/0041.md) | Action button state may be stale when toggled | BlueskyFeed | All | resolved |
+| [0042](issues/0042.md) | Toolbar list button is centered instead of right-aligned | BlueskyFeed | macOS | resolved |
 | [0043](issues/0043.md) | Pull-to-refresh not implemented for feeds, replies, and search | BlueskyFeed / BlueskyProfile / BlueskySearch | All | resolved |
 | [0044](issues/0044.md) | Feed fails to load: missing `$type` in embedded quote record | BlueskyCore | All | resolved |
 | [0045](issues/0045.md) | Thread view styling is broken: collapsed rows, connector lines, dark mode failure | BlueskyFeed | All | resolved |
@@ -61,10 +61,10 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0049](issues/0049.md) | FeedView task fires twice on launch, creating duplicate FeedViewModels | BlueskyFeed | All | resolved |
 | [0050](issues/0050.md) | Add Light and Dark #Preview blocks to all views missing them | All | All | resolved |
 | [0051](issues/0051.md) | Search results post cards have white background in dark mode | BlueskySearch | All | resolved |
-| [0052](issues/0052.md) | Deep link opens a new window instead of routing in the existing window | Bluesky-SwiftUI | macOS | in-progress |
-| [0053](issues/0053.md) | Like state does not persist after tapping the like button | BlueskyFeed | All | in-progress |
-| [0054](issues/0054.md) | Cannot tap a reply in thread view to navigate into it | BlueskyFeed | All | in-progress |
-| [0055](issues/0055.md) | Switching tabs while in a thread does not change the active tab | Bluesky-SwiftUI | macOS | in-progress |
+| [0052](issues/0052.md) | Deep link opens a new window instead of routing in the existing window | Bluesky-SwiftUI | macOS | resolved |
+| [0053](issues/0053.md) | Like state does not persist after tapping the like button | BlueskyFeed | All | resolved |
+| [0054](issues/0054.md) | Cannot tap a reply in thread view to navigate into it | BlueskyFeed | All | resolved |
+| [0055](issues/0055.md) | Switching tabs while in a thread does not change the active tab | Bluesky-SwiftUI | macOS | resolved |
 | [0056](issues/0056.md) | Profile screen missing banner, avatar placeholder broken, post cards not dark mode | BlueskyProfile | All | resolved |
 | [0057](issues/0057.md) | Bookmarks not implemented: requires server-side or local storage solution | BlueskyFeed / BlueskyDataStore | All | resolved |
 | [0058](issues/0058.md) | Audit and eliminate `try?` to prevent silent failures | All | All | resolved |
@@ -164,6 +164,31 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0205](issues/0205.md) | Video Feed screen unreachable: `VideoFeedView` has no entry point | BlueskyFeed / Bluesky-SwiftUI | All | resolved |
 | [0206](issues/0206.md) | Starter packs unreachable: no browse/create entry; screen only mounts from a notification | BlueskyLists / BlueskyProfile / Bluesky-SwiftUI | All | resolved |
 | [0207](issues/0207.md) | Composer crashes after a successful thread post (stale index in `threadPostSection` binding) | BlueskyComposer | All | resolved |
+| [0208](issues/0208.md) | 401 refresh stampede clobbers the rotated refresh token | BlueskyNetworking | All | open |
+| [0209](issues/0209.md) | Deep links to a profile or post are dropped / route to the wrong screen | Bluesky-SwiftUI | All | open |
+| [0210](issues/0210.md) | Editing display name/bio wipes the user's avatar, banner, pinned post, and self-labels | BlueskyProfile | All | open |
+| [0211](issues/0211.md) | Search Feeds tab uses the wrong endpoint and param, ignoring the query | BlueskySearch | All | open |
+| [0212](issues/0212.md) | Message thread is always treated as "at bottom" (jump-to-newest / new-messages divider never appear) | BlueskyMessages | All | open |
+| [0213](issues/0213.md) | Replies to a reply set `reply.root` to the parent, mis-threading deep threads | BlueskyComposer | All | open |
+| [0214](issues/0214.md) | Main JSON decoder uses `.iso8601`, which rejects fractional-second timestamps | BlueskyCore | All | open |
+| [0215](issues/0215.md) | Unsubscribing from a moderation list leaves the row on screen | BlueskyModeration | All | open |
+| [0216](issues/0216.md) | `networkBecameViable` is broadcast but has no subscribers — no auto-refresh on reconnect | Bluesky-SwiftUI | All | open |
+| [0217](issues/0217.md) | `switchAccount` mutates in-memory current account before persisting currentDID | BlueskyAuth | All | open |
+| [0218](issues/0218.md) | Removing the active account signs the user out even when other accounts exist | BlueskyAuth | All | open |
+| [0219](issues/0219.md) | Switching search result tabs while a search is in flight drops the new tab's search | BlueskySearch | All | open |
+| [0220](issues/0220.md) | `MessageThreadStore.convo` is never assigned — thread uses a stale member list | BlueskyMessages | All | open |
+| [0221](issues/0221.md) | Group system-message actors not resolved via `relatedProfiles`; removed/left users show a raw DID | BlueskyMessages | All | open |
+| [0222](issues/0222.md) | Reading a thread never clears the inbox unread badge | BlueskyMessages | All | open |
+| [0223](issues/0223.md) | Immersive video feed never removes its end-of-playback observer (leak) | BlueskyFeed | iOS | open |
+| [0224](issues/0224.md) | Composer character count uses unicode scalars instead of grapheme clusters | BlueskyComposer | All | open |
+| [0225](issues/0225.md) | `app.bsky.feed.post` record is written without a `$type` discriminator | BlueskyCore | All | open |
+| [0226](issues/0226.md) | List report dialog never offers/uses a labeler proxy (always posts to PDS default) | BlueskyLists | All | open |
+| [0227](issues/0227.md) | Search Feeds tab has no pagination and discards the cursor | BlueskySearch | All | open |
+| [0228](issues/0228.md) | Profile relationship mutations (follow/block/mute) lack an in-flight guard | BlueskyProfile | All | open |
+| [0229](issues/0229.md) | Quote-with-media posts aren't filtered when the quoted record is detached | BlueskyFeed | All | open |
+| [0230](issues/0230.md) | SavedFeeds `.task` reload silently discards unsaved pin/reorder/delete edits | BlueskyFeed | All | open |
+| [0231](issues/0231.md) | Report dialog allows submitting details past the displayed 300-character limit | BlueskyModeration | All | open |
+| [0232](issues/0232.md) | Deleting a muted word without a server `id` can remove unrelated duplicates | BlueskyModeration | All | open |
 
 ---
 

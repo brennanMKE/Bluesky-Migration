@@ -365,6 +365,106 @@ _Record any deferred decisions from `Strategy.md` once resolved._
 
 ## Session Notes
 
+**2026-06-11 — AFK multi-agent bug-hunt audit; 25 issues filed (#0208–#0232)**
+
+User went AFK and asked to "get as much work done using subagents." Did only
+safe, no-launch, verifiable work (no app launches — standing rule after the
+earlier relaunch-loop incident).
+
+- **Health check green:** BlueskyKit `swift test` = 142 tests pass; macOS
+  `build-for-testing` (signing off) = TEST BUILD SUCCEEDED.
+- **Audit:** 6 parallel read-only subagents swept the codebase for correctness /
+  AT-Proto / SwiftUI bugs (RN reference repo not on disk → correctness-grounded,
+  not RN line-diffing). Filed **25 evidence-backed issues #0208–#0232** (`open`,
+  marked "audit-sourced, unconfirmed in a running app"). 8 high-severity; the
+  highest-impact (401 refresh stampede, deep-link drop, profile-edit data loss,
+  feeds-search wrong endpoint, reply-root mis-threading, fractional-second dates)
+  were verified firsthand against source.
+- **Index reconciliation:** synced 12 stale rows (0032/0033/0034/0041/0042/0052/
+  0053/0054/0055 → resolved; 0035/0037/0038 → open).
+- Uncommitted in Bluesky-SwiftUI: `project.pbxproj`, `HomeFeedUITests.swift`,
+  `UITestNavigatorTests.swift` (macOS UI-test cross-platform bits).
+
+---
+
+**2026-06-10/11 — #0195 launch crash fixed; open-issue sweep via per-issue agents (AFK session)**
+
+Resolved **18 issues**, filed 12 new ones (all but the macOS/manual categories
+now closed). Highlights:
+
+- **#0195** macOS launch crash (~25%): Swift-runtime metadata race instantiating
+  `_AVKit_SwiftUI` generics during the initial view graph vs. AttributeGraph's
+  background descriptor thread. Fixed structurally — new `BlueskyVideoView`
+  (AVPlayerView/AVPlayerViewController representable) replaces SwiftUI
+  `VideoPlayer` everywhere; `_AVKit_SwiftUI` no longer loads at all.
+- **Key discovery:** the iPhone 17 simulator has a signed-in live session
+  (`rnmigration.bsky.social`), enabling AFK live validation on iOS. All work
+  below was live-verified there; every account mutation reversed.
+- **iOS gates closed:** #0064 composer (10/10 checks), #0065 settings
+  persistence, #0066 remaining screens (7/7). #0030 push routing implemented +
+  resolved. #0040 palette: previous values were largely Twitter's; replaced
+  with Bluesky's actual ALF 0.1.7 tokens. #0156 tab-bar avatar ring fixed to
+  RN metrics.
+- **Defects found by gates, all fixed same session:** #0196 unread badge never
+  wired (now 30s shell poll per RN), #0197 `BlobRef.encode` missing
+  `$type:"blob"` (ALL media posts were rejected by the PDS), #0198 mention
+  overlay never dismissed, #0199 Dim theme overridden by
+  `adaptiveBlueskyTheme()` (API deleted), #0200 font-size setting had no
+  consumers (env-driven scale, RN multipliers), **#0201 `putPreferences`
+  clobbered the whole server preference namespace** (now read-modify-write via
+  `PreferencesWriter`; unknown prefs round-trip), #0202 labeler subscriptions
+  used a bogus pref shape (now `labelersPref` + implicit Bluesky labeler),
+  #0203 list-create AppView race (optimistic insert), #0204 list member
+  management UI (RN add/remove dialog), #0205 VideoFeedView unreachable
+  (Trending Videos interstitial ported), #0206 starter packs unreachable
+  (profile tab + create + owner delete), #0207 composer crash after thread
+  submit (stale index binding).
+- BlueskyKit unit tests grew 87 → 142 (all green); note `swift test` was
+  broken at session start and was repaired under #0030.
+- **Still open (all need the user):** #0031 (needs a second account to generate
+  a fresh notification + macOS half), #0035/#0037/#0038 (macOS gates —
+  blocked on signing cert private key + TCC automation grant, GUI-only),
+  #0161–#0172 (manual RN-parity sign-offs), #0186–#0194 (macOS UI tests —
+  same signing/TCC blockers; the #0195 crash blocker is now gone).
+
+---
+
+**2026-06-10 — macOS UI test prep (#0186/#0187); issue-index reconciliation (AFK session)**
+
+Worked the new macOS UI-test issues (#0186–#0194), then earlier open issues.
+
+- **#0186 macOS foundation — still blocked, new blocker found.** Re-ran the macOS
+  `test` invocation. It no longer reaches the 2026-05-25 TCC automation-mode step;
+  it now fails earlier at signing: the "Mac Development" certificate registered to
+  this Mac has **no private key in the login keychain**, so the XCUITest runner
+  can't be signed. This is an environment/keychain change, not a code regression —
+  fix is GUI-only (Xcode revoke+reissue, or import the cert `.p12`). Behind it the
+  original TCC permission grant is still required, plus a test-account
+  `BLUESKY_TEST_HANDLE`/`PASSWORD`. None of these are doable AFK; #0186 stays open.
+- **Code is healthy for macOS.** `build-for-testing -destination 'platform=macOS'
+  CODE_SIGNING_ALLOWED=NO` → `TEST BUILD SUCCEEDED`; app + all 9 UI suites compile.
+- **#0187 prep landed (Bluesky-SwiftUI working tree, uncommitted).** Added
+  `tab(_:)`/`tapTab(_:)` to `BlueskyUITestHarness` so primary-nav taps work on the
+  macOS sidebar (`cells`) as well as the iOS tab bar (`Button`s); migrated the
+  home-feed dup-cells test off the iOS-only literal-button path. Other suites
+  navigate via the platform-agnostic `UITestNavigator` script, so no further
+  forks were needed. (Left uncommitted — no commit was requested.)
+- **Issue-index drift fixed.** #0046/#0058/#0059/#0060 were resolved on 2026-05-05
+  but the `Issues.md` index still said `open`; reconciled to `resolved`. No issue
+  was newly closed.
+- **Sign-offs #0161–#0172 not actioned.** They are manual RN-parity test plans
+  ("test plan, not a bug report") that need a human at a running, signed-in app
+  comparing against the RN reference — not AFK-automatable without credentials and
+  interactive validation. Left untouched (no fabricated sign-off).
+
+**Next session (needs a GUI login + test account):** restore the Mac Development
+signing cert's private key, grant the XCUITest runner TCC automation permission,
+then run `xcodebuild test -scheme "Bluesky (Beta)" -testPlan Screenshots
+-destination 'platform=macOS' BLUESKY_TEST_HANDLE=… BLUESKY_TEST_PASSWORD=…` to
+verify #0186 foundation suites and proceed through #0187–#0194.
+
+---
+
 **2026-04-26 — RN drift review: Group Clops feature branch (#10360)**
 
 7 new commits since baseline `a90bb66`. The only migration-impacting change is the **Group Clops** feature branch (`cdb8d4bfb`), which shipped a full group chat implementation.

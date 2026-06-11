@@ -4,6 +4,42 @@ All completed work, most recent first. Mirrors the Completion Log in `Progress.m
 
 ---
 
+## 2026-06-11 — AFK multi-agent bug-hunt audit (filed #0208–#0232); health check; index reconciliation
+
+### Audit — 25 new issues filed (#0208–#0232)
+- Ran 6 parallel read-only subagents (no app launches, no edits) across Feed/Thread, Composer+Core encoding, Messages, Profile/Search/Notifications, Settings/Moderation/Lists, and Networking/Auth/Shell. Each returned evidence-backed findings (file:line); high-severity ones verified firsthand.
+- Filed all 25 as `open` issues with the bug template, marked "found via automated source audit — not yet confirmed in a running app." Highlights (high severity):
+  - #0208 401 refresh stampede clobbers the rotated refresh token (BlueskyNetworking)
+  - #0209 deep links to profile/post dropped or routed to the wrong screen (Bluesky-SwiftUI)
+  - #0210 editing name/bio wipes avatar/banner/pinned-post/self-labels via blind putRecord (BlueskyProfile)
+  - #0211 Search Feeds tab uses wrong endpoint+param, ignores the query (BlueskySearch)
+  - #0212 message thread always "at bottom" — jump-to-newest/divider never appear (BlueskyMessages)
+  - #0213 replies-to-a-reply set reply.root=parent, mis-threading (BlueskyComposer)
+  - #0214 main decoder `.iso8601` rejects fractional-second timestamps (BlueskyCore)
+  - #0215 unsubscribing from a mod list leaves the row on screen (BlueskyModeration)
+- #0216–#0232 cover medium/low findings (account-switch ordering, reconnect auto-refresh, search tab-switch race, stale convo members, unread-badge clearing, video observer leak, grapheme char-count, PostRecord `$type`, list-report labeler proxy, etc.).
+
+### Health check (no app launch)
+- BlueskyKit `swift build` + `swift test`: **142 tests pass** (27 suites). macOS `build-for-testing` (signing off): **TEST BUILD SUCCEEDED**.
+
+### Issue-index reconciliation
+- Synced 12 stale `Issues.md` rows to their files: 0032/0033/0034/0041/0042/0052/0053/0054/0055 → `resolved`; 0035/0037/0038 → `open`.
+
+---
+
+## 2026-06-10 — macOS UI test prep (#0186/#0187); issue-index reconciliation
+
+### Tests — macOS UI automation (Bluesky-SwiftUI)
+- Re-attempted the macOS `xcodebuild test` run; surfaced a **new** run blocker distinct from the 2026-05-25 TCC one: the "Mac Development" signing certificate's private key is no longer in the login keychain, so the test runner can't be signed (`No "Mac Development" signing certificate … with a private key`). Environment/keychain-only fix (GUI revoke+reissue or `.p12` import); not a code regression. Documented in `issues/0186.md`.
+- Confirmed code is not the blocker: `build-for-testing -destination 'platform=macOS' CODE_SIGNING_ALLOWED=NO` → `TEST BUILD SUCCEEDED` (app + all 9 UI suites compile for macOS).
+- Added cross-platform `tab(_:)` / `tapTab(_:)` helpers to `BlueskyUITestHarness` that resolve primary-nav taps on either shell (iOS tab-bar `Button`s or macOS sidebar `cells`); switched `HomeFeedUITests.testNoDuplicateCellsAfterTabSwitch` off the iOS-only `app.buttons["Home"]/["Search"]` path. Re-verified macOS build green. (Code-side prep for #0187; running still gated on #0186 signing + TCC.)
+
+### Issue tracking — index drift reconciled
+- Corrected stale `Issues.md` index rows that still read `open` though the issue files were closed 2026-05-05: **#0046** (avatar→profile nav), **#0058** (`try?` audit), **#0059** (network reachability gating), **#0060** (Saved Posts UX) → `resolved`.
+- Note: #0161–#0172 (RN-parity sign-offs) remain `open` — they are manual live-app test plans needing credentials + interactive validation, not AFK-automatable.
+
+---
+
 ## 2026-04-26 — Planning: store layer architecture + RN drift review
 
 ### Architecture — Store Layer
