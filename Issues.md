@@ -71,6 +71,7 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0059](issues/0059.md) | Network reachability gating using Network framework | BlueskyNetworking / BlueskyKit | All | resolved |
 | [0060](issues/0060.md) | Saved Posts section does not match Bluesky website UX | BlueskyFeed / Bluesky-SwiftUI | All | resolved |
 | [0063](issues/0063.md) | Notification reason labels incomplete (`subscribed-post` and others render verbatim) | BlueskyNotifications | All | resolved |
+| [0064](issues/0064.md) | Module 12 gate (iOS): composer live validation on iPhone | BlueskyComposer | iOS | open |
 | [0105](issues/0105.md) | Group chat thread bubbles missing sender info row | BlueskyMessages | All | resolved |
 | [0106](issues/0106.md) | Message bubbles have no per-message context menu | BlueskyMessages | All | resolved |
 | [0107](issues/0107.md) | Message thread missing per-message timestamps and date dividers | BlueskyMessages | All | resolved |
@@ -149,6 +150,8 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0194](issues/0194.md) | macOS UI test suite: settings, moderation, and account screens | Tests / BlueskySettings / BlueskyModeration | macOS | open |
 | [0195](issues/0195.md) | macOS app intermittently crashes on launch (`_AVKit_SwiftUI` getSuperclassMetadata) | BlueskyUI / BlueskyFeed / Bluesky-SwiftUI | macOS | resolved |
 | [0196](issues/0196.md) | Notifications unread badge is never populated (`getUnreadCount` has no callers) | BlueskyNotifications / Bluesky-SwiftUI | All | open |
+| [0197](issues/0197.md) | Composer media posts rejected by PDS: `BlobRef` encodes without `$type: "blob"` | BlueskyCore / BlueskyComposer | All | open |
+| [0198](issues/0198.md) | Mention autocomplete overlay lingers after a mention is completed | BlueskyComposer | All | open |
 
 ---
 
