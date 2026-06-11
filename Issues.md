@@ -189,6 +189,15 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0230](issues/0230.md) | SavedFeeds `.task` reload silently discards unsaved pin/reorder/delete edits | BlueskyFeed | All | open |
 | [0231](issues/0231.md) | Report dialog allows submitting details past the displayed 300-character limit | BlueskyModeration | All | open |
 | [0232](issues/0232.md) | Deleting a muted word without a server `id` can remove unrelated duplicates | BlueskyModeration | All | open |
+| [0233](issues/0233.md) | Quote-with-media embeds fail to decode: `recordWithMedia` misses the nested `record` wrapper | BlueskyCore / BlueskyFeed | All | open |
+| [0234](issues/0234.md) | Launch-time feed and preference fetches are cancelled mid-flight and logged as errors | BlueskyFeed / BlueskySettings / BlueskyNetworking | macOS | open |
+| [0235](issues/0235.md) | DM conversation list fails to load: `chat.bsky.convo.listConvos` returns `MethodNotImplemented` | BlueskyMessages / BlueskyNetworking | All | open |
+| [0236](issues/0236.md) | Feed fetch repeatedly fails with `UpstreamFailure: feed unavailable`; verify retry behavior and error UI | BlueskyFeed | All | open |
+| [0237](issues/0237.md) | Create a distinct Beta app icon so dev/test builds are visually distinguishable | Bluesky-SwiftUI / Build / Config | All | open |
+| [0238](issues/0238.md) | "Modifying state during view update" — `MainTabView.savedStoreOrCreate()` mutates `@State` inside body evaluation | Bluesky-SwiftUI | All | open |
+| [0239](issues/0239.md) | Add Sparkle automatic updates to the Mac app | Bluesky-SwiftUI / BlueskyKit / Build / Config | macOS | open |
+| [0240](issues/0240.md) | Release pipeline: code-signed, notarized, stapled DMG for direct distribution | Bluesky-SwiftUI / Build / Config | macOS | open |
+| [0241](issues/0241.md) | Release website: hosting for downloads, appcast, and changelog | Bluesky-SwiftUI / Website | macOS | open |
 
 ---
 
