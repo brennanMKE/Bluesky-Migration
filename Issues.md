@@ -181,7 +181,7 @@ The deliberate exception: an issue may be set to `resolved` (work-is-done-but-no
 | [0193](issues/0193.md) | DM compose bar on iPhone has no option to attach an image | BlueskyMessages | iOS | open |
 | [0194](issues/0194.md) | Sending an image in a DM does not work on macOS | BlueskyMessages | macOS | open |
 | [0195](issues/0195.md) | Incoming DMs do not appear until the conversation is reloaded: add getLog polling while messages UI is visible | BlueskyMessages | All | open |
-| [0196](issues/0196.md) | macOS top bar: trailing buttons crammed on the right; only the Feeds (`#`) button should remain | Bluesky-SwiftUI | macOS | open |
+| [0196](issues/0196.md) | macOS top bar: trailing buttons crammed on the right; only the Feeds (`#`) button should remain | Bluesky-SwiftUI | macOS | in-progress |
 | [0197](issues/0197.md) | macOS: post button should be a floating button at the bottom right, as in the RN app | Bluesky-SwiftUI | macOS | open |
 | [0198](issues/0198.md) | macOS: replace the sidebar with a hamburger-toggled menu drawer, as in the RN app | Bluesky-SwiftUI | macOS | open |
 
