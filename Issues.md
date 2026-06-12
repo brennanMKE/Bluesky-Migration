@@ -184,7 +184,7 @@ The deliberate exception: an issue may be set to `resolved` (work-is-done-but-no
 | [0196](issues/0196.md) | macOS top bar: trailing buttons crammed on the right; only the Feeds (`#`) button should remain | Bluesky-SwiftUI | macOS | resolved |
 | [0197](issues/0197.md) | macOS: post button should be a floating button at the bottom right, as in the RN app | Bluesky-SwiftUI | macOS | resolved |
 | [0198](issues/0198.md) | macOS: replace the sidebar with a hamburger-toggled menu drawer, as in the RN app | Bluesky-SwiftUI | macOS | resolved |
-| [0199](issues/0199.md) | macOS Feeds screen shows placeholder "Feed" rows: `#` button routes to the bare SavedFeedsScreen instead of MyFeedsScreen | BlueskyFeed / Bluesky-SwiftUI | macOS / iPadOS | open |
+| [0199](issues/0199.md) | macOS Feeds screen shows placeholder "Feed" rows: `#` button routes to the bare SavedFeedsScreen instead of MyFeedsScreen | BlueskyFeed / Bluesky-SwiftUI | macOS / iPadOS | in-progress |
 
 ---
 
