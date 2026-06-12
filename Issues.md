@@ -145,6 +145,9 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0190](issues/0190.md) | Add Sparkle automatic updates to the Mac app | Bluesky-SwiftUI / BlueskyKit / Build / Config | macOS | open |
 | [0191](issues/0191.md) | Release pipeline: code-signed, notarized, stapled DMG for direct distribution | Bluesky-SwiftUI / Build / Config | macOS | open |
 | [0192](issues/0192.md) | Release website: hosting for downloads, appcast, and changelog | Bluesky-SwiftUI / Website | macOS | open |
+| [0193](issues/0193.md) | DM compose bar on iPhone has no option to attach an image | BlueskyMessages | iOS | open |
+| [0194](issues/0194.md) | Sending an image in a DM does not work on macOS | BlueskyMessages | macOS | open |
+| [0195](issues/0195.md) | Incoming DMs do not appear until the conversation is reloaded: add getLog polling while messages UI is visible | BlueskyMessages | All | open |
 
 ---
 
