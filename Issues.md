@@ -4,6 +4,39 @@ Lightweight issue tracking for bugs and regressions found while testing the Blue
 
 Issues are described verbally (or with screenshots) and recorded here so work is not interrupted. Each issue gets a unique four-digit number, left-padded with zeros (`0001`, `0002`, …).
 
+Issue **tracking** lives in this repo (`Bluesky-Migration`); the **code** lives in two sibling repos, `../Bluesky-SwiftUI/` (app target — always open via `Bluesky.xcworkspace`) and `../BlueskyKit/` (library modules). That split shapes the workflow below:
+
+- Issue markdown (`Issues.md`, `issues/NNNN.md`, attachments) commits directly to this repo's `main` — this repo never branches.
+- Code changes for an issue happen on an `issue/NNNN` branch in whichever code repo(s) the fix touches, and land on that repo's `main` as a single squash commit after an independent review approves the diff.
+- After the squash merge the issue branch is **kept, not deleted** — the branch and its commits remain unchanged as the full history of the work, while `main` stays clean with one `#NNNN` commit per issue.
+
+---
+
+## Status values
+
+| File value | Display name | Meaning |
+|---|---|---|
+| `open` | Open | Filed but not yet started |
+| `in-progress` | In Progress | Actively being worked on |
+| `resolved` | Resolved | Work passed the review gate and landed; awaiting user confirmation |
+| `closed` | Closed | User has confirmed the fix |
+| `wontfix` | Won't Fix | Acknowledged but won't be addressed |
+
+Use the **file value** (lowercase, hyphenated) in the issue's metadata table and the Index below.
+
+> Legacy note: issues resolved before this review-gated workflow was adopted (2026-06-11) carry `resolved` under the old rule (user-confirmed resolution) and were not migrated to `closed`. The `resolved` / `closed` distinction applies from this date forward.
+
+## Critical rule: never close without explicit confirmation
+
+An issue must **never** be marked `closed` or `wontfix` based on inference. Only when the user has said so in plain language. Do not infer resolution from:
+
+- a code change you (or a subagent) just made
+- a commit message
+- the filing of a related issue
+- the user saying "thanks, that looks better"
+
+The deliberate exception: an issue may be set to `resolved` (work-is-done-but-not-confirmed) when the work has passed this project's review gate — see "Working an issue" below. That transition is made by the orchestrator after the reviewer approves, never by the implementer subagent itself. Nothing and nobody but the user sets `closed`. This separation is the entire reason `resolved` and `closed` are different states. When in doubt, ask.
+
 ---
 
 ## Index
@@ -160,13 +193,18 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 2. Create `issues/NNNN.md` using the template below.
 3. If there are screenshots or other attachments, drop them in `issues/NNNN/` and add them to the Attachments section using inline image syntax (see template).
 4. Add a row to the Index table above.
+5. Add a row to the open-issues table in `../Bluesky-SwiftUI/CLAUDE.md` (it mirrors a subset of this index).
+6. Commit the new issue in this repo with message `#NNNN <issue title>` so it enters git history with its `open` status; commit the table row in `Bluesky-SwiftUI` separately.
 
 ## How to update an existing issue
 
 Any change to an issue — status update, added notes, new attachment, or any other edit — requires these steps:
 
 1. Edit `issues/NNNN.md` with the change.
-2. If the status changed, update the matching row in the Index table above.
+2. If the status changed, update the matching row in the Index table above and (if the issue is listed there) in the open-issues table in `../Bluesky-SwiftUI/CLAUDE.md`.
+3. Commit the markdown change in this repo with a `#NNNN`-prefixed message.
+
+When status moves to `resolved` or `closed`, add a `**Closed**` row to the issue's metadata table with today's date. When the move to `resolved` comes from a review-approved issue branch, also add a `**Branch**` row (`issue/NNNN`) naming the repo(s) it lives in. The landing commit is found by its message (`git log --oneline --grep='#NNNN'` in the code repo) — don't record a commit hash, since the squash hash doesn't exist when the issue file is written.
 
 **Adding screenshots:** macOS screenshot filenames contain a **narrow no-break space** (U+202F) before AM/PM — visually identical to a regular space but distinct in bytes. Quoting the literal filename in a `cp` command will fail with "No such file or directory" because of this character.
 
@@ -182,10 +220,181 @@ If Claude cannot copy the file (e.g. no Desktop access), run the copy yourself u
 ! cp /Users/brennan/Desktop/Screenshot\ YYYY-MM-DD\ at\ H.MM.SS*XM.png issues/NNNN/screenshot.png
 ```
 
-**Status values:** `open` · `in-progress` · `resolved` · `wontfix`
+---
 
-> **IMPORTANT — do not close issues without explicit confirmation.**
-> An issue must **never** be marked `resolved` or `wontfix` unless the user has explicitly said the bug is fixed or won't be addressed. Do not infer resolution from a code change, a commit message, or the filing of a related issue. Always leave status as `open` until the user confirms closure.
+## Working an issue (review-gated branch workflow)
+
+All code work for an issue happens on a branch named for the issue (`issue/NNNN`), and **nothing reaches `main` until an independent review approves the diff** — at which point the branch lands as a single squash commit. Each issue runs through a three-role loop:
+
+- **Implementer subagent** — model pinned to **Sonnet**. Implements and verifies the change on the issue branch, committing checkpoints as it goes. Never touches `main`.
+- **Reviewer subagent** — model pinned to **Opus**. Reviews the branch diff against the issue and commits its verdict to the issue file in this repo. Does **not** edit code or change status.
+- **Orchestrator** (the main session) — picks issues, creates branches, dispatches both subagents, routes review feedback back to the implementer, records token-usage work-log rows, and — only after approval — marks the issue `resolved` and squash-merges the branch to `main`.
+
+Issues are worked **strictly one at a time** — never run two implementers in parallel. The code repos are real working copies shared by every agent; two issues would fight over branch checkouts.
+
+### Which repos branch
+
+Create `issue/NNNN` (same name) in each code repo the fix touches — `Bluesky-SwiftUI`, `BlueskyKit`, or both. The workspace resolves `BlueskyKit @ local`, so whatever branch is checked out in `../BlueskyKit` is what builds. This repo (`Bluesky-Migration`) never branches: issue markdown, work-log rows, and review verdicts commit straight to its `main` with `#NNNN`-prefixed messages.
+
+Commits on a code repo's **`main`** stay clean: one `#NNNN <verb> <title>` squash commit per approved issue (plus unrelated housekeeping). Commits on an **issue branch** are free-form checkpoints — implementation steps, review-round fixes — prefixed `#NNNN`; granularity doesn't matter because the squash merge collapses the branch into one commit on `main`.
+
+**Why a branch per issue, squashed on merge:** stalled work is never discarded — a bailed attempt stays on its branch for the next try to resume; the implementer can checkpoint without polluting `main`; the reviewer examines exactly the diff that will land (`git diff main...issue/NNNN`); and `main` stays readable — one `#NNNN` commit per issue, greppable with `git log --grep`. **After the squash merge the branch is kept, not deleted** — it remains, unchanged, as the granular history of how the work was done.
+
+### Orchestrator: branch → dispatch → review-gate → squash-merge
+
+1. **Refresh the pricing cache if stale.** If `issues/model-pricing.json` is missing or its `fetched` date isn't today, fetch current model prices and rewrite it (once per day, not per issue). See "Token usage and cost tracking" below.
+2. If the user named an issue ("fix 0193"), work that one; otherwise pick the lowest-numbered `open` issue that is actionable.
+3. **Create the issue branch(es)** from a clean `main` in each code repo the fix will touch: `git switch -c issue/NNNN main`. If the branch already exists from a previous bailed attempt, resume it instead: `git switch issue/NNNN` (read the bail Notes on the issue first).
+4. **Dispatch the implementer** — a fresh subagent with the model pinned to Sonnet, given the issue id and instructions to follow "Implementer subagent" below. It works on the issue branch(es) and returns a summary of what changed, how it was verified, and what it committed.
+5. **Record the implementer's usage** — append a `## Work log` row to `issues/NNNN.md` (see "Token usage and cost tracking") and commit it in this repo (`#NNNN Work log: implementer round 1`).
+6. **Dispatch the reviewer** — a fresh subagent with the model pinned to Opus, given the issue id and the implementer's summary, following "Reviewer subagent" below. A fresh reviewer per round; don't reuse a reviewer across issues. The reviewer commits its verdict to the issue file; afterwards, record its usage as another work-log row (`#NNNN Work log: review round 1`).
+7. **If the reviewer requests changes**, send the findings back to the **same implementer agent** (continue it — its context is intact) to address, re-verify, and commit on the branch, then dispatch a fresh review round. If three rounds don't converge, bail per "When the implementer can't finish" — the branch keeps every attempt; nothing is discarded.
+8. **On approval, mark the issue `resolved`** (see "Updating the issue on resolve" below) and commit the markdown in this repo.
+9. **Squash-merge to `main`** in each code repo that has an `issue/NNNN` branch:
+
+   ```bash
+   git switch main
+   git merge --squash issue/NNNN
+   git commit -m "#NNNN <verb> <title>"
+   ```
+
+   One commit, one simple one-line message — the issue file carries the detail (root cause, fix, review, verification, files changed, costs). **Do not delete the branch** — `issue/NNNN` and its commits stay in place, unchanged, as the full history of the work. (Git never recognizes squash merges as merged, so the branch will not show in `git branch --merged`; that's expected.)
+10. Confirm both code repos are back on `main`, then move on to the next open issue (or stop if only one was requested).
+
+### Implementer subagent (Sonnet): claim → fix → verify → checkpoint
+
+The implementer starts with fresh context, so its first job is loading the project's conventions before touching anything. The issue branch already exists — confirm with `git branch --show-current` in each code repo you touch before committing, and stay there: never switch branches, never touch `main`, never merge.
+
+1. **Orient in the project.** Read these in order, every time:
+   - **`../Bluesky-Migration/Issues.md`** (this file) — status vocabulary, workflow, commit conventions. **Authoritative for issue-tracking workflow.**
+   - **`CLAUDE.md`** in `../Bluesky-Migration/` and in `../Bluesky-SwiftUI/` — porting rules (the React Native app is the spec), architecture layering, restricted areas. **Treat their instructions as binding.**
+   - **`../Bluesky-Migration/issues/NNNN.md`** — the issue you're working on, in full, including attachments in `issues/NNNN/`.
+
+   If guides disagree, prefer the `CLAUDE.md` files for code/repo conventions and this file for issue-tracking specifics.
+
+2. **Set status to `in-progress`** in `issues/NNNN.md` and the Index here, and commit in this repo (`#NNNN Claim`).
+3. **Make the code changes** required by the issue, committing checkpoints on the issue branch(es) as you go — messages prefixed `#NNNN`, granularity at your discretion (it all squashes into one commit on `main`).
+4. **Build *and* run the project's verification commands, and confirm tests actually executed and passed.** This step is mandatory and cannot be shortcutted.
+
+   - **Compilation is not verification.** "It builds" / "no type errors" does not count. Tests must actually run. A green build with zero tests run is a failure of this step.
+   - **If you wrote or modified tests as part of the fix, you MUST execute those specific tests and observe them pass.** Confirm the test names you added appear in the run output and the result was success. A test that compiles but never ran proves nothing.
+   - **Read the output, don't just check the exit code.** "0 tests run", "skipped", "no tests found", or a "build succeeded" line with no test summary are red flags even when the exit code is 0.
+   - **If verification cannot be run in your environment**, you have not verified the change. Do not hand it to review as verified — bail per "When the implementer can't finish" below, naming the verification step you couldn't run.
+   - **If the build was already failing before you started**, note it on the issue and bail — don't fix unrelated breakage.
+
+5. **Commit your final state on the branch(es), but do not touch the issue markdown beyond the `in-progress` flip** — the resolution sections are the orchestrator's job, after review. Return to the orchestrator with: what changed and why, the files touched per repo, the exact verification command(s) run and what was observed, and anything the reviewer should scrutinize (trade-offs, RN-parity judgment calls, choices that constrain later issues).
+
+When the orchestrator sends back review findings, address every item (or push back with a concrete reason), re-verify, commit on the branch, and return an updated summary the same way.
+
+### Reviewer subagent (Opus): review the branch before it lands
+
+The reviewer also starts fresh: read this file, both `CLAUDE.md` files, and `issues/NNNN.md` with its attachments, then examine each issue branch with `git diff main...HEAD` — that is exactly the diff the squash merge will land on `main`. (`git log main..HEAD --oneline` shows the checkpoint history if the path the implementer took matters.)
+
+Judge the diff against:
+
+- **The issue itself** — does the change deliver the Expected behavior? Does it match the reference screenshots and the React Native client's behavior (read the cited RN files in `../Bluesky-ReactNative/src/` — RN is the spec)?
+- **Correctness and idiom** — SwiftUI best practices, sensible state management, the architecture layering rules in `CLAUDE.md` (lower layers never import higher ones; `@MainActor` default isolation in UI targets), code that reads like the surrounding code.
+- **Verification credibility** — did the implementer's verification actually demonstrate the behavior, or just compile? Re-run the build/verify commands if in doubt.
+- **Downstream impact** — does the change box in a later issue or break another platform (a macOS fix that regresses iOS, or vice versa)?
+
+Record the verdict — **Approve**, or **Request changes** with a specific, actionable list (file, problem, what would satisfy the objection) — by appending it to a `## Review` section in `issues/NNNN.md` (one entry per round, with model and date) and committing it in this repo (`#NNNN Review round N: approve` or `…: request changes`). Return the same verdict to the orchestrator. Review only; never edit code, never commit in the code repos, never change issue status.
+
+### Updating the issue on resolve (orchestrator, after approval)
+
+Edit `issues/NNNN.md` metadata:
+
+- Change Status to `resolved`; update the Index row here and the open-issues table row in `../Bluesky-SwiftUI/CLAUDE.md` (commit that one on the issue branch if one exists in that repo, so it lands with the squash; otherwise as a small commit on its `main`).
+- Add a `**Closed**` row with today's date.
+- Add a `**Branch**` row with the branch name and repo(s), e.g. `issue/0193 (BlueskyKit, Bluesky-SwiftUI)`. No commit hash — find the landing commit by message: `git log --oneline --grep='#NNNN'`.
+
+Then add a structured summary so the issue becomes a primary-source record:
+
+- **`## Root cause`** — what was actually wrong (often different from the original report). For feature issues, describe the starting state instead.
+- **`## Fix`** — the approach taken.
+- **`## Review`** — already written per-round by the reviewer; the orchestrator adds a closing line if needed (rounds taken, what the review changed, or "approved first pass").
+- **`## Verification`** — the exact command(s) run and what was observed; name any new tests and confirm they ran. Also say what the user should do by hand in the running app to confirm the behavior before closing. Mandatory — this is the audit trail that distinguishes "verified" from "compiled and hoped".
+- **`## Files changed`** — bulleted list grouped by repo, one bullet per file, with a short note on each.
+- **`## Gotchas`** *(optional)* — surprises, dead ends, non-obvious behavior, or anything a future engineer working on similar code should know.
+
+Commit in this repo (`#NNNN Resolve: <one-line summary>`), then perform the squash merge(s).
+
+Status flow: `open` → `in-progress` → `resolved`. **Never set `closed`** — the user does that after verifying the behavior in the running app.
+
+### Build / verify commands for this project
+
+Run from `../Bluesky-SwiftUI/` (the app) and `../BlueskyKit/` (the package):
+
+- **Package tests** (always, for any fix touching BlueskyKit): `swift test` in `../BlueskyKit/`. Read the summary line and confirm tests executed and passed.
+- **macOS app build**: `xcodebuild -workspace Bluesky.xcworkspace -scheme "Bluesky (Beta)" -destination 'platform=macOS' build -quiet`
+- **iOS app build** (for iOS-affecting changes): same command with `-destination 'generic/platform=iOS Simulator'`.
+- If the issue has UI-test coverage (see the `Tests /` issues in the index), run the relevant UI tests too.
+
+A fix that touches both platforms must build for both. Use the **Beta** scheme for all automated work, never Prod.
+
+### When the implementer can't finish
+
+If the issue is unreproducible, out of scope, the build won't pass after reasonable effort, or three review rounds don't converge, the work is parked on the branch — never discarded:
+
+1. **Commit everything in flight on the branch(es)**, including half-done work (`#NNNN WIP: <state>`). The branch is the parking spot; the next attempt resumes from it.
+2. **Switch the code repo(s) back to `main`** and leave the branch in place.
+3. **Add a `## Notes` section** to the issue describing what was tried, why work stopped, what you'd try next, and naming the branch (`Work parked on issue/NNNN in <repo>`). For a review-deadlock bail, include the unresolved review findings verbatim. Revert the status to `open` in the issue file and both index tables (the claim only meant anything while work was active).
+4. **Commit the markdown in this repo** with message `#NNNN Notes: <one-line bail summary>` (the orchestrator does this), including the work-log rows for the failed sessions — they're real costs.
+5. Return with a one-line summary of why work stalled.
+
+Never use `wontfix` or `closed` to escape a stuck issue.
+
+---
+
+## Token usage and cost tracking
+
+Every subagent dispatch gets a usage record on the issue it worked: which model did the work, exactly how many tokens it consumed, and an estimated cost — this is the budget log for the issue. The **orchestrator** records this after the subagent returns — a subagent can't measure its own totals. One row per session: each implementer round (Sonnet) **and** each reviewer round (Opus) gets its own row, so an issue's true cost includes its reviews. Rows are appended to `issues/NNNN.md` and committed in this repo as each round finishes.
+
+### Pricing cache (`issues/model-pricing.json`)
+
+Anthropic publishes prices on the docs site (no API endpoint). Fetch once per day, cache to:
+
+```json
+{
+  "fetched": "YYYY-MM-DD",
+  "source": "https://docs.claude.com/en/docs/about-claude/pricing",
+  "currency": "USD per MTok",
+  "models": {
+    "claude-opus-4-8": { "input": 5.00, "output": 25.00, "cache_write_5m": 6.25, "cache_read": 0.50 }
+  }
+}
+```
+
+If `fetched` is today, use as-is. If the fetch fails, use the stale cache and note the staleness next to the cost; with no cache at all, record tokens and model with `—` for cost. Never trust example numbers over a fresh fetch.
+
+### Getting exact token counts
+
+Claude Code writes each subagent's transcript to `~/.claude/projects/<project-slug>/<session-id>/subagents/agent-<id>.jsonl`, where `<project-slug>` is the working directory with `/`, `.`, and `_` replaced by `-` (the orchestrator usually runs from `Bluesky-SwiftUI`, so look under `-Users-brennan-Developer-Bluesky-Bluesky-SwiftUI`). Assistant lines carry `message.usage` (exact `input_tokens`, `output_tokens`, `cache_read_input_tokens`, `cache_creation_input_tokens`) and `message.model`.
+
+**Dedupe by `requestId`** — one API response can span several JSONL lines repeating the same usage object; summing every line over-counts. Find the newest agent file mentioning the issue id, keep one usage entry per `requestId`, and sum.
+
+```
+cost = (input × input_rate + output × output_rate
+      + cache_read × cache_read_rate + cache_write × cache_write_5m_rate) / 1,000,000
+```
+
+If no transcript is available (different harness), record whatever total the harness reported, or `—`. Never fabricate counts.
+
+### The `## Work log` section
+
+One row per work session, conventionally the last section of the issue file:
+
+```markdown
+## Work log
+
+| Date | Role | Model | Input | Output | Cache read | Cache write | Cost |
+|---|---|---|---|---|---|---|---|
+| 2026-06-11 | implement | claude-sonnet-4-6 | 96 | 23,141 | 4,877,408 | 133,823 | $1.92 |
+| 2026-06-11 | review | claude-opus-4-8 | 54 | 8,210 | 1,204,331 | 41,002 | $0.93 |
+
+**Total: $2.85**
+```
+
+Update the `**Total**` line whenever a row is appended. Bails get rows too. Don't reformat existing rows.
 
 ---
 
