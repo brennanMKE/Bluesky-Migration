@@ -54,7 +54,7 @@ When a bug or regression is spotted during testing, **file it rather than fixing
 3. Drop any screenshots or attachments in `issues/NNNN/`.
 4. Add a row to the index table in `Issues.md`.
 
-When an issue is fixed: update its `Status` to `resolved` in `issues/NNNN.md` and in the `Issues.md` index.
+**Working an issue follows the review-gated branch workflow in `Issues.md`** — authoritative for the full process. In short: code work happens on an `issue/NNNN` branch in the code repo(s), implemented by a Sonnet subagent and reviewed by an Opus subagent; token usage for each round is logged in a `## Work log` on the issue; only after review approval does the orchestrator mark the issue `resolved` and squash-merge the branch to `main`, keeping the branch and its commits in place. This repo never branches — issue markdown commits straight to `main` with `#NNNN`-prefixed messages. Only the user sets `closed`.
 
 Any other change to an existing issue (adding notes, attaching files, changing status) requires editing `issues/NNNN.md` and updating the matching row in the `Issues.md` index.
 

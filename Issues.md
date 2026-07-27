@@ -191,13 +191,21 @@ Issues are described verbally (or with screenshots) and recorded here so work is
 | [0232](issues/0232.md) | Deleting a muted word without a server `id` can remove unrelated duplicates | BlueskyModeration | All | open |
 | [0233](issues/0233.md) | Quote-with-media embeds fail to decode: `recordWithMedia` misses the nested `record` wrapper | BlueskyCore / BlueskyFeed | All | open |
 | [0234](issues/0234.md) | Launch-time feed and preference fetches are cancelled mid-flight and logged as errors | BlueskyFeed / BlueskySettings / BlueskyNetworking | macOS | open |
-| [0235](issues/0235.md) | DM conversation list fails to load: `chat.bsky.convo.listConvos` returns `MethodNotImplemented` | BlueskyMessages / BlueskyNetworking | All | open |
+| [0235](issues/0235.md) | DM conversation list fails to load: `chat.bsky.convo.listConvos` returns `MethodNotImplemented` | BlueskyMessages / BlueskyNetworking | All | resolved |
 | [0236](issues/0236.md) | Feed fetch repeatedly fails with `UpstreamFailure: feed unavailable`; verify retry behavior and error UI | BlueskyFeed | All | open |
 | [0237](issues/0237.md) | Create a distinct Beta app icon so dev/test builds are visually distinguishable | Bluesky-SwiftUI / Build / Config | All | open |
 | [0238](issues/0238.md) | "Modifying state during view update" — `MainTabView.savedStoreOrCreate()` mutates `@State` inside body evaluation | Bluesky-SwiftUI | All | open |
 | [0239](issues/0239.md) | Add Sparkle automatic updates to the Mac app | Bluesky-SwiftUI / BlueskyKit / Build / Config | macOS | open |
 | [0240](issues/0240.md) | Release pipeline: code-signed, notarized, stapled DMG for direct distribution | Bluesky-SwiftUI / Build / Config | macOS | open |
 | [0241](issues/0241.md) | Release website: hosting for downloads, appcast, and changelog | Bluesky-SwiftUI / Website | macOS | open |
+| [0242](issues/0242.md) | DM compose bar on iPhone has no option to attach an image | BlueskyMessages | iOS | open |
+| [0243](issues/0243.md) | Sending an image in a DM does not work on macOS | BlueskyMessages | macOS | open |
+| [0244](issues/0244.md) | Incoming DMs do not appear until the conversation is reloaded: add getLog polling while messages UI is visible | BlueskyMessages | All | open |
+| [0245](issues/0245.md) | macOS top bar: trailing buttons crammed on the right; only the Feeds (`#`) button should remain | Bluesky-SwiftUI | macOS | resolved |
+| [0246](issues/0246.md) | macOS: post button should be a floating button at the bottom right, as in the RN app | Bluesky-SwiftUI | macOS | resolved |
+| [0247](issues/0247.md) | macOS: replace the sidebar with a hamburger-toggled menu drawer, as in the RN app | Bluesky-SwiftUI | macOS | resolved |
+| [0248](issues/0248.md) | macOS Feeds screen shows placeholder "Feed" rows: `#` button routes to the bare SavedFeedsScreen instead of MyFeedsScreen | BlueskyFeed / Bluesky-SwiftUI | macOS / iPadOS | resolved |
+| [0249](issues/0249.md) | Remove dead `SavedFeedsScreen` from BlueskyFeed (unreachable after #0248) | BlueskyFeed | All | open |
 
 ---
 
